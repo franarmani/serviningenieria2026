@@ -1,8 +1,11 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'framer-motion';
-import { getPublishedNews } from '../utils/newsmanager';
+import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedCounter from '../components/ui/AnimatedCounter';
+import RevealOnScroll from '../components/ui/RevealOnScroll';
+import StaggerText from '../components/ui/StaggerText';
+import { getPublishedNews } from '../utils/newsManager';
 
 const Home = () => {
   const { language } = useLanguage();
@@ -42,7 +45,7 @@ const Home = () => {
     setCurrentImageIndex((prev) => (prev - 1 + 8) % 8);
   };
 
-  // manejo de teclas para navegacion
+  // Manejo de teclas para navegacion
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (isGalleryOpen) {
@@ -66,7 +69,7 @@ const Home = () => {
     },
     {
       id: 'planta',
-      name: language === 'es' ? 'Planta de mantenimiento Industrial' : 'Industrial maintenance Plant',
+      name: language === 'es' ? 'Planta de Mantenimiento Industrial' : 'Industrial Maintenance Plant',
       path: '/services/planta',
       description: language === 'es' ? 'Infraestructura especializada 2,639 m²' : 'Specialized infrastructure 2,639 m²'
     },
@@ -126,11 +129,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       
-      <section className="relative h-screen flex itemás-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
+      {/* HERO — SERVIN INGENIERÍA S.A. */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
         
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='m50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '100px 100px'
         }}></div>
         
@@ -142,7 +146,7 @@ const Home = () => {
             className="w-full h-full object-cover"
             style={{
               filter: 'grayscale(100%) contrast(1.2)',
-              mixBlendmode: 'overlay'
+              mixBlendMode: 'overlay'
             }}
           />
         </div>
@@ -155,27 +159,17 @@ const Home = () => {
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
           
           {/* Corporate badge */}
-          <motion.div 
-            className="mb-6 sm:mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="inline-flex itemás-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
+          <div className="mb-6 sm:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
               <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
               <span className="text-white/80 text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? '+45 Años de Excelencia Industrial' : '+45 Years of Industrial Excellence'}
               </span>
             </div>
-          </motion.div>
+          </div>
           
           {/* Executive title */}
-          <motion.div 
-            className="mb-6 sm:mb-8 lg:mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
+          <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-light text-white mb-4 sm:mb-6" style={{ 
               fontFamily: 'Inter, system-ui, sans-serif',
               fontWeight: '200',
@@ -184,7 +178,7 @@ const Home = () => {
             }}>
               SERVIN
             </h1>
-            <div className="flex itemás-center justify-center mb-4 sm:mb-6">
+            <div className="flex items-center justify-center mb-4 sm:mb-6">
               <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
@@ -200,75 +194,63 @@ const Home = () => {
               </h2>
               <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
             </div>
-          </motion.div>
+          </div>
           
           {/* Professional subtitle */}
-          <motion.p 
-            className="text-base sm:text-lg lg:text-xl text-white/80 mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4" 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '300',
-              letterSpacing: '0.01em'
-            }}
-          >
+          <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300',
+            letterSpacing: '0.01em'
+          }}>
             {language === 'es' 
               ? 'Una empresa de servicios al servicio de las empresas.'
               : 'A service company at the service of companies.'}
-          </motion.p>
+          </p>
           
           {/* CTA buttons */}
-          <motion.div 
-            className="px-4 flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
+          <div className="animate-fade-in-up-delay-3 px-4 flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/services" 
-              className="btn-primary w-full sm:w-auto px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base inline-flex itemás-center justify-center"
+              className="btn-primary w-full sm:w-auto px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base inline-flex items-center justify-center"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               {language === 'es' ? 'Ver servicios' : 'View services'}
             </Link>
             <Link 
               to="/about" 
-              className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 w-full sm:w-auto px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base inline-flex itemás-center justify-center font-semibold tracking-wide uppercase"
+              className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 w-full sm:w-auto px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base inline-flex items-center justify-center font-semibold tracking-wide uppercase"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               {language === 'es' ? 'Conocer la empresa' : 'About the company'}
             </Link>
-          </motion.div>
+          </div>
           
         </div>
         
       </section>
 
-      <section className="relative bg-white py-20 lg:py-28 overflow-hidden">
+
+      {/* SOMOS SERVIN INGENIERÍA — PRESENTACIÓN */}
+      <section className="relative bg-white py-20 lg:py-24 overflow-hidden">
+        
+        {/* Decoración de fondo sutil */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50 to-transparent opacity-50"></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           
-          <motion.div 
-            className="grid lg:grid-cols-2 gap-12 lg:gap-16 itemás-center"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
             {/* Lado izquierdo: Contenido */}
             <div>
               {/* Badge */}
-              <div className="inline-flex itemás-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-6">
+              <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-6">
                 <div className="w-2 h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
                 <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' ? 'Somos' : 'We are'}
                 </span>
               </div>
               
+              {/* Título */}
               <h2 
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
@@ -278,6 +260,7 @@ const Home = () => {
                 <span className="text-corporate-red">INGENIERÍA</span>
               </h2>
               
+              {/* Descripción */}
               <div className="space-y-4">
                 <p 
                   className="text-base text-gray-700 leading-relaxed"
@@ -309,23 +292,19 @@ const Home = () => {
               </div>
             </div>
             
-          </motion.div>
+          </div>
           
         </div>
       </section>
 
 
-      {/* ACTUALIDAD INSTITUCIONAL � CARRUSEL DESLIZANTE */}
+      {/* ACTUALIDAD INSTITUCIONAL — CARRUSEL DESLIZANTE */}
       <section className="py-20 lg:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
           
-          <motion.div 
-            className="mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          {/* Título */}
+          <RevealOnScroll direction="up">
+            <div className="mb-12">
               <h2 
                 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.01em' }}
@@ -340,7 +319,8 @@ const Home = () => {
                   ? 'Manténgase informado sobre nuestras últimas actualizaciones, desarrollos técnicos y logros empresariales.'
                   : 'Stay informed about our latest updates, technical developments and business achievements.'}
               </p>
-          </motion.div>
+            </div>
+          </RevealOnScroll>
 
         </div>
 
@@ -351,6 +331,7 @@ const Home = () => {
             {/* Contenedor con overflow hidden */}
             <div className="overflow-hidden">
               
+              {/* Track de novedades con animación continua */}
               <motion.div 
                 className="flex gap-4 sm:gap-6"
                 animate={{
@@ -399,11 +380,11 @@ const Home = () => {
                         {language === 'es' ? news.summary : news.summaryEn}
                       </p>
                       <span 
-                        className="text-sm text-corporate-red font-semibold inline-flex itemás-center gap-2 group-hover:gap-3 transition-all mt-auto"
+                        className="text-sm text-corporate-red font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto"
                       >
                         {language === 'es' ? 'Leer más' : 'Read more'}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m17 8l4 4m0 0l-4 4m4-4H3" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </span>
                     </div>
@@ -431,12 +412,12 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-16 text-center">
             <Link 
               to="/novedades"
-              className="inline-flex itemás-center gap-2 text-sm text-corporate-red font-semibold hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-sm text-corporate-red font-semibold hover:gap-3 transition-all"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               {language === 'es' ? 'Ver todas las novedades' : 'View all news'}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
           </div>
@@ -444,21 +425,18 @@ const Home = () => {
 
       </section>
 
+
+      {/* BLOQUE DE AUTORIDAD — CERTIFICACIÓN Y RESPALDO TÉCNICO */}
       <section className="relative bg-black py-20 lg:py-28 overflow-hidden">
         
+        {/* Decoración: líneas rojas sutiles */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent opacity-30"></div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent opacity-30"></div>
         
         <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
             
             {/* Encabezado */}
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+            <div className="text-center mb-12">
               <h2 
                 className="text-3xl lg:text-4xl font-bold text-white mb-4"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
@@ -475,34 +453,16 @@ const Home = () => {
                   ? 'Estándares globales aplicados a cada proceso de nuestra operación industrial.'
                   : 'Global standards applied to every process of our industrial operation.'}
               </p>
-            </motion.div>
+            </div>
             
             {/* Certificaciones Grid */}
-            <motion.div 
-              className="grid md:grid-cols-3 gap-6 mb-12 itemás-start"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15
-                  }
-                }
-              }}
-            >
+            <div className="grid md:grid-cols-3 gap-6 mb-12 items-start">
               
               {/* ISO 9001 */}
-              <motion.div 
-                className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col itemás-center text-center"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-                }}
-              >
-                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex itemás-center justify-center mb-3">
+              <div className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <span className="text-lg font-bold text-white mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -516,19 +476,13 @@ const Home = () => {
                     ? 'Procesos documentados y auditados para garantizar calidad consistente en cada servicio.'
                     : 'Documented and audited processes to ensure consistent quality in every service.'}
                 </p>
-              </motion.div>
+              </div>
               
               {/* API */}
-              <motion.div 
-                className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col itemás-center text-center"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-                }}
-              >
-                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex itemás-center justify-center mb-3">
+              <div className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m9 5a2 2 0 002 2h2a2 2 0 002-2m9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                   </svg>
                 </div>
                 <span className="text-lg font-bold text-white mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -542,24 +496,18 @@ const Home = () => {
                     ? 'Métodos de inspección petrolera aplicados con trazabilidad técnica completa.'
                     : 'Petroleum inspection methods applied with complete technical traceability.'}
                 </p>
-              </motion.div>
+              </div>
               
-              {/* ASmE */}
-              <motion.div 
-                className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col itemás-center text-center"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-                }}
-              >
-                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex itemás-center justify-center mb-3">
+              {/* ASME */}
+              <div className="bg-white/5 border-2 border-white/10 p-6 rounded-lg hover:border-corporate-red hover:bg-white/10 transition-all duration-300 h-full flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-corporate-red/20 rounded-full flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                 <span className="text-lg font-bold text-white mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  ASmE
+                  ASME
                 </span>
                 <h3 className="text-sm font-semibold text-gray-300 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' ? 'Ingeniería Mecánica Aplicada' : 'Applied Mechanical Engineering'}
@@ -569,33 +517,28 @@ const Home = () => {
                     ? 'Criterios técnicos aplicados en diseño, fabricación y mantenimiento de equipos críticos.'
                     : 'Technical criteria applied in design, manufacturing and maintenance of critical equipment.'}
                 </p>
-              </motion.div>
+              </div>
               
-            </motion.div>
+            </div>
             
         </div>
       </section>
 
 
-      {/* NUESTRO COmPROmISO � CENTRADO Y LImPIO */}
+      {/* NUESTRO COMPROMISO — CENTRADO Y LIMPIO */}
       <section className="bg-gray-50 py-20 lg:py-24">
-        <motion.div 
-          className="max-w-4xl mx-auto px-6 lg:px-8 text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           
           {/* Badge sin logo */}
           <div className="mb-8 flex justify-center">
-            <div className="inline-flex itemás-center bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
+            <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
               <span className="text-xs font-semibold text-gray-700 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Nuestro Compromiso' : 'Our Commitment'}
               </span>
             </div>
           </div>
           
+          {/* Título */}
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8"
             style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.01em' }}
@@ -637,7 +580,7 @@ const Home = () => {
           </div>
           
           {/* Firma con logo al lado */}
-          <div className="mt-12 pt-8 border-t border-gray-300 max-w-md mx-auto flex flex-col sm:flex-row itemás-center justify-center gap-4">
+          <div className="mt-12 pt-8 border-t border-gray-300 max-w-md mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
             <img 
               src="/logo-s-white.jpg"
               alt="Servin Ingeniería"
@@ -659,22 +602,17 @@ const Home = () => {
             </div>
           </div>
           
-        </motion.div>
+        </div>
       </section>
 
 
+      {/* INFRAESTRUCTURA Y OPERACIONES — GALERÍA PREMIUM IRREGULAR */}
       <section className="bg-white py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           {/* Encabezado con badge */}
-          <motion.div 
-            className="mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <div className="inline-flex itemás-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-4">
+          <div className="mb-12">
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-4">
               <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Instalaciones' : 'Facilities'}
               </span>
@@ -693,10 +631,12 @@ const Home = () => {
                 ? 'Instalaciones equipadas con tecnología de última generación para ensayos, mantenimiento y operaciones industriales de alta precisión.'
                 : 'Facilities equipped with state-of-the-art technology for testing, maintenance and high-precision industrial operations.'}
             </p>
-          </motion.div>
+          </div>
           
+          {/* Grid elegante - 8 imágenes en diseño balanceado */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             
+            {/* Primera fila: 2 imágenes grandes */}
             <motion.div
               className="md:col-span-1 lg:col-span-2 relative overflow-hidden rounded-lg bg-gray-900 cursor-pointer group h-[280px] md:h-[320px] lg:h-[400px]"
               onClick={() => openGallery(0)}
@@ -729,6 +669,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
 
+            {/* Segunda fila: 4 imágenes medianas */}
             <motion.div
               className="relative overflow-hidden rounded-lg bg-gray-900 cursor-pointer group h-[240px] md:h-[260px]"
               onClick={() => openGallery(2)}
@@ -793,6 +734,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
 
+            {/* Tercera fila: 2 imágenes anchas */}
             <motion.div
               className="md:col-span-1 lg:col-span-2 relative overflow-hidden rounded-lg bg-gray-900 cursor-pointer group h-[240px] md:h-[280px]"
               onClick={() => openGallery(6)}
@@ -830,7 +772,11 @@ const Home = () => {
         </div>
       </section>
 
+
+      {/* CTA FINAL — ELEGANTE Y PROFESIONAL */}
       <section className="relative bg-black py-20 lg:py-24 overflow-hidden">
+        
+        {/* Líneas decorativas sutiles */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent"></div>
@@ -838,19 +784,13 @@ const Home = () => {
 
         <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
           
-          <motion.div 
-            className="grid lg:grid-cols-2 gap-12 itemás-center"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Contenido */}
             <div className="text-left">
               
               {/* Badge */}
-              <div className="inline-flex itemás-center bg-corporate-red/10 border border-corporate-red rounded-full px-4 py-2 mb-6">
+              <div className="inline-flex items-center bg-corporate-red/10 border border-corporate-red rounded-full px-4 py-2 mb-6">
                 <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
                 <span className="text-corporate-red text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' ? 'Consultoría Técnica' : 'Technical Consulting'}
@@ -899,7 +839,7 @@ const Home = () => {
                   className="block text-center px-6 sm:px-8 py-3 sm:py-4 bg-corporate-red hover:bg-[#6B0000] text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
-                  {language === 'es' ? 'Solicitar consulta t�cnica' : 'Request technical consultation'}
+                  {language === 'es' ? 'Solicitar consulta técnica' : 'Request technical consultation'}
                 </Link>
 
                 <Link 
@@ -907,46 +847,48 @@ const Home = () => {
                   className="block text-center px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-black text-sm sm:text-base font-medium border-2 border-black hover:bg-black hover:text-white rounded-lg transition-all duration-300"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
-                  {language === 'es' ? 'Explorar capacidades t�cnicas' : 'Explore technical capabilities'}
+                  {language === 'es' ? 'Explorar capacidades técnicas' : 'Explore technical capabilities'}
                 </Link>
               </div>
               
             </div>
             
-          </motion.div>
+          </div>
           
         </div>
       </section>
 
+
+      {/* MODAL GALERIA */}
       {isGalleryOpen && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex itemás-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
           
           {/* Boton cerrar */}
           <button
             onClick={closeGallery}
-            className="absolute top-4 right-4 w-12 h-12 flex itemás-center justify-center text-white/70 hover:text-white transition-colors"
+            className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 18L18 6m6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
           
           {/* Navegacion */}
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex itemás-center justify-center text-white/70 hover:text-white transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m15 19l-7-7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex itemás-center justify-center text-white/70 hover:text-white transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
           
