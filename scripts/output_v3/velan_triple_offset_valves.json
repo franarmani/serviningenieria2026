@@ -1,0 +1,130 @@
+{
+  "product_line": "Triple offset valves",
+  "slug": "triple-offset-valves",
+  "categoria_servin": "esfericas-mariposas-diafragma",
+  "total_productos": 2,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Triple offset valves",
+      "nombre": "Torqseal® 2.0 Triple Offset Valve",
+      "descripcion": "Velan’s Torqseal® 2.0 triple offset valve is engineered to deliver repeatable full bi-directional zero leakage, lower torques and superior fugitive emissions performance. Offering a bi-directional zero leakage closure with a metal-to-metal seat, the Torqseal® triple offset valve is the right solution when a tight seal is required. The Torqseal’s all metal construction results in an inherently fire-safe design that can stand up to the most demanding services.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Torqseal-2.0-triple-offset.png",
+      "url_velan": "https://velan.com/products/torqseal-2-0-triple-offset-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 3 - 96 (DN 80 - 2400)",
+        "Pressure Class": "ASME Classes 150, 300, 600, and 900",
+        "Standard Connections": "Lug, Double flanged (short and long) pattern, Butt weld"
+      },
+      "caracteristicas": [
+        "The Torqseal® advanced design features a triple eccentricity and unique elliptical seat geometry, that allows for friction free, non-rubbing operation of the valve during all of the valve travel.",
+        "Zero leakage seat tightness (API 598 resilient seat standard). The resilient metal seal ring radially compresses around it’s circumference when torque is evenly applied as the seal ring makes contact with the integral metal body seat.",
+        "The robust centered-weighted splined connection between disc/shaft produces a uniform and repeatable torque transmissionand ensures even distribution of contact pressure between seat and seal.",
+        "Torqseal® valves are dual qualified for API 641 and ISO-15848-1 fugitive emission requirements.",
+        "Torqseal® valves are fire safe qualified."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-TOV2-11-25",
+          "title": "Torqseal Triple Offset Valves 2.0",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-TOV2-03-25",
+          "title": "Torqseal Triple Offset Valve 2.0",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-TOV2-03-25.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-TOV2-10-24",
+          "title": "Torqseal 2.0 Triple Offset Valves NPS 3–48 (DN 80–1200)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Triple offset valves",
+      "nombre": "Torqseal® Triple Offset Cryogenic Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Torqseal-cryogenic-triple-offset.png",
+      "url_velan": "https://velan.com/products/torqseal-triple-offset-cryogenic-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 3 - 80 (DN 80 - 2000)",
+        "Pressure Class": "ASME Class 150 - 900",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "Triple-offset disc rotation: Provides bubble-tight sealing without rubbing or galling.",
+        "Cryogenic stem packing: Composed of superposed Viton O-rings and expanded graphite rings (fire safe approved).",
+        "Low fugitive emissions: in accordance with ISO 15848/Ta-Luft.",
+        "No cavity: No cavity to prevent build-up of solids.",
+        "Drainage possibility: The bottom cover can be removed if drainage is required.",
+        "Internal blow-out protection: Prevents the shaft from blowing out under pressure.",
+        "Inherent fire safe function: Stainless steel construction and metallic seal provide inherent fire safe function.",
+        "Extended bonnet: With a sufficient gas column to keep the stem packing away from cold fluid. Extended bonnet length is qualified for use in LNG application with type approvals from major classification societies.",
+        "Actuator: Manual, pneumatic (single or double-acting type), electric or hydraulic according to customer specification. ON/OFF or MODULATING function according to the application. Fast-acting actuators for Emergency Shut Down (ESD) also available.",
+        "High quality castings: Radiographic control, dye penetrant test, ferrite content control, impact test at -196ºC according to customers’ requirements.",
+        "Reinforced stainless steel shaft bearings: For high cycles and smooth operation at very low temperatures.",
+        "High reliability: Safety Integrity Level requirements according to IEC 61508."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-CRYO-2001a",
+          "title": "Cryogenic Gate, Globe, Check, Ball, and Butterfly Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-CRYO-2001a.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-TOV2-11-25",
+          "title": "Torqseal Triple Offset Valves 2.0",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

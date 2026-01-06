@@ -1,0 +1,452 @@
+{
+  "product_line": "Large forged bolted bonnet valves",
+  "slug": "large-forged-bolted-bonnet-valves",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 7,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Bonnet Forged Flexible Wedge Gate Valve",
+      "descripcion": "Velan bolted bonnet flexible wedge gate valves are ideal for high pressure steam, catalytic reformers, hydrocrackers and other tough services.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-flexible-wedge-gate.png",
+      "url_velan": "https://velan.com/products/bolted-bonnet-forged-flexible-wedge-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME Classes 150 - 1500",
+        "Standard Connections": "Socket weld, Butt weld"
+      },
+      "caracteristicas": [
+        "Stronger, leakproof bolted body bonnet joint ensures joint tightness with a higher bolting torque.",
+        "Wedge guiding minimizes seat rubbing and scuffing resulting in long cycle life.",
+        "Designed to ASME B16.34.",
+        "Body made of superior strength forgings and optional cast steel.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Optional live-loading of packing and leakoff.",
+        "Non-rotating stem.",
+        "Hardfaced seating faces resist erosion.",
+        "Available with provision for seal weld.",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-BBWGA-05-25",
+          "title": "Bolted Bonnet Forged Flexible Wedge Gate Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Bonnet Forged Parallel Slide Gate Valve",
+      "descripcion": "Velan bolted bonnet parallel slide gate valves are ideal for clean service and steam. The parallel slide valve design relies on the primary system pressure acting on the downstream disc for seat integrity. There is no wedging action or extra loading on the seats. Due to its inherent design, the parallel slide valve is not subject to thermal binding concerns, resulting in a distinct safety advantage in high temperature service.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-parallel-slide-gate.png",
+      "url_velan": "https://velan.com/products/bolted-bonnet-forged-parallel-slide-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME Classes 600 - 1500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Designed to ASME B16.34.",
+        "Body made of superior strength forgings / high quality castings.",
+        "Stronger, leakproof bolted body bonnet joint ensures joint tightness with a higher bolting torque. Recommended over pressure seal valves for any applications with pressure below 500 psi (34.5 bar).",
+        "Available with provision for seal weld.",
+        "Unique parallel slide forged cage unit design comprises all operating parts of the slide discs and is precision guided to provide longer disc, seat, and body life.",
+        "Bypass valves are recommended to equalize pressure across the disc before opening if the valve is exposed to very high differential pressure.",
+        "Hardfaced seating faces resist erosion.",
+        "Non-rotating stem.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Optional live-loading of packing.",
+        "Velan offers equalizing and bypass pipes and valves in many different configurations to help ensure the valve will open under any operating conditions, preventing over pressurization, pressure locking, and thermal binding.",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_BBPSLGA-01-23",
+          "title": "Bolted Bonnet Parallel Slide Gate Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Bonnet Forged Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-globe.png",
+      "url_velan": "https://velan.com/products/bolted-bonnet-forged-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 14 (DN 65 - 350)",
+        "Pressure Class": "ASME Class 150 - 1500",
+        "Standard Connections": "Socket weld, Butt weld"
+      },
+      "caracteristicas": [
+        "Stronger, leakproof bolted body bonnet joint ensures joint tightness with a higher bolting torque.",
+        "Body guided disc eliminates side thrust and provides longer disc, seat and body life.",
+        "Impactor handwheel for tight shutoff.",
+        "Designed to ASME B16.34.",
+        "Body made of superior strength forgings and optional cast steel.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Optional live-loading of packing.",
+        "Non-rotating stem.",
+        "Hardfaced seating faces resist erosion.",
+        "Available with provision for seal weld.",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-BBFGL-08-24",
+          "title": "Bolted Bonnet Forged Globe, Stop Check, and Needle Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Cover Forged Swing Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. For information please consult the appropriate Installation Operation manual (IOM).",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-cover-forged-swing-check.png",
+      "url_velan": "https://velan.com/products/bolted-cover-forged-swing-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 24 (DN 65 - 600)",
+        "Pressure Class": "ASME Classes 150 - 1500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Stronger, leakproof bolted body bonnet joint.",
+        "No penetration of hinge pin to outside eliminates pin seal leakage and provides in-line service.",
+        "Compact cage unit. All moving parts are attached to the hanger block/hanger ring and can be removed easily for service.",
+        "Forged seat/disc (1) is hardfaced with CoCr alloy, ground and lapped to a mirror finish for maximum erosion resistance and long service life. The seat is seal-welded to the body. A cast option is also available.",
+        "Disc can partially adjust for tight shutoff. In the fully open position, it rests against a stop.",
+        "CoCr alloy bearings for hinge pin.",
+        "Easy in-line service. All parts are easily accessible for maintenance. Seating faces can be re-lapped.",
+        "Forged cover"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_BCSC-08-23",
+          "title": "Bolted Cover Swing Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Cover Forged Piston Check Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-cover-forged-piston-check.png",
+      "url_velan": "https://velan.com/products/bolted-cover-forged-piston-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 14 (DN 65 - 350)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Socket weld, Butt weld"
+      },
+      "caracteristicas": [
+        "Stronger, leakproof bolted body bonnet joint.",
+        "Low pressure drop compared to vertical globe valves.",
+        "Excellent resistance to thermal changes.",
+        "Forged bonnet ring is centered by the body bore and provides perfect sealing surface for the pressure seal gasket.",
+        "Quick and easy repair in the line.",
+        "Integral seat – CoCr alloy providing maximum resistance to wear, erosion and distortion due to high temperature changes and piping loads.",
+        "Equalizer piping for safe operation."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_BCPC-08-23",
+          "title": "Bolted Cover Piston Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Bonnet Forged Bellows Seal Flexible Wedge Gate Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-bellows-seal-gate.png",
+      "url_velan": "https://velan.com/products/bolted-bonnet-forged-bellows-seal-flexible-wedge-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 6 (DN 65 - 150)",
+        "Pressure Class": "ASME classes 600 - 1500",
+        "Standard Connections": "Butt weld"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (2000 cycles) in Gr. 321 (stainless) or Inconel. Designed for, and successfully tested in high pressure/temperature conditions.",
+        "Bellows monitoring port (optional): Connected to the space above the bellows to monitor performance.",
+        "Non-rotating stem prevents torsion of bellows.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Forged for higher safety: Increased toughness, strength and fatigue resistance.",
+        "Two-part bellows.",
+        "Low torque due to: a) Non-rotating stem prevents torsion of bellows; b) Stem nut thrust bearings; c) Central lubrication.",
+        "Seating faces hardfaced with CoCr alloy, ground and lapped."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Large forged bolted bonnet valves",
+      "nombre": "Bolted Bonnet Forged Bellows Seal Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-bellows-seal-globe.png",
+      "url_velan": "https://velan.com/products/bolted-bonnet-forged-bellows-seal-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 10 (DN 65 - 250)",
+        "Pressure Class": "ASME class 600 - 1500",
+        "Standard Connections": "Butt weld"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (3000 cycles) in Gr. 321 (stainless) or Inconel. Designed and successfully tested in high pressure/temperature conditions.",
+        "Two-part bellows.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Low torque due to: a) Non-rotating stem prevents torsion of bellows; b) Stem nut thrust bearings; c) Central lubrication.",
+        "Bellows monitoring port (optional): A plug can be connected to the space above the bellows to monitor performance.",
+        "Forged for higher safety: Increased toughness, strength and fatigue resistance",
+        "Guided disc: Seat and disc hardfaced with CoCr alloy, ground and lapped."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBBM-04-20a",
+          "title": "Forged Steel Bolted Bonnet Gate, Globe, Parallel Slide and Check Valves NPS 2-24 (DN 50-600)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

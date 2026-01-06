@@ -1,0 +1,1147 @@
+{
+  "product_line": "Small forged valves",
+  "slug": "small-forged-valves",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 19,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "Forged Steel Check Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Piston-check-forged.png",
+      "url_velan": "https://velan.com/products/forged-steel-check-valves-for-nuclear-applications/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME Classes 150, 300, 600, 1500",
+        "Standard Connections": "Threaded, socket weld, or flanged"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "A compact but extremely sturdy design for high pressuretemperature service.",
+        "Quick and easy inline repair for bolted cover valves."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-N-SFCHK-06-25",
+          "title": "Small Forged Check Valves for Nuclear Applications",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-NUC-11-21a",
+          "title": "Global Leader in Valves for Nuclear Power",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "Forged Steel Extended Body Gate Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Gate-extended-body-forged.png",
+      "url_velan": "https://velan.com/products/forged-steel-extended-body-gate-valves-nuclear-applications/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 800 - 1500",
+        "Standard Connections": "Threaded, Socket weld"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "Available with an extended body or an integrally reinforced extended body (IREB).",
+        "Extended body gate valves have a welded or NPT connection and are used for tapping of pressure vessels and header lines for vents, drains or takeoff lines and instrumentation.",
+        "Also available with extended body assemblies for vents, drains, and instrument root valves."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-N-SFEBGAT-06-25",
+          "title": "Small Forged Steel Extended Body Gate Valves for Nuclear Applications",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-NUC-11-21a",
+          "title": "Global Leader in Valves for Nuclear Power",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "Forged Steel Gate Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/gate-forged.png",
+      "url_velan": "https://velan.com/products/forged-steel-gate-valves-for-nuclear-application/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "A compact but extremely sturdy design for high pressure-temperature service.",
+        "Packing rings are pre-compressed in the packing chamber to ensure equal stress distribution, effectiveness of all rings and a high integrity seal.",
+        "For welded bonnet valves, the bonnet is threaded in and torqued to an engineered torque value and the body bonnet joint is strength-welded, offering double protection against leakage. (body/bonnet threads and strength-weld).",
+        "CoCr alloy hardfaced wedge (optional) ensures low friction and long service life.",
+        "Fully guided wedge reduces wear on seating surfaces.",
+        "For Class 1500 valves and for steam service, seats are seal-welded to the body.",
+        "Repairable two-piece stem drive."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-N-SFGAT-06-25",
+          "title": "Small Forged Gate Valves for Nuclear Applications",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-NUC-11-21a",
+          "title": "Global Leader in Valves for Nuclear Power",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "Forged Steel Globe Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Globe-forged.png",
+      "url_velan": "https://velan.com/products/forged-steel-globe-valves-for-nuclear-applications/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "A compact but extremely sturdy design forhigh pressure-temperature service.",
+        "Packing rings are pre-compressed in the packingchamber to ensure equal stress distribution,effectiveness of all rings and a high integrity seal.",
+        "For welded bonnet valves, the bonnet is threaded in andtorqued to an engineered torque value and the bodybonnet joint is strength-welded, offering double protectionagainst leakage. (body/bonnet threads and strength-weld).",
+        "CoCr alloy hardfaced disc (optional) ensureslow friction and long service life.",
+        "Body guided disc eliminates side thrust andprovides longer disc, seat, and body life.",
+        "Available disc designs: stop, stop check,needle, and flow control."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-N-SFGLB-06-25",
+          "title": "Small Forged Globe Valves for Nuclear Applications",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-NUC-11-21a",
+          "title": "Global Leader in Valves for Nuclear Power",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Forged Steel Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-bolted-cover-piston-check.png",
+      "url_velan": "https://velan.com/products/api-602-forged-steel-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Threaded, Socket weld, Flanged"
+      },
+      "caracteristicas": [
+        "Velan small forged steel check valves comply to API 602 and ASME B16.34 standards.",
+        "A compact but extremely sturdy design for high pressure-temperature service.",
+        "Quick and easy repair in the line.",
+        "Available types: Piston, ball, swing check"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-SFCHK-12-23",
+          "title": "API 602 Forged Steel Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Piston Check Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-piston-check.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-bonnetless-piston-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS ¼ - 4 (DN 8 - 100)",
+        "Pressure Class": "ASME classes 1690 - 4500",
+        "Standard Connections": "Threaded, socket weld, butt weld"
+      },
+      "caracteristicas": [
+        "Velan small forged steel check valves for horizontal and vertical lines",
+        "Complies to ASME B16.34 standards.",
+        "Solid CoCr alloy disc, fully guided for fast and full seating, even without spring",
+        "A compact but extremely sturdy design for high pressure-temperature service.",
+        "Self-draining waterways",
+        "Quick and easy repair in the line."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-SFINP-12-23",
+          "title": "ASME B16.34 Forged Steel Piston Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FBGM-10-23",
+          "title": "Forged Y-Pattern Globe Valves NPS 1/4-4 (DN 8-100)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Forged Steel Extended Body Gate Valves",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-extended-body-gate.png",
+      "url_velan": "https://velan.com/products/api-602-forged-steel-extended-body-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 800 - 1500",
+        "Standard Connections": "Threaded, Socket weld"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (3000 cycles): Gr. 321 (stainless) for Class 800, Gr. 321 or Inconel for Class 1500, and Hastelloy C for chlorine service. Optional materials available on request. Designed and qualification-tested for high pressure/temperature service.",
+        "Bellows monitoring port (optional): A plug can be connected with the space above the bellows to monitor performance.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Superior seating faces: Seats hardfaced with CoCr alloy and wedge is solid CoCr alloy."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-SFEBGAT-12-23",
+          "title": "API 602 Forged Steel Extended Body Gate Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Globe Continuous Blowdown Valve",
+      "descripcion": "API 602 small forged globe valve designed for continuous blowdown.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-continuous-blowdown.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-continuous-blowdown-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 200)",
+        "Pressure Class": "ASME classes 600 - 2500",
+        "Standard Connections": "Threaded, Socket weld"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards",
+        "Incorporating a hardfaced CoCr alloy disc and seat and a venturi diffuser from stainless steel type 316.",
+        "Orifice range: 1⁄8 to 11 1⁄16” (3.18 to 42.86 mm), depending on the capacity required.",
+        "Can also be used for sampling and boiler feed pump bypass relief where high pressure drop causes erosion and cavitation that can destroy conventional globe valves"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-SFCBD-12-23",
+          "title": "Forged Steel Continuous Blowdown Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Angle Globe Boiler Blowoff Valve",
+      "descripcion": "These special small forged blowoff valves are available in bolted bonnet angle and streamlined flow 45° inclined designs for Class 600 and 1500 primary service and in bonnetless angle and inclined designs for Class 2500.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-steel-boiler-blowoff-angle-globe.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-angle-globe-boiler-blowoff-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 600 - 1500",
+        "Standard Connections": "Socket weld, Flanged"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "CoCr alloy seats and fully-guided CoCr alloy discs resist the excessive corrosion and erosion effects aggravated by grid and boiler scale particles and high temperature changes.",
+        "Velan boiler blowoff valves meet all applicable specifications of the ASME boiler code, U.S. military standards (listed on qualified product list), U.S. Coast Guard, American Bureau of Shipping and Lloyd’s."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-SFBOFF-12-23.pdf",
+          "title": "Forged Steel Boiler Plant Service Blowoff Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Cryogenic Gate Valve",
+      "descripcion": "All basic design features of Velan small forged steel gate valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-cryogenic-gate.png",
+      "url_velan": "https://velan.com/products/api-602-cryogenic-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 2500",
+        "Standard Connections": "Socket weld, Flanged"
+      },
+      "caracteristicas": [
+        "Extended bonnets with sufficient gas column length, usually specified by customer, are supplied for all valves to keep stem packing at sufficient distance away from the cold fluid to remain functional.",
+        "Solid CoCr alloy wedges on NPS 1⁄2 – 2 (DN 15–50) valves operate with no galling in cryogenic service.",
+        "Cleaning: All cryogenic valves are thoroughly degreased and cleaned and pipe ends are sealed to prevent contamination."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-CRYO-2001a",
+          "title": "Cryogenic Gate, Globe, Check, Ball, and Butterfly Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-CRYO-2001a.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Cryogenic Globe Valve",
+      "descripcion": "All basic design features of Velan small forged steel globe valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-cryogenic-globe.png",
+      "url_velan": "https://velan.com/products/api-602-cryogenic-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 2500",
+        "Standard Connections": "Socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Extended bonnets with sufficient gas column length, usually specified by customer, are supplied for all valves to keep stem packing at sufficient distance away from the cold fluid to remain functional.",
+        "Solid CoCr alloy wedges on NPS 1⁄2 – 2 (DN 15–50) valves operate with no galling in cryogenic service.",
+        "Kel-F inserts (optional) for globe discs.",
+        "Cleaning: All cryogenic valves are thoroughly degreased and cleaned and pipe ends are sealed to prevent contamination."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-CRYO-2001a",
+          "title": "Cryogenic Gate, Globe, Check, Ball, and Butterfly Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-CRYO-2001a.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Bellows Seal Gate Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-gate.png",
+      "url_velan": "https://velan.com/products/api-602-bellows-seal-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 150 - 800",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (10,000 cycles): Designed and qualification tested for high pressure/temperature applications.",
+        "Bellows monitoring port (optional): A plug can be connected to the space above the bellows to monitor performance.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Superior seating faces: Seats hardfaced with CoCr alloy, disc is solid CoCr alloy."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BSVM-2006b",
+          "title": "Bellows Seal Gate and Globe Valves ½-12″ (15-300 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Extended Body Bellows Seal Gate Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-extended-body-gate-1.png",
+      "url_velan": "https://velan.com/products/api-602-extended-body-bellows-seal-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 800 - 1500",
+        "Standard Connections": "Threaded, socket weld"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (3000 cycles): Gr. 321 (stainless) for Class 800, Gr. 321 or Inconel for Class 1500, and Hastelloy C for chlorine service. Optional materials available on request. Designed and qualification-tested for high pressure/temperature service.",
+        "Bellows monitoring port (optional): A plug can be connected with the space above the bellows to monitor performance.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Superior seating faces: Seats hardfaced with CoCr alloy and wedge is solid CoCr alloy."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BSVM-2006b",
+          "title": "Bellows Seal Gate and Globe Valves ½-12″ (15-300 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Bellows Seal Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-globe.png",
+      "url_velan": "https://velan.com/products/api-602-bellows-seal-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 150 - 800",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (10,000 cycles): Designed and qualification tested for high pressure/temperature applications.",
+        "Bellows monitoring port (optional): A plug can be connected to the space above the bellows to monitor performance.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Superior seating faces: Seats hardfaced with CoCr alloy, disc is solid CoCr alloy."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BSVM-2006b",
+          "title": "Bellows Seal Gate and Globe Valves ½-12″ (15-300 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Forged Steel Gate Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-gate.png",
+      "url_velan": "https://velan.com/products/api-602-forged-steel-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Complies to API 602 and ASME B16.34 standards.",
+        "A compact but extremely sturdy design for high pressure-temperature service.",
+        "Available with bolted or welded bonnet.",
+        "Meets API 624 and ISO 15848-1 fugitive emissions standards.",
+        "Packing rings are pre-compressed in the packing chamber to ensure equal stress distribution, effectiveness of all rings and a high integrity seal.",
+        "For welded bonnet valves, the bonnet is threaded in and torqued to an engineered torque value and the body bonnet joint is strength-welded, offering double protection against leakage. (body/bonnet threads and strength-weld).",
+        "CoCr alloy hardfaced wedge (optional) ensures low friction and long service life.",
+        "Fully guided wedge reduces wear on seating surfaces.",
+        "For Class 1500 valves and for steam service, seats are seal-welded to the body.",
+        "Repairable two-piece stem drive.",
+        "Pre-positioned field injection ports for precise application of low emissions (Low-E) injectable packing through the bonnet (applies to bolted bonnet gate NPS 1/4–2 (DN 8–50) Class 150–1500).",
+        "Optional designs available with double packing, leak-off connection, live-loading, and packing blowout for easy removal of old packing."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-SFGAT-02-24",
+          "title": "API 602 Forged Steel Gate Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-SFIP-02-24",
+          "title": "Field Injection Port Now a Standard Feature on Small Forged Gate and Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "API 602 Forged Steel Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-globe.png",
+      "url_velan": "https://velan.com/products/api-602-forged-steel-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "ASME classes 150 - 1500",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Complies to API 602 and ASME B16.34 standards.",
+        "A compact but extremely sturdy design for high pressure-temperature service.",
+        "Available with bolted or welded bonnet.",
+        "Meets API 624 and ISO 15848-1 fugitive emissions standards.",
+        "Packing rings are pre-compressed in the packing chamber to ensure equal stress distribution, effectiveness of all rings and a high integrity seal.",
+        "For welded bonnet valves, the bonnet is threaded in and torqued to an engineered torque value and the body bonnet joint is strength-welded, offering double protection against leakage. (body/bonnet threads and strength-weld).",
+        "CoCr alloy hardfaced disc (optional) ensures low friction and long service life.",
+        "Body guided disc eliminates side thrust and provides longer disc, seat, and body life.",
+        "Pre-positioned field injection ports for precise application of low emissions (Low-E) injectable packing through the bonnet (applies to bolted bonnet globe NPS 1/4–2 (DN 8–50) Class 150–1500).",
+        "Available disc designs: stop, stop check, needle, and flow control.",
+        "Optional designs available with double packing, leak-off connection, and live-loading."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-SFGLB-01-25",
+          "title": "API 602 Forged Steel Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-SFV-06-20",
+          "title": "Small Forged Steel Gate, Globe, and Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-SFIP-02-24",
+          "title": "Field Injection Port Now a Standard Feature on Small Forged Gate and Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Inclined Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-boiler-blowoff-45-inclined-globe.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-inclined-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME classes 800 - 2680",
+        "Standard Connections": "Threaded, socket weld, butt weld"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "Designed for quick and easy maintenance – one step removal of all working parts including packing.",
+        "Fully enclosed, lubricated stem drive system with needle bearings ensures low operating torque.",
+        "Solid CoCr alloy disc, seat ring and backseat provide excellent long service life even in severe services.",
+        "Available with bolted or welded bonnet."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-SFING-12-23",
+          "title": "API 602 Forged Steel 45 deg. Inclined Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Y-Pattern Globe Valve",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-y-pattern-globe.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-bonnetless-y-pattern-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 4 (DN 8 - 100)",
+        "Pressure Class": "ASME classes 1690 - 4500",
+        "Standard Connections": "Socket weld, butt weld, and threaded"
+      },
+      "caracteristicas": [
+        "Complies to ASME B16.34 standards.",
+        "Designed for quick and easy maintenance – one step removal of all working parts including packing.",
+        "All pressure containing parts within one body-bonnet forging – no joints to leak or welds to cut for servicing.",
+        "Non rotating stem allows a non-spinning disc, ensures low torque and prevents torsional damage of the packing.",
+        "Fully enclosed, lubricated stem drive system with needle bearings ensures low operating torque.",
+        "Solid CoCr alloy disc, seat ring and backseat provide excellent long service life even in severe services.",
+        "Backseat bevel on the stem, not on the disc, satisfies both API-600 and API-602 specifications.",
+        "Optional live-loading: keeps packing tight for long periods of time without maintenance.",
+        "Optional double packing and leak-off."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-SFYP-12-23",
+          "title": "ASME B16.34 Forged Steel Y-Pattern Bonnetless Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-SFVM-05-24",
+          "title": "Forged Steel Bolted and Welded Bonnet Gate, Globe, and Check Valves NPS 1/4-2 (DN 8-50)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Small forged valves",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Y-Pattern Bellows Seal Globe Valves",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-y-pattern-globe.png",
+      "url_velan": "https://velan.com/products/asme-b16-34-forged-steel-bonetless-y-pattern-bellows-seal-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "ASME Classes 150 - 800",
+        "Standard Connections": "Threaded, socket weld, flanged"
+      },
+      "caracteristicas": [
+        "Long cycle life bellows (10,000 cycles): Designed and qualification tested for high pressure/temperature applications.",
+        "Bellows monitoring port (optional): A plug can be connected to the space above the bellows to monitor performance.",
+        "Two secondary stem seals: a) Backseat in open position; b) Graphite packing.",
+        "Superior seating faces: Seats hardfaced with CoCr alloy, disc is solid CoCr alloy."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BSVM-2006b",
+          "title": "Bellows Seal Gate and Globe Valves ½-12″ (15-300 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BS-2001a",
+          "title": "Hermetically Sealed Gate and Globe Bellows Seal Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

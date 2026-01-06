@@ -1,0 +1,171 @@
+{
+  "product_line": "Corrosion resistant cast stainless steel valves",
+  "slug": "corrosion-resistant-cast-stainless-steel-valves",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 3,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Corrosion resistant cast stainless steel valves",
+      "nombre": "API 603 Corrosion Resistant Cast Steel Gate Valve",
+      "descripcion": "Velan corrosion resistant cast stainless steel gate valves are manufactured to API 603 and ASME B16.34 design requirements and are available in bolted bonnet and welded extended (cryogenic) bonnet styles. Velan gate valves are ideal for tight shutoff and are used in many applications to isolate the flow of fluids in either direction. In addition, Velan API 603 gate valves offer a low total cost of ownership and are easy to repair. NPS ½-24 (DN 15–600) NPS ½–1½ (DN 15–40)",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-603-corrosion-resistant-cast-steel-gate.png",
+      "url_velan": "https://velan.com/products/api-603-corrosion-resistant-cast-steel-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 24 (DN 15 - 600)",
+        "Pressure Class": "ASME classes 50 - 600",
+        "Standard Connections": "Flanged, threaded, socket weld"
+      },
+      "caracteristicas": [
+        "Integral seat, flanged, ASME Classes 150 and 300",
+        "Integral seat, threaded or socket weld, ASME Classes 150, 300, 600"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-SXgate-03-24",
+          "title": "API 603 Corrosion Resistant Cast Steel Gate Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-HNA-05-15",
+          "title": "High Nickel Alloy Gate, Globe, Check, and Ball Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-HNA-05-2015.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Corrosion resistant cast stainless steel valves",
+      "nombre": "Corrosion Resistant Cast Steel Globe Valve",
+      "descripcion": "Velan corrosion resistant cast stainless steel globe valves are manufactured as per ASME B16.34 design requirements and are available in bolted bonnet and welded extended (cryogenic) bonnet styles. Velan globe valves have both good throttling and shutoff capabilities and are used in many applications to regulate the flow of fluids. NPS ½–6 (DN 15–150) NPS ½–1½ (DN 15–40)",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Corrosion-resistant-cast-steel-globe.png",
+      "url_velan": "https://velan.com/products/corrosion-resistant-cast-steel-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 6 (DN 15 - 150)",
+        "Pressure Class": "ASME classes 150 - 600",
+        "Standard Connections": "Flanged, threaded, or socket weld"
+      },
+      "caracteristicas": [
+        "Integral seat, flanged, ASME Classes 150 and 300",
+        "Integral seat, threaded or socket weld, ASME Classes 150, 300, 600"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API-624-03-18",
+          "title": "Valves Qualified for API 624 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-SXglobe-03-24",
+          "title": "Corrosion Resistant Cast Steel Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-HNA-05-15",
+          "title": "High Nickel Alloy Gate, Globe, Check, and Ball Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-HNA-05-2015.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Corrosion resistant cast stainless steel valves",
+      "nombre": "Corrosion Resistant Cast Steel Swing Check Valve",
+      "descripcion": "Swing check valves can be installed to allow flow in one direction only and protect systems that can be affected by reverse flow, such as a system shutdown. Operated entirely by reaction to the direction of flow, swing check valves do not require any external actuation. Once the cover is removed, all parts are easily accessible for maintenance and seating faces can be re-lapped. Velan corrosion resistant cast stainless steel swing check valves are manufactured to ASME B16.34 design requirements. NPS ½–1½ (DN 15–40) NPS 2–12 (DN 50–300)",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Cast-stainless-steel-corrosion-resistant-swing-check.png",
+      "url_velan": "https://velan.com/products/corrosion-resistant-cast-steel-swing-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 12 (DN 15 - 300)",
+        "Pressure Class": "ASME classes 150 - 600",
+        "Standard Connections": "Flanged, threaded, socket weld or combination"
+      },
+      "caracteristicas": [
+        "Integral seat, flanged: ASME Classes 150, 300, and threaded, socket weld or combination: ASME Classes 600",
+        "Integral seat, flanged: ASME Classes 150, 300"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-SXSC-03-24",
+          "title": "Corrosion Resistant Cast Steel Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-HNA-05-15",
+          "title": "High Nickel Alloy Gate, Globe, Check, and Ball Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-HNA-05-2015.pdf"
+        }
+      ]
+    }
+  ]
+}

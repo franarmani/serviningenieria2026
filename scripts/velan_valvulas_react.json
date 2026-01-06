@@ -1,0 +1,1570 @@
+{
+  "valvulas": [
+    {
+      "id": 1,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal® J-Series metal-seated double-ball valve",
+      "descripcion": "Single or double-actuated bi-directional double-ball valve for hydrocracking, ebullated bed, catalyst handling, and other refining processes. The J-Series is based on the Securaseal® R-Series and incl...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/07/MSBVJ.bip_.17-1.png"
+    },
+    {
+      "id": 2,
+      "categoria": "seguridad",
+      "nombre": "V-Flange manual valve remote monitoring system",
+      "descripcion": "V-Flange is an advanced and reliable remote monitoring system designed specifically for quarter-turn valves. This innovative solution combines a robust on-valve device with an intuitive cloud dashboar...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/04/V-flange-new-right.png"
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 603 Corrosion Resistant Cast Steel Gate Valve",
+      "descripcion": "Velan corrosion resistant cast stainless steel gate valves are manufactured to API 603 and ASME B16.34 design requirements and are available in bolted bonnet and welded extended (cryogenic) bonnet sty...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-603-corrosion-resistant-cast-steel-gate.png"
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Forged Steel Check Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, s...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Piston-check-forged.png"
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Forged Steel Extended Body Gate Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Gate-extended-body-forged.png"
+    },
+    {
+      "id": 6,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Cast Steel Swing Check Valves for Nuclear Applicatons",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Nuclear"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/S-check-cast.png"
+    },
+    {
+      "id": 7,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Cast Steel Gate Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Gate-cast.png"
+    },
+    {
+      "id": 8,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Forged Steel Gate Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Vapor",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/gate-forged.png"
+    },
+    {
+      "id": 9,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Forged Steel Globe Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Nuclear",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Globe-forged.png"
+    },
+    {
+      "id": 10,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Cast Steel Globe, Stop Check, and Needle Valves for Nuclear Applications",
+      "descripcion": "Available for nuclear class 1, 2, and 3 and safety related applications. Design features ",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Nuclear"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/09/Globe-cast.png"
+    },
+    {
+      "id": 11,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal R-Series Ebullated Bed Valve",
+      "descripcion": "Designed and developed to perform in a wide range of severe applications, the Securaseal R-series is our most robust and versatile metal-seated ball valve with over two decades of proven performance i...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/R-series-ebullated-bed-hub-end.png"
+    },
+    {
+      "id": 12,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal C-Series Slurry Ball Valve",
+      "descripcion": "Válvula Severe service metal-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-C-series-ball.png"
+    },
+    {
+      "id": 13,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Torqseal® 2.0 Triple Offset Valve",
+      "descripcion": "Velan’s Torqseal® 2.0 triple offset valve is engineered to deliver repeatable full bi-directional zero leakage, lower torques and superior fugitive emissions performance. Offering a bi-directional zer...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Torqseal-2.0-triple-offset.png"
+    },
+    {
+      "id": 14,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 623 Cast Steel Globe, Stop Check, and Needle Valves",
+      "descripcion": "Válvula Cast steel gate, globe and check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-623-cast-steel-globe-edited-1.png"
+    },
+    {
+      "id": 15,
+      "categoria": "seguridad",
+      "nombre": "Programmable logic controller and local control panels",
+      "descripcion": "Velan’s Programmable Logic Controller (PLC) and control panels are programmed with Velan-proprietary software developed according to the best practices and procedures of the Delayed Coker industry. Ve...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/PLC-panel-copy.png"
+    },
+    {
+      "id": 16,
+      "categoria": "seguridad",
+      "nombre": "Purge Panel",
+      "descripcion": "Velan has developed highly customizable purge systems designed to optimize process conditions through precise control of temperature, flow rate, and pressure. These systems prevent clogging in the val...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Purge-panel.png"
+    },
+    {
+      "id": 17,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "KEC-KEY-KSC-BTK series Rotary control ball valves",
+      "descripcion": "Developed from a traditional trunnion ball design, the new generation Key-C rotary control ball valve offers high performance with maximum flow capacity. Manufactured by Velan ABV, the ball is equippe...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/KEC-series-Rotary-control-ball.png"
+    },
+    {
+      "id": 18,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "DTP series Adjustable angle choke control valves",
+      "descripcion": "Generally located at the wellhead, valves are designed for Oil&Gas processing, water and gas injection and gas lift. Velan’s DTP series are the optimal solution for controlling high levels of fluid pr...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/DTP-adjustable-angle-choke-control.png"
+    },
+    {
+      "id": 19,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "GTC Series Slab Through Conduit Gate Valve",
+      "descripcion": "Slab through conduit gate valves are designed and manufactured in accordance with API 6D and API 6A standards and specifically for on-off services. This valve is suited to withstand all type of proces...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/GTC-slab-through-conduit-gate.png"
+    },
+    {
+      "id": 20,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "GTX Series Double Expanding Gate Valve",
+      "descripcion": "GTX series valves are specifically design for on-off services and are suited to withstand all types of high abrasive services under high pressure and temperature conditions. The valve is equipped with...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/GTX-double-expanding-gate.png"
+    },
+    {
+      "id": 21,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "CHK Series Swing Check Valve",
+      "descripcion": "Swing check valves are a trusted choice for general-purpose use in both upstream and midstream applications, available in both forged or cast materials, and the design ensures total reliability for hi...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/CHK-series-swing-check.png"
+    },
+    {
+      "id": 22,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "CSK Series Subsea Swing Check Valve",
+      "descripcion": "Subsea swing check valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years. Available in both forged or cast materials, the design ensures total relia...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/CSK-series-subsea-swing-check.png"
+    },
+    {
+      "id": 23,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Axial No-Slam Check Valve (NSC-NSZ-NFC-NFZ-SSC-SSZ-SFC-SFZ series)",
+      "descripcion": "Velan ABV’s API 6D no-slam check valves are silent in-line and specifically designed to automatically protect critical components from reverse flow as well as pressure transients. Fast and prompt clos...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía",
+        "Agua"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Axial-no-slam-check.png"
+    },
+    {
+      "id": 24,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pilot-Operated Check Valve",
+      "descripcion": "Velan’s pilot-operated check valve design is a flexible and reliable solution. It enables reverse flow, and provides a safe alternative to control hydraulic and pneumatic systems during maintenance an...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pilot-operated-check.png"
+    },
+    {
+      "id": 25,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Corrosion Resistant Cast Steel Swing Check Valve",
+      "descripcion": "Swing check valves can be installed to allow flow in one direction only and protect systems that can be affected by reverse flow, such as a system shutdown. Operated entirely by reaction to the direct...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Cast-stainless-steel-corrosion-resistant-swing-check.png"
+    },
+    {
+      "id": 26,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Proquip Dual-Plate Check Valve: Wafer Type",
+      "descripcion": "Válvula Dual plate check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-wafer-edited.png"
+    },
+    {
+      "id": 27,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Proquip Dual-Plate Check Valve: Lug Type",
+      "descripcion": "Válvula Dual plate check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-solid-lug.png"
+    },
+    {
+      "id": 28,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Proquip Dual-Plate Check Valve: Hub End Type",
+      "descripcion": "Velan Proquip hub end dual-plate check valves are made of carbon, stainless, or alloy steel to handle an extensive range of applications. The retainerless body is clamped into a piping system by using...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-hub.png"
+    },
+    {
+      "id": 29,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Proquip Dual-Plate Check Valve: Double Flange Type",
+      "descripcion": "Velan Proquip double flange dual-plate check valves are made of cast carbon, stainless, or alloy steel to handle an extensive range of applications. The retainerless body is available in a drilled-thr...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-Doub-flg-edited.png"
+    },
+    {
+      "id": 30,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Proquip Dual-Plate Check Valve: Butt Weld End Type",
+      "descripcion": "Velan Proquip butt weld end dual-plate check valves are made of carbon, stainless, or alloy steel to handle an extensive range of applications. The butt weld ends are designed to be directly welded in...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-BW.png"
+    },
+    {
+      "id": 31,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 600 Cast Steel Cryogenic Gate Valve",
+      "descripcion": "All basic design features of Velan cast steel gate valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Cast-steel-bolted-bonnet-cryogenic-gate.png"
+    },
+    {
+      "id": 32,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 623 Cast Steel Cryogenic Globe Valve",
+      "descripcion": "All basic design features of Velan small forged steel globe valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Cast-steel-bolted-bonnet-cryogenic-globe.png"
+    },
+    {
+      "id": 33,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 600 Cast Steel Bellows Seal Gate Valve",
+      "descripcion": "Válvula Cast steel gate, globe and check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-600-cast-steel-bellows-seal-BB-gate.png"
+    },
+    {
+      "id": 34,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 623 Cast Steel Bellows Seal Globe Valve",
+      "descripcion": "Válvula Cast steel gate, globe and check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Cast-steel-bellows-seal-BB-globe.png"
+    },
+    {
+      "id": 35,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Corrosion Resistant Cast Steel Globe Valve",
+      "descripcion": "Velan corrosion resistant cast stainless steel globe valves are manufactured as per ASME B16.34 design requirements and are available in bolted bonnet and welded extended (cryogenic) bonnet styles. Ve...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Corrosion-resistant-cast-steel-globe.png"
+    },
+    {
+      "id": 36,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Extended Body Bellows Seal Gate Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-extended-body-gate-1.png"
+    },
+    {
+      "id": 37,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Bellows Seal Globe Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-globe.png"
+    },
+    {
+      "id": 38,
+      "categoria": "especiales",
+      "nombre": "API 602 Hydrofluoric Acid Alkylation Gate Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-HF-acid-gate.png"
+    },
+    {
+      "id": 39,
+      "categoria": "especiales",
+      "nombre": "API 602 Hydrofluoric Acid Alkylation Globe Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-HF-acid-globe.png"
+    },
+    {
+      "id": 40,
+      "categoria": "especiales",
+      "nombre": "API 602 Hydrofluoric Acid Alkylation Check Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/HF-acid-SF-bolted-bonnet-check-edited.png"
+    },
+    {
+      "id": 41,
+      "categoria": "especiales",
+      "nombre": "Hydrofluoric Acid Alkylation Cast Carbon Steel and Monel® Gate Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/HF-acid-Carbon-and-Monel-gate.png"
+    },
+    {
+      "id": 42,
+      "categoria": "especiales",
+      "nombre": "Hydrofluoric Acid Alkylation Cast Carbon Steel and Monel® Globe Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/HF-acid-Carbon-and-Monel-globe.png"
+    },
+    {
+      "id": 43,
+      "categoria": "especiales",
+      "nombre": "Hydrofluoric Acid Alkylation Cast Carbon Steel and Monel® Swing Check Valve",
+      "descripcion": "Válvula Hydrofluoric acid alkylation valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alquilación HF"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/HF-acid-Carbon-and-Monel-swing-check.png"
+    },
+    {
+      "id": 44,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Forged Steel Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-bolted-cover-piston-check.png"
+    },
+    {
+      "id": 45,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BS 1873 Cast Steel Globe, Stop Check and Needle Valve",
+      "descripcion": "Válvula Cast steel gate, globe and check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BS-1873-cast-steel-globe-edited.png"
+    },
+    {
+      "id": 46,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Piston Check Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-piston-check.png"
+    },
+    {
+      "id": 47,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 600 Cast Steel Gate Valve",
+      "descripcion": "Válvula Cast steel gate, globe and check valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-600-cast-steel-bolted-bonnet-gate-edited.png"
+    },
+    {
+      "id": 48,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Forged Steel Extended Body Gate Valves",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-extended-body-gate.png"
+    },
+    {
+      "id": 49,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 594 Cast Steel Swing Check Valve",
+      "descripcion": "Swing check valves can be installed to allow flow in one direction only and protect systems that can be affected by reverse flow, such as a system shutdown. Robust one-piece construction to withstand ...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-594-cast-steel-swing-check.png"
+    },
+    {
+      "id": 50,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Globe Continuous Blowdown Valve",
+      "descripcion": "API 602 small forged globe valve designed for continuous blowdown.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-continuous-blowdown.png"
+    },
+    {
+      "id": 51,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Angle Globe Boiler Blowoff Valve",
+      "descripcion": "These special small forged blowoff valves are available in bolted bonnet angle and streamlined flow 45° inclined designs for Class 600 and 1500 primary service and in bonnetless angle and inclined des...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-steel-boiler-blowoff-angle-globe.png"
+    },
+    {
+      "id": 52,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Cryogenic Gate Valve",
+      "descripcion": "All basic design features of Velan small forged steel gate valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-cryogenic-gate.png"
+    },
+    {
+      "id": 53,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Cryogenic Globe Valve",
+      "descripcion": "All basic design features of Velan small forged steel globe valves are adapted to special service conditions at cryogenic temperatures. ADDITIONAL DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-cryogenic-globe.png"
+    },
+    {
+      "id": 54,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Bellows Seal Gate Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-bellows-seal-gate.png"
+    },
+    {
+      "id": 55,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Cover Forged Piston Check Valve",
+      "descripcion": "Válvula Large forged bolted bonnet valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-cover-forged-piston-check.png"
+    },
+    {
+      "id": 56,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Bonnet Forged Bellows Seal Flexible Wedge Gate Valve",
+      "descripcion": "Válvula Large forged bolted bonnet valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-bellows-seal-gate.png"
+    },
+    {
+      "id": 57,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Bonnet Forged Bellows Seal Globe Valve",
+      "descripcion": "Válvula Large forged bolted bonnet valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-bellows-seal-globe.png"
+    },
+    {
+      "id": 58,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Forged Steel Gate Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-gate.png"
+    },
+    {
+      "id": 59,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Flexible Wedge Gate Valve",
+      "descripcion": "The Velan pressure seal flexible wedge gate valve was pioneered by Velan in 1960. It has a large flexibility index up to 0.035” (0.89 mm) within normal closing torques and allowable stresses to compen...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-flexible-wedge-gate-edited.png"
+    },
+    {
+      "id": 60,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "API 602 Forged Steel Globe Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/API-602-SF-globe.png"
+    },
+    {
+      "id": 61,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Parallel Slide Gate Valve",
+      "descripcion": "Velan pressure seal parallel slide gate valves are ideal for clean service and steam. The parallel slide valve design relies on the primary system pressure acting on the downstream disc for seat integ...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-parallel-slide-gate.png"
+    },
+    {
+      "id": 62,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Inclined Globe Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-boiler-blowoff-45-inclined-globe.png"
+    },
+    {
+      "id": 63,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Globe Valve",
+      "descripcion": "Velan globe valve’s top and bottom-guided disc assures stem operation without side thrust caused by high pressure flow. The non-rotating stem results in lower friction of all moving parts and longer s...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-globe-edited.png"
+    },
+    {
+      "id": 64,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Y-Pattern Globe Valve",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-y-pattern-globe.png"
+    },
+    {
+      "id": 65,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Y-Pattern Globe Valve",
+      "descripcion": "The Velan pressure seal y-pattern globe valve offers a lower pressure drop compared to vertical globe valves. The non-rotating stem results in lower friction of all moving parts and longer stem packin...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-y-pattern-globe.png"
+    },
+    {
+      "id": 66,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "ASME B16.34 Forged Steel Bonnetless Y-Pattern Bellows Seal Globe Valves",
+      "descripcion": "Válvula Small forged valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/B16.34-SF-bonnetless-y-pattern-globe.png"
+    },
+    {
+      "id": 67,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Swing Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-swing-check-edited.png"
+    },
+    {
+      "id": 68,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Tilting Disc Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-tilting-disc-check.png"
+    },
+    {
+      "id": 69,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Piston Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-piston-check.png"
+    },
+    {
+      "id": 70,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Pressure Seal Y-Pattern Piston Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-y-pattern-piston-check.png"
+    },
+    {
+      "id": 71,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Bonnet Forged Flexible Wedge Gate Valve",
+      "descripcion": "Velan bolted bonnet flexible wedge gate valves are ideal for high pressure steam, catalytic reformers, hydrocrackers and other tough services.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-flexible-wedge-gate.png"
+    },
+    {
+      "id": 72,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Bonnet Forged Parallel Slide Gate Valve",
+      "descripcion": "Velan bolted bonnet parallel slide gate valves are ideal for clean service and steam. The parallel slide valve design relies on the primary system pressure acting on the downstream disc for seat integ...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-parallel-slide-gate.png"
+    },
+    {
+      "id": 73,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Bonnet Forged Globe Valve",
+      "descripcion": "Válvula Large forged bolted bonnet valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-bonnet-forged-globe.png"
+    },
+    {
+      "id": 74,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "Bolted Cover Forged Swing Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the f...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Bolted-cover-forged-swing-check.png"
+    },
+    {
+      "id": 75,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BTD-BTC-SSD Series Modular Double Block and Bleed Ball Valve",
+      "descripcion": "Modular double block and bleed valves combine two in-line isolation valves into a single body with an additional bleed valve used to drain or vent trapped fluid between the two obturators to ensure hi...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Offshore"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BTD-BTC-SSD-modular-double-BB-ball-.png"
+    },
+    {
+      "id": 76,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BC2-BC3 Series High Pressure Compact Ball Valve",
+      "descripcion": "With several years of experience in high pressure ball valves for offshore platforms and FPSO, Velan ABV has developed a new generation of compact valves in both a single and double ball configuration...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BC2-and-BC3-high-pressure-compact-ball.png"
+    },
+    {
+      "id": 77,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BF2-BF3-BFT-BFU Series Side-Entry Floating Ball Valve",
+      "descripcion": "Velan ABV’S floating ball valve designed for on/off general service, offers a high-quality product at a very competitive price ensuring the greatest level of tightness and reliability. Side-entry floa...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Corrosivos",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BF2-BF3-BFT-BFU-series-side-entry-floating-ball.png"
+    },
+    {
+      "id": 78,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal N-Series Hydromet Ball Valve",
+      "descripcion": "The Securaseal Type N was designed and developed for the most severe services heavy industry has to offer. None are more severe than high pressure leaching by acid or oxygen used in the refining of ni...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-N-series-ball.png"
+    },
+    {
+      "id": 79,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Torqseal® Triple Offset Cryogenic Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Torqseal-cryogenic-triple-offset.png"
+    },
+    {
+      "id": 80,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal TX-Series Acid Injection Ball Valve",
+      "descripcion": "Designed for the most extreme process and environmental conditions, Velan’s Securaseal acid injection top-entry metal-seated ball valve provides customized application-focused features that deliver a ...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-TX-series.png"
+    },
+    {
+      "id": 81,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal U-Series Trunnion-Mounted (Balance) Ball Valve",
+      "descripcion": "Trunnion mounted metal-seated ball valve.",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-U-series.png"
+    },
+    {
+      "id": 82,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal L-Series High Temperature Ball Valve",
+      "descripcion": "The Velan Type L high-temperature metal-seated ball valve is well suited for a variety of demanding services where high-temperature and abrasive solids are present.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-L-series-ball.png"
+    },
+    {
+      "id": 83,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Cap-Tight Batch Digester Capping Valve",
+      "descripcion": "The cap-tight batch digester capping valve delivers outstanding performance and exceptional reliability, because of its unique design. It was developed by using more than 25 years of experience in the...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Batch-digester.png"
+    },
+    {
+      "id": 84,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BT2-BT3 Series API 6D Side-Entry Trunnion Ball Valve",
+      "descripcion": "Side-entry ball valves are manufactured in accordance with API 6D standards. The complete range of forged valves is designed in two or three bolted pieces with a solid double trunnion configuration an...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Alta presión",
+        "Corrosivos",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BT2-BT3-API-6D-side-entry-ball.png"
+    },
+    {
+      "id": 85,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BT2-BT3 Series API 6A Side-Entry Trunnion Ball Valve",
+      "descripcion": "Velan ABV has been an API 6A licensee since 2001, implementing a quality management system in compliance with API Q1 and offers a complete range of valves that comply with the latest edition of API re...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BT2-BT3-API-6A-side-entry-ball.png"
+    },
+    {
+      "id": 86,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "SS2-SS3 Series Subsea Side-Entry Trunnion Ball Valve",
+      "descripcion": "Subsea side-entry ball valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years offering the utmost level of reliability and safety under high-pressure...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SS2-SS3-subsea-side-entry-ball.png"
+    },
+    {
+      "id": 87,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "SYR-SYD Series Cryogenic Side-Entry Trunnion Ball Valve",
+      "descripcion": "Cryogenic side-entry ball valves are manufactured for extremely low temperature and cryogenic applications.Valves are designed with an integral bonnet extension which prevents cryogenic liquids from r...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SYR-SYD-cryogenic-side-entry-ball.png"
+    },
+    {
+      "id": 88,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BTE-BTF-TSB-BTX-TXB Series Top-Entry Trunnion Ball Valve",
+      "descripcion": "Top-entry trunnion ball valves are the perfect solution for both offshore and onshore systems. Convenience of operation and maintenance are essential features of our design simplifying in-line disasse...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BTE-BTF-TSB-BTX-TXB-top-entry-ball.png"
+    },
+    {
+      "id": 89,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "TYF-TYS Series Cryogenic Top-Entry Trunnion Ball Valve",
+      "descripcion": "Cryogenic top-entry ball valves are manufactured for extremely low temperature and cryogenic applications where in-line disassembly is required for trim inspection and maintenance.Valves are designed ...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/TYF-TYS-cryogenic-top-entry-ball.png"
+    },
+    {
+      "id": 90,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "BPU Serie Fully Welded Side-Entry Trunnion Ball Valve",
+      "descripcion": "Velan ABV offers a complete range of fully welded two or three-piece side-entry ball valves. The fully welded body construction provides a lighter solution while also avoiding potential leak paths to ...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BPU-series-fully-welded-side-entry-ball.png"
+    },
+    {
+      "id": 91,
+      "categoria": "esclusas-globo-retencion",
+      "nombre": "SXP Serie Subsea Fully Welded Side-Entry Trunnion Ball Valve",
+      "descripcion": "Subsea fully welded ball valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years. Valves are designed with two or three fully welded forged pieces wit...",
+      "normas": [
+        "API 6A",
+        "API 6D",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Marina",
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SXP-series-subsea-fully-welded-side-entry-ball.png"
+    },
+    {
+      "id": 92,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal® Coker Ring Type Back Pressure Control Valve",
+      "descripcion": "Patented Velan ring valves are an intrinsically safe design. The ring valve has no seats. It is a throttling valve. As a result, it does not require a mechanical stop in order to avoid full closure an...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-ring-type.png"
+    },
+    {
+      "id": 93,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ SB 150/300/600 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal® split-body resilient-seated ball valves are available with a floating or trunnion ball, designed to handle an extensive range of applications. Standard valves with MPTFE seats and gr...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-SB-ball.png"
+    },
+    {
+      "id": 94,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal Hydrodrill Ball Valve",
+      "descripcion": "Velan Securaseal R-series full bore ball valves are generally installed in high pressure applications where the highly erosive and sometimes corrosive reclaimed waters, used to drill the coke out of t...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-hydrodrill-ball.png"
+    },
+    {
+      "id": 95,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ UB 150 and 300 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal™ unibody resilient-seated ball valves are designed with unique 3-way packing arrangements for superior stem sealing to handle an extensive range of applications. These rugged, versati...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-UB-ball.png"
+    },
+    {
+      "id": 96,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal® K-Series Coker Isolation Valve",
+      "descripcion": "Optimized for superior isolation–the right choice for uninterrupted service in delayed coking. ​AUTOMATIONThe electric, hydraulic or pneumatic actuator is selected in function of coker service. A larg...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-isolation-ball.png"
+    },
+    {
+      "id": 97,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ TE-150/300/600 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal™ top-entry resilient-seated ball valves can be easily serviced or replaced in-line while the integrity of the valve is not affected. The exclusive Memoryseal™ seats compensate automat...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-Top-entry-ball.png"
+    },
+    {
+      "id": 98,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ EP-2000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-EP-2000-ball.png"
+    },
+    {
+      "id": 99,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ EE-1000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-EE-1000-ball.png"
+    },
+    {
+      "id": 100,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ HB-2000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-HB-2000-ball.png"
+    },
+    {
+      "id": 101,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ Cryogenic Split-Body Ball Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-cryogenic-cast-split-body.png"
+    },
+    {
+      "id": 102,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Memoryseal™ Cryogenic Top-Entry Ball Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-cryogenic-cast-top-entry.png"
+    },
+    {
+      "id": 103,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "VTP-2000 Three-Piece High Performance Ball Valve",
+      "descripcion": "Velan’s VTP-2000 three-piece ball valve is a high-performance ball valve, ideal for a wide variety of services. Designed for simple, in-line maintenance, and long, reliable service life, this resilien...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VTP-2000-resilient-seated-ball.png"
+    },
+    {
+      "id": 104,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Valvac VOP-1000 General Purpose Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VOP_1000.png"
+    },
+    {
+      "id": 105,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Valvac VEE-2000 General Purpose Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VEE_2000F.png"
+    },
+    {
+      "id": 106,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Valvac V3P-1000 General Purpose Ball Valve",
+      "descripcion": "The Velan Valvac three-piece ball valve with integral ISO mounting pad is a low-cost ball valve for many industrial, commercial and OEM automated applications. The ISO mounting pad will allow quick an...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/V3P_1000.png"
+    },
+    {
+      "id": 107,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal M-Series Metal-Seated Ball Valves",
+      "descripcion": "Válvula Metal-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/M-series_os-1000x1000-1.png"
+    },
+    {
+      "id": 108,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal TE-150 300 600 Metal-Seated Ball Valve",
+      "descripcion": "The Velan top-entry metal-seated ball valve is one of the most universally used valves on the market today. As a standard design it is ideally suited for manual, automatic and throttling control for a...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/TE-150-300-600-MS-ball.png"
+    },
+    {
+      "id": 109,
+      "categoria": "esfericas-mariposas-diafragma",
+      "nombre": "Securaseal® Coker Diverter Valve (Three and Four-Way)",
+      "descripcion": "​AUTOMATIONThe electric, hydraulic or pneumatic actuator is selected in function of coker service. A large torque safety factor ensures the valve will cycle under the most stringent conditions. When s...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-diverter.png"
+    }
+  ]
+}
