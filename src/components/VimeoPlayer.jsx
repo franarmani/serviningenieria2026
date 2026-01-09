@@ -55,7 +55,7 @@ export default function VimeoPlayer({
   }, [videoId, hash, autoplay, muted, loop, background]);
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative w-full h-full ${className}`}>
       <iframe
         title={title}
         src={src}

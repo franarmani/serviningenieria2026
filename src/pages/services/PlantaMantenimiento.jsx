@@ -276,12 +276,11 @@ const PlantaMantenimiento = () => {
             {/* Video - Columna izquierda */}
             <div className="order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
-                <div className="aspect-video relative">
+                <div className="aspect-video">
                   <VimeoPlayer
                     videoId="1152915059"
                     hash="f6d5a1320b"
                     title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
-                    className="absolute inset-0"
                   />
                 </div>
               </div>

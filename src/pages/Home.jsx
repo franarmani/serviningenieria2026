@@ -370,21 +370,26 @@ const Home = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
         
         {/* Video background */}
-        <div className="absolute inset-0 z-0 opacity-[0.15]">
-          <div className="absolute inset-0">
-            <VimeoPlayer
-              videoId="1152915143"
-              hash="fef85752dc"
-              title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
-              background
-              loop
-              videoStyle={{
-                filter: 'grayscale(100%) contrast(1.2)',
-                mixBlendMode: 'overlay'
-              }}
-              className="absolute inset-0"
-            />
-          </div>
+        <div className="absolute inset-0 z-0 opacity-[0.15] overflow-hidden">
+          <VimeoPlayer
+            videoId="1152915143"
+            hash="fef85752dc"
+            title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
+            background
+            loop
+            videoStyle={{
+              filter: 'grayscale(100%) contrast(1.2)',
+              mixBlendMode: 'overlay',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '177.78vh',
+              height: '100vh',
+              minWidth: '100%',
+              minHeight: '56.25vw',
+              transform: 'translate(-50%, -50%)'
+            }}
+          />
         </div>
         
         {/* Premium gradient overlay */}
