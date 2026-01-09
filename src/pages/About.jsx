@@ -211,83 +211,83 @@ const About = () => {
     <div className="min-h-screen">
       
       {/* Hero Section - Compacto y Profesional con imagen */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        
-        {/* Imagen de fondo */}
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
         <div className="absolute inset-0 z-0">
           <img 
             src="/about/servin.png" 
-            alt="Servin Ingeniería"
-            className="w-full h-full object-cover"
+            alt={language === 'es' ? 'SERVIN Ingeniería' : 'SERVIN Engineering'}
+            className="w-full h-full object-cover" 
             style={{ filter: 'blur(3px)' }}
           />
-          {/* Overlay oscuro para legibilidad */}
-          <div className="absolute inset-0 bg-black/75"></div>
         </div>
-        
-        {/* Gradient overlay limpio */}
-        <div className="absolute inset-0 z-10" style={{ 
-          background: 'radial-gradient(ellipse at center, rgba(139,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)'
-        }}></div>
-        
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center min-h-[60vh] sm:min-h-[65vh] pt-20 sm:pt-24">
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
           
-          {/* Badge profesional */}
-          <div className="mb-6 sm:mb-8">
-            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-5 py-2">
-              <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2.5 animate-pulse"></div>
-              <span className="text-white/90 text-xs font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? '+45 Años de Trayectoria' : '+45 Years of Experience'}
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Nuestra Empresa' : 'Our Company'}
               </span>
             </div>
           </div>
-          
-          {/* Título compacto y elegante */}
-          <div className="mb-4 sm:mb-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              letterSpacing: '-0.03em'
-            }}>
-              {language === 'es' ? (
-                <>
-                  NUESTRA <span className="text-corporate-red">EMPRESA</span>
-                </>
-              ) : (
-                <>
-                  OUR <span className="text-corporate-red">COMPANY</span>
-                </>
-              )}
-            </h1>
-          </div>
-          
-          {/* Descripción breve y directa */}
-          <p className="text-sm sm:text-base text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed" style={{ 
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? (
+              <>
+                SERVIN{' '}
+                <span className="text-corporate-red">INGENIERÍA</span>
+              </>
+            ) : (
+              <>
+                <span className="text-corporate-red">SERVIN</span>{' '}
+                ENGINEERING
+              </>
+            )}
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             fontWeight: '300'
           }}>
             {language === 'es' 
-              ? 'Referentes en ingeniería industrial aplicada con infraestructura propia y certificaciones internacionales.'
-              : 'Leaders in applied industrial engineering with own infrastructure and international certifications.'}
+              ? 'Referentes en ingeniería industrial aplicada con infraestructura propia, equipos especializados y certificaciones internacionales.'
+              : 'Leaders in applied industrial engineering with own infrastructure, specialized equipment and international certifications.'}
           </p>
-          
-          {/* CTA limpio */}
-          <div className="flex justify-center">
-            <a 
-              href="#pilares" 
-              className="group inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-300"
-            >
-              <span className="text-sm font-medium tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Conocer más' : 'Learn more'}
-              </span>
-              <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
-          </div>
+
+          {/* CTA */}
+          <a 
+            href="#pilares" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Conocer más' : 'Learn more'}
+          </a>
         </div>
 
-        {/* Barra inferior decorativa */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-20"></div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center text-white/80 animate-bounce">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
+            </span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+            </svg>
+          </div>
+        </div>
       </section>
 
       {/* About Section - Pilares de Autoridad mejorado */}
