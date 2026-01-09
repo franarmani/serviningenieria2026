@@ -370,20 +370,19 @@ const Home = () => {
         
         {/* Video background */}
         <div className="absolute inset-0 z-0 opacity-[0.15]">
-          <video 
-            autoPlay
-            loop
-            muted
-            playsInline
+          <iframe
             className="w-full h-full object-cover"
             style={{
               filter: 'grayscale(100%) contrast(1.2)',
-              mixBlendMode: 'overlay'
+              mixBlendMode: 'overlay',
+              pointerEvents: 'none'
             }}
-            onLoadedMetadata={(e) => { e.target.currentTime = 6; }}
-          >
-            <source src="/servinhome.mp4" type="video/mp4" />
-          </video>
+            src="https://www.youtube.com/embed/sIQBMDMeTqY?autoplay=1&mute=1&loop=1&playlist=sIQBMDMeTqY&controls=0&disablekb=1&fs=0&modestbranding=1&iv_load_policy=3&playsinline=1&rel=0&start=6"
+            title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
+            loading="lazy"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </div>
         
         {/* Premium gradient overlay */}
