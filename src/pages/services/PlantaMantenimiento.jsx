@@ -98,14 +98,7 @@ const PlantaMantenimiento = () => {
               : 'Over 700 m² covered facility in Bahía Blanca, specialized in industrial valve repair and calibration. A comprehensive service that minimizes downtime and maximizes work quality.'}
           </p>
 
-          {/* CTA */}
-          <a 
-            href="#especificaciones" 
-            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
-            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-          >
-            {language === 'es' ? 'Ver especificaciones' : 'View specifications'}
-          </a>
+          
         </div>
 
         {/* Deslizar */}
@@ -119,8 +112,113 @@ const PlantaMantenimiento = () => {
         </div>
       </section>
 
+      {/* Descripción de la Planta */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' 
+                ? 'SERVIN INGENIERÍA S.A. cuenta con una planta de mantenimiento industrial situada en la ciudad de Bahía Blanca, especializada en la reparación de válvulas especiales y Calibración de válvulas de seguridad.'
+                : 'SERVIN INGENIERÍA S.A. has an industrial maintenance plant located in the city of Bahía Blanca, specialized in the repair of special valves and calibration of safety valves.'}
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' 
+                ? 'La planta de más de 700m² cubiertos se encuentra equipada con tornos, soldadoras GMAW, GTAW, SMAW, equipos de granallado, lapidadoras automáticas, bancos de pruebas computarizados, etc. permitiendo llevar a cabo la totalidad de los procesos de intervención en nuestras instalaciones.'
+                : 'The plant of more than 700m² covered is equipped with lathes, GMAW, GTAW, SMAW welding machines, shot blasting equipment, automatic lapping machines, computerized test benches, etc. allowing to carry out all the intervention processes in our facilities.'}
+            </p>
+            <div className="inline-block bg-corporate-red/5 border-l-4 border-corporate-red px-6 py-4 rounded-r-lg">
+              <p className="text-sm sm:text-base text-gray-900 font-medium italic" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' 
+                  ? '"Un servicio integral que permite minimizar tiempos y maximizar calidad de trabajo"'
+                  : '"A comprehensive service that minimizes time and maximizes work quality"'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ensayos en Planta - EVIDENCIA TÉCNICA */}
+      <section id="ensayos-planta" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            {/* Texto técnico - Columna izquierda */}
+            <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-gray-700 text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Ensayos en Planta' : 'In-Plant Testing'}
+                </span>
+              </div>
+              
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <span className="font-semibold text-corporate-red">{language === 'es' ? 'Ensayos funcionales' : 'Functional testing'}</span> {language === 'es' ? 'en banco certificado' : 'on certified bench'}
+              </h3>
+              
+              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' 
+                  ? 'Evaluación funcional de válvulas de control y seguridad en condiciones controladas, con instrumentación digital y registro documental.'
+                  : 'Functional evaluation of control and safety valves under controlled conditions, with digital instrumentation and documentary recording.'}
+              </p>
+              
+              <ul className="space-y-3">
+                {(language === 'es' ? [
+                  'Presión hidráulica hasta 650 kg/cm²',
+                  'Presión neumática hasta 200 kg/cm²',
+                  'Registro digital e informe técnico'
+                ] : [
+                  'Hydraulic pressure up to 650 kg/cm²',
+                  'Pneumatic pressure up to 200 kg/cm²',
+                  'Digital recording and technical report'
+                ]).map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Imágenes - Columna derecha */}
+            <div className="order-1 lg:order-2 space-y-3">
+              {/* Imagen principal grande */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <img 
+                  src="/plantamantenimiento/banco.png"
+                  alt={language === 'es' ? 'Planta de mantenimiento industrial - Vista general' : 'Industrial maintenance plant - General view'}
+                  className="w-full h-48 sm:h-56 object-cover"
+                />
+              </div>
+              
+              {/* Grid de imágenes pequeñas */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                  <img 
+                    src="/plantamantenimiento/1.png"
+                    alt={language === 'es' ? 'Banco de ensayos - Detalle' : 'Test bench - Detail'}
+                    className="w-full h-32 sm:h-36 object-cover"
+                  />
+                </div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                  <img 
+                    src="/plantamantenimiento/2.png"
+                    alt={language === 'es' ? 'Equipos de control y medición' : 'Control and measurement equipment'}
+                    className="w-full h-32 sm:h-36 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Información Técnica - Grid Compacto con Modales */}
-      <section id="especificaciones" className="scroll-mt-20 py-8 sm:py-12 lg:py-20 bg-gray-50">
+      <section id="especificaciones" className="scroll-mt-20 py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-8 sm:mb-12">
@@ -273,38 +371,8 @@ const PlantaMantenimiento = () => {
           
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             
-            {/* Imágenes - Columna izquierda */}
-            <div className="order-2 lg:order-1 space-y-3">
-              {/* Imagen principal grande */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                <img 
-                  src="/plantamantenimiento/banco.png"
-                  alt={language === 'es' ? 'Planta de mantenimiento industrial - Vista general' : 'Industrial maintenance plant - General view'}
-                  className="w-full h-48 sm:h-56 object-cover"
-                />
-              </div>
-              
-              {/* Grid de imágenes pequeñas */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                  <img 
-                    src="/plantamantenimiento/1.png"
-                    alt={language === 'es' ? 'Banco de ensayos - Detalle' : 'Test bench - Detail'}
-                    className="w-full h-32 sm:h-36 object-cover"
-                  />
-                </div>
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                  <img 
-                    src="/plantamantenimiento/2.png"
-                    alt={language === 'es' ? 'Equipos de control y medición' : 'Control and measurement equipment'}
-                    className="w-full h-32 sm:h-36 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Texto técnico - Columna derecha */}
-            <div className="order-1 lg:order-2">
+            {/* Texto técnico - Columna izquierda */}
+            <div className="order-2 lg:order-1">
               <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-gray-700 text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -342,6 +410,36 @@ const PlantaMantenimiento = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Imágenes - Columna derecha */}
+            <div className="order-1 lg:order-2 space-y-3">
+              {/* Imagen principal grande */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <img 
+                  src="/plantamantenimiento/banco.png"
+                  alt={language === 'es' ? 'Planta de mantenimiento industrial - Vista general' : 'Industrial maintenance plant - General view'}
+                  className="w-full h-48 sm:h-56 object-cover"
+                />
+              </div>
+              
+              {/* Grid de imágenes pequeñas */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                  <img 
+                    src="/plantamantenimiento/1.png"
+                    alt={language === 'es' ? 'Banco de ensayos - Detalle' : 'Test bench - Detail'}
+                    className="w-full h-32 sm:h-36 object-cover"
+                  />
+                </div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                  <img 
+                    src="/plantamantenimiento/2.png"
+                    alt={language === 'es' ? 'Equipos de control y medición' : 'Control and measurement equipment'}
+                    className="w-full h-32 sm:h-36 object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
