@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import VimeoPlayer from '../../components/VimeoPlayer';
 
 // Estilos CSS para animaciones
 const styles = `
@@ -383,6 +384,76 @@ const MantenimientosInSitu = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Ensayos en Planta - EVIDENCIA TÉCNICA (Video) */}
+      <section id="video-ensayos" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            
+            {/* Video - Columna izquierda */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
+                <div className="aspect-video">
+                  <VimeoPlayer
+                    videoId="1152915059"
+                    hash="f6d5a1320b"
+                    title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-3 flex items-center justify-center gap-2">
+                <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
+                <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Calibración de válvulas — video' : 'Valve calibration — video'}
+                </span>
+              </div>
+            </div>
+
+            {/* Texto técnico - Columna derecha */}
+            <div className="order-1 lg:order-2">
+              <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-gray-700 text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Ensayos en Planta' : 'In-Plant Testing'}
+                </span>
+              </div>
+              
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <span className="font-semibold text-corporate-red">{language === 'es' ? 'Ensayos funcionales' : 'Functional testing'}</span> {language === 'es' ? 'en banco certificado' : 'on certified bench'}
+              </h3>
+              
+              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' 
+                  ? 'Evaluación funcional de válvulas de control y seguridad en condiciones controladas, con instrumentación digital y registro documental.'
+                  : 'Functional evaluation of control and safety valves under controlled conditions, with digital instrumentation and documentary recording.'}
+              </p>
+              
+              <ul className="space-y-3">
+                {(language === 'es' ? [
+                  'Presión hidráulica hasta 650 kg/cm²',
+                  'Presión neumática hasta 200 kg/cm²',
+                  'Registro digital e informe técnico'
+                ] : [
+                  'Hydraulic pressure up to 650 kg/cm²',
+                  'Pneumatic pressure up to 200 kg/cm²',
+                  'Digital recording and technical report'
+                ]).map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

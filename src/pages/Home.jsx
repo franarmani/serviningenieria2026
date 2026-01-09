@@ -458,7 +458,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-corporate-red to-red-700 transform group-hover:scale-105 transition-transform duration-300"></div>
                 <div className="relative px-6 sm:px-8 py-3 text-xs sm:text-sm font-semibold text-white tracking-wide uppercase inline-flex items-center justify-center w-full sm:w-auto transition-all duration-300"
                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  <span className="mr-2">{language === 'es' ? 'Ver servicios' : 'View services'}</span>
+                  <span className="mr-2">{language === 'es' ? 'Ver divisiones' : 'View divisions'}</span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -928,18 +928,64 @@ const Home = () => {
                 
                 <div className="mb-4">
                   <span className="inline-block text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    ISO 9001
+                    IRAM-ISO 9001:2015
                   </span>
                   <h3 className="text-sm sm:text-base font-semibold text-gray-700 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es' ? 'Sistema de Gestión de Calidad' : 'Quality Management System'}
                   </h3>
                 </div>
                 
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' 
-                    ? 'Sistema de gestión de calidad certificado bajo norma ISO 9001, aplicado a los procesos definidos en el alcance de certificación.'
-                    : 'Quality management system certified under ISO 9001, applied to processes defined in the certification scope.'}
+                    ? 'Sistema de gestión de calidad certificado bajo norma IRAM-ISO 9001:2015. Certificado N.° 9000-9001. Alcance: comercialización, inspecciones y mantenimiento.'
+                    : 'Quality management system certified under IRAM-ISO 9001:2015. Certificate N.° 9000-9001. Scope: commercialization, inspections and maintenance.'}
                 </p>
+                <a 
+                  href="https://drive.google.com/file/d/1xMXkUsMzNMcg4UWSXZM8D7-Jvwa-qp-i/view?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-corporate-red hover:text-red-700 font-semibold text-xs transition-colors"
+                >
+                  {language === 'es' ? 'Ver certificado' : 'View certificate'}
+                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+              
+              {/* IQNet */}
+              <div className="group bg-white border border-gray-200 p-6 sm:p-8 rounded-2xl hover:border-corporate-red hover:shadow-xl transition-all duration-300">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-corporate-red/20 transition-colors">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <div className="mb-4">
+                  <span className="inline-block text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    IQNet
+                  </span>
+                  <h3 className="text-sm sm:text-base font-semibold text-gray-700 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Red Internacional de Certificación' : 'International Certification Network'}
+                  </h3>
+                </div>
+                
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Red Internacional de Certificación reconocida por IRAM. Sistema de Gestión de la Calidad certificado con presencia en Bahía Blanca.'
+                    : 'International Certification Network recognized by IRAM. Certified Quality Management System with presence in Bahía Blanca.'}
+                </p>
+                <a 
+                  href="https://drive.google.com/file/d/1Nqk4EIJ0Yy4v13qxERVYKWFGJAK2zfsy/view?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-corporate-red hover:text-red-700 font-semibold text-xs transition-colors"
+                >
+                  {language === 'es' ? 'Ver certificado' : 'View certificate'}
+                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
               
               {/* API */}
@@ -963,31 +1009,6 @@ const Home = () => {
                   {language === 'es' 
                     ? 'Aplicación de estándares API en inspección de tanques, válvulas y equipos críticos, mediante procedimientos técnicos y documentación trazable.'
                     : 'Application of API standards in tank, valve and critical equipment inspection, through technical procedures and traceable documentation.'}
-                </p>
-              </div>
-              
-              {/* ASME */}
-              <div className="group bg-white border border-gray-200 p-6 sm:p-8 rounded-2xl hover:border-corporate-red hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-corporate-red/20 transition-colors">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                
-                <div className="mb-4">
-                  <span className="inline-block text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    ASME
-                  </span>
-                  <h3 className="text-sm sm:text-base font-semibold text-gray-700 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Criterios de Ingeniería Mecánica' : 'Mechanical Engineering Criteria'}
-                  </h3>
-                </div>
-                
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Aplicación de criterios ASME como referencia técnica en procedimientos de mantenimiento, ensayos y evaluación mecánica de equipos industriales.'
-                    : 'Application of ASME criteria as technical reference in maintenance procedures, testing and mechanical evaluation of industrial equipment.'}
                 </p>
               </div>
               

@@ -273,8 +273,8 @@ const Header = () => {
                               <div className="text-sm font-medium tracking-wide">{t('ingenieriaMateriales')}</div>
                               <div className="text-xs text-white/40 mt-1 font-light">{language === 'es' ? 'Stock permanente y entrega rápida' : 'Permanent stock and fast delivery'}</div>
                             </div>
-                            <svg className="w-4 h-4 text-white/30 group-hover:text-corporate-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                            <svg className="w-5 h-5 text-white/70 group-hover:text-corporate-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </Link>
 

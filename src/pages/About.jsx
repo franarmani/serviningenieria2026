@@ -408,16 +408,6 @@ const About = () => {
               <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 sm:mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Experiencia Multisectorial' : 'Multi-sector Experience'}</h4>
               <p className="text-[9px] sm:text-[10px] text-gray-500">{language === 'es' ? '+400 empresas' : '+400 companies'}</p>
             </div>
-            
-            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-corporate-red/5 transition-colors duration-300 group">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 bg-corporate-red/10 rounded-lg flex items-center justify-center group-hover:bg-corporate-red/20 transition-colors">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 sm:mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Soporte Especializado' : 'Specialized Support'}</h4>
-              <p className="text-[9px] sm:text-[10px] text-gray-500">{language === 'es' ? '24/7' : '24/7'}</p>
-            </div>
           </div>
 
         </div>

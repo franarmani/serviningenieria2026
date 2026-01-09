@@ -46,29 +46,63 @@ const Novedades = () => {
   return (
     <div className="min-h-screen bg-[#fefefe]">
       
-      {/* MASTHEAD EDITORIAL - Estilo Diario con Identidad SERVIN */}
-      <section className="relative bg-[#2e2c3a] border-b-4 border-corporate-red pt-24 overflow-hidden">
-        {/* Imagen de fondo con blur */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm"
-          style={{backgroundImage: 'url(/galeriahome/13.jpg)'}}
-        ></div>
-        {/* Overlay negro para contraste */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        
-        {/* Contenido */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          {/* Header Editorial */}
-          <div className="text-center mb-10">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: '0.9'}}>
-              {language === 'es' ? 'NOVEDADES' : 'NEWS'}
-            </h1>
-            <div className="w-32 h-1.5 bg-corporate-red mx-auto mb-8"></div>
-            <p className="text-base sm:text-lg md:text-xl text-white/95 font-light max-w-3xl mx-auto leading-relaxed" style={{fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '0.01em'}}>
-              {language === 'es' 
-                ? 'Actualidad técnica, proyectos y logros de SERVIN INGENIERÍA S.A.' 
-                : 'Technical updates, projects and achievements from SERVIN INGENIERÍA S.A.'}
-            </p>
+      {/* HERO SECTION - Estilo Contact */}
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/galeriahome/13.jpg"
+            alt="SERVIN INGENIERÍA Novedades"
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
+          />
+        </div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Novedades' : 'News'}
+              </span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? 'ACTUALIDAD' : 'CURRENT'}{' '}
+            <span className="text-corporate-red">{language === 'es' ? 'TÉCNICA' : 'UPDATES'}</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Proyectos, logros y últimas actualizaciones de SERVIN INGENIERÍA S.A.' 
+              : 'Projects, achievements and latest updates from SERVIN INGENIERÍA S.A.'}
+          </p>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center text-white/80 animate-bounce">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'EXPLORAR' : 'EXPLORE'}
+            </span>
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
       </section>
