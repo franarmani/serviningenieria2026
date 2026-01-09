@@ -111,39 +111,13 @@ const PlantaMantenimiento = () => {
           </div>
         </div>
       </section>
-
-      {/* Descripción de la Planta */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' 
-                ? 'SERVIN INGENIERÍA S.A. cuenta con una planta de mantenimiento industrial situada en la ciudad de Bahía Blanca, especializada en la reparación de válvulas especiales y Calibración de válvulas de seguridad.'
-                : 'SERVIN INGENIERÍA S.A. has an industrial maintenance plant located in the city of Bahía Blanca, specialized in the repair of special valves and calibration of safety valves.'}
-            </p>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' 
-                ? 'La planta de más de 700m² cubiertos se encuentra equipada con tornos, soldadoras GMAW, GTAW, SMAW, equipos de granallado, lapidadoras automáticas, bancos de pruebas computarizados, etc. permitiendo llevar a cabo la totalidad de los procesos de intervención en nuestras instalaciones.'
-                : 'The plant of more than 700m² covered is equipped with lathes, GMAW, GTAW, SMAW welding machines, shot blasting equipment, automatic lapping machines, computerized test benches, etc. allowing to carry out all the intervention processes in our facilities.'}
-            </p>
-            <div className="inline-block bg-corporate-red/5 border-l-4 border-corporate-red px-6 py-4 rounded-r-lg">
-              <p className="text-sm sm:text-base text-gray-900 font-medium italic" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' 
-                  ? '"Un servicio integral que permite minimizar tiempos y maximizar calidad de trabajo"'
-                  : '"A comprehensive service that minimizes time and maximizes work quality"'}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ensayos en Planta - EVIDENCIA TÉCNICA */}
+          {/* Ensayos en Planta - EVIDENCIA TÉCNICA */}
       <section id="ensayos-planta" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             
-            {/* Texto técnico - Columna izquierda */}
+            {/* Texto descriptivo - Columna izquierda */}
             <div className="order-2 lg:order-1">
               <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
@@ -152,36 +126,25 @@ const PlantaMantenimiento = () => {
                 </span>
               </div>
               
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                <span className="font-semibold text-corporate-red">{language === 'es' ? 'Ensayos funcionales' : 'Functional testing'}</span> {language === 'es' ? 'en banco certificado' : 'on certified bench'}
-              </h3>
-              
-              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' 
-                  ? 'Evaluación funcional de válvulas de control y seguridad en condiciones controladas, con instrumentación digital y registro documental.'
-                  : 'Functional evaluation of control and safety valves under controlled conditions, with digital instrumentation and documentary recording.'}
+                  ? 'SERVIN INGENIERÍA S.A. cuenta con una planta de mantenimiento industrial situada en la ciudad de Bahía Blanca, especializada en la reparación de válvulas especiales y Calibración de válvulas de seguridad.'
+                  : 'SERVIN INGENIERÍA S.A. has an industrial maintenance plant located in the city of Bahía Blanca, specialized in the repair of special valves and calibration of safety valves.'}
               </p>
               
-              <ul className="space-y-3">
-                {(language === 'es' ? [
-                  'Presión hidráulica hasta 650 kg/cm²',
-                  'Presión neumática hasta 200 kg/cm²',
-                  'Registro digital e informe técnico'
-                ] : [
-                  'Hydraulic pressure up to 650 kg/cm²',
-                  'Pneumatic pressure up to 200 kg/cm²',
-                  'Digital recording and technical report'
-                ]).map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' 
+                  ? 'La planta de más de 700m² cubiertos se encuentra equipada con tornos, soldadoras GMAW, GTAW, SMAW, equipos de granallado, lapidadoras automáticas, bancos de pruebas computarizados, etc. permitiendo llevar a cabo la totalidad de los procesos de intervención en nuestras instalaciones.'
+                  : 'The plant of more than 700m² covered is equipped with lathes, GMAW, GTAW, SMAW welding machines, shot blasting equipment, automatic lapping machines, computerized test benches, etc. allowing to carry out all the intervention processes in our facilities.'}
+              </p>
+              
+              <div className="bg-corporate-red/5 border-l-4 border-corporate-red px-6 py-4 rounded-r-lg">
+                <p className="text-sm sm:text-base text-gray-900 font-medium italic" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? '"Un servicio integral que permite minimizar tiempos y maximizar calidad de trabajo"'
+                    : '"A comprehensive service that minimizes time and maximizes work quality"'}
+                </p>
+              </div>
             </div>
 
             {/* Imágenes - Columna derecha */}
@@ -213,6 +176,116 @@ const PlantaMantenimiento = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+          {/* Servicios Especializados */}
+      <section className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+              <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+              <span className="text-corporate-red text-[10px] sm:text-xs font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Capacidades Técnicas' : 'Technical Capabilities'}</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+              {language === 'es' ? 'Servicios' : 'Specialized'} <span className="text-corporate-red">{language === 'es' ? 'Especializados' : 'Services'}</span>
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+              {language === 'es'
+                ? 'Recuperación, calibración y certificación de válvulas industriales críticas'
+                : 'Recovery, calibration and certification of critical industrial valves'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            
+            {/* Válvulas de Seguridad */}
+            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
+              <div className="absolute top-2 right-2 flex gap-1">
+                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">API</span>
+                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">ASME</span>
+              </div>
+              
+              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              
+              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Válvulas de Seguridad y Alivio' : 'Safety and Relief Valves'}
+              </h3>
+              
+              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                {language === 'es' 
+                  ? 'Calibración, reparación y ensayo de válvulas de seguridad y alivio conforme a procedimientos alineados a API 526/527 y criterios ASME Sección VIII.'
+                  : 'Calibration, repair and testing of safety and relief valves per procedures aligned with API 526/527 and ASME Section VIII criteria.'}
+              </p>
+            </div>
+
+            {/* Válvulas de Control */}
+            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
+              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              
+              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Válvulas de Control' : 'Control Valves'}
+              </h3>
+              
+              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                {language === 'es' 
+                  ? 'Mantenimiento preventivo y correctivo de válvulas de control automáticas, incluidos actuadores neumáticos e hidráulicos.'
+                  : 'Preventive and corrective maintenance of automatic control valves, including pneumatic and hydraulic actuators.'}
+              </p>
+            </div>
+
+            {/* Válvulas de Proceso */}
+            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
+              <div className="absolute top-2 right-2">
+                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">API 6D</span>
+              </div>
+              
+              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              
+              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Válvulas de Proceso' : 'Process Valves'}
+              </h3>
+              
+              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                {language === 'es' 
+                  ? 'Reparación y prueba hidráulica de válvulas de compuerta, globo, bola y mariposa según API 6D y estándares de fabricante.'
+                  : 'Repair and hydrostatic testing of gate, globe, ball and butterfly valves per API 6D and manufacturer standards.'}
+              </p>
+            </div>
+
+            {/* Actuadores */}
+            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
+              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              
+              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Actuadores y Accesorios' : 'Actuators and Accessories'}
+              </h3>
+              
+              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                {language === 'es' 
+                  ? 'Reparación completa de actuadores neumáticos e hidráulicos, posicionadores y sistemas de control asociados.'
+                  : 'Complete repair of pneumatic and hydraulic actuators, positioners and associated control systems.'}
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -365,195 +438,9 @@ const PlantaMantenimiento = () => {
         </div>
       </section>
 
-      {/* Ensayos en Planta - EVIDENCIA TÉCNICA */}
-      <section id="ensayos-planta" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            
-            {/* Texto técnico - Columna izquierda */}
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
-                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
-                <span className="text-gray-700 text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Ensayos en Planta' : 'In-Plant Testing'}
-                </span>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                <span className="font-semibold text-corporate-red">{language === 'es' ? 'Ensayos funcionales' : 'Functional testing'}</span> {language === 'es' ? 'en banco certificado' : 'on certified bench'}
-              </h3>
-              
-              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' 
-                  ? 'Evaluación funcional de válvulas de control y seguridad en condiciones controladas, con instrumentación digital y registro documental.'
-                  : 'Functional evaluation of control and safety valves under controlled conditions, with digital instrumentation and documentary recording.'}
-              </p>
-              
-              <ul className="space-y-3">
-                {(language === 'es' ? [
-                  'Presión hidráulica hasta 650 kg/cm²',
-                  'Presión neumática hasta 200 kg/cm²',
-                  'Registro digital e informe técnico'
-                ] : [
-                  'Hydraulic pressure up to 650 kg/cm²',
-                  'Pneumatic pressure up to 200 kg/cm²',
-                  'Digital recording and technical report'
-                ]).map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+  
 
-            {/* Imágenes - Columna derecha */}
-            <div className="order-1 lg:order-2 space-y-3">
-              {/* Imagen principal grande */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                <img 
-                  src="/plantamantenimiento/banco.png"
-                  alt={language === 'es' ? 'Planta de mantenimiento industrial - Vista general' : 'Industrial maintenance plant - General view'}
-                  className="w-full h-48 sm:h-56 object-cover"
-                />
-              </div>
-              
-              {/* Grid de imágenes pequeñas */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                  <img 
-                    src="/plantamantenimiento/1.png"
-                    alt={language === 'es' ? 'Banco de ensayos - Detalle' : 'Test bench - Detail'}
-                    className="w-full h-32 sm:h-36 object-cover"
-                  />
-                </div>
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                  <img 
-                    src="/plantamantenimiento/2.png"
-                    alt={language === 'es' ? 'Equipos de control y medición' : 'Control and measurement equipment'}
-                    className="w-full h-32 sm:h-36 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Servicios Especializados */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
-              <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
-              <span className="text-corporate-red text-[10px] sm:text-xs font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Capacidades Técnicas' : 'Technical Capabilities'}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
-              {language === 'es' ? 'Servicios' : 'Specialized'} <span className="text-corporate-red">{language === 'es' ? 'Especializados' : 'Services'}</span>
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              {language === 'es'
-                ? 'Recuperación, calibración y certificación de válvulas industriales críticas'
-                : 'Recovery, calibration and certification of critical industrial valves'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            
-            {/* Válvulas de Seguridad */}
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
-              <div className="absolute top-2 right-2 flex gap-1">
-                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">API</span>
-                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">ASME</span>
-              </div>
-              
-              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              
-              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Válvulas de Seguridad y Alivio' : 'Safety and Relief Valves'}
-              </h3>
-              
-              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                {language === 'es' 
-                  ? 'Calibración, reparación y ensayo de válvulas de seguridad y alivio conforme a procedimientos alineados a API 526/527 y criterios ASME Sección VIII.'
-                  : 'Calibration, repair and testing of safety and relief valves per procedures aligned with API 526/527 and ASME Section VIII criteria.'}
-              </p>
-            </div>
-
-            {/* Válvulas de Control */}
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
-              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-              </div>
-              
-              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Válvulas de Control' : 'Control Valves'}
-              </h3>
-              
-              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                {language === 'es' 
-                  ? 'Mantenimiento preventivo y correctivo de válvulas de control automáticas, incluidos actuadores neumáticos e hidráulicos.'
-                  : 'Preventive and corrective maintenance of automatic control valves, including pneumatic and hydraulic actuators.'}
-              </p>
-            </div>
-
-            {/* Válvulas de Proceso */}
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
-              <div className="absolute top-2 right-2">
-                <span className="px-1.5 py-0.5 bg-corporate-red/10 text-corporate-red text-[8px] font-bold rounded-full">API 6D</span>
-              </div>
-              
-              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              
-              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Válvulas de Proceso' : 'Process Valves'}
-              </h3>
-              
-              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                {language === 'es' 
-                  ? 'Reparación y prueba hidráulica de válvulas de compuerta, globo, bola y mariposa según API 6D y estándares de fabricante.'
-                  : 'Repair and hydrostatic testing of gate, globe, ball and butterfly valves per API 6D and manufacturer standards.'}
-              </p>
-            </div>
-
-            {/* Actuadores */}
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-lg hover:border-corporate-red/30 transition-all duration-500">
-              <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-4 h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              
-              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Actuadores y Accesorios' : 'Actuators and Accessories'}
-              </h3>
-              
-              <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                {language === 'es' 
-                  ? 'Reparación completa de actuadores neumáticos e hidráulicos, posicionadores y sistemas de control asociados.'
-                  : 'Complete repair of pneumatic and hydraulic actuators, positioners and associated control systems.'}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
+  
 
       {/* Documentación Técnica */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
