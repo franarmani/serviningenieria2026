@@ -281,6 +281,7 @@ const PlantaMantenimiento = () => {
                     videoId="1152915059"
                     hash="f6d5a1320b"
                     title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
+                    className="absolute inset-0"
                   />
                 </div>
               </div>

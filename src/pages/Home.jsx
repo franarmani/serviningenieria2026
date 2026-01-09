@@ -376,6 +376,8 @@ const Home = () => {
               videoId="1152915143"
               hash="fef85752dc"
               title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
+              background
+              loop
               videoStyle={{
                 filter: 'grayscale(100%) contrast(1.2)',
                 mixBlendMode: 'overlay'
@@ -386,7 +388,7 @@ const Home = () => {
         </div>
         
         {/* Premium gradient overlay */}
-        <div className="absolute inset-0 z-10" style={{ 
+        <div className="absolute inset-0 z-10 pointer-events-none" style={{ 
           background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.03) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)'
         }}></div>
         
