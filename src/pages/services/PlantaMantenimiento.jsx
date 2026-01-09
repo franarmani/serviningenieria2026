@@ -181,7 +181,7 @@ const PlantaMantenimiento = () => {
       </section>
 
           {/* Servicios Especializados */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-10 sm:mb-14">
@@ -291,7 +291,7 @@ const PlantaMantenimiento = () => {
       </section>
 
       {/* Información Técnica - Grid Compacto con Modales */}
-      <section id="especificaciones" className="scroll-mt-20 py-8 sm:py-12 lg:py-20 bg-white">
+      <section id="especificaciones" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-8 sm:mb-12">
@@ -443,7 +443,7 @@ const PlantaMantenimiento = () => {
   
 
       {/* Documentación Técnica */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl border border-white/5">
@@ -496,7 +496,7 @@ const PlantaMantenimiento = () => {
       </section>
 
       {/* Clientes de Referencia */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-12 sm:mb-16">
@@ -554,7 +554,7 @@ const PlantaMantenimiento = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             

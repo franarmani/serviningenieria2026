@@ -80,20 +80,7 @@ const LaboratorioMovil = () => {
     "Pressure range: 1500 mmH2O up to 500 kg/cm²"
   ];
 
-  const alcanceSeguridad = language === 'es' ? [
-    "Verificación de presión de apertura (SET)",
-    "Ajuste de set point en línea",
-    "Pruebas de estanqueidad in situ",
-    "Registro digital de parámetros",
-    "Documentación técnica conforme a procedimientos alineados a API / criterios ASME"
-  ] : [
-    "Opening pressure verification (SET)",
-    "In-line set point adjustment",
-    "On-site tightness tests",
-    "Digital parameter recording",
-    "Technical documentation per procedures aligned with API / ASME criteria"
-  ];
-
+  
   const alcanceControl = language === 'es' ? [
     "Diagnóstico de posicionadores digitales",
     "Pruebas de carrera y respuesta",
@@ -110,7 +97,7 @@ const LaboratorioMovil = () => {
 
   const ventajasServicio = language === 'es' ? [
     {
-      titulo: "Reducción de Paradas",
+      titulo: "Reducción de Paradas de planta",
       descripcion: "Minimiza el tiempo de inactividad al realizar servicios sin desmontar equipos de la línea de proceso."
     },
     {
@@ -127,7 +114,7 @@ const LaboratorioMovil = () => {
     }
   ] : [
     {
-      titulo: "Reduced Downtime",
+      titulo: "Reduced Plant Downtime",
       descripcion: "Minimizes downtime by performing services without removing equipment from the process line."
     },
     {
@@ -233,7 +220,7 @@ const LaboratorioMovil = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Texto */}
-            <div>
+            <div className="order-2 lg:order-2">
               <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 py-1 mb-4">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -323,7 +310,7 @@ const LaboratorioMovil = () => {
             </div>
 
             {/* Imagen principal del laboratorio */}
-            <div className="relative">
+            <div className="relative order-1 lg:order-1">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/laboratoriomovil/9.jpg" 
@@ -393,7 +380,7 @@ const LaboratorioMovil = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Texto */}
-            <div>
+            <div className="order-1 lg:order-1">
               <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 py-1 mb-4">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -436,7 +423,7 @@ const LaboratorioMovil = () => {
             </div>
 
             {/* Imagen */}
-            <div className="relative">
+            <div className="relative order-2 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/laboratoriomovil/4.jpg" 
@@ -449,98 +436,13 @@ const LaboratorioMovil = () => {
         </div>
       </section>
 
-      {/* Válvulas de Seguridad */}
-      <section className="py-12 lg:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            
-            {/* Imagen */}
-            <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/laboratoriomovil/5.jpg" 
-                  alt={language === 'es' ? 'Válvula de seguridad en proceso de calibración' : 'Safety valve in calibration process'}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Texto */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 py-1 mb-4">
-                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
-                <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas de Seguridad' : 'Safety Valves'}
-                </span>
-              </div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
-                {language === 'es' 
-                  ? <>Verificación y ajuste <span className="font-bold text-corporate-red">in situ</span><br/><span className="text-xl sm:text-2xl lg:text-3xl text-gray-600">sin desmontaje</span></>
-                  : <>Verification and adjustment <span className="font-bold text-corporate-red">in situ</span><br/><span className="text-xl sm:text-2xl lg:text-3xl text-gray-600">without disassembly</span></>}
-              </h2>
-              
-              <p className="text-sm text-gray-600 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es'
-                  ? 'Verificación y ajuste de válvulas de seguridad directamente en línea, minimizando paradas de planta y costos operativos.'
-                  : 'Verification and adjustment of safety valves directly in-line, minimizing plant shutdowns and operating costs.'}
-              </p>
-
-              {/* Normas */}
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-1.5 mb-3">
-                  <div className="w-1 h-1 rounded-full bg-corporate-red"></div>
-                  <p className="text-[10px] font-bold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Normas aplicables' : 'Applicable standards'}
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <div className="px-4 py-2 bg-corporate-red/5 border border-corporate-red/20 rounded-lg hover:bg-corporate-red/10 transition-colors">
-                    <span className="text-corporate-red font-bold text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>API 527</span>
-                  </div>
-                  <div className="px-4 py-2 bg-corporate-red/5 border border-corporate-red/20 rounded-lg hover:bg-corporate-red/10 transition-colors">
-                    <span className="text-corporate-red font-bold text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>ASME</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Alcance */}
-              <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-6 h-6 rounded-lg bg-corporate-red flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Alcance del servicio' : 'Service scope'}
-                  </h3>
-                </div>
-                <div className="space-y-2.5">
-                  {alcanceSeguridad.map((item, index) => (
-                    <div key={index} className="flex items-start gap-2.5 group">
-                      <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-corporate-red/20 transition-colors">
-                        <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-xs text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Válvulas de Control */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Texto */}
-            <div>
+            <div className="order-2 lg:order-2">
               <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -605,7 +507,7 @@ const LaboratorioMovil = () => {
             </div>
 
             {/* Imagen */}
-            <div className="relative">
+            <div className="relative order-1 lg:order-1">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/laboratoriomovil/8.jpg" 
@@ -624,7 +526,7 @@ const LaboratorioMovil = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Imagen */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/laboratoriomovil/9.jpg" 
@@ -635,7 +537,7 @@ const LaboratorioMovil = () => {
             </div>
 
             {/* Texto */}
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-1">
               <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 py-1 mb-4">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
