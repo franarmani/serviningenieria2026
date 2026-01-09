@@ -1,4 +1,12 @@
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
+
+const ensureSupabase = () => {
+  if (!isSupabaseConfigured || !supabase) {
+    console.warn('[newsService] Supabase not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+    return false;
+  }
+  return true;
+};
 
 const AUTH_STORAGE_KEY = 'servin_admin_auth';
 
@@ -39,6 +47,7 @@ export const getCurrentUser = () => {
 // ========== CRUD DE NOVEDADES ==========
 
 export const getPublishedNews = async () => {
+  if (!ensureSupabase()) return [];
   try {
     const { data, error } = await supabase
       .from('news')
@@ -73,6 +82,7 @@ export const getPublishedNews = async () => {
 };
 
 export const getAllNewsAdmin = async () => {
+  if (!ensureSupabase()) return [];
   try {
     const { data, error } = await supabase
       .from('news')
@@ -106,6 +116,7 @@ export const getAllNewsAdmin = async () => {
 };
 
 export const getNewsById = async (id) => {
+  if (!ensureSupabase()) return null;
   try {
     const { data, error } = await supabase
       .from('news')
@@ -139,6 +150,7 @@ export const getNewsById = async (id) => {
 };
 
 export const createNews = async (newsData) => {
+  if (!ensureSupabase()) return null;
   try {
     const dataToInsert = {
       ...newsData,
@@ -169,6 +181,7 @@ export const createNews = async (newsData) => {
 };
 
 export const updateNews = async (id, newsData) => {
+  if (!ensureSupabase()) return null;
   try {
     const dataToUpdate = {
       ...newsData,
@@ -199,6 +212,7 @@ export const updateNews = async (id, newsData) => {
 };
 
 export const deleteNews = async (id) => {
+  if (!ensureSupabase()) return false;
   try {
     const { error } = await supabase
       .from('news')
@@ -214,6 +228,7 @@ export const deleteNews = async (id) => {
 };
 
 export const getNewsByCategory = async (category) => {
+  if (!ensureSupabase()) return [];
   try {
     const { data, error } = await supabase
       .from('news')
@@ -245,6 +260,7 @@ export const categories = [
 // ========== UPLOAD DE IMÁGENES ==========
 
 export const uploadNewsImage = async (file) => {
+  if (!ensureSupabase()) return null;
   try {
     const fileExt = file.name.split('.').pop();
     const fileName = `${Math.random()}.${fileExt}`;
@@ -270,6 +286,7 @@ export const uploadNewsImage = async (file) => {
 // ========== INICIALIZAR DATOS DE EJEMPLO ==========
 
 export const initializeSampleData = async () => {
+  if (!ensureSupabase()) return;
   try {
     // Check if there's already data
     const { data: existingNews } = await supabase
