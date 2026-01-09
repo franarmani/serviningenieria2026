@@ -274,55 +274,43 @@ const PlantaMantenimiento = () => {
             
             {/* Video - Columna izquierda */}
             <div className="order-2 lg:order-1">
-              <div className="grid gap-6">
-                {/* Video 1: Calibración (YouTube) */}
-                <div>
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
-                    <div className="aspect-video relative">
-                      <iframe
-                        className="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/D4b-2MTpRKo?rel=0"
-                        title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
-                    </div>
-                  </div>
+              <a
+                href="https://www.youtube.com/watch?v=D4b-2MTpRKo"
+                target="_blank"
+                rel="noreferrer"
+                className="block group"
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
+                  <div className="aspect-video relative">
+                    <img
+                      src="/plantamantenimiento/banco.png"
+                      alt={language === 'es' ? 'Calibración de válvulas de seguridad y alivio' : 'Safety and relief valve calibration'}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors"></div>
 
-                  <div className="mt-3 flex items-center justify-center gap-2">
-                    <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Calibración — banco VENTIL (Bahía Blanca)' : 'Calibration — VENTIL bench (Bahía Blanca)'}
-                    </span>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-corporate-red flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style={{ width: '80px', height: '80px', borderRadius: '50%' }}>
+                        <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="absolute top-4 left-4 hidden sm:flex items-center gap-1.5 bg-corporate-red/20 border border-corporate-red/30 rounded-full px-2.5 py-1">
+                      <div className="w-1.5 h-1.5 bg-corporate-red rounded-full"></div>
+                      <span className="text-white text-[10px] font-semibold tracking-wide">SERVIN</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Video 2: Diagnóstico (YouTube) */}
-                <div>
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
-                    <div className="aspect-video relative">
-                      <iframe
-                        className="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/BApELXj_CgA?rel=0"
-                        title={language === 'es' ? 'Diagnóstico de válvulas de control - SERVIN Ingeniería' : 'Control valve diagnostics - SERVIN Engineering'}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-3 flex items-center justify-center gap-2">
-                    <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Diagnóstico — válvulas de control' : 'Diagnostics — control valves'}
-                    </span>
-                  </div>
+                <div className="mt-3 flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
+                  <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Calibración de válvulas — ver video' : 'Valve calibration — view video'}
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Texto técnico - Columna derecha */}
