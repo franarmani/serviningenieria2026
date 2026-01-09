@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import VimeoPlayer from '../../components/VimeoPlayer';
 
 const PlantaMantenimiento = () => {
   const { language } = useLanguage();
@@ -276,14 +277,10 @@ const PlantaMantenimiento = () => {
             <div className="order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
                 <div className="aspect-video relative">
-                  <iframe
-                    title="vimeo-player"
-                    src="https://player.vimeo.com/video/1152915059?h=f6d5a1320b"
-                    className="absolute inset-0 w-full h-full"
-                    frameBorder="0"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                    allowFullScreen
+                  <VimeoPlayer
+                    videoId="1152915059"
+                    hash="f6d5a1320b"
+                    title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
                   />
                 </div>
               </div>

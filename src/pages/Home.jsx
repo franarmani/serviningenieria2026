@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import VimeoPlayer from '../components/VimeoPlayer';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
 import StaggerText from '../components/ui/StaggerText';
@@ -370,19 +371,18 @@ const Home = () => {
         
         {/* Video background */}
         <div className="absolute inset-0 z-0 opacity-[0.15]">
-          <iframe
-            className="w-full h-full object-cover"
-            style={{
-              filter: 'grayscale(100%) contrast(1.2)',
-              mixBlendMode: 'overlay',
-              pointerEvents: 'none'
-            }}
-            src="https://www.youtube.com/embed/sIQBMDMeTqY?autoplay=1&mute=1&loop=1&playlist=sIQBMDMeTqY&controls=0&disablekb=1&fs=0&modestbranding=1&iv_load_policy=3&playsinline=1&rel=0&start=6"
-            title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
-            loading="lazy"
-            allow="autoplay; encrypted-media; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
+          <div className="absolute inset-0">
+            <VimeoPlayer
+              videoId="1152915143"
+              hash="fef85752dc"
+              title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
+              videoStyle={{
+                filter: 'grayscale(100%) contrast(1.2)',
+                mixBlendMode: 'overlay'
+              }}
+              className="absolute inset-0"
+            />
+          </div>
         </div>
         
         {/* Premium gradient overlay */}
