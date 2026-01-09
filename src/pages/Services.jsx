@@ -81,107 +81,75 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       
-      {/* Hero Section - Diseño ejecutivo premium igual a About */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: '100px 100px'
-        }}></div>
-        
-        {/* Subtle industrial image overlay */}
-        <div className="absolute inset-0 z-0 opacity-[0.08]">
+      {/* Hero Section - Estilo Planta de Mantenimiento */}
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop"
-            alt="Servicios SERVIN INGENIERÍA"
-            className="w-full h-full object-cover"
-            style={{
-              filter: 'grayscale(100%) contrast(1.2)',
-              mixBlendMode: 'overlay'
-            }}
+            src="/about/servin.png" 
+            alt="Servin Ingeniería Servicios"
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
           />
         </div>
-        
-        {/* Premium gradient overlay */}
-        <div className="absolute inset-0 z-10" style={{ 
-          background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.03) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)'
-        }}></div>
-        
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
-          {/* Corporate badge */}
-          <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
-              <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? '8 Divisiones Operativas' : '8 Operational Divisions'}
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? '8 Divisiones Especializadas' : '8 Specialized Divisions'}
               </span>
             </div>
           </div>
-          
-          {/* Executive title */}
-          <div className="mb-8 sm:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-4 sm:mb-6" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '200',
-              letterSpacing: '0.01em',
-              lineHeight: '0.9'
-            }}>
-              {language === 'es' ? 'NUESTROS' : 'OUR'}
-            </h1>
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-5xl sm:text-6xl lg:text-7xl font-bold" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '800',
-              background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              letterSpacing: '-0.02em',
-              lineHeight: '0.9'
-            }}>
-                {language === 'es' ? 'SERVICIOS' : 'SERVICES'}
-              </h2>
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
-            </div>
-          </div>
-          
-          {/* Professional subtitle */}
-          <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{ 
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
-            fontWeight: '300',
-            letterSpacing: '0.01em'
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
           }}>
-            {t('serviciosDesc')}
+            {language === 'es' ? (
+              <>
+                NUESTROS <span className="text-corporate-red">SERVICIOS</span>
+              </>
+            ) : (
+              <>
+                OUR <span className="text-corporate-red">SERVICES</span>
+              </>
+            )}
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Soluciones integrales de ingeniería industrial con infraestructura propia de 2.600 m² y certificaciones internacionales.'
+              : 'Comprehensive industrial engineering solutions with our own 2,600 m² infrastructure and international certifications.'}
           </p>
-          
-          {/* Executive actions */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link 
-              to="/contact" 
-              className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
-            </Link>
-            
-            <a 
-              href="#divisiones" 
-              className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Explorar Divisiones' : 'Explore Divisions'}
-            </a>
-          </div>
+
+          {/* CTA */}
+          <a 
+            href="#divisiones" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Ver divisiones' : 'View divisions'}
+          </a>
         </div>
 
-        {/* Scroll Indicator - EXACTAMENTE el mismo de About */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+        {/* Deslizar */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
-            <span className="text-[10px] sm:text-xs font-medium mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Deslizar' : 'Scroll'}
-            </span>
-            <svg className="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
             </svg>
           </div>
@@ -189,7 +157,7 @@ const Services = () => {
       </section>
 
       {/* Divisions Section - Compact Grid */}
-      <section id="divisiones" className="py-16 lg:py-24 bg-white">
+      <section id="divisiones" className="py-16 lg:py-24 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Section */}
@@ -200,12 +168,12 @@ const Services = () => {
                 {language === 'es' ? 'Divisiones Operativas' : 'Operational Divisions'}
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
               {language === 'es' 
                 ? <>Nuestras <span className="font-bold text-corporate-red">8 Divisiones</span></>
                 : <>Our <span className="font-bold text-corporate-red">8 Divisions</span></>}
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm lg:text-sm sm:text-base" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Infraestructura propia y certificaciones internacionales.' : 'Own infrastructure and international certifications.'}
             </p>
           </div>
@@ -230,7 +198,7 @@ const Services = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
-                  <h3 className="text-sm sm:text-sm sm:text-base font-bold text-gray-900 group-hover:text-corporate-red transition-colors mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-corporate-red transition-colors mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {division.title}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-gray-500 leading-relaxed mb-3 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -278,7 +246,7 @@ const Services = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
-                  <h3 className="text-sm sm:text-sm sm:text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <h3 className="text-sm sm:text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {division.title}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-gray-500 leading-relaxed mb-3 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -322,13 +290,13 @@ const Services = () => {
                 <span className="text-white text-[10px] sm:text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Contacto' : 'Contact'}</span>
               </div>
               
-              <h3 className="text-xl sm:text-2xl lg:text-xl sm:text-2xl lg:text-3xl font-light text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' 
                   ? <>¿Necesita una <span className="font-semibold">solución técnica industrial</span>?</>
                   : <>Need an <span className="font-semibold">industrial technical solution</span>?</>}
               </h3>
               
-              <p className="text-sm sm:text-sm sm:text-base text-white/85 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+              <p className="text-sm sm:text-base text-white/85 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
                 {language === 'es'
                   ? <>Nuestro equipo evalúa su requerimiento y le propone la solución más adecuada en <strong className="text-white font-normal">mantenimiento, inspección o suministro industrial</strong>, conforme a normas y certificaciones vigentes.</>
                   : <>Our team evaluates your requirements and proposes the most suitable solution in <strong className="text-white font-normal">maintenance, inspection or industrial supply</strong>, in accordance with current standards and certifications.</>}
@@ -337,7 +305,7 @@ const Services = () => {
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Link 
                   to="/contact"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red text-sm sm:text-sm sm:text-base font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red text-sm sm:text-base font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif', minWidth: '220px' }}
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

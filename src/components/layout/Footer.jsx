@@ -3,95 +3,67 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 
 const Footer = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   
   return (
     <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          {/* Logo y descripción */}
-          <div className="col-span-2 md:col-span-2">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-300 mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              SERVIN INGENIERÍA
-            </h3>
-            <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              {t('footerDesc')}
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        
+        {/* Top Section - Empresa y tagline */}
+        <div className="mb-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+              SERVIN <span className="text-corporate-red">INGENIERÍA</span>
+            </h2>
+            <p className="text-sm sm:text-base text-gray-300 mb-3 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+              {language === 'es' 
+                ? 'Ingeniería industrial aplicada a procesos críticos.'
+                : 'Industrial engineering applied to critical processes.'}
             </p>
-            <p className="text-gray-400 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              {t('footerDesc2')}
-            </p>
-          </div>
-
-          {/* Servicios */}
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {t('divisiones')}
-            </h4>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-              <li>
-                <Link to="/services/planta-mantenimiento" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('plantaMantenimiento')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/mantenimientos-in-situ" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {language === 'es' ? 'Mantenimientos In Situ' : 'On-Site Maintenance'}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/inspeccion-tanques-api" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('inspeccionTanques')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/ingenieria-materiales" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('ingenieriaMateriales')}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Enlaces */}
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {t('enlaces')}
-            </h4>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('acercaNosotros')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('servicios')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  {t('contacto')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/login" className="text-gray-300 hover:text-[#8B0000] transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                  Admin
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Línea divisoria */}
-        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <p className="text-gray-400 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              © {new Date().getFullYear()} SERVIN INGENIERÍA S.A. {t('derechosReservados')}.
-            </p>
-            <p className="text-gray-500 text-[10px] sm:text-xs mt-2 md:mt-0" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              {t('slogan')}
+            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+              {language === 'es'
+                ? 'Más de 45 años brindando soluciones técnicas para la industria pesada argentina.'
+                : 'Over 45 years providing technical solutions for Argentine heavy industry.'}
             </p>
           </div>
         </div>
+
+        {/* Bottom Section */}
+        <div>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <p className="text-xs sm:text-sm text-gray-400 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                © {new Date().getFullYear()} <span className="font-medium text-white">SERVIN INGENIERÍA S.A.</span>
+              </p>
+              <p className="text-[10px] sm:text-xs text-gray-500" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+              </p>
+            </div>
+            
+            <div className="flex items-start gap-6">
+              <div className="text-left md:text-right">
+                <p className="text-xs sm:text-sm text-gray-500 italic" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                  {language === 'es'
+                    ? 'Una empresa de servicios al servicio de las empresas.'
+                    : 'A service company at the service of companies.'}
+                </p>
+                {/* Admin Login Button (discreto) */}
+                <Link
+                  to="/admin/login"
+                  className="mt-2 inline-flex items-center gap-1.5 px-2 py-1 text-[10px] text-gray-700 hover:text-gray-500 opacity-50 hover:opacity-70 transition-colors"
+                  aria-label="Admin"
+                >
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-.257-.257A6 6 0 1118 8zm-1.5 0a4.5 4.5 0 11-9 0 4.5 0 019 0zm-4.5 2.121l-1.06-1.061a1.5 1.5 0 112.12-2.121l1.061 1.06-2.121 2.122z" clipRule="evenodd" />
+                  </svg>
+                  <span className="tracking-tight">Admin</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

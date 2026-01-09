@@ -6,7 +6,7 @@ const AcoplamientosRexnord = () => {
   const { language } = useLanguage();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   const acoplamientosRexnord = [
@@ -17,7 +17,7 @@ const AcoplamientosRexnord = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos elastoméricos de alto rendimiento para aplicaciones industriales generales. Diseñados con elemento flexible bipartido que permite una instalación rápida sin desmontar equipos."
         : "High-performance elastomeric couplings for general industrial applications. Designed with a two-piece flexible element that allows quick installation without dismounting equipment.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/img_omegaCoupling_thumbnail.png?ext=.png",
+      imagen: "/acoplamientos/omega-elastomeric.jpg",
       caracteristicas: language === 'es' 
         ? ["Alta absorción de vibraciones", "Compensación de desalineaciones", "Bajo mantenimiento", "Instalación sin desmontaje"]
         : ["High vibration absorption", "Misalignment compensation", "Low maintenance", "Installation without dismounting"],
@@ -43,7 +43,7 @@ const AcoplamientosRexnord = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos elastoméricos compactos para espacios reducidos y aplicaciones con restricciones dimensionales. Excelente relación potencia/tamaño."
         : "Compact elastomeric couplings for tight spaces and applications with dimensional restrictions. Excellent power/size ratio.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Viva/img_vivaCoupling_thumbnail.png?ext=.png",
+      imagen: "/acoplamientos/viva-elastomeric.jpg",
       caracteristicas: language === 'es' 
         ? ["Diseño compacto", "Alto torque en poco espacio", "Resistencia química", "Larga vida útil"]
         : ["Compact design", "High torque in small space", "Chemical resistance", "Long service life"],
@@ -69,7 +69,7 @@ const AcoplamientosRexnord = () => {
       descripcion: language === 'es' 
         ? "Tecnología avanzada de discos compuestos para máxima flexibilidad angular y axial. Diseño libre de mantenimiento para aplicaciones críticas."
         : "Advanced composite disc technology for maximum angular and axial flexibility. Maintenance-free design for critical applications.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Disc%20Couplings/Composite%20Disc%20Couplings/img_compositeDiscCoupling_thumbnail.jpg?ext=.jpg",
+      imagen: "/acoplamientos/composite-disc.jpg",
       caracteristicas: language === 'es' 
         ? ["Cero mantenimiento", "Máxima flexibilidad", "Resistencia a la fatiga", "Balanceado dinámico"]
         : ["Zero maintenance", "Maximum flexibility", "Fatigue resistance", "Dynamic balance"],
@@ -95,7 +95,7 @@ const AcoplamientosRexnord = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos especializados para transmisiones industriales pesadas. Construcción robusta para condiciones operativas severas y cargas extremas."
         : "Specialized couplings for heavy industrial transmissions. Robust construction for severe operating conditions and extreme loads.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Rexnord/CAD/CAD%20Item%20Images/1088-XTSR71_andXTSR52.jpg?ext=.jpg",
+      imagen: "/acoplamientos/thomas-xtsr.jpg",
       caracteristicas: language === 'es' 
         ? ["Construcción robusta", "Servicio pesado", "Alta confiabilidad", "Resistencia a impactos"]
         : ["Robust construction", "Heavy duty service", "High reliability", "Impact resistance"],
@@ -169,128 +169,199 @@ const AcoplamientosRexnord = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E\")", backgroundSize: '100px 100px'}}></div>
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://es.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/omega-hotspots.jpg?lang=es-mx&ext=.jpg" 
+            alt={language === 'es' ? 'Acoplamientos Rexnord' : 'Rexnord Couplings'}
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
+          />
+        </div>
 
-          <div className="absolute inset-0 z-0 opacity-[0.08]">
-            <img src="https://es.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/omega-hotspots.jpg?lang=es-mx&ext=.jpg" alt="Acoplamientos Industriales Rexnord" className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
-          </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
 
-          <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(220, 38, 38, 0.03) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
-
-          <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
-            <div className="mb-6 sm:mb-8 animate-fade-in-up">
-              <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-                <div className="w-2 h-2 bg-corporate-red rounded-full mr-3" style={{backgroundColor: 'rgb(139, 0, 0)'}}></div>
-                <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Representación Exclusiva Rexnord' : 'Exclusive Rexnord Representation'}</span>
-              </div>
-            </div>
-
-            <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '200', letterSpacing: '0.01em', lineHeight: '1.1'}}>
-                {language === 'es' ? 'ACOPLAMIENTOS' : 'COUPLINGS'}
-              </h1>
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4" style={{background: 'linear-gradient(to right, transparent, rgb(139, 0, 0))'}}></div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl sm:text-4xl lg:text-5xl font-bold" style={{
-                  fontFamily: 'Inter, system-ui, sans-serif', 
-                  fontWeight: '800', 
-                  background: 'linear-gradient(135deg, rgb(139, 0, 0) 0%, rgb(139, 0, 0) 50%, rgb(139, 0, 0) 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  letterSpacing: '-0.02em', 
-                  lineHeight: '1.1'
-                }}>
-                  REXNORD
-                </h2>
-                <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4" style={{background: 'linear-gradient(to right, rgb(139, 0, 0), transparent)'}}></div>
-              </div>
-            </div>
-
-            <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300', letterSpacing: '0.01em'}}>
-              {language === 'es' 
-                ? <>Acoplamientos industriales <strong className="text-white font-normal">Rexnord de alta performance</strong> para <strong className="text-white font-normal">transmisión de potencia</strong> en <strong className="text-white font-normal">aplicaciones críticas</strong> con garantía internacional.</>
-                : <>High-performance <strong className="text-white font-normal">Rexnord industrial couplings</strong> for <strong className="text-white font-normal">power transmission</strong> in <strong className="text-white font-normal">critical applications</strong> with international warranty.</>}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-              <Link 
-                to="/contact" 
-                className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Navegación */}
-        <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600">
-              <Link to="/services" className="hover:text-corporate-red transition-colors">
-                {language === 'es' ? 'Servicios' : 'Services'}
-              </Link>
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <Link to="/services/ingenieria-materiales" className="hover:text-corporate-red transition-colors">
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+          
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
-              </Link>
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <span className="text-corporate-red font-medium">{language === 'es' ? 'Acoplamientos Rexnord' : 'Rexnord Couplings'}</span>
+              </span>
             </div>
           </div>
-        </section>
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? (
+              <>
+                ACOPLAMIENTOS{' '}
+                <span className="text-corporate-red">REXNORD</span>
+              </>
+            ) : (
+              <>
+                REXNORD{' '}
+                <span className="text-corporate-red">COUPLINGS</span>
+              </>
+            )}
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Representación oficial Rexnord: Omega, Viva, Addax, Thomas XTSR, Euroflex para aplicaciones industriales críticas. Ingeniería de aplicación y soporte técnico especializado.'
+              : 'Official Rexnord representation: Omega, Viva, Addax, Thomas XTSR, Euroflex for critical industrial applications. Application engineering and specialized technical support.'}
+          </p>
+
+          {/* CTA */}
+          <a 
+            href="#catalogo" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Ver catálogo' : 'View catalog'}
+          </a>
+        </div>
+
+        {/* Deslizar */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center text-white/80 animate-bounce">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Navegación - Breadcrumb */}
+      <section className="py-3 sm:py-4 lg:py-6 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs lg:text-sm text-gray-600 overflow-x-auto">
+            <Link to="/services" className="hover:text-corporate-red transition-colors whitespace-nowrap flex-shrink-0">
+              {language === 'es' ? 'Servicios' : 'Services'}
+            </Link>
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <Link to="/services/ingenieria-materiales" className="hover:text-corporate-red transition-colors whitespace-nowrap flex-shrink-0">
+              {language === 'es' ? 'Materiales' : 'Materials'}
+            </Link>
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-corporate-red font-medium whitespace-nowrap flex-shrink-0">{language === 'es' ? 'Rexnord' : 'Rexnord'}</span>
+          </nav>
+        </div>
+      </section>
 
         {/* REPRESENTACIÓN EXCLUSIVA REXNORD */}
-        <section id="scroll-content" className="py-12 sm:py-16 lg:py-20 bg-white">
+        <section id="scroll-content" className="py-12 sm:py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
+            {/* Header */}
+            <div className="mb-10 sm:mb-14 lg:mb-20">
+              <div className="inline-flex items-center bg-gray-100 border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-gray-700 text-[11px] sm:text-xs font-semibold tracking-wide uppercase">{language === 'es' ? 'Representación Exclusiva' : 'Exclusive Representation'}</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-2 sm:mb-4 leading-tight">
+                {language === 'es' ? 'Acoplamientos' : 'Rexnord'}
+                <span className="block font-semibold text-corporate-red mt-0.5 sm:mt-1">{language === 'es' ? 'Rexnord Originales' : 'Original Couplings'}</span>
+              </h2>
+            </div>
+
+            {/* Main Content - Two Column */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-start">
+              {/* Left Column */}
               <div>
-                <div className="inline-flex items-center bg-gray-50 border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
-                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-                  <span className="text-gray-700 text-xs sm:text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Representación Exclusiva' : 'Exclusive Representation'}</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  <span className="font-semibold text-corporate-red">{language === 'es' ? 'Acoplamientos Rexnord' : 'Rexnord Couplings'}</span> {language === 'es' ? 'Originales' : 'Original'}
-                </h3>
-                <div className="space-y-3 sm:space-y-4 text-sm sm:text-sm sm:text-base text-gray-600 leading-relaxed">
-                  <p>{language === 'es' 
-                    ? <>Como <strong>representantes exclusivos de Rexnord</strong>, SERVIN Ingeniería ofrece la línea completa de acoplamientos industriales para transmisión de potencia en aplicaciones críticas.</>
-                    : <>As <strong>exclusive Rexnord representatives</strong>, SERVIN Engineering offers the complete line of industrial couplings for power transmission in critical applications.</>}</p>
-                  <p>{language === 'es' 
-                    ? <>Los acoplamientos Rexnord están diseñados para operar con <strong>máxima confiabilidad</strong> en condiciones severas, cubriendo un amplio rango de potencias según modelo y aplicación.</>
-                    : <>Rexnord couplings are designed to operate with <strong>maximum reliability</strong> under severe conditions, covering a wide power range depending on model and application.</>}</p>
-                  <p>{language === 'es' ? <>SERVIN Ingeniería brinda <strong>soporte técnico especializado</strong> en:</> : <>SERVIN Engineering provides <strong>specialized technical support</strong> in:</>}</p>
-                  <ul className="list-disc list-inside text-sm sm:text-sm sm:text-base text-gray-600 ml-4">
-                    <li>{language === 'es' ? 'selección de producto' : 'product selection'}</li>
-                    <li>{language === 'es' ? 'análisis de aplicación' : 'application analysis'}</li>
-                    <li>{language === 'es' ? 'provisión de repuestos originales' : 'original spare parts supply'}</li>
-                  </ul>
+                <div className="space-y-5 sm:space-y-8">
+                  {/* First Block */}
+                  <div>
+                    <h3 className="text-base sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">{language === 'es' ? 'Representantes Autorizados' : 'Authorized Representatives'}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      {language === 'es'
+                        ? 'Como representantes exclusivos de Rexnord en la región, ofrecemos la línea completa de acoplamientos industriales para transmisión de potencia en aplicaciones críticas.'
+                        : 'As exclusive Rexnord representatives in the region, we offer the complete line of industrial couplings for power transmission in critical applications.'}
+                    </p>
+                  </div>
+
+                  {/* Second Block */}
+                  <div>
+                    <h3 className="text-base sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">{language === 'es' ? 'Máxima Confiabilidad' : 'Maximum Reliability'}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      {language === 'es'
+                        ? 'Los acoplamientos Rexnord están diseñados para operar con máxima confiabilidad en condiciones severas, cubriendo un amplio rango de potencias según modelo y aplicación.'
+                        : 'Rexnord couplings are designed to operate with maximum reliability under severe conditions, covering a wide range of power capacities depending on model and application.'}
+                    </p>
+                  </div>
+
+                  {/* Services Block */}
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">{language === 'es' ? 'Soporte Técnico Especializado' : 'Specialized Technical Support'}</h3>
+                    <ul className="space-y-2 sm:space-y-3">
+                      <li className="flex items-start gap-2 sm:gap-3">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-corporate-red rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <span className="text-xs sm:text-sm lg:text-base text-gray-700">{language === 'es' ? 'Selección de producto' : 'Product selection'}</span>
+                      </li>
+                      <li className="flex items-start gap-2 sm:gap-3">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-corporate-red rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <span className="text-xs sm:text-sm lg:text-base text-gray-700">{language === 'es' ? 'Análisis de aplicación' : 'Application analysis'}</span>
+                      </li>
+                      <li className="flex items-start gap-2 sm:gap-3">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-corporate-red rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <span className="text-xs sm:text-sm lg:text-base text-gray-700">{language === 'es' ? 'Provisión de repuestos originales' : 'Original spare parts supply'}</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-              
-              <div className="text-center">
-                <img 
-                  src="https://es.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/omega-hotspots.jpg?lang=es-mx&ext=.jpg"
-                  alt="Acoplamientos Rexnord Industriales"
-                  className="w-full h-64 sm:h-80 object-cover rounded-xl shadow-lg mb-6"
-                />
-                <div className="grid grid-cols-2 gap-3 sm:gap-6">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 rounded-xl border border-gray-200">
-                    <div className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-corporate-red mb-1 sm:mb-2">6</div>
-                    <div className="text-xs sm:text-xs sm:text-sm text-gray-600">{language === 'es' ? 'líneas de productos Rexnord' : 'Rexnord product lines'}</div>
+
+              {/* Right Column - Image & Stats */}
+              <div className="flex flex-col gap-5 sm:gap-8">
+                {/* Image */}
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <img 
+                    src="https://es.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/omega-hotspots.jpg?lang=es-mx&ext=.jpg"
+                    alt="Acoplamientos Rexnord Industriales"
+                    className="w-full h-48 sm:h-64 lg:h-80 object-cover"
+                  />
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="bg-corporate-red rounded-lg p-4 sm:p-6 lg:p-8 text-white border border-red-600">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-light mb-1 sm:mb-2">6</div>
+                    <p className="text-[10px] sm:text-xs lg:text-sm font-semibold tracking-wide leading-tight">{language === 'es' ? 'LÍNEAS DE PRODUCTOS' : 'PRODUCT LINES'}</p>
                   </div>
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 rounded-xl border border-gray-200">
-                    <div className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-corporate-red mb-1 sm:mb-2">100%</div>
-                    <div className="text-xs sm:text-xs sm:text-sm text-gray-600">{language === 'es' ? 'productos originales certificados' : 'certified original products'}</div>
+                  <div className="bg-gray-900 rounded-lg p-4 sm:p-6 lg:p-8 text-white border border-gray-700">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-light mb-1 sm:mb-2">100%</div>
+                    <p className="text-[10px] sm:text-xs lg:text-sm font-semibold tracking-wide leading-tight">{language === 'es' ? 'ORIGINALES' : 'ORIGINAL'}</p>
                   </div>
                 </div>
               </div>
@@ -622,66 +693,64 @@ const AcoplamientosRexnord = () => {
         </section>
 
         {/* CONTACTO FINAL */}
-        <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
+        <section className="py-10 sm:py-14 lg:py-20 relative overflow-hidden" 
           style={{
             background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
           }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-7xl mx-auto">
-              
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Ingeniería de Aplicación' : 'Application Engineering'}</span>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
+                <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
+                <span className="text-white/90 text-[10px] sm:text-xs lg:text-sm font-medium tracking-wide uppercase">{language === 'es' ? 'Ingeniería de Aplicación' : 'Application Engineering'}</span>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl lg:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <h2 className="text-xl sm:text-2xl lg:text-5xl font-light text-white mb-4 sm:mb-6 leading-tight">
                 {language === 'es' 
-                  ? <>¿Necesita asesoramiento especializado <span className="block font-bold mt-2">en acoplamientos industriales?</span></>
-                  : <>Need specialized advice <span className="block font-bold mt-2">on industrial couplings?</span></>}
+                  ? <>¿Necesita asesoramiento <span className="block font-bold mt-1 sm:mt-2">especializado?</span></>
+                  : <>Need specialized <span className="block font-bold mt-1 sm:mt-2">advice?</span></>}
               </h2>
               
-              <p className="text-base sm:text-lg lg:text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p className="text-xs sm:text-base lg:text-lg text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === 'es' 
-                  ? 'Nuestro equipo lo asesora en la selección, provisión y soporte técnico de acoplamientos Rexnord.'
-                  : 'Our team advises you on the selection, supply and technical support of Rexnord couplings.'}
+                  ? 'Selección, provisión y soporte técnico de acoplamientos Rexnord.'
+                  : 'Selection, supply and technical support for Rexnord couplings.'}
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Link 
                   to="/contact"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-base sm:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                  style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                  className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-white text-xs sm:text-sm lg:text-base font-bold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  style={{ color: '#8B0000' }}
                 >
-                  <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
+                  {language === 'es' ? 'Cotización Técnica' : 'Technical Quote'}
                 </Link>
                 
                 <Link 
                   to="/services/ingenieria-materiales"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base sm:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                  className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm lg:text-base font-semibold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   </svg>
-                  {language === 'es' ? 'Ver Ingeniería de Materiales' : 'View Materials Engineering'}
+                  {language === 'es' ? 'Materiales' : 'Materials'}
                 </Link>
               </div>
               
-              <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                  <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? '+30 años' : '+30 years'}</div>
-                  <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Experiencia en transmisión' : 'Transmission experience'}</div>
+              <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-3 sm:px-4 lg:px-6 py-2.5 sm:py-3 lg:py-4 text-center">
+                  <div className="text-white font-bold text-xs sm:text-sm lg:text-base mb-0.5">{language === 'es' ? '+30 años' : '+30 yrs'}</div>
+                  <div className="text-white/70 text-[9px] sm:text-[10px] lg:text-xs leading-tight">{language === 'es' ? 'Experiencia' : 'Experience'}</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                  <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>✓ Rexnord</div>
-                  <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Representante oficial' : 'Official representative'}</div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-3 sm:px-4 lg:px-6 py-2.5 sm:py-3 lg:py-4 text-center">
+                  <div className="text-white font-bold text-xs sm:text-sm lg:text-base mb-0.5">✓ Rexnord</div>
+                  <div className="text-white/70 text-[9px] sm:text-[10px] lg:text-xs leading-tight">{language === 'es' ? 'Oficial' : 'Official'}</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                  <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Soporte Técnico' : 'Technical Support'}</div>
-                  <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Ingeniería + Provisión' : 'Engineering + Supply'}</div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-3 sm:px-4 lg:px-6 py-2.5 sm:py-3 lg:py-4 text-center">
+                  <div className="text-white font-bold text-xs sm:text-sm lg:text-base mb-0.5">{language === 'es' ? 'Soporte' : 'Support'}</div>
+                  <div className="text-white/70 text-[9px] sm:text-[10px] lg:text-xs leading-tight">{language === 'es' ? 'Técnico' : '24/7'}</div>
                 </div>
               </div>
             </div>

@@ -1,8 +1,8 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { getNewsById } from '../utils/newsManager';
 import RichContentRenderer from '../components/ui/RichContentRenderer';
 import { useLanguage } from '../context/LanguageContext';
+import { useNews } from '../context/NewsContext';
 
 const NewsDetail = () => {
   const { language } = useLanguage();
@@ -14,37 +14,41 @@ const NewsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [newsItem, setNewsItem] = useState(null);
+  const { getNewsItem } = useNews();
 
   // Helper functions for bilingual content
   const getTitle = (news) => {
-    if (language === 'en' && news.titleEn) {
-      return news.titleEn;
+    if (language === 'en' && news.title_en) {
+      return news.title_en;
     }
     return news.title;
   };
 
   const getSummary = (news) => {
-    if (language === 'en' && news.summaryEn) {
-      return news.summaryEn;
+    if (language === 'en' && news.summary_en) {
+      return news.summary_en;
     }
     return news.summary;
   };
 
   const getContent = (news) => {
-    if (language === 'en' && news.contentEn) {
-      return news.contentEn;
+    if (language === 'en' && news.content_en) {
+      return news.content_en;
     }
     return news.content;
   };
 
   useEffect(() => {
-    const item = getNewsById(id);
-    if (item && item.status === 'published') {
-      setNewsItem(item);
-    } else {
-      navigate('/news');
-    }
-  }, [id, navigate]);
+    const loadNews = async () => {
+      const item = await getNewsItem(id);
+      if (item && item.status === 'published') {
+        setNewsItem(item);
+      } else {
+        navigate('/news');
+      }
+    };
+    loadNews();
+  }, [id, navigate, getNewsItem]);
 
   if (!newsItem) {
     return (
@@ -58,8 +62,10 @@ const NewsDetail = () => {
   }
 
   const formatDate = (dateString) => {
+    const [year, month, day] = dateString.split('-');
+    const date = new Date(year, month - 1, day);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(language === 'es' ? 'es-AR' : 'en-US', options);
+    return date.toLocaleDateString(language === 'es' ? 'es-AR' : 'en-US', options);
   };
 
   return (
@@ -79,7 +85,7 @@ const NewsDetail = () => {
           </>
         )}
         
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 pb-12 pt-32">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 pb-10 pt-28 sm:pt-32">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs sm:text-sm text-white/50 mb-8" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             <Link to="/" className="hover:text-white transition-colors">{language === 'es' ? 'Inicio' : 'Home'}</Link>
@@ -98,7 +104,7 @@ const NewsDetail = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15] max-w-4xl" style={{ 
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] max-w-4xl" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.02em'
           }}>
@@ -111,10 +117,10 @@ const NewsDetail = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           {/* Summary */}
-          <p className="text-xl lg:text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-12 font-light" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-10 md:mb-12 font-light" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             {getSummary(newsItem)}
           </p>
 
@@ -122,7 +128,7 @@ const NewsDetail = () => {
           <div className="w-16 h-[2px] bg-corporate-red mb-12"></div>
 
           {/* Content */}
-          <div className="prose prose-lg prose-gray max-w-none" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+          <div className="prose prose-base sm:prose-lg lg:prose-xl prose-gray max-w-none prose-headings:text-xl sm:prose-headings:text-2xl lg:prose-headings:text-3xl prose-p:leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             <RichContentRenderer content={getContent(newsItem)} />
           </div>
 
@@ -142,47 +148,81 @@ const NewsDetail = () => {
         </div>
       </section>
 
-      {/* Elegant CTA */}
-      <section className="py-20 lg:py-28 bg-corporate-red">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            {/* Left Content */}
-            <div className="lg:max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-[2px] bg-white"></div>
-                <span className="text-white/60 text-[10px] sm:text-xs font-medium tracking-[0.2em] uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Contáctenos' : 'Contact Us'}
-                </span>
-              </div>
-              <h3 className="text-2xl lg:text-xl sm:text-2xl lg:text-3xl font-semibold text-white mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? '¿Tiene un proyecto en mente?' : 'Have a project in mind?'}
-              </h3>
-              <p className="text-white/70 text-sm sm:text-base" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' 
-                  ? 'Nuestros especialistas están listos para asesorarlo.'
-                  : 'Our specialists are ready to assist you.'}
-              </p>
+      {/* CTA Section */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-xs font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Comencemos su proyecto' : "Let's start your project"}
+              </span>
             </div>
 
-            {/* Right CTA */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            {/* Title */}
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight" style={{ 
+              fontFamily: 'Inter, system-ui, sans-serif',
+              letterSpacing: '-0.02em'
+            }}>
+              {language === 'es' ? (
+                <>¿Tiene un proyecto <span className="text-corporate-red">industrial</span>?</>
+              ) : (
+                <>Have an <span className="text-corporate-red">industrial</span> project?</>
+              )}
+            </h2>
+
+            {/* Description */}
+            <p className="text-sm sm:text-base text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ 
+              fontFamily: 'Inter, system-ui, sans-serif',
+              fontWeight: '300'
+            }}>
+              {language === 'es' 
+                ? 'Nuestro equipo de especialistas está listo para brindarle soluciones técnicas adaptadas a sus necesidades industriales.'
+                : 'Our team of specialists is ready to provide you with technical solutions tailored to your industrial needs.'}
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/contact" 
-                className="group inline-flex items-center justify-center px-6 py-3.5 bg-white text-corporate-red font-semibold rounded-lg hover:bg-gray-100 transition-all"
+                className="group inline-flex items-center justify-center px-8 py-4 bg-corporate-red text-white font-semibold hover:bg-[#6B0000] transition-all"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {language === 'es' ? 'Solicitar Consulta' : 'Request Consultation'}
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link 
                 to="/services" 
-                className="inline-flex items-center justify-center px-6 py-3.5 text-white font-medium rounded-lg border border-white/30 hover:border-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 text-white font-medium border-2 border-white/20 hover:border-white/40 hover:bg-white/10 transition-all"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                {language === 'es' ? 'Ver Servicios' : 'View Services'}
+                {language === 'es' ? 'Explorar Servicios' : 'Explore Services'}
               </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-3xl mx-auto mt-16 pt-12 border-t border-white/10">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>+30</div>
+                <div className="text-[11px] sm:text-xs md:text-sm text-white/60 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Años de experiencia' : 'Years of experience'}
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>+500</div>
+                <div className="text-[11px] sm:text-xs md:text-sm text-white/60 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Proyectos completados' : 'Completed projects'}
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>24/7</div>
+                <div className="text-[11px] sm:text-xs md:text-sm text-white/60 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Soporte técnico' : 'Technical support'}
+                </div>
+              </div>
             </div>
           </div>
         </div>

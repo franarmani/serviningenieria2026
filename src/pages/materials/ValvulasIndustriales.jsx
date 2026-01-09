@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import velanData from '../../data/velanCatalogoCompleto.json';
+import velanData from '../../data/velanCatalogoBilingue.json';
 
 const ValvulasIndustriales = () => {
   const { language, t, getLocalizedField } = useLanguage();
@@ -28,77 +28,201 @@ const ValvulasIndustriales = () => {
 
   // Categorías reales según catálogo oficial SERVIN
   const categorias = [
-    { id: 'todos', nombre: 'Todos', nombreCorto: 'Todos', cantidad: contarPorCategoria('todos') },
-    { id: 'esclusas-globo-retencion', nombre: 'Esclusas / Globo / Retención', nombreCorto: 'Esclusas', cantidad: contarPorCategoria('esclusas-globo-retencion') },
-    { id: 'esfericas-mariposas-diafragma', nombre: 'Esféricas / Mariposas / Diafragma', nombreCorto: 'Esféricas', cantidad: contarPorCategoria('esfericas-mariposas-diafragma') },
-    { id: 'especiales', nombre: 'Servicios Especiales', nombreCorto: 'Especiales', cantidad: contarPorCategoria('especiales') },
-    { id: 'seguridad', nombre: 'Seguridad y Automatización', nombreCorto: 'Seguridad', cantidad: contarPorCategoria('seguridad') }
+    { 
+      id: 'todos', 
+      nombre: language === 'es' ? 'Todos' : 'All', 
+      nombreCorto: language === 'es' ? 'Todos' : 'All', 
+      cantidad: contarPorCategoria('todos') 
+    },
+    { 
+      id: 'esclusas-globo-retencion', 
+      nombre: language === 'es' ? 'Esclusas / Globo / Retención' : 'Gate / Globe / Check', 
+      nombreCorto: language === 'es' ? 'Globo' : 'Globe', 
+      cantidad: contarPorCategoria('esclusas-globo-retencion') 
+    },
+    { 
+      id: 'esfericas-mariposas-diafragma', 
+      nombre: language === 'es' ? 'Esféricas / Mariposas / Diafragma' : 'Spherical / Butterfly / Diaphragm', 
+      nombreCorto: language === 'es' ? 'Esféricas' : 'Spherical', 
+      cantidad: contarPorCategoria('esfericas-mariposas-diafragma') 
+    },
+    { 
+      id: 'especiales', 
+      nombre: language === 'es' ? 'Servicios Especiales' : 'Special Services', 
+      nombreCorto: language === 'es' ? 'Especiales' : 'Special', 
+      cantidad: contarPorCategoria('especiales') 
+    },
+    { 
+      id: 'seguridad', 
+      nombre: language === 'es' ? 'Seguridad y Automatización' : 'Safety & Automation', 
+      nombreCorto: language === 'es' ? 'Seguridad' : 'Safety', 
+      cantidad: contarPorCategoria('seguridad') 
+    }
   ];
 
-  // Filtrado combinado
-  const valvulasFiltradas = valvulas.filter(v => {
-    const matchCategoria = categoriaActiva === 'todos' || v.categoria === categoriaActiva;
-    const matchProductLine = productLineActiva === 'todos' || v.product_line === productLineActiva;
-    const matchBusqueda = busqueda === '' || 
-      v.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-      v.descripcion.toLowerCase().includes(busqueda.toLowerCase()) ||
-      v.normas?.some(n => n.toLowerCase().includes(busqueda.toLowerCase())) ||
-      v.aplicaciones?.some(a => a.toLowerCase().includes(busqueda.toLowerCase()));
-    return matchCategoria && matchProductLine && matchBusqueda;
-  });
+  // Función para determinar el tipo de válvula y su prioridad
+  const getTipoPrioridad = (valvula) => {
+    const nombre = valvula.nombre.toLowerCase();
+    const normas = valvula.normas?.join(' ').toLowerCase() || '';
+    const productLine = valvula.product_line.toLowerCase();
+    
+    // 1. ESCLUSAS (Gate) - prioridad por tipo
+    if (nombre.includes('gate') || nombre.includes('compuerta')) {
+      if (nombre.includes('api 600')) return { tipo: 1, subtipo: 1 }; // API 600
+      if (nombre.includes('cryogenic') || nombre.includes('criogénic')) return { tipo: 1, subtipo: 2 }; // Criogénicas
+      if (productLine.includes('cast steel')) return { tipo: 1, subtipo: 3 }; // Cast steel comunes
+      if (productLine.includes('small forged')) return { tipo: 1, subtipo: 4 }; // Small forged
+      if (productLine.includes('large forged')) return { tipo: 1, subtipo: 5 }; // Large forged
+      if (productLine.includes('corrosion resistant') || nombre.includes('api 603')) return { tipo: 1, subtipo: 6 }; // API 603
+      return { tipo: 1, subtipo: 7 }; // Otras esclusas
+    }
+    
+    // 2. GLOBO (Globe) - prioridad por tipo
+    if (nombre.includes('globe') || nombre.includes('globo')) {
+      if (nombre.includes('api 623')) return { tipo: 2, subtipo: 1 }; // API 623
+      if (nombre.includes('cryogenic') || nombre.includes('criogénic')) return { tipo: 2, subtipo: 2 }; // Criogénicas
+      if (productLine.includes('cast steel')) return { tipo: 2, subtipo: 3 }; // Cast steel comunes
+      if (productLine.includes('small forged')) return { tipo: 2, subtipo: 4 }; // Small forged
+      if (productLine.includes('corrosion resistant')) return { tipo: 2, subtipo: 5 }; // Resistentes a corrosión
+      return { tipo: 2, subtipo: 6 }; // Otros globos
+    }
+    
+    // 3. RETENCIÓN (Check) - prioridad por tipo
+    if (nombre.includes('check') || nombre.includes('retención')) {
+      if (productLine.includes('dual plate')) return { tipo: 3, subtipo: 1 }; // Dual plate
+      if (productLine.includes('pilot-operated')) return { tipo: 3, subtipo: 2 }; // Pilot operated
+      if (productLine.includes('cast steel')) return { tipo: 3, subtipo: 3 }; // Cast steel
+      if (productLine.includes('small forged')) return { tipo: 3, subtipo: 4 }; // Small forged
+      return { tipo: 3, subtipo: 5 }; // Otras retención
+    }
+    
+    // 4. ESFÉRICAS (Ball/Spherical) - prioridad por tipo
+    if (nombre.includes('ball') || nombre.includes('esférica') || nombre.includes('bola')) {
+      if (nombre.includes('cryogenic') || nombre.includes('criogénic')) return { tipo: 4, subtipo: 1 }; // Criogénicas
+      if (productLine.includes('metal-seated') || productLine.includes('metal seated')) return { tipo: 4, subtipo: 2 }; // Metal seated
+      if (productLine.includes('severe service')) return { tipo: 4, subtipo: 3 }; // Severe service
+      if (productLine.includes('resilient-seated') || productLine.includes('resilient seated')) return { tipo: 4, subtipo: 4 }; // Resilient seated
+      return { tipo: 4, subtipo: 5 }; // Otras esféricas
+    }
+    
+    // 5. MARIPOSA (Butterfly)
+    if (nombre.includes('butterfly') || nombre.includes('mariposa')) {
+      if (productLine.includes('triple offset')) return { tipo: 5, subtipo: 1 }; // Triple offset
+      return { tipo: 5, subtipo: 2 }; // Otras mariposas
+    }
+    
+    // 6. PRESSURE SEAL
+    if (productLine.includes('pressure seal')) {
+      return { tipo: 6, subtipo: 1 };
+    }
+    
+    // 7. ESPECIALES - API 6A/6D, HF Alkylation, etc
+    if (productLine.includes('api 6a')) return { tipo: 7, subtipo: 1 };
+    if (productLine.includes('hydrofluoric') || nombre.includes('api 602')) return { tipo: 7, subtipo: 2 };
+    if (productLine.includes('digital')) return { tipo: 7, subtipo: 3 };
+    
+    // 999. Sin clasificar
+    return { tipo: 999, subtipo: 999 };
+  };
+
+  // Filtrado y ordenamiento combinado
+  const valvulasFiltradas = valvulas
+    .filter(v => {
+      const matchCategoria = categoriaActiva === 'todos' || v.categoria === categoriaActiva;
+      const matchProductLine = productLineActiva === 'todos' || v.product_line === productLineActiva;
+      const matchBusqueda = busqueda === '' || 
+        v.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+        v.descripcion.toLowerCase().includes(busqueda.toLowerCase()) ||
+        v.normas?.some(n => n.toLowerCase().includes(busqueda.toLowerCase())) ||
+        v.aplicaciones?.some(a => a.toLowerCase().includes(busqueda.toLowerCase()));
+      return matchCategoria && matchProductLine && matchBusqueda;
+    })
+    .sort((a, b) => {
+      // Ordenar según tipo y subtipo
+      const prioridadA = getTipoPrioridad(a);
+      const prioridadB = getTipoPrioridad(b);
+      
+      // Primero por tipo, luego por subtipo
+      if (prioridadA.tipo !== prioridadB.tipo) {
+        return prioridadA.tipo - prioridadB.tipo;
+      }
+      return prioridadA.subtipo - prioridadB.subtipo;
+    });
 
   return (
     <div className="min-h-screen">
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, rgb(255, 255, 255) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
-        <div className="absolute inset-0 z-0 opacity-[0.08]">
-          <img src="https://www.dombor.com/wp-content/uploads/2023/06/image.png" alt="Industrial Background" className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/about/velan.jpg" 
+            alt={language === 'es' ? 'Válvulas Industriales' : 'Industrial Valves'} 
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
+          />
         </div>
-        <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(139, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
-        
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-16 lg:py-20">
-          <div className="mb-4 sm:mb-6 lg:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 mb-4 sm:mb-6 lg:mb-8">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 sm:mr-3" style={{backgroundColor: '#8B0000'}}></div>
-              <span className="text-white/80 text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                {language === 'es' ? 'Catálogo Oficial SERVIN' : 'SERVIN Official Catalog'}
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+          
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
               </span>
             </div>
           </div>
 
-          <div className="mb-4 sm:mb-6 lg:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-2 sm:mb-3 lg:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 200, letterSpacing: '0.01em', lineHeight: '1.1'}}>
-              {language === 'es' ? 'VÁLVULAS' : 'INDUSTRIAL'}
-            </h1>
-            
-            <div className="flex items-center justify-center mb-3 sm:mb-4 lg:mb-6">
-              <div className="h-px w-6 sm:w-8 lg:w-16 mr-2 sm:mr-3 lg:mr-4" style={{background: 'linear-gradient(to right, transparent, #8B0000)'}}></div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
-                {language === 'es' ? 'INDUSTRIALES' : 'VALVES'}
-              </h2>
-              <div className="h-px w-6 sm:w-8 lg:w-16 ml-2 sm:ml-3 lg:ml-4" style={{background: 'linear-gradient(to right, #8B0000, transparent)'}}></div>
-            </div>
-          </div>
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? (
+              <>
+                VÁLVULAS{' '}
+                <span className="text-corporate-red">VELAN</span>
+              </>
+            ) : (
+              <>
+                VELAN{' '}
+                <span className="text-corporate-red">VALVES</span>
+              </>
+            )}
+          </h1>
 
-          <p className="text-xs sm:text-sm lg:text-sm sm:text-base xl:text-sm sm:text-base md:text-lg text-white/70 mb-6 sm:mb-8 lg:mb-16 max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-2" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 300, letterSpacing: '0.01em'}}>
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
             {language === 'es' 
-              ? 'Válvulas API 600, 602, 603, esféricas, mariposa, seguridad y servicios especiales.'
-              : 'API 600, 602, 603 valves, ball valves, butterfly, safety and special services.'}
+              ? 'Válvulas industriales de alto rendimiento: API 600, 602, 603, esféricas, mariposa, seguridad y servicios especiales para aplicaciones críticas.'
+              : 'High-performance industrial valves: API 600, 602, 603, spherical, butterfly, safety and special services for critical applications.'}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 lg:gap-6 animate-fade-in-up-delay-3 px-2">
-            <Link className="btn-primary w-full sm:w-48 lg:w-64 h-10 sm:h-11 lg:h-14 text-xs sm:text-sm lg:text-sm sm:text-base" to="/contact" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-              {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
-            </Link>
-            <a href="#catalogo" className="btn-secondary w-full sm:w-48 lg:w-64 h-10 sm:h-11 lg:h-14 text-xs sm:text-sm lg:text-sm sm:text-base" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Ver Catálogo' : 'View Catalog'}</a>
-          </div>
+          {/* CTA */}
+          <a 
+            href="#catalogo" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Ver catálogo' : 'View catalog'}
+          </a>
         </div>
 
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30 hidden sm:block">
+        {/* Deslizar */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
-            <span className="text-[10px] sm:text-[10px] sm:text-xs font-medium mb-1.5 sm:mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
             <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
             </svg>
@@ -107,280 +231,112 @@ const ValvulasIndustriales = () => {
       </section>
 
       {/* Navegación */}
-      <section className="py-3 sm:py-4 lg:py-6 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="flex items-center text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <Link to="/services" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Servicios' : 'Services'}</Link>
-            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 mx-1 sm:mx-1.5 lg:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
+            <Link 
+              to="/services"
+              className="hover:text-corporate-red transition-colors flex-shrink-0"
+            >
+              {language === 'es' ? 'Servicios' : 'Services'}
+            </Link>
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <Link to="/services/ingenieria-materiales" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Materiales' : 'Materials'}</Link>
-            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 mx-1 sm:mx-1.5 lg:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <Link 
+              to="/services/ingenieria-materiales"
+              className="hover:text-corporate-red transition-colors flex-shrink-0"
+            >
+              {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
+            </Link>
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium flex-shrink-0" style={{color: '#8B0000'}}>{language === 'es' ? 'Válvulas' : 'Valves'}</span>
+            <span className="text-corporate-red font-medium flex-shrink-0">{language === 'es' ? 'Válvulas Industriales' : 'Industrial Valves'}</span>
           </div>
         </div>
       </section>
 
-      {/* Filtros por Categoría - Diseño Premium */}
-      <section id="catalogo" className="py-6 sm:py-8 lg:py-12 bg-gradient-to-b from-white to-gray-50/50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          
-          {/* Header de filtros */}
-          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-[10px] sm:text-xs font-medium tracking-wider uppercase mb-3 sm:mb-4">
-              <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-              </svg>
-              {language === 'es' ? 'Explorar Catálogo' : 'Explore Catalog'}
-            </div>
-            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Encuentra la' : 'Find the'} <span className="font-bold" style={{ color: '#8B0000' }}>{language === 'es' ? 'válvula ideal' : 'ideal valve'}</span>
-            </h2>
+      {/* Banner de exclusividad Velan (versión discreta) */}
+      <section className="bg-gray-100 border-y border-gray-200 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-2">
+          <div className="mt-0.5 text-corporate-red">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 6h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
-
-          {/* Contenedor principal de filtros */}
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-gray-100 overflow-hidden">
-            
-            {/* Barra de búsqueda premium */}
-            <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
-              <div className="relative max-w-2xl mx-auto">
-                <div className="absolute inset-0 bg-white/5 rounded-xl sm:rounded-2xl blur-xl"></div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder={language === 'es' ? 'Buscar válvulas...' : 'Search valves...'}
-                    value={busqueda}
-                    onChange={(e) => setBusqueda(e.target.value)}
-                    className="w-full px-3 sm:px-4 lg:px-5 py-3 sm:py-3.5 lg:py-4 pl-10 sm:pl-12 lg:pl-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl text-white placeholder-white/50 focus:bg-white/15 focus:border-white/40 focus:ring-2 focus:ring-corporate-red/50 focus:outline-none transition-all text-xs sm:text-sm lg:text-sm sm:text-base"
-                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                  />
-                  <div className="absolute left-2.5 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-corporate-red/80 rounded-md sm:rounded-lg flex items-center justify-center">
-                    <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                  {busqueda && (
-                    <button 
-                      onClick={() => setBusqueda('')}
-                      className="absolute right-2.5 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-white/10 hover:bg-white/20 rounded-md sm:rounded-lg flex items-center justify-center transition-colors"
-                    >
-                      <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                  )}
-                </div>
-                {busqueda && (
-                  <div className="mt-1.5 sm:mt-2 text-center text-white/60 text-[10px] sm:text-[10px] sm:text-xs">
-                    {language === 'es' ? 'Resultados:' : 'Results:'} "<span className="text-white font-medium">{busqueda}</span>"
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Sección de filtros */}
-            <div className="p-3 sm:p-4 lg:p-6 space-y-4 sm:space-y-5 lg:space-y-6">
-              
-              {/* Línea de Producto - Dropdown estilizado */}
-              <div>
-                <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-gray-100 rounded-md sm:rounded-lg flex items-center justify-center">
-                    <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-                  <h3 className="text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm font-semibold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Línea de Producto' : 'Product Line'}
-                  </h3>
-                  {productLineActiva !== 'todos' && (
-                    <button 
-                      onClick={() => setProductLineActiva('todos')}
-                      className="ml-auto text-[10px] sm:text-[10px] sm:text-xs text-corporate-red hover:text-corporate-red/80 font-medium flex items-center gap-0.5 sm:gap-1"
-                    >
-                      <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                      {language === 'es' ? 'Limpiar' : 'Clear'}
-                    </button>
-                  )}
-                </div>
-                
-                {/* Grid de líneas de producto */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1.5 sm:gap-2">
-                  {productLines.map((pl) => (
-                    <button
-                      key={pl}
-                      onClick={() => setProductLineActiva(pl)}
-                      className={`group relative px-2 sm:px-2.5 lg:px-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[10px] sm:text-[10px] sm:text-xs font-medium transition-all duration-300 text-left overflow-hidden ${
-                        productLineActiva === pl
-                          ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg'
-                          : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-gray-300'
-                      }`}
-                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                    >
-                      <div className="flex items-center gap-1.5 sm:gap-2">
-                        <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full flex-shrink-0 transition-colors ${
-                          productLineActiva === pl ? 'bg-corporate-red' : 'bg-gray-300 group-hover:bg-gray-400'
-                        }`}></div>
-                        <span className="truncate text-[10px] sm:text-[10px] sm:text-xs">{pl === 'todos' ? (language === 'es' ? 'Todas' : 'All') : pl}</span>
-                      </div>
-                      {productLineActiva === pl && (
-                        <div className="absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8">
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 absolute top-0.5 right-0.5 sm:top-1 sm:right-1 text-white/50" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200"></div>
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-white px-3 sm:px-4 text-[10px] sm:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">{language === 'es' ? 'Tipo' : 'Type'}</span>
-                </div>
-              </div>
-
-              {/* Categorías - Cards visuales */}
-              <div>
-                <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-corporate-red/10 rounded-md sm:rounded-lg flex items-center justify-center">
-                    <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm font-semibold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Categoría' : 'Category'}
-                  </h3>
-                </div>
-
-                {/* Mobile: Grid de cards */}
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 sm:hidden">
-                  {categorias.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => setCategoriaActiva(cat.id)}
-                      className={`relative p-3 rounded-lg transition-all duration-300 text-left ${
-                        categoriaActiva === cat.id
-                          ? 'bg-gradient-to-br from-[#8B0000] to-[#6B0000] text-white shadow-lg shadow-corporate-red/20'
-                          : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
-                      }`}
-                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                    >
-                      <div className="flex flex-col">
-                        <span className="text-[10px] font-semibold leading-tight">{cat.nombreCorto}</span>
-                        <span className={`text-base sm:text-lg md:text-xl font-bold mt-0.5 ${categoriaActiva === cat.id ? 'text-white' : 'text-corporate-red'}`}>
-                          {cat.cantidad}
-                        </span>
-                        <span className={`text-[9px] ${categoriaActiva === cat.id ? 'text-white/70' : 'text-gray-500'}`}>
-                          {language === 'es' ? 'productos' : 'products'}
-                        </span>
-                      </div>
-                      {categoriaActiva === cat.id && (
-                        <div className="absolute top-1.5 right-1.5">
-                          <svg className="w-3 h-3 text-white/70" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      )}
-                    </button>
-                  ))}
-                </div>
-                
-                {/* Desktop: Cards horizontales premium */}
-                <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                  {categorias.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => setCategoriaActiva(cat.id)}
-                      className={`group relative p-4 rounded-xl transition-all duration-300 text-left overflow-hidden ${
-                        categoriaActiva === cat.id
-                          ? 'bg-gradient-to-br from-[#8B0000] to-[#6B0000] text-white shadow-lg shadow-corporate-red/25 scale-[1.02]'
-                          : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 hover:shadow-md'
-                      }`}
-                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                    >
-                      {/* Background decoration */}
-                      <div className={`absolute -right-4 -bottom-4 w-20 h-20 rounded-full transition-all duration-300 ${
-                        categoriaActiva === cat.id ? 'bg-white/10' : 'bg-gray-200/50 group-hover:bg-gray-300/50'
-                      }`}></div>
-                      
-                      <div className="relative flex flex-col">
-                        <span className={`text-xl sm:text-2xl lg:text-3xl font-bold ${categoriaActiva === cat.id ? 'text-white' : 'text-corporate-red'}`}>
-                          {cat.cantidad}
-                        </span>
-                        <span className="text-[10px] sm:text-xs font-semibold mt-1 leading-tight">{cat.nombreCorto}</span>
-                        <span className={`text-[10px] mt-0.5 ${categoriaActiva === cat.id ? 'text-white/60' : 'text-gray-500'}`}>
-                          {cat.id === 'todos' ? 'total' : (language === 'es' ? 'productos' : 'products')}
-                        </span>
-                      </div>
-                      
-                      {categoriaActiva === cat.id && (
-                        <div className="absolute top-3 right-3">
-                          <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                        </div>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Footer con resumen de filtros activos */}
-            <div className="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 bg-gray-50 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
-              <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm text-gray-600">
-                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-                <span>
-                  <strong className="text-gray-900">{valvulasFiltradas.length}</strong> {language === 'es' ? 'productos' : 'products'}
-                </span>
-              </div>
-              
-              {(categoriaActiva !== 'todos' || productLineActiva !== 'todos' || busqueda) && (
-                <button 
-                  onClick={() => {
-                    setCategoriaActiva('todos');
-                    setProductLineActiva('todos');
-                    setBusqueda('');
-                  }}
-                  className="inline-flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 lg:px-4 py-1.5 sm:py-2 bg-white border border-gray-200 rounded-md sm:rounded-lg text-[10px] sm:text-[10px] sm:text-xs font-medium text-gray-600 hover:text-corporate-red hover:border-corporate-red/30 transition-colors"
-                >
-                  <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                  {language === 'es' ? 'Limpiar' : 'Clear'}
-                </button>
-              )}
-            </div>
-          </div>
+          <p className="text-[12px] sm:text-sm text-gray-800 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}>
+            {language === 'es'
+              ? 'Representantes exclusivos de Velan en Argentina desde diciembre de 2000.'
+              : 'Exclusive Velan representative in Argentina since December 2000.'}
+            <span className="ml-2 text-corporate-red font-semibold">Velan.</span>
+          </p>
         </div>
       </section>
 
       {/* Catálogo de Válvulas */}
-      <section className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="text-center mb-5 sm:mb-6 lg:mb-10">
-            <h2 className="text-base sm:text-lg lg:text-2xl xl:text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-2 sm:mb-3 lg:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {categoriaActiva === 'todos' ? (language === 'es' ? 'Catálogo ' : 'Complete ') : ''}<span className="font-semibold text-corporate-red">{categoriaActiva === 'todos' ? (language === 'es' ? 'Completo' : 'Catalog') : categorias.find(c => c.id === categoriaActiva)?.nombre}</span>
+      <section id="catalogo" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Catálogo de' : 'Valve'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Válvulas' : 'Catalog'}</span>
             </h2>
-            <p className="text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-              {valvulasFiltradas.length} {language === 'es' ? 'productos con certificación' : 'certified products'}
+            <p className="text-sm sm:text-sm sm:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 mb-6 sm:mb-8" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+              {language === 'es' 
+                ? 'Válvulas industriales certificadas para aplicaciones críticas. Cumplimiento API 600, 602, 603 y normativas internacionales.'
+                : 'Certified industrial valves for critical applications. API 600, 602, 603 compliance and international standards.'}
             </p>
+
+            {/* Barra de búsqueda */}
+            <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder={language === 'es' ? 'Buscar válvulas...' : 'Search valves...'}
+                  value={busqueda}
+                  onChange={(e) => setBusqueda(e.target.value)}
+                  className="w-full px-4 py-3 pl-12 bg-white border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:border-corporate-red focus:ring-2 focus:ring-corporate-red/20 focus:outline-none transition-all text-sm sm:text-base"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                />
+                <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                {busqueda && (
+                  <button 
+                    onClick={() => setBusqueda('')}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Botones de Filtro por Categoría */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              {categorias.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setCategoriaActiva(cat.id)}
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-xs sm:text-sm font-medium transition-all duration-300 ${
+                    categoriaActiva === cat.id
+                      ? 'bg-corporate-red text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-200 hover:border-corporate-red/50 hover:text-corporate-red'
+                  }`}
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                >
+                  {cat.nombreCorto} ({cat.cantidad})
+                </button>
+              ))}
+            </div>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 lg:gap-4">
+          {/* Grid de válvulas */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {valvulasFiltradas.map((valvula) => (
               <Link 
                 key={valvula.id}
@@ -497,7 +453,7 @@ const ValvulasIndustriales = () => {
             </h2>
             
             <p className="text-xs sm:text-sm lg:text-sm sm:text-base xl:text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 lg:mb-10 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Asesoramiento técnico en' : 'Technical advice on'} <strong className="text-white font-semibold">{language === 'es' ? 'válvulas API, esféricas, mariposa y seguridad' : 'API, ball, butterfly and safety valves'}</strong>.
+              {language === 'es' ? 'Asesoramiento técnico en' : 'Technical advice on'} <strong className="text-white font-semibold">{language === 'es' ? 'válvulas API, esféricas, mariposa y seguridad' : 'API, spherical, butterfly and safety valves'}</strong>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 lg:gap-5 justify-center items-center px-2">

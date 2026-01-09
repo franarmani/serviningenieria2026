@@ -8,6 +8,88 @@ const IndustrialEngineering = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const renderHero = () => (
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/about/servin.png" 
+          alt="Ingeniería Industrial"
+          className="w-full h-full object-cover" 
+          style={{ filter: 'blur(3px)' }}
+        />
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+      {/* Content */}
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12 lg:py-16 xl:py-20">
+        
+        {/* Badge */}
+        <div className="mb-6 sm:mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 sm:py-2.5">
+            <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
+            <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'División Técnica' : 'Technical Division'}
+            </span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8" style={{ 
+          fontFamily: 'Inter, system-ui, sans-serif',
+          letterSpacing: '-0.03em',
+          lineHeight: '1.1'
+        }}>
+          {language === 'es' ? (
+            <>
+              Ingeniería{' '}
+              <span className="text-corporate-red">Industrial</span>
+            </>
+          ) : (
+            <>
+              Industrial{' '}
+              <span className="text-corporate-red">Engineering</span>
+            </>
+          )}
+        </h1>
+
+        {/* Description */}
+        <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ 
+          fontFamily: 'Inter, system-ui, sans-serif',
+          fontWeight: '300'
+        }}>
+          {language === 'es' 
+            ? 'Optimización de procesos industriales mediante metodologías Lean Six Sigma, automatización Industry 4.0 y sistemas de gestión integrados.'
+            : 'Industrial process optimization through Lean Six Sigma methodologies, Industry 4.0 automation and integrated management systems.'}
+        </p>
+
+        {/* CTA */}
+        <a 
+          href="#capabilities" 
+          className="inline-flex items-center text-sm sm:text-base text-white hover:text-corporate-red font-medium transition-colors"
+          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+        >
+          {language === 'es' ? 'Ver más' : 'Learn more'}
+        </a>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="flex flex-col items-center text-white/80 animate-bounce">
+          <span className="text-[10px] sm:text-xs font-medium mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            {language === 'es' ? 'Deslizar' : 'Scroll'}
+          </span>
+          <svg className="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+
   const capabilities = [
     {
       title: language === 'es' ? 'Optimización de Procesos Industriales' : 'Industrial Process Optimization',
@@ -122,93 +204,7 @@ const IndustrialEngineering = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with advanced gradient and texture */}
-        <div className="absolute inset-0 bg-gradient-to-br from-corporate-dark via-slate-900 to-corporate-dark">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(196,53,56,0.15)_0%,transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(196,53,56,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute inset-0 opacity-30">
-            <img 
-              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop" 
-              alt={language === 'es' ? 'Ingeniería Industrial' : 'Industrial Engineering'} 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-corporate-dark/80 via-corporate-dark/40 to-corporate-dark/60"></div>
-        </div>
-        
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
-          {/* Corporate badge */}
-          <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
-              <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Optimización industrial' : 'Industrial Optimization'}
-              </span>
-            </div>
-          </div>
-          
-          {/* Executive title */}
-          <div className="mb-8 sm:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-4 sm:mb-6" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '200',
-              letterSpacing: '0.01em',
-              lineHeight: '0.9'
-            }}>
-              {language === 'es' ? 'INGENIERÍA' : 'INDUSTRIAL'}
-            </h1>
-            <div className="flex items-center justify-center mb-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-corporate-red mr-4"></div>
-              <h2 className="text-6xl sm:text-7xl lg:text-9xl xl:text-10xl font-bold" style={{ 
-                fontFamily: 'Inter, system-ui, sans-serif',
-                fontWeight: '800',
-                background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                letterSpacing: '0.02em'
-              }}>
-                {language === 'es' ? 'INDUSTRIAL' : 'ENGINEERING'}
-              </h2>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-corporate-red ml-4"></div>
-            </div>
-          </div>
-          
-          {/* Corporate subtitle */}
-          <p className="text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2" style={{ 
-            fontFamily: 'Inter, system-ui, sans-serif',
-            fontWeight: '300',
-            letterSpacing: '0.01em'
-          }}>
-            {language === 'es' ? (
-              <><strong className="text-white font-normal">Optimización de procesos industriales</strong>, automatización avanzada, ingeniería de plantas y <strong className="text-white font-normal">sistemas de gestión de calidad</strong> con metodologías Industry 4.0.</>
-            ) : (
-              <><strong className="text-white font-normal">Industrial process optimization</strong>, advanced automation, plant engineering and <strong className="text-white font-normal">quality management systems</strong> with Industry 4.0 methodologies.</>
-            )}
-          </p>
-          
-          {/* Executive actions */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 animate-fade-in-up-delay-3">
-            <Link 
-              to="/contact" 
-              className="btn-primary"
-              style={{ width: '280px', height: '64px', fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Consultoría Especializada' : 'Specialized Consulting'}
-            </Link>
-            
-            <Link 
-              to="/services" 
-              className="btn-secondary"
-              style={{ width: '280px', height: '64px', fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Ver Todos los Servicios' : 'View All Services'}
-            </Link>
-          </div>
-        </div>
-      </section>
+      {renderHero()}
 
       {/* Capabilities Section Premium */}
       <section id="capabilities" className="section-padding bg-white">

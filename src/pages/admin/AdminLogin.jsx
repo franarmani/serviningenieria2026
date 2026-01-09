@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginAdmin } from '../../utils/newsManager';
+import { loginAdmin } from '../../services/newsService';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -86,7 +86,7 @@ const AdminLogin = () => {
                 value={formData.username}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-corporate-gray-300 rounded-lg focus:ring-2 focus:ring-corporate-red focus:border-transparent transition-all duration-300"
-                placeholder="Ingrese su usuario"
+                placeholder="admin"
                 required
                 autoFocus
               />

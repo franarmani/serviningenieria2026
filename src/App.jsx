@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/layout/Layout'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -35,7 +36,6 @@ import Clientes from './pages/Clientes'
 import Novedades from './pages/Novedades'
 import NoticiaDetail from './pages/NoticiaDetail'
 import Contact from './pages/Contact'
-import News from './pages/News'
 import NewsDetail from './pages/NewsDetail'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
@@ -43,6 +43,7 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 function App() {
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         {/* Main Pages */}
         <Route path="/" element={<Home />} />

@@ -14,8 +14,8 @@ const menuConfig = {
         submenu: [
           { 
             name: 'Acoplamientos Rexnord', 
-            path: '/services/acoplamientos-rexnord',
-            description: 'Omega, Viva, Addax, Thomas y Euroflex'
+            path: '/materiales/acoplamientos',
+            description: 'Omega, Viva, Addax, Thomas XTSR, Euroflex'
           },
           { 
             name: 'Reductores Falk CT-Series', 
@@ -25,12 +25,12 @@ const menuConfig = {
           { 
             name: 'Accesorios para Cañerías', 
             path: '/materiales/accesorios-caneria',
-            description: 'Codos, tees, reducciones - ASME'
+            description: 'Codos, Te, Bridas, Reducciones, Caños'
           },
           { 
             name: 'Válvulas Industriales', 
             path: '/materiales/valvulas',
-            description: 'Compuerta, globo, retención, mariposa'
+            description: 'Compuertas, globos, retenciones, mariposas'
           }
         ]
       },
@@ -116,7 +116,7 @@ const Header = () => {
   const mainMenuItems = [
     { name: t('inicio'), path: '/' },
     { name: t('empresa'), path: '/about' },
-    { name: t('servicios'), path: '/services', hasDropdown: true },
+    { name: t('divisiones'), path: '/services', hasDropdown: true },
     { name: t('novedades'), path: '/novedades' },
     { name: t('contacto'), path: '/contact' }
   ];
@@ -168,7 +168,7 @@ const Header = () => {
   );
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-[12000] transition-all duration-500 ${
       isScrolled 
         ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
         : 'bg-black/20 backdrop-blur-md'
@@ -177,11 +177,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
           
           {/* Logo Corporativo */}
-          <Link to="/" className="flex items-center group transition-all duration-300">
+          <Link to="/" className="flex items-center group transition-all duration-300 relative z-[12001]">
             <img 
               src="/logocompleto.png" 
               alt="SERVIN INGENIERÍA S.A." 
-              className="h-12 w-auto transition-all duration-300 group-hover:brightness-110 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto transition-all duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -243,254 +243,178 @@ const Header = () => {
                   }`}></div>
                 </Link>
 
-                {/* Mega Menú Servicios - CONTENEDOR ÚNICO */}
+                {/* Mega Menú Servicios - DISEÑO CORPORATIVO SOBRIO */}
                 {item.hasDropdown && isServicesOpen && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 pt-2 z-[60]">
-                    <div className="w-[520px] bg-[#121212] backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 relative overflow-visible">
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 pt-4 z-[60]">
+                    <div className="w-[680px] bg-[#0a0a0a] rounded-none border-t-2 border-corporate-red shadow-[0_20px_50px_-12px_rgba(0,0,0,0.9)]">
                       
-                      {/* Header del menú */}
-                      <div className="px-6 py-4 border-b border-white/10 bg-gradient-to-r from-red-900/10 to-transparent">
-                        <h3 className="text-white font-semibold text-sm tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {/* Header minimalista */}
+                      <div className="px-8 py-6 border-b border-white/5">
+                        <h3 className="text-white/90 font-light text-xs tracking-[0.2em] uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '0.2em' }}>
                           {t('servicios')}
                         </h3>
-                        <p className="text-white/60 text-xs mt-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                          {language === 'es' ? 'Soluciones especializadas certificadas' : 'Certified specialized solutions'}
-                        </p>
                       </div>
 
-                      {/* Contenedor principal con scroll */}
-                      <div className="p-3 relative overflow-y-auto max-h-[calc(100vh-200px)]">
+                      {/* Lista de servicios - diseño simple y directo */}
+                      <div className="py-4">
                         
-                        {/* Items del menú */}
-                        <div className="space-y-1">
-
-                          {/* Ingeniería de Materiales CON SUBMENÚ INTEGRADO */}
-                          <div 
-                            className="relative"
-                            onMouseEnter={() => setIsMaterialesOpen(true)}
-                            onMouseLeave={() => setIsMaterialesOpen(false)}
-                          >
-                            <Link
-                              to="/services/ingenieria-materiales"
-                              className="dropdown-item flex items-center justify-between px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200 group"
-                              style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                                <div>
-                                  <div className="font-medium">{t('ingenieriaMateriales')}</div>
-                                  <div className="text-xs text-white/50 mt-0.5">{language === 'es' ? 'Materiales y componentes especializados' : 'Specialized materials and components'}</div>
-                                </div>
-                              </div>
-                              <svg 
-                                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </Link>
-
-                            {/* SUBMENÚ PROFESIONAL */}
-                            {isMaterialesOpen && (
-                              <div className="absolute left-full top-0 ml-2 w-96 bg-[#121212] border border-white/10 rounded-xl shadow-2xl z-[9999] animate-fade-in">
-                                
-                                {/* Header del submenú */}
-                                <div className="px-4 py-3 border-b border-white/10 bg-gradient-to-r from-red-900/10 to-transparent">
-                                  <p className="text-red-800 text-xs font-semibold tracking-wider uppercase">
-                                    {language === 'es' ? 'CATEGORÍAS ESPECIALIZADAS' : 'SPECIALIZED CATEGORIES'}
-                                  </p>
-                                  <p className="text-white/50 text-xs mt-1">
-                                    {t('stockPermanente')}
-                                  </p>
-                                </div>
-
-                                {/* Items del submenú */}
-                                <div className="p-2 space-y-1">
-                                  <Link
-                                    to="/services/acoplamientos-rexnord"
-                                    className="dropdown-item block px-4 py-3 rounded-lg transition-all duration-200 hover:bg-white/5 group"
-                                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-1 h-1 bg-red-900/60 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                                      <div>
-                                        <div className="font-medium text-white text-sm group-hover:text-red-800 transition-colors duration-200">
-                                          {t('acoplamientosRexnord')}
-                                        </div>
-                                        <div className="text-xs text-white/50 mt-0.5">
-                                          {t('acoplamientosDesc')}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Link>
-
-                                  <Link
-                                    to="/services/falk-ct-series"
-                                    className="dropdown-item block px-4 py-3 rounded-lg transition-all duration-200 hover:bg-white/5 group"
-                                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-1 h-1 bg-red-900/60 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                                      <div>
-                                        <div className="font-medium text-white text-sm group-hover:text-red-800 transition-colors duration-200">
-                                          {t('reductoresFalk')}
-                                        </div>
-                                        <div className="text-xs text-white/50 mt-0.5">
-                                          {t('reductoresDesc')}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Link>
-
-                                  <Link
-                                    to="/materiales/accesorios-caneria"
-                                    className="dropdown-item block px-4 py-3 rounded-lg transition-all duration-200 hover:bg-white/5 group"
-                                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-1 h-1 bg-red-900/60 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                                      <div>
-                                        <div className="font-medium text-white text-sm group-hover:text-red-800 transition-colors duration-200">
-                                          {t('accesoriosCaneria')}
-                                        </div>
-                                        <div className="text-xs text-white/50 mt-0.5">
-                                          {t('accesoriosDesc')}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Link>
-
-                                  <Link
-                                    to="/materiales/valvulas"
-                                    className="dropdown-item block px-4 py-3 rounded-lg transition-all duration-200 hover:bg-white/5 group"
-                                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-1 h-1 bg-red-900/60 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                                      <div>
-                                        <div className="font-medium text-white text-sm group-hover:text-red-800 transition-colors duration-200">
-                                          {t('valvulasIndustriales')}
-                                        </div>
-                                        <div className="text-xs text-white/50 mt-0.5">
-                                          {t('valvulasDesc')}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Link>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                          
+                        {/* Ingeniería de Materiales con submenú */}
+                        <div 
+                          className="relative group"
+                          onMouseEnter={() => setIsMaterialesOpen(true)}
+                          onMouseLeave={() => setIsMaterialesOpen(false)}
+                        >
                           <Link
-                            to="/services/planta"
-                            className="dropdown-item flex items-center px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
+                            to="/services/ingenieria-materiales"
+                            className="flex items-center justify-between px-8 py-4 text-white/80 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-corporate-red"
+                            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                           >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{t('plantaMantenimiento')}</div>
-                                <div className="text-xs text-white/50 mt-0.5">{t('plantaDesc')}</div>
-                              </div>
+                            <div>
+                              <div className="text-sm font-medium tracking-wide">{t('ingenieriaMateriales')}</div>
+                              <div className="text-xs text-white/40 mt-1 font-light">{language === 'es' ? 'Stock permanente y entrega rápida' : 'Permanent stock and fast delivery'}</div>
                             </div>
+                            <svg className="w-4 h-4 text-white/30 group-hover:text-corporate-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                            </svg>
                           </Link>
 
-                          <Link
-                            to="/services/laboratorio-movil"
-                            className="dropdown-item flex items-center px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{language === 'es' ? 'Laboratorio Móvil' : 'Mobile Laboratory'}</div>
-                                <div className="text-xs text-white/50 mt-0.5">{language === 'es' ? 'Servicios técnicos en campo' : 'Field technical services'}</div>
+                          {/* Submenú minimalista */}
+                          {isMaterialesOpen && (
+                            <div className="absolute left-full top-0 w-[380px] bg-[#0a0a0a] border-l border-white/5 shadow-[20px_0_50px_-12px_rgba(0,0,0,0.9)] z-[9999]">
+                              
+                              <div className="px-6 py-5 border-b border-white/5">
+                                <p className="text-white/40 text-[10px] tracking-[0.15em] uppercase font-light">
+                                  {language === 'es' ? 'Categorías' : 'Categories'}
+                                </p>
                               </div>
-                            </div>
-                          </Link>
 
-                          <Link
-                            to="/services/in-situ"
-                            className="dropdown-item flex items-center px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{t('calibracionInSitu')}</div>
-                                <div className="text-xs text-white/50 mt-0.5">{t('calibracionDesc')}</div>
-                              </div>
-                            </div>
-                          </Link>
+                              <div className="py-2">
+                                <Link
+                                  to="/materiales/acoplamientos"
+                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
+                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                                >
+                                  <div className="text-sm font-normal">{t('acoplamientosRexnord')}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">Omega, Viva, Addax, Thomas XTSR, Euroflex</div>
+                                </Link>
 
-                          <Link
-                            to="/services/inspecciones"
-                            className="dropdown-item flex items-center px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{t('inspeccionTanques')}</div>
-                                <div className="text-xs text-white/50 mt-0.5">{t('inspeccionDesc')}</div>
-                              </div>
-                            </div>
-                          </Link>
+                                <Link
+                                  to="/services/falk-ct-series"
+                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
+                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                                >
+                                  <div className="text-sm font-normal">{t('reductoresFalk')}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">CT-Series</div>
+                                </Link>
 
-                          <Link
-                            to="/services/tratamiento-tanques"
-                            className="dropdown-item flex items-center justify-between px-4 py-3 text-sm text-white/70 hover:bg-white/5 hover:text-white/90 rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-amber-500/70 rounded-full group-hover:bg-amber-400 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{t('revestimientoTanques')}</div>
-                                <div className="text-xs text-white/40 mt-0.5">{t('revestimientoDesc')}</div>
-                              </div>
-                            </div>
-                            <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded-full border border-amber-500/30 font-medium">
-                              {t('proximamente')}
-                            </span>
-                          </Link>
+                                <Link
+                                  to="/materiales/accesorios-caneria"
+                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
+                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                                >
+                                  <div className="text-sm font-normal">{t('accesoriosCaneria')}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">Codos, Te, Bridas, Reducciones, Caños</div>
+                                </Link>
 
-                          <Link
-                            to="/services/cabinas-granallado"
-                            className="dropdown-item flex items-center justify-between px-4 py-3 text-sm text-white/70 hover:bg-white/5 hover:text-white/90 rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-amber-500/70 rounded-full group-hover:bg-amber-400 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{t('cabinasGranallado')}</div>
-                                <div className="text-xs text-white/40 mt-0.5">{t('cabinasDesc')}</div>
+                                <Link
+                                  to="/materiales/valvulas"
+                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
+                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                                >
+                                  <div className="text-sm font-normal">{language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">{language === 'es' ? 'Esclusa, Globo, Retención, Mariposa, Esférica' : 'Gate, Globe, Check, Butterfly, Spherical'}</div>
+                                </Link>
                               </div>
                             </div>
-                            <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded-full border border-amber-500/30 font-medium">
-                              {t('proximamente')}
-                            </span>
-                          </Link>
-
-                          <Link
-                            to="/services/prefabricados"
-                            className="dropdown-item flex items-center justify-between px-4 py-3 text-sm text-white/70 hover:bg-white/5 hover:text-white/90 rounded-lg transition-all duration-200 group"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 bg-amber-500/70 rounded-full group-hover:bg-amber-400 transition-colors duration-200"></div>
-                              <div>
-                                <div className="font-medium">{language === 'es' ? 'Prefabricados' : 'Prefabrication'}</div>
-                                <div className="text-xs text-white/40 mt-0.5">{language === 'es' ? 'Piping y estructuras metálicas' : 'Piping and metal structures'}</div>
-                              </div>
-                            </div>
-                            <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded-full border border-amber-500/30 font-medium">
-                              {t('proximamente')}
-                            </span>
-                          </Link>
+                          )}
                         </div>
+
+                        {/* Resto de servicios - lista simple */}
+                        <Link
+                          to="/services/planta"
+                          className="flex items-center justify-between px-8 py-4 text-white/80 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-corporate-red"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{t('plantaMantenimiento')}</div>
+                            <div className="text-xs text-white/40 mt-1 font-light">2,639 m² certificados OPDS</div>
+                          </div>
+                        </Link>
+
+                        <Link
+                          to="/services/laboratorio-movil"
+                          className="flex items-center justify-between px-8 py-4 text-white/80 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-corporate-red"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{language === 'es' ? 'Laboratorio Móvil' : 'Mobile Laboratory'}</div>
+                            <div className="text-xs text-white/40 mt-1 font-light">{language === 'es' ? 'Servicios técnicos en campo' : 'Field technical services'}</div>
+                          </div>
+                        </Link>
+
+                        <Link
+                          to="/services/in-situ"
+                          className="flex items-center justify-between px-8 py-4 text-white/80 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-corporate-red"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{t('calibracionInSitu')}</div>
+                            <div className="text-xs text-white/40 mt-1 font-light">Sistema PREVENTEST</div>
+                          </div>
+                        </Link>
+
+                        <Link
+                          to="/services/inspecciones"
+                          className="flex items-center justify-between px-8 py-4 text-white/80 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-corporate-red"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{t('inspeccionTanques')}</div>
+                            <div className="text-xs text-white/40 mt-1 font-light">API 653 & END</div>
+                          </div>
+                        </Link>
+
+                        {/* Divisor sutil */}
+                        <div className="my-2 mx-8">
+                          <div className="h-px bg-white/5"></div>
+                        </div>
+
+                        {/* Servicios en desarrollo - minimalistas */}
+                        <Link
+                          to="/services/tratamiento-tanques"
+                          className="flex items-center justify-between px-8 py-4 text-white/40 hover:text-white/60 hover:bg-white/[0.01] transition-all duration-200 border-l-2 border-transparent"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{t('revestimientoTanques')}</div>
+                            <div className="text-xs text-white/20 mt-1 font-light">{language === 'es' ? 'En desarrollo' : 'In development'}</div>
+                          </div>
+                          <span className="text-[10px] text-white/30 tracking-wider">2026</span>
+                        </Link>
+
+                        <Link
+                          to="/services/cabinas-granallado"
+                          className="flex items-center justify-between px-8 py-4 text-white/40 hover:text-white/60 hover:bg-white/[0.01] transition-all duration-200 border-l-2 border-transparent"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{t('cabinasGranallado')}</div>
+                            <div className="text-xs text-white/20 mt-1 font-light">{language === 'es' ? 'En desarrollo' : 'In development'}</div>
+                          </div>
+                          <span className="text-[10px] text-white/30 tracking-wider">2026</span>
+                        </Link>
+
+                        <Link
+                          to="/services/prefabricados"
+                          className="flex items-center justify-between px-8 py-4 text-white/40 hover:text-white/60 hover:bg-white/[0.01] transition-all duration-200 border-l-2 border-transparent"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                        >
+                          <div>
+                            <div className="text-sm font-medium tracking-wide">{language === 'es' ? 'Prefabricados' : 'Prefabrication'}</div>
+                            <div className="text-xs text-white/20 mt-1 font-light">{language === 'es' ? 'En desarrollo' : 'In development'}</div>
+                          </div>
+                          <span className="text-[10px] text-white/30 tracking-wider">2026</span>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -609,7 +533,7 @@ const Header = () => {
           {/* Botón Menú Móvil */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden relative w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex flex-col items-center justify-center space-y-1 transition-all duration-300 hover:bg-white/20 group"
+            className="lg:hidden relative w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex flex-col items-center justify-center space-y-1 transition-all duration-300 hover:bg-white/20 group z-[12001]"
           >
             <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
             <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -618,10 +542,21 @@ const Header = () => {
         </div>
 
         {/* Menú Móvil */}
-        <div className={`lg:hidden transition-all duration-500 ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden bg-black/95 backdrop-blur-xl border-t border-white/10`}>
-          <nav className="px-6 py-6 space-y-3">
+        <div className={`lg:hidden fixed top-0 left-0 right-0 bottom-0 h-screen w-screen z-[20000] bg-[#0a0a0a] transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        } flex flex-col overflow-y-auto overscroll-contain pt-24 pb-10 px-6`} style={{ WebkitOverflowScrolling: 'touch' }}>
+          
+          {/* Botón cerrar explícito */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/30 group z-[20001]"
+          >
+            <svg className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <nav className="space-y-3 w-full">
             {mainMenuItems.map((item, index) => (
               <div key={index}>
                 {item.hasDropdown ? (
@@ -676,25 +611,32 @@ const Header = () => {
                     {menuConfig.servicios.items.map((service, serviceIndex) => (
                       <div key={serviceIndex}>
                         {service.hasSubmenu ? (
-                          <div
-                            onClick={() => setIsMaterialesOpen(!isMaterialesOpen)}
-                            className="flex items-center justify-between px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 cursor-pointer"
-                            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                          >
-                            <div>
+                          <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/0 hover:bg-white/5 transition-all duration-200">
+                            <Link
+                              to={service.path}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="flex-1 text-sm text-white/80 hover:text-white"
+                              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                            >
                               <div className="font-medium">{service.name}</div>
                               <div className="text-xs text-white/50 mt-0.5">{service.description}</div>
-                            </div>
-                            <svg 
-                              className={`w-3 h-3 transition-transform duration-200 ${
-                                isMaterialesOpen ? 'rotate-180' : ''
-                              }`}
-                              fill="none" 
-                              stroke="currentColor" 
-                              viewBox="0 0 24 24"
+                            </Link>
+                            <button
+                              type="button"
+                              onClick={() => setIsMaterialesOpen(!isMaterialesOpen)}
+                              className="p-2 text-white/70 hover:text-white"
                             >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                            </svg>
+                              <svg 
+                                className={`w-3 h-3 transition-transform duration-200 ${
+                                  isMaterialesOpen ? 'rotate-180' : ''
+                                }`}
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
                           </div>
                         ) : (
                           <Link
@@ -703,7 +645,14 @@ const Header = () => {
                             className="block px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
                             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                           >
-                            <div className="font-medium">{service.name}</div>
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium">{service.name}</span>
+                              {service.isComingSoon && (
+                                <span className="px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider bg-corporate-red/20 text-corporate-red border border-corporate-red/30 rounded-full">
+                                  {language === 'es' ? 'Próximamente' : 'Coming Soon'}
+                                </span>
+                              )}
+                            </div>
                             <div className="text-xs text-white/50 mt-0.5">{service.description}</div>
                           </Link>
                         )}

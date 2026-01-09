@@ -273,46 +273,71 @@ const AccesoriosIndustriales = () => {
     <div className="min-h-screen">
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, rgb(255, 255, 255) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
-        <div className="absolute inset-0 z-0 opacity-[0.08]">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" alt="Industrial Background" className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" 
+            alt="Industrial Background" 
+            className="w-full h-full object-cover" 
+            style={{filter: 'blur(3px)'}} 
+          />
         </div>
-        <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(139, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
         
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12 lg:py-16 xl:py-20">
+          {/* Badge */}
           <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <div className="w-2 h-2 rounded-full mr-3" style={{backgroundColor: '#8B0000'}}></div>
-              <span className="text-white/80 text-[10px] sm:text-xs md:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Stock Permanente · Entrega Rápida' : 'Permanent Stock · Fast Delivery'}</span>
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 sm:py-2.5">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+                Ingeniería de Materiales
+              </span>
             </div>
           </div>
 
-          <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-3 sm:mb-4 lg:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 200, letterSpacing: '0.01em', lineHeight: '1.1'}}>{language === 'es' ? 'ACCESORIOS PARA' : 'PIPE'}</h1>
-            
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="h-px w-8 sm:w-12 lg:w-16 mr-2 sm:mr-4" style={{background: 'linear-gradient(to right, transparent, #8B0000)'}}></div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>{language === 'es' ? 'CAÑERÍAS' : 'ACCESSORIES'}</h2>
-              <div className="h-px w-8 sm:w-12 lg:w-16 ml-2 sm:ml-4" style={{background: 'linear-gradient(to right, #8B0000, transparent)'}}></div>
-            </div>
-          </div>
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 animate-fade-in-up-delay-1" style={{
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em'
+          }}>
+            ACCESORIOS PARA <span className="text-corporate-red">CAÑERÍAS</span>
+          </h1>
 
-          <p className="text-xs sm:text-sm md:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-8 sm:mb-12 lg:mb-16 max-w-2xl lg:max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 300, letterSpacing: '0.01em'}}>
+          {/* Description */}
+          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2" style={{
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
             {language === 'es' 
               ? 'Bridas, cañerías, accesorios forjados, juntas y espárragos certificados ASME/ANSI con trazabilidad completa para la industria.'
               : 'Flanges, pipes, forged fittings, gaskets and ASME/ANSI certified studs with complete traceability for industry.'}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-xs sm:text-sm md:text-sm sm:text-base" to="/contact" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
-            <a href="#catalogo" className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-xs sm:text-sm md:text-sm sm:text-base" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Ver Catálogo' : 'View Catalog'}</a>
+          {/* CTA */}
+          <div className="animate-fade-in-up-delay-3">
+            <a 
+              href="#catalogo" 
+              className="inline-flex items-center text-sm sm:text-base text-white hover:text-corporate-red transition-colors duration-300"
+              style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+            >
+              <span className="mr-2">{language === 'es' ? 'Ver catálogo' : 'View Catalog'}</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
           </div>
         </div>
 
+        {/* Scroll Indicator */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
-            <span className="text-[10px] sm:text-[10px] sm:text-xs font-medium mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
+            <span className="text-xs font-medium mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
+            </span>
             <svg className="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
             </svg>

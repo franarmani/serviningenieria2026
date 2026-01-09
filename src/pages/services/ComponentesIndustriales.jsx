@@ -11,6 +11,88 @@ const ComponentesIndustriales = () => {
 
   const [filtroActivo, setFiltroActivo] = useState('todos');
 
+  // Hero Section first in return
+  const renderHero = () => (
+    <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/about/bridas-fojadas.jpg" 
+          alt="Accesorios para Cañerías Industriales"
+          className="w-full h-full object-cover" 
+          style={{ filter: 'blur(3px)' }}
+        />
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+      {/* Content */}
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+        
+        {/* Badge */}
+        <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+            <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+            <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'División Técnica' : 'Technical Division'}
+            </span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          fontFamily: 'Inter, system-ui, sans-serif',
+          letterSpacing: '-0.03em',
+          lineHeight: '1.1'
+        }}>
+          {language === 'es' ? (
+            <>
+              Accesorios para{' '}
+              <span className="text-corporate-red">Cañerías</span>
+            </>
+          ) : (
+            <>
+              Pipe{' '}
+              <span className="text-corporate-red">Fittings</span>
+            </>
+          )}
+        </h1>
+
+        {/* Description */}
+        <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+          fontFamily: 'Inter, system-ui, sans-serif',
+          fontWeight: '300'
+        }}>
+          {language === 'es' 
+            ? 'Distribución especializada de componentes industriales de marcas líderes: bridas, cañerías, válvulas y accesorios para la industria pesada.'
+            : 'Specialized distribution of industrial components from leading brands: flanges, pipes, valves and fittings for heavy industry.'}
+        </p>
+
+        {/* CTA */}
+        <a 
+          href="#catalogo" 
+          className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+        >
+          {language === 'es' ? 'Ver más' : 'Learn more'}
+        </a>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="flex flex-col items-center text-white/80 animate-bounce">
+          <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            {language === 'es' ? 'Deslizar' : 'Scroll'}
+          </span>
+          <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+
   // Todos los productos organizados por categoría - PROVEEDORES REALES SERVIN
   const catalogoCompleto = [
     {
@@ -311,79 +393,7 @@ const ComponentesIndustriales = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, rgb(255, 255, 255) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
-
-        <div className="absolute inset-0 z-0 opacity-[0.35]">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" alt="Industrial Background" className="w-full h-full object-cover" style={{filter: 'grayscale(30%) contrast(1.1)'}} />
-        </div>
-
-        <div className="absolute inset-0 z-10" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%)'}}></div>
-
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
-          
-          {/* Etiqueta superior */}
-          <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
-              <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'ACCESORIOS DE CAÑERÍA CERTIFICADOS' : 'CERTIFIED PIPE FITTINGS'}</span>
-            </div>
-          </div>
-
-          {/* Títulos */}
-          <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-3 sm:mb-4 lg:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 200, letterSpacing: '0.01em', lineHeight: '1.1'}}>{language === 'es' ? 'ACCESORIOS' : 'FITTINGS'}</h1>
-            
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #8B0000 0%, #A00000 50%, #8B0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
-                {language === 'es' ? 'PARA CAÑERÍAS' : 'FOR PIPING'}
-              </h2>
-
-              <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
-            </div>
-          </div>
-
-          {/* Descripción */}
-          <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 300, letterSpacing: '0.01em'}}>
-            {language === 'es' 
-              ? <><strong className="text-white font-normal">Suministro integral de bridas, cañerías, accesorios, juntas, espárragos, acoplamientos y aeroenfriadores</strong> con certificación completa y trazabilidad por lote según normas ANSI, ASME, API y DIN.</>
-              : <><strong className="text-white font-normal">Comprehensive supply of flanges, pipes, fittings, gaskets, studs, couplings and air coolers</strong> with full certification and lot traceability according to ANSI, ASME, API and DIN standards.</>}
-          </p>
-
-          {/* Botones */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link 
-              className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" 
-              to="/contact" 
-              style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-            >
-              {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
-            </Link>
-
-            <a 
-              href="#categorias" 
-              className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" 
-              style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-            >
-              {language === 'es' ? 'Ver Productos' : 'View Products'}
-            </a>
-          </div>
-        </div>
-
-        {/* Deslizar */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
-          <div className="flex flex-col items-center text-white/80 animate-bounce">
-            <span className="text-[10px] sm:text-xs font-medium mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
-            <svg className="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
-            </svg>
-          </div>
-        </div>
-
-      </section>
+      {renderHero()}
 
       {/* Navegación */}
       <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">

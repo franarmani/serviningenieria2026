@@ -47,7 +47,7 @@ const AcoplamientoDetail = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos elastoméricos bipartidos diseñados para transmisión de potencia confiable en aplicaciones industriales generales. Permiten absorber vibraciones, compensar desalineaciones y realizar instalaciones rápidas sin desmontar equipos."
         : "Two-piece elastomeric couplings designed for reliable power transmission in general industrial applications. They absorb vibrations, compensate for misalignment and allow quick installation without dismounting equipment.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Omega/img_omegaCoupling_thumbnail.png?ext=.png",
+      imagen: "/acoplamientos/omega-elastomeric.jpg",
       caracteristicas: language === 'es' 
         ? ["Alta absorción de vibraciones y choques", "Compensación de desalineaciones angular, paralela y axial", "Elemento flexible de uretano de larga duración", "Instalación sin desmontaje de equipos", "Bajo mantenimiento operativo", "Resistencia a ambientes industriales"]
         : ["High vibration and shock absorption", "Angular, parallel and axial misalignment compensation", "Long-lasting urethane flexible element", "Installation without dismounting equipment", "Low operational maintenance", "Resistance to industrial environments"],
@@ -75,7 +75,7 @@ const AcoplamientoDetail = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos elastoméricos compactos de alto torque, ideales para aplicaciones con restricciones dimensionales. Ofrecen excelente relación potencia/tamaño y mayor capacidad de transmisión en espacios reducidos."
         : "High-torque compact elastomeric couplings, ideal for applications with dimensional restrictions. They offer excellent power/size ratio and greater transmission capacity in tight spaces.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Elastomeric%20Couplings/Viva/img_vivaCoupling_thumbnail.png?ext=.png",
+      imagen: "/acoplamientos/viva-elastomeric.jpg",
       caracteristicas: language === 'es' 
         ? ["Diseño compacto optimizado", "Alto torque en espacios reducidos", "Resistencia química superior", "Construcción robusta y confiable", "Larga vida útil en servicio", "Fácil instalación y mantenimiento"]
         : ["Optimized compact design", "High torque in tight spaces", "Superior chemical resistance", "Robust and reliable construction", "Long service life", "Easy installation and maintenance"],
@@ -103,7 +103,7 @@ const AcoplamientoDetail = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos flexibles metálicos sin mantenimiento para aplicaciones de alta precisión, velocidad y temperatura."
         : "Maintenance-free metallic flexible couplings for high precision, speed and temperature applications.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Disc%20Couplings/Composite%20Disc%20Couplings/img_compositeDiscCoupling_thumbnail.jpg?ext=.jpg",
+      imagen: "/acoplamientos/composite-disc.jpg",
       caracteristicas: language === 'es' 
         ? ["Cero mantenimiento durante la vida útil", "Construcción totalmente metálica", "Alta precisión y repetibilidad", "Resistencia a temperaturas extremas", "Larga vida libre de fallas", "Respuesta dinámica excepcional"]
         : ["Zero maintenance throughout service life", "All-metal construction", "High precision and repeatability", "Extreme temperature resistance", "Long failure-free life", "Exceptional dynamic response"],
@@ -215,7 +215,7 @@ const AcoplamientoDetail = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos de discos compuestos diseñados para aplicaciones críticas de alta exigencia. Proveen máxima flexibilidad angular y axial, transmisión precisa de torque y operación libre de mantenimiento."
         : "Composite disc couplings designed for high-demand critical applications. They provide maximum angular and axial flexibility, precise torque transmission and maintenance-free operation.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Couplings/Disc%20Couplings/Composite%20Disc%20Couplings/img_compositeDiscCoupling_thumbnail.jpg?ext=.jpg",
+      imagen: "/acoplamientos/composite-disc.jpg",
       caracteristicas: language === 'es' 
         ? ["Cero mantenimiento", "Máxima flexibilidad", "Resistencia a la fatiga", "Balanceado dinámico", "Construcción libre de lubricación", "Larga vida útil"]
         : ["Zero maintenance", "Maximum flexibility", "Fatigue resistance", "Dynamic balance", "Lubrication-free construction", "Long service life"],
@@ -271,7 +271,7 @@ const AcoplamientoDetail = () => {
       descripcion: language === 'es' 
         ? "Acoplamientos industriales robustos para transmisiones pesadas y condiciones operativas severas. Diseñados para soportar cargas elevadas, impactos y ciclos exigentes con alta confiabilidad."
         : "Robust industrial couplings for heavy transmissions and severe operating conditions. Designed to withstand high loads, impacts and demanding cycles with high reliability.",
-      imagen: "https://www.rexnord.com/Rexnord/media/Rexnord/CAD/CAD%20Item%20Images/1088-XTSR71_andXTSR52.jpg?ext=.jpg",
+      imagen: "/acoplamientos/thomas-xtsr.jpg",
       caracteristicas: language === 'es' 
         ? ["Construcción robusta", "Servicio pesado", "Alta confiabilidad", "Resistencia a impactos", "Diseño para cargas extremas", "Larga vida útil"]
         : ["Robust construction", "Heavy duty service", "High reliability", "Impact resistance", "Design for extreme loads", "Long service life"],
@@ -362,83 +362,58 @@ const AcoplamientoDetail = () => {
       <div className="min-h-screen bg-white">
         
         {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E\")", backgroundSize: '100px 100px'}}></div>
-
-          <div className="absolute inset-0 z-0 opacity-[0.08]">
-            <img src={product.imagen} alt={product.nombre} className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
+        <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={product.imagen} 
+              alt={product.nombre} 
+              className="w-full h-full object-cover" 
+              style={{filter: 'blur(3px)'}}
+            />
           </div>
 
-          <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(220, 38, 38, 0.03) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
+          {/* Dark overlay */}
+          <div className="absolute inset-0 z-10 bg-black/75"></div>
 
-          <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
+          {/* Content */}
+          <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
             
-            <div className="mb-6 sm:mb-8 animate-fade-in-up">
-              <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-                <div className="w-2 h-2 bg-corporate-red rounded-full mr-3" style={{backgroundColor: 'rgb(139, 0, 0)'}}></div>
-                <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{product.tipo}</span>
+            {/* Badge */}
+            <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+              <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+                <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+                <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+                  Ingeniería de Materiales
+                </span>
               </div>
             </div>
 
-            <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-              {product.nombre.includes('Parts & Kits') ? (
-                <>
-                  <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-xl sm:text-2xl lg:text-3xl font-light text-white mb-4 sm:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '200', letterSpacing: '0.01em', lineHeight: '1.2'}}>
-                    Elastomeric
-                  </h1>
-                  <div className="flex items-center justify-center mb-4 sm:mb-6">
-                    <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4" style={{background: 'linear-gradient(to right, transparent, rgb(139, 0, 0))'}}></div>
-                    <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-xl sm:text-2xl lg:text-3xl font-bold" style={{
-                      fontFamily: 'Inter, system-ui, sans-serif', 
-                      fontWeight: '800', 
-                      background: 'linear-gradient(135deg, rgb(139, 0, 0) 0%, rgb(107, 0, 0) 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                      letterSpacing: '-0.01em', 
-                      lineHeight: '1.2'
-                    }}>
-                      Coupling Parts & Kits
-                    </h2>
-                    <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4" style={{background: 'linear-gradient(to right, rgb(139, 0, 0), transparent)'}}></div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '200', letterSpacing: '0.01em', lineHeight: '1.1'}}>
-                    {product.nombre.split(' ')[0]}
-                  </h1>
-                  <div className="flex items-center justify-center mb-4 sm:mb-6">
-                    <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4" style={{background: 'linear-gradient(to right, transparent, rgb(139, 0, 0))'}}></div>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl sm:text-4xl lg:text-5xl font-bold" style={{
-                      fontFamily: 'Inter, system-ui, sans-serif', 
-                      fontWeight: '800', 
-                      background: 'linear-gradient(135deg, rgb(139, 0, 0) 0%, rgb(107, 0, 0) 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                      letterSpacing: '-0.02em', 
-                      lineHeight: '1.1'
-                    }}>
-                      {product.nombre.split(' ').slice(1).join(' ')}
-                    </h2>
-                    <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4" style={{background: 'linear-gradient(to right, rgb(139, 0, 0), transparent)'}}></div>
-                  </div>
-                </>
-              )}
-            </div>
+            {/* Title */}
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 md:mb-10 animate-fade-in-up-delay-1" style={{
+              fontFamily: 'Inter, system-ui, sans-serif',
+              letterSpacing: '-0.03em'
+            }}>
+              {product.nombre.toUpperCase().split(' ').map((word, idx, arr) => (
+                idx === arr.length - 1 ? (
+                  <span key={idx} className="text-corporate-red">{word}</span>
+                ) : (
+                  <span key={idx}>{word} </span>
+                )
+              ))}
+            </h1>
 
-            <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300', letterSpacing: '0.01em'}}>
-              {product.descripcion}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
+            {/* CTA */}
+            <div className="animate-fade-in-up-delay-2">
               <Link 
                 to="/contact" 
-                className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base"
+                className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red transition-colors duration-300"
                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
               >
-                {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
+                <span className="mr-2">{language === 'es' ? 'Solicitar cotización' : 'Request Quote'}</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
@@ -457,8 +432,8 @@ const AcoplamientoDetail = () => {
               <h2 className="text-lg sm:text-xl lg:text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Especificaciones Técnicas' : 'Technical Specifications'}
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Parámetros técnicos y rangos operacionales del producto' : 'Technical parameters and operational ranges of the product'}
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {product.descripcion}
               </p>
             </div>
 

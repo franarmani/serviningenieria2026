@@ -33,9 +33,12 @@ const MantenimientosInSitu = () => {
   // Estado para manejar la expansión de características en ventajas PREVENTEST
   const [expandedVentajas, setExpandedVentajas] = useState({});
 
+  // Estado para controlar si está expandida la sección de metodología
+  const [expandedMetodologia, setExpandedMetodologia] = useState(false);
+
   const ventajasPreventest = [
     {
-      titulo: language === 'es' ? "Sin Parar Planta" : "No Plant Shutdown",
+      titulo: language === 'es' ? "Sin Interrumpir la Operación" : "Without Interrupting Operation",
       descripcion: language === 'es' ? "Diagnóstico completo de válvulas sin interrumpir la operación ni detener procesos productivos." : "Complete valve diagnostics without interrupting operation or stopping production processes.",
       icon: "🏭",
       detalles: language === 'es' ? [
@@ -134,55 +137,25 @@ const MantenimientosInSitu = () => {
 
   const serviciosInSitu = [
     {
-      titulo: language === 'es' ? "Calibración PREVENTEST" : "PREVENTEST Calibration",
-      descripcion: language === 'es' ? "Aplicación especializada del equipo PREVENTEST para calibración precisa de válvulas de seguridad en condiciones reales de operación." : "Specialized application of PREVENTEST equipment for precise safety valve calibration under real operating conditions.",
-      imagen: "https://sc04.alicdn.com/kf/Hf5def47b5fb04e44a1e346cc5b5dc2a6g.jpg",
+      titulo: language === 'es' ? "Verificación de Presión de Apertura (SET)" : "Opening Pressure Verification (SET)",
+      descripcion: language === 'es' ? "Determinación del punto de apertura (SET) de válvulas de seguridad directamente en línea, bajo condiciones reales de operación, sin desmontaje ni interrupción del proceso." : "Determination of safety valve opening point (SET) directly in-line, under real operating conditions, without disassembly or process interruption.",
+      imagen: "/preventest/1.png",
       caracteristicas: language === 'es' ? [
-        "Uso directo del sistema PREVENTEST",
-        "Calibración en línea especializada", 
-        "Personal certificado en la tecnología",
-        "Procedimientos estandarizados"
+        "Verificación del SET en servicio",
+        "Ensayo en línea (ensayo en caliente)",
+        "Aplicación de fuerza controlada sobre el vástago",
+        "Evaluación funcional de la válvula instalada",
+        "Registro digital de parámetros del ensayo",
+        "Emisión de informe técnico documentado en sitio"
       ] : [
-        "Direct use of PREVENTEST system",
-        "Specialized in-line calibration", 
-        "Technology-certified personnel",
-        "Standardized procedures"
+        "In-service SET verification",
+        "In-line testing (hot testing)",
+        "Controlled force application on stem",
+        "Functional evaluation of installed valve",
+        "Digital recording of test parameters",
+        "Issue of documented technical report on-site"
       ],
-      aplicaciones: language === 'es' ? ["Refinerías", "Petroquímica", "Energía", "Química"] : ["Refineries", "Petrochemical", "Energy", "Chemical"]
-    },
-    {
-      titulo: language === 'es' ? "Mantenimiento de Válvulas en Planta" : "In-Plant Valve Maintenance",
-      descripcion: language === 'es' ? "Servicios de mantenimiento preventivo y correctivo especializado directamente en las instalaciones del cliente." : "Specialized preventive and corrective maintenance services directly at client facilities.",
-      imagen: "https://thumbs.dreamstime.com/b/industrial-facility-technician-inspecting-maintaining-pipeline-system-integrity-technician-performing-routine-maintenance-408942924.jpg",
-      caracteristicas: language === 'es' ? [
-        "Mantenimiento preventivo programado",
-        "Reparaciones correctivas urgentes",
-        "Herramientas especializadas portátiles",
-        "Equipo técnico especializado"
-      ] : [
-        "Scheduled preventive maintenance",
-        "Urgent corrective repairs",
-        "Portable specialized tools",
-        "Specialized technical team"
-      ],
-      aplicaciones: language === 'es' ? ["Industrial", "Plantas de proceso", "Offshore", "Minería"] : ["Industrial", "Process Plants", "Offshore", "Mining"]
-    },
-    {
-      titulo: language === 'es' ? "Medición de Presión SET" : "SET Pressure Measurement",
-      descripcion: language === 'es' ? "Determinación precisa del punto de apertura de válvulas de seguridad críticas sin interrumpir procesos operativos." : "Precise determination of critical safety valve opening point without interrupting operational processes.",
-      imagen: "https://assets.cms.ralstoninst.com/landing/2021-02-10-09_27_08-How-to-Perform-a-Pressure-Safety-Valve-Test-PSV-YouTube.jpg",
-      caracteristicas: language === 'es' ? [
-        "Medición de SET de alta precisión",
-        "Verificación de sistemas críticos",
-        "Calibración de instrumentos",
-        "Validación de parámetros operativos"
-      ] : [
-        "High-precision SET measurement",
-        "Critical systems verification",
-        "Instrument calibration",
-        "Operational parameters validation"
-      ],
-      aplicaciones: language === 'es' ? ["Válvulas de seguridad", "Sistemas críticos", "Alta presión", "Proceso continuo"] : ["Safety valves", "Critical systems", "High pressure", "Continuous process"]
+      aplicaciones: language === 'es' ? ["Plantas petroquímicas", "Refinerías", "Centrales térmicas", "Proceso continuo", "Válvulas de seguridad", "Sistemas de alivio"] : ["Petrochemical plants", "Refineries", "Thermal power plants", "Continuous process", "Safety valves", "Relief systems"]
     }
   ];
 
@@ -194,13 +167,13 @@ const MantenimientosInSitu = () => {
     "Registro digital completo con gráficos de presión",
     "Informes técnicos con fotografías documentales",
     "Ensayos bajo condiciones reales de operación",
-    "Certificados de calibración con trazabilidad"
+    "Certificados de verificación con trazabilidad"
   ];
 
   const equipamientoPreventest = [
     {
       nombre: "Sistema PREVENTEST",
-      descripcion: "Tecnología holandesa de última generación para calibración sin desmontaje",
+      descripcion: "Tecnología holandesa de última generación para verificación sin desmontaje",
       capacidades: [
         "Válvulas de 1/2\" a 12\"",
         "Presiones hasta 500 kg/cm²",
@@ -220,7 +193,7 @@ const MantenimientosInSitu = () => {
     },
     {
       nombre: "Sistema de Registro",
-      descripcion: "Documentación digital completa del proceso de calibración",
+      descripcion: "Documentación digital completa del proceso de verificación",
       capacidades: [
         "Registro gráfico",
         "Fotografías",
@@ -241,377 +214,1291 @@ const MantenimientosInSitu = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen">
       
-      {/* Hero Section - Más compacto */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
-
-        <div className="absolute inset-0 z-0 opacity-[0.35]">
+      {/* Hero Section */}
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=2070&auto=format&fit=crop"
-            alt="Mantenimientos In Situ PREVENTEST"
-            className="w-full h-full object-cover"
-            style={{
-              filter: 'grayscale(30%) contrast(1.1)'
-            }}
+            src="/preventest/2.png" 
+            alt="PREVENTEST – In Situ"
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
           />
         </div>
 
-        <div className="absolute inset-0 z-10" style={{ 
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%)'
-        }}></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
 
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12 lg:py-16 xl:py-20">
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
           
-          {/* Corporate badge */}
-          <div className="mb-4 sm:mb-6 lg:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 mb-4 sm:mb-6 lg:mb-8">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-              <span className="text-white/90 text-[10px] sm:text-[10px] sm:text-xs lg:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'DIVISIÓN DE SERVICIOS' : 'SERVICES DIVISION'}
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'División Técnica' : 'Technical Division'}
               </span>
             </div>
           </div>
 
-          {/* Executive title - Optimizado para móvil */}
-          <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-2 sm:mb-4 lg:mb-6 px-2" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '200',
-              letterSpacing: '0.01em',
-              lineHeight: '1.1'
-            }}>
-              {language === 'es' ? 'MANTENIMIENTOS' : 'ON-SITE'}
-            </h1>
-            <div className="flex items-center justify-center mb-3 sm:mb-4 lg:mb-6">
-              <div className="h-px w-4 sm:w-8 lg:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-1 sm:mr-2 lg:mr-4"></div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold px-1" style={{ 
-                fontFamily: 'Inter, system-ui, sans-serif',
-                fontWeight: '800',
-                background: 'linear-gradient(135deg, #8B0000 0%, #A00000 50%, #8B0000 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                letterSpacing: '-0.02em',
-                lineHeight: '1.1'
-              }}>
-                {language === 'es' ? 'IN SITU' : 'MAINTENANCE'}
-              </h2>
-              <div className="h-px w-4 sm:w-8 lg:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-1 sm:ml-2 lg:ml-4"></div>
-            </div>
-          </div>
-
-          {/* Professional subtitle - Optimizado para móvil */}
-          <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/80 mb-8 sm:mb-12 lg:mb-16 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4 sm:px-6" style={{ 
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
-            fontWeight: '300',
-            letterSpacing: '0.01em'
+            letterSpacing: '-0.02em',
+            lineHeight: '1.15'
           }}>
-            {language === 'es'
-              ? 'Tecnología PREVENTEST para calibración de válvulas sin desmontaje. Mantenimiento en planta sin interrumpir la operación.'
-              : 'PREVENTEST technology for valve calibration without disassembly. In-plant maintenance without interrupting operation.'}
+            {language === 'es' ? (
+              <>
+                <span className="text-corporate-red">PREVENTEST</span> - {' '}
+                In Situ
+              </>
+            ) : (
+              <>
+                <span className="text-corporate-red">PREVENTEST</span> - {' '}
+                In Situ
+              </>
+            )}
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Tecnología de ensayo en línea para verificar y ajustar válvulas de seguridad sin desmontaje, en condiciones reales de operación, con procedimientos documentados y trazabilidad técnica completa.'
+              : 'In-line testing technology to verify and adjust safety valves without disassembly, under real operating conditions, with documented procedures and complete technical traceability.'}
           </p>
 
-          {/* Executive actions - Optimizado para móvil */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in-up-delay-3 px-4">
-            <Link 
-              to="/contact"
-              className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm sm:text-sm sm:text-base font-semibold rounded-lg transition-all duration-300 hover:from-red-600 hover:to-red-700 hover:shadow-lg hover:shadow-red-500/25 hover:scale-105 border border-red-400/20 text-center" 
-              style={{ minWidth: '200px', fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Solicitar Servicio' : 'Request Service'}
-            </Link>
-
-            <a 
-              href="#scroll-content" 
-              className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm sm:text-sm sm:text-base font-medium rounded-lg transition-all duration-300 hover:bg-white/25 hover:border-white/40 text-center"
-              style={{ minWidth: '200px', fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {language === 'es' ? 'Ver Servicios' : 'View Services'}
-            </a>
-          </div>
+          {/* CTA */}
+          <a 
+            href="#scroll-content" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Ver más' : 'Learn more'}
+          </a>
         </div>
 
-        {/* Deslizar - Más pequeño */}
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-30">
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
-            <span className="text-[9px] sm:text-[10px] sm:text-xs font-medium mb-1 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
-            <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
+            </span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
             </svg>
           </div>
         </div>
-
       </section>
 
-      {/* ¿Qué es PREVENTEST? - Diseño profesional y refinado */}
-      <section id="scroll-content" className="relative py-8 sm:py-10 lg:py-12 xl:py-14 bg-white overflow-hidden">
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header minimalista y profesional */}
-          <div className="text-center mb-8 sm:mb-12">
-            <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-red-50 text-red-600 text-[10px] sm:text-xs font-semibold rounded-md mb-4 sm:mb-6 tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Tecnología PREVENTEST' : 'PREVENTEST Technology'}
-            </span>
+      {/* ¿Qué es PREVENTEST? */}
+      <section id="scroll-content" className="py-12 lg:py-16 bg-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 px-4" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              letterSpacing: '-0.02em'
-            }}>
-              {language === 'es' 
-                ? <>Método de Calibración de válvulas de Seguridad <span className="font-semibold text-red-600">sin Desmontaje</span></>
-                : <>Safety Valve Calibration Method <span className="font-semibold text-red-600">Without Disassembly</span></>}
-            </h2>
-            
-            <div className="w-16 sm:w-20 h-px bg-red-600 mx-auto mb-6 sm:mb-8"></div>
-            
-            <p className="text-sm sm:text-sm sm:text-base text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-4" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif'
-            }}>
-              {language === 'es'
-                ? 'Tecnología avanzada para calibración de válvulas de seguridad en condiciones reales de operación, manteniendo la continuidad de procesos industriales con certificación internacional.'
-                : 'Advanced technology for safety valve calibration under real operating conditions, maintaining industrial process continuity with international certification.'}
-            </p>
-          </div>
+            {/* Texto */}
+            <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-corporate-red text-xs sm:text-sm font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Tecnología PREVENTEST' : 'PREVENTEST Technology'}
+                </span>
+              </div>
+              
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 mb-4 sm:mb-5 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+                {language === 'es' 
+                  ? <>Verificación y Medición <span className="font-bold text-corporate-red">sin desmontaje</span></>
+                  : <>Verification and Measurement <span className="font-bold text-corporate-red">without disassembly</span></>}
+              </h2>
+              
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <p>
+                  {language === 'es'
+                    ? 'SERVIN INGENIERÍA S.A. cuenta con tecnología PREVENTEST, un sistema especializado para la verificación y ajuste del punto de apertura (SET) de válvulas de seguridad directamente en planta, sin necesidad de desmontaje.'
+                    : 'SERVIN INGENIERÍA S.A. has PREVENTEST technology, a specialized system for verification and adjustment of safety valve opening point (SET) directly in plant, without the need for disassembly.'}
+                </p>
+                <p>
+                  {language === 'es'
+                    ? 'El método PREVENTEST permite realizar el ensayo en línea (ensayo en caliente), evaluando la válvula en su condición real de operación, minimizando intervenciones y evitando paradas de proceso.'
+                    : 'The PREVENTEST method allows in-line testing (hot testing), evaluating the valve in its real operating condition, minimizing interventions and avoiding process shutdowns.'}
+                </p>
+                <div className="bg-gradient-to-r from-red-50 to-white rounded-xl p-4 sm:p-5 border-l-4 border-corporate-red shadow-sm">
+                  <p className="text-xs sm:text-sm text-gray-600 italic leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'PREVENTEST es una tecnología de verificación y ajuste en servicio. No reemplaza los ensayos en banco ni las reparaciones realizadas en planta o laboratorio.'
+                      : 'PREVENTEST is an in-service verification and adjustment technology. It does not replace bench testing or repairs performed in plant or laboratory.'}
+                  </p>
+                </div>
+              </div>
 
-        
-        </div>
-      </section>
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
+                <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-3 sm:p-4 text-center border border-red-100 hover:shadow-lg transition-shadow">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>SET</div>
+                  <p className="text-[10px] sm:text-xs text-gray-600 font-medium leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Medición Precisa' : 'Precise Measurement'}</p>
+                </div>
+                <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-3 sm:p-4 text-center border border-red-100 hover:shadow-lg transition-shadow">
+                  <div className="text-sm sm:text-lg lg:text-2xl font-bold text-corporate-red mb-1 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'EN LÍNEA' : 'IN-LINE'}</div>
+                  <p className="text-[10px] sm:text-xs text-gray-600 font-medium leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Sin Interrupciones' : 'No Interruptions'}</p>
+                </div>
+                <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-3 sm:p-4 text-center border border-red-100 hover:shadow-lg transition-shadow">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>ASME</div>
+                  <p className="text-[10px] sm:text-xs text-gray-600 font-medium leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Normativa Vigente' : 'Current Standards'}</p>
+                </div>
+              </div>
+            </div>
 
-      {/* Servicios In Situ - Diseño más compacto */}
-      <section className="relative py-2 sm:py-12 lg:py-16 bg-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'linear-gradient(45deg, #dc2626 25%, transparent 25%), linear-gradient(-45deg, #dc2626 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #dc2626 75%), linear-gradient(-45deg, transparent 75%, #dc2626 75%)',
-            backgroundSize: '20px 20px',
-            backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-          }}></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         
-
-          {/* Cards de servicios más compactas */}
-          <div className="space-y-6 sm:space-y-8">
-            {serviciosInSitu.map((servicio, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-500 hover:border-red-200"
-              >
-                {/* Card Layout - Horizontal en desktop, vertical en móvil */}
-                <div className="flex flex-col lg:flex-row">
-                  
-                  {/* Imagen */}
-                  <div className="relative lg:w-1/4 overflow-hidden">
-                    <div className="aspect-[3/2] lg:aspect-square">
-                      <img 
-                        src={servicio.imagen}
-                        alt={servicio.titulo}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                      />
-                    </div>
-                    
-                    {/* Overlay para móvil solo */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent lg:hidden"></div>
-                    
-                    {/* Título sobre la imagen en móvil */}
-                    <div className="absolute bottom-3 left-3 lg:hidden">
-                      <h3 className="text-sm sm:text-base md:text-lg font-bold text-white drop-shadow-lg" style={{ 
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        letterSpacing: '-0.01em'
-                      }}>
-                        {servicio.titulo}
-                      </h3>
-                    </div>
+            {/* Imagen principal del equipo PREVENTEST */}
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/preventest/3.png" 
+                  alt={language === 'es' ? 'Equipo PREVENTEST en operación' : 'PREVENTEST equipment in operation'}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Badge flotante */}
+              <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-
-                  {/* Contenido */}
-                  <div className="p-4 sm:p-6 lg:w-3/4">
-                    
-                    {/* Título para desktop */}
-                    <h3 className="hidden lg:block text-xl lg:text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3" style={{ 
-                      fontFamily: 'Inter, system-ui, sans-serif',
-                      letterSpacing: '-0.01em'
-                    }}>
-                      {servicio.titulo}
-                    </h3>
-
-                    {/* Descripción */}
-                    <p className="text-xs sm:text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed" style={{ 
-                      fontFamily: 'Inter, system-ui, sans-serif'
-                    }}>
-                      {servicio.descripcion}
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs sm:text-sm font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Operadores Certificados' : 'Certified Operators'}
                     </p>
+                    <p className="text-[10px] sm:text-xs text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Ventil USA Training' : 'Ventil USA Training'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    {/* Grid de características y aplicaciones - Más compacto */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      
-                      {/* Características */}
-                      <div>
-                        <h4 className="text-xs sm:text-sm font-bold text-gray-900 mb-2 flex items-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                          <svg className="w-4 h-4 text-corporate-red mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                          </svg>
-                          {language === 'es' ? 'Características' : 'Features'}
-                        </h4>
-                        
-                        {/* Versión móvil con limitación */}
-                        <div className="lg:hidden">
-                          <div className="space-y-1">
-                            {servicio.caracteristicas.slice(0, expandedCards[index] ? servicio.caracteristicas.length : 2).map((caracteristica, idx) => (
-                              <div key={idx} className="flex items-start">
-                                <div className="w-1 h-1 bg-corporate-red rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
-                                <span className="text-[11px] text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                                  {caracteristica}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                          {servicio.caracteristicas.length > 2 && (
-                            <button
-                              onClick={() => setExpandedCards(prev => ({ ...prev, [index]: !prev[index] }))}
-                              className="mt-1 text-[10px] text-corporate-red font-medium hover:text-red-700 transition-colors duration-200 flex items-center"
-                              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                            >
-                              {expandedCards[index] ? (language === 'es' ? 'Ver menos' : 'See less') : (language === 'es' ? `Ver ${servicio.caracteristicas.length - 2} más` : `See ${servicio.caracteristicas.length - 2} more`)}
-                              <svg 
-                                className={`w-3 h-3 ml-1 transform transition-transform duration-200 ${expandedCards[index] ? 'rotate-180' : ''}`}
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-                              </svg>
-                            </button>
-                          )}
-                        </div>
+          </div>
+        </div>
+      </section>
 
-                        {/* Versión desktop completa */}
-                        <div className="hidden lg:block">
-                          <div className="space-y-1">
-                            {servicio.caracteristicas.map((caracteristica, idx) => (
-                              <div key={idx} className="flex items-start">
-                                <div className="w-1 h-1 bg-corporate-red rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
-                                <span className="text-[10px] sm:text-xs text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                                  {caracteristica}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+      {/* Cómo funciona PREVENTEST - Estilo Laboratorio Móvil */}
+      <section className="pt-12 pb-8 lg:pt-16 lg:pb-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            {/* Texto */}
+            <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center bg-red-50 border border-red-100 rounded-full px-3 py-1 mb-4">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-corporate-red text-[10px] font-bold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Metodología Técnica' : 'Technical Methodology'}
+                </span>
+              </div>
+              
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+                {language === 'es' 
+                  ? <><span className="font-bold text-corporate-red">¿Cómo funciona</span> PREVENTEST?</>
+                  : <><span className="font-bold text-corporate-red">How does</span> PREVENTEST work?</>}
+              </h2>
+              
+              <p className="text-sm text-gray-600 leading-relaxed mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es'
+                  ? 'El sistema PREVENTEST permite verificar y ajustar el punto de apertura (SET) de válvulas de seguridad directamente en línea, mediante instrumentación de alta precisión y procedimientos controlados.'
+                  : 'The PREVENTEST system allows verification and adjustment of safety valve opening point (SET) directly in-line, using high-precision instrumentation and controlled procedures.'}
+              </p>
 
-                      {/* Aplicaciones */}
-                      <div>
-                        <h4 className="text-xs sm:text-sm font-bold text-gray-900 mb-2 flex items-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                          <svg className="w-4 h-4 text-corporate-red mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a2 2 0 104 0 2 2 0 00-4 0zm6 0a2 2 0 104 0 2 2 0 00-4 0z" clipRule="evenodd"/>
-                          </svg>
-                          {language === 'es' ? 'Sectores' : 'Sectors'}
-                        </h4>
-                        
-                        <div className="flex flex-wrap gap-1.5">
-                          {servicio.aplicaciones.slice(0, 3).map((app, idx) => (
-                            <span 
-                              key={idx} 
-                              className="px-2 py-0.5 bg-gray-100 text-gray-700 text-[10px] sm:text-[10px] sm:text-xs rounded-md hover:bg-corporate-red hover:text-white transition-colors duration-200"
-                              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                            >
-                              {app}
-                            </span>
-                          ))}
-                          {servicio.aplicaciones.length > 3 && (
-                            <span className="px-2 py-0.5 bg-gray-200 text-gray-500 text-[10px] sm:text-[10px] sm:text-xs rounded-md" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                              +{servicio.aplicaciones.length - 3}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Call to Action */}
-                    <div className="mt-4 pt-3 border-t border-gray-100">
-                      <Link 
-                        to="/contact"
-                        className="inline-flex items-center text-corporate-red hover:text-red-700 font-semibold text-[10px] sm:text-xs transition-colors duration-200"
-                        style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                      >
-                        {language === 'es' ? 'Solicitar este servicio' : 'Request this service'}
-                        <svg className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                      </Link>
-                    </div>
+              {/* Características principales en grid compacto */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Sin desmontaje' : 'No disassembly'}
+                    </p>
+                    <p className="text-[10px] text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Ensayo en caliente' : 'Hot testing'}
+                    </p>
                   </div>
                 </div>
 
-                {/* Hover effect border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-corporate-red/20 rounded-xl transition-all duration-300 pointer-events-none"></div>
+                <div className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Sin paradas' : 'No shutdowns'}
+                    </p>
+                    <p className="text-[10px] text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Operación continua' : 'Continuous operation'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Alta precisión' : 'High precision'}
+                    </p>
+                    <p className="text-[10px] text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Sensores certificados' : 'Certified sensors'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Trazabilidad' : 'Traceability'}
+                    </p>
+                    <p className="text-[10px] text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Informes digitales' : 'Digital reports'}
+                    </p>
+                  </div>
+                </div>
               </div>
-            ))}
+
+              {/* Badge de certificación */}
+              <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg p-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Certificación ASME/NBIC' : 'ASME/NBIC Certification'}
+                    </p>
+                    <p className="text-[10px] text-gray-300" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' 
+                        ? 'Equipo aprobado según ASME Section I y VIII-1 y NBIC Part 4 con validez internacional.'
+                        : 'Equipment approved per ASME Section I and VIII-1 and NBIC Part 4 with international validity.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Botón para abrir modal */}
+              <button
+                onClick={() => setExpandedMetodologia(true)}
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-corporate-red hover:text-corporate-red/80 transition-colors"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
+                <span>
+                  {language === 'es' ? 'Ver información técnica detallada' : 'View detailed technical information'}
+                </span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Imagen */}
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/preventest/1.png" 
+                  alt={language === 'es' ? 'Sistema PREVENTEST en operación' : 'PREVENTEST system in operation'}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-7xl mx-auto">
-            
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-              <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Servicios In Situ' : 'On-Site Services'}</span>
+      {/* Modal de información técnica */}
+      {expandedMetodologia && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setExpandedMetodologia(false)}
+        >
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[75vh] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header del modal */}
+            <div className="sticky top-0 bg-gradient-to-r from-corporate-red to-corporate-red/90 px-6 py-4 flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Información Técnica Detallada' : 'Detailed Technical Information'}
+                </h3>
+                <p className="text-xs text-white/80 mt-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Metodología PREVENTEST' : 'PREVENTEST Methodology'}
+                </p>
+              </div>
+              <button
+                onClick={() => setExpandedMetodologia(false)}
+                className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Contenido scrolleable del modal */}
+            <div className="overflow-y-auto max-h-[calc(75vh-80px)] px-5 py-5">
+              
+              {/* Instrumentación */}
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-1.5 mb-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-corporate-red"></div>
+                  <p className="text-xs font-bold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Instrumentación utilizada' : 'Instrumentation used'}
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                    <div className="w-8 h-8 rounded-lg bg-corporate-red flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Sensor de desplazamiento' : 'Displacement sensor'}
+                      </h4>
+                      <p className="text-xs text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Controla el movimiento del vástago durante el ensayo.' : 'Controls stem movement during testing.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                    <div className="w-8 h-8 rounded-lg bg-corporate-red flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Celda de carga' : 'Load cell'}
+                      </h4>
+                      <p className="text-xs text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Mide la fuerza aplicada para determinar con precisión el valor de SET.' : 'Measures applied force to precisely determine SET value.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                    <div className="w-8 h-8 rounded-lg bg-corporate-red flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Sensor acústico' : 'Acoustic sensor'}
+                      </h4>
+                      <p className="text-xs text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Detecta el inicio de apertura de la válvula sin necesidad de descarga completa.' : 'Detects valve opening without requiring complete discharge.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ventajas */}
+              <div className="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-xl p-5 mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-7 h-7 rounded-lg bg-corporate-red flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ventajas del método' : 'Method advantages'}
+                  </h4>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { es: 'Los ensayos son realizados bajo las mismas condiciones de servicio', en: 'Tests performed under the same service conditions' },
+                    { es: 'No requiere el paro de planta', en: 'No plant shutdown required' },
+                    { es: 'No requiere desmontaje de la válvula', en: 'No valve disassembly required' },
+                    { es: 'Disminuye la pérdida de productividad', en: 'Decreases productivity loss' },
+                    { es: 'Maximiza rentabilidad', en: 'Maximizes profitability' }
+                  ].map((ventaja, index) => (
+                    <div key={index} className="flex items-start gap-3 group">
+                      <div className="w-6 h-6 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3.5 h-3.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? ventaja.es : ventaja.en}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Respaldo técnico */}
+              <div className="p-5 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Respaldo técnico' : 'Technical support'}
+                    </h4>
+                    <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es'
+                        ? 'Todos los ensayos son realizados por personal calificado, siguiendo procedimientos técnicos definidos y con documentación trazable del proceso. PREVENTEST es un servicio complementario a los ensayos en banco y a las tareas de mantenimiento realizadas en planta.'
+                        : 'All tests are performed by qualified personnel, following defined technical procedures with traceable process documentation. PREVENTEST is a complementary service to bench testing and plant maintenance tasks.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Nuestro Alcance - Responsive */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header */}
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-6">
+              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+              <span className="text-[10px] sm:text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Alcance de Servicios' : 'Service Scope'}
+              </span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl lg:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? '¿Necesita mantenimiento especializado' : 'Need specialized maintenance'} <span className="block font-bold mt-2">{language === 'es' ? 'en su planta industrial?' : 'at your industrial plant?'}</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4" style={{ 
+              fontFamily: 'Inter, system-ui, sans-serif',
+              letterSpacing: '-0.02em'
+            }}>
+              {language === 'es' ? 'Nuestro Alcance' : 'Our Scope'}
             </h2>
             
-            <p className="text-base sm:text-lg lg:text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? <>Nuestros especialistas están listos para implementar la mejor solución, incluyendo tecnología <strong className="text-white font-semibold">PREVENTEST</strong> para calibración sin parar planta.</> : <>Our specialists are ready to implement the best solution, including <strong className="text-white font-semibold">PREVENTEST</strong> technology for calibration without plant shutdown.</>}
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es'
+                ? 'Servicios especializados para una amplia gama de válvulas industriales y sistemas de automatización.'
+                : 'Specialized services for a wide range of industrial valves and automation systems.'}
             </p>
+          </div>
+
+          {/* Grid de categorías - Responsive */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
-              <Link 
-                to="/contact"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-base sm:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
-              >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
-              </Link>
+            {/* Válvulas Industriales */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas Industriales' : 'Industrial Valves'}
+                </h3>
+              </div>
               
-              <Link 
-                to="/services"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base sm:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-              >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                {language === 'es' ? 'Ver Todos los Servicios' : 'View All Services'}
-              </Link>
+              <div className="space-y-2">
+                {[
+                  { es: 'Esclusa, Globo, Retención', en: 'Gate, Globe, Check' },
+                  { es: 'Esféricas y Mariposa', en: 'Ball & Butterfly' },
+                  { es: 'Diafragma y Tapón lubricado', en: 'Diaphragm & Lubricated Plug' }
+                ].map((valve, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? valve.es : valve.en}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Válvulas Especiales */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas Especiales' : 'Special Valves'}
+                </h3>
+              </div>
+              
+              <div className="space-y-2">
+                {[
+                  { es: 'Pressure Seal', en: 'Pressure Seal' },
+                  { es: 'Doble y Triple excentricidad', en: 'Double & Triple Offset' },
+                  { es: 'API 6D / API 6A', en: 'API 6D / API 6A' },
+                  { es: 'Válvulas de Coke', en: 'Coke Valves' }
+                ].map((valve, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? valve.es : valve.en}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sistemas de Alivio */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Sistemas de Alivio' : 'Relief Systems'}
+                </h3>
+              </div>
+              
+              <div className="space-y-2">
+                {[
+                  { es: 'Válvulas de seguridad y alivio', en: 'Safety & Relief Valves' },
+                  { es: 'Convencionales y Pilotadas', en: 'Conventional & Piloted' },
+                  { es: 'Presión y Vacío', en: 'Pressure & Vacuum' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? item.es : item.en}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Automatización */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Automatización' : 'Automation'}
+                </h3>
+              </div>
+              
+              <div className="space-y-2">
+                {[
+                  { es: 'Válvulas Automatizadas', en: 'Automated Valves' },
+                  { es: 'Actuadores', en: 'Actuators' },
+                  { es: 'Válvulas de Control', en: 'Control Valves' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? item.es : item.en}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Certificación PREVENTEST - Diseño Mejorado */}
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-red-50/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            {/* Contenido de Texto */}
+            <div className="order-2 lg:order-1">
+              {/* Badge */}
+              <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-6">
+                <div className="w-2 h-2 bg-corporate-red rounded-full mr-2"></div>
+                <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Certificación Oficial' : 'Official Certification'}
+                </span>
+              </div>
+              
+              {/* Título */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6" style={{ 
+                fontFamily: 'Inter, system-ui, sans-serif',
+                letterSpacing: '-0.02em'
+              }}>
+                {language === 'es' ? (
+                  <>Operadores Certificados <span className="text-corporate-red">PREVENTEST</span></>
+                ) : (
+                  <><span className="text-corporate-red">PREVENTEST</span> Certified Operators</>
+                )}
+              </h2>
+              
+              {/* Descripción */}
+              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es'
+                  ? 'Nuestro equipo técnico cuenta con certificación oficial de Ventil USA para la operación de equipos PREVENTEST LTC/Advanced, garantizando ensayos profesionales y resultados confiables.'
+                  : 'Our technical team holds official Ventil USA certification for PREVENTEST LTC/Advanced equipment operation, ensuring professional testing and reliable results.'}
+              </p>
+
+              {/* Características de la Certificación */}
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Certificación Ventil USA' : 'Ventil USA Certification'}
+                    </h3>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es'
+                        ? 'Entrenamiento especializado en equipos PREVENTEST LTC y Advanced'
+                        : 'Specialized training on PREVENTEST LTC and Advanced equipment'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Operación Profesional' : 'Professional Operation'}
+                    </h3>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es'
+                        ? 'Ensayos técnicos ejecutados bajo procedimientos certificados'
+                        : 'Technical tests executed under certified procedures'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Resultados Confiables' : 'Reliable Results'}
+                    </h3>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es'
+                        ? 'Informes técnicos con trazabilidad y respaldo documentado'
+                        : 'Technical reports with traceability and documented support'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+                  <div className="text-2xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>✓</div>
+                  <p className="text-xs text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Certificado' : 'Certified'}
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+                  <div className="text-2xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>LTC</div>
+                  <p className="text-xs text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Tecnología' : 'Technology'}
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+                  <div className="text-2xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>USA</div>
+                  <p className="text-xs text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ventil' : 'Ventil'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Imagen del Certificado */}
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                {/* Decoración de fondo */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-corporate-red/10 to-red-500/5 rounded-3xl blur-2xl opacity-50"></div>
+                
+                {/* Contenedor del certificado */}
+                <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-100">
+                  <img 
+                    src="/preventest/certificado.png" 
+                    alt={language === 'es' ? 'Certificado PREVENTEST - Operador Certificado' : 'PREVENTEST Certificate - Certified Operator'}
+                    className="w-full h-auto rounded-lg shadow-md"
+                  />
+                  
+                  {/* Badge flotante */}
+                  <div className="absolute -bottom-4 -right-4 bg-corporate-red text-white rounded-full w-20 h-20 flex items-center justify-center shadow-xl">
+                    <div className="text-center">
+                      <div className="text-xs font-bold" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>VENTIL</div>
+                      <div className="text-[10px] opacity-90" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>USA</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* TRABAJOS REALIZADOS - Responsive */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header */}
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-6">
+              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+              <span className="text-[10px] sm:text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Portfolio' : 'Portfolio'}
+              </span>
             </div>
             
-            <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? '+30 años' : '+30 years'}</div>
-                <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Experiencia industrial' : 'Industrial experience'}</div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4" style={{ 
+              fontFamily: 'Inter, system-ui, sans-serif',
+              letterSpacing: '-0.02em'
+            }}>
+              {language === 'es' ? 'TRABAJOS REALIZADOS' : 'COMPLETED WORKS'}
+            </h2>
+            
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es'
+                ? 'Experiencia comprobada en mantenimiento y reparación de válvulas industriales de alta complejidad.'
+                : 'Proven experience in maintenance and repair of high-complexity industrial valves.'}
+            </p>
+          </div>
+
+          {/* Grid de trabajos - Responsive */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            
+            {/* Trabajo 1 - Pressure Seal */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/1.png" 
+                  alt="Pressure Seal"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>PREVENTEST</div>
-                <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Sin parar planta' : 'No plant shutdown'}</div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  Pressure Seal
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de válvulas esclusas Pressure Seal.' 
+                    : 'Pressure Seal gate valve maintenance.'}
+                </p>
+                <ul className="space-y-1.5 sm:space-y-2">
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Internos Stellite' : 'Stellite internals'}</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Empaquetadura y Junta grafito conformado' : 'Formed graphite packing and gasket'}</span>
+                  </li>
+                </ul>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center">
-                <div className="text-white font-bold text-sm sm:text-base mb-0.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Soporte Técnico' : 'Technical Support'}</div>
-                <div className="text-white/70 text-[10px] sm:text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Ingeniería + Servicio' : 'Engineering + Service'}</div>
+            </div>
+
+            {/* Trabajo 2 - Válvula para Coke */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/2.png" 
+                  alt="Válvula para Coke"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvula para Coke' : 'Coke Valve'}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de válvula Esférica 4 Vías 16" para servicio de Coke.' 
+                    : '4-Way 16" Ball Valve maintenance for Coke service.'}
+                </p>
+                <ul className="space-y-1.5 sm:space-y-2">
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Asientos Metálicos' : 'Metal seats'}</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Fuelles y acometidas de vapor' : 'Bellows and steam connections'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 3 - Válvulas con Actuador Eléctrico */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/3.png" 
+                  alt="Válvulas con Actuador Eléctrico"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas esclusas con Actuador Eléctrico' : 'Gate Valves with Electric Actuator'}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de Válvulas esclusas con actuadores eléctricos.' 
+                    : 'Gate valve maintenance with electric actuators.'}
+                </p>
+                <ul className="space-y-1.5 sm:space-y-2">
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Internos Stellite' : 'Stellite internals'}</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Empaquetadura Grafito Conformado' : 'Formed Graphite Packing'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 4 - Válvula Retención con Amortiguación */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/4.png" 
+                  alt="Válvula Retención con Amortiguación"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvula Retención con Amortiguación' : 'Check Valve with Damping'}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de válvulas retención y fabricación de sistema de amortiguación de Clapeta.' 
+                    : 'Check valve maintenance and clapper damping system fabrication.'}
+                </p>
+                <ul className="space-y-1.5 sm:space-y-2">
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Actuador Hidráulico' : 'Hydraulic Actuator'}</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="leading-tight">{language === 'es' ? 'Internos AISI 410' : 'AISI 410 internals'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 5 - Válvulas esclusas API 6D */}
+            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/5.png" 
+                  alt="Válvulas esclusas API 6D"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas esclusas API 6D' : 'API 6D Gate Valves'}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de válvulas esclusas con actuador hidráulico.' 
+                    : 'Gate valve maintenance with hydraulic actuator.'}
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Asiento metálico' : 'Metal seat'}
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Cuchilla y guías con aporte de Electroless Nickel' : 'Knife and guides with Electroless Nickel coating'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 6 - Válvulas esclusas, globo y retención */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/6.png" 
+                  alt="Válvulas esclusas, globo y retención"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas esclusas, globo y retención' : 'Gate, Globe and Check Valves'}
+                </h3>
+                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de 100 válvulas esclusas, globo y retención de 2" a 12".' 
+                    : 'Maintenance of 100 gate, globe and check valves from 2" to 12".'}
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Internos AISI 410 y Stellite' : 'AISI 410 and Stellite internals'}
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Empaquetaduras de grafito conformado con inhibidor de corrosión' : 'Formed graphite packing with corrosion inhibitor'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 7 - Válvulas de Seguridad Tanque */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/7.png" 
+                  alt="Válvulas de Seguridad Tanque"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas de Seguridad Tanque / Presión y Vacío' : 'Tank Safety Valves / Pressure and Vacuum'}
+                </h3>
+                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento en planta de válvulas de seguridad de Tanque de Amoniaco.' 
+                    : 'On-site maintenance of Ammonia Tank safety valves.'}
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Reemplazo de sellos, diafragmas y mantenimiento de piloto' : 'Seal and diaphragm replacement and pilot maintenance'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 8 - Válvula de Seguridad 24" */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/8.png" 
+                  alt="Válvula de Seguridad 24 pulgadas"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvula de Seguridad Diámetro 24"' : '24" Diameter Safety Valve'}
+                </h3>
+                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de Válvula de seguridad de presión negativa.' 
+                    : 'Negative pressure safety valve maintenance.'}
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Cierre Metal-Metal' : 'Metal-to-Metal seal'}
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? '0 Burbujas' : '0 Bubbles'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 9 - Válvulas de Seguridad Pilotadas */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/preventest/trabajos/9.png" 
+                  alt="Válvulas de Seguridad Pilotadas"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Válvulas de Seguridad Pilotadas' : 'Pilot-Operated Safety Valves'}
+                </h3>
+                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Mantenimiento de Válvulas de seguridad de alta presión pilotadas.' 
+                    : 'High-pressure pilot-operated safety valve maintenance.'}
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Asiento Metal-Metal' : 'Metal-to-Metal seat'}
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {language === 'es' ? 'Presión de Prueba 296 Kg/cm²' : 'Test Pressure 296 Kg/cm²'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Trabajo 10 - Mantenimiento en planta 11 Válvulas */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-3">
+              <div className="p-6">
+                {/* Grid de 3 imágenes - Responsive optimizado */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
+                  <div className="aspect-[4/3] overflow-hidden rounded-lg">
+                    <img 
+                      src="/preventest/trabajos/mantenimiento1.png" 
+                      alt="Mantenimiento Pressure Seal - Imagen 1"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-[4/3] overflow-hidden rounded-lg">
+                    <img 
+                      src="/preventest/trabajos/mantenimiento2.png" 
+                      alt="Mantenimiento Pressure Seal - Imagen 2"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-[4/3] overflow-hidden rounded-lg col-span-2 md:col-span-1">
+                    <img 
+                      src="/preventest/trabajos/mantenimiento3.png" 
+                      alt="Mantenimiento Pressure Seal - Imagen 3"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                
+                <div className="flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Mantenimiento en planta de 11 Válvulas Pressure Seal' : 'On-site maintenance of 11 Pressure Seal Valves'}
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' 
+                      ? 'Válvulas esclusas Pressure Seal 8" Serie 1500 y 12" Serie 1500.' 
+                      : '8" Series 1500 and 12" Series 1500 Pressure Seal gate valves.'}
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Desarme de válvulas' : 'Valve disassembly'}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Lapidado de asientos y cuñas' : 'Seat and wedge lapping'}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Mecanizado de vástagos' : 'Stem machining'}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Reemplazo de empaquetaduras' : 'Packing replacement'}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Juntas de bonete pressure seal' : 'Pressure seal bonnet gaskets'}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Reemplazo de cajas reductoras' : 'Gear box replacement'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* CTA Final - Estilo About */}
+      <section className="py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
+            <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
+            <span className="text-white/90 text-[10px] sm:text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Servicios In Situ' : 'On-Site Services'}
+            </span>
+          </div>
+          
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}>
+            {language === 'es' ? '¿Necesita mantenimiento especializado en su planta industrial?' : 'Need specialized maintenance at your industrial plant?'}
+          </h2>
+          
+          <p className="text-sm sm:text-base text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+            {language === 'es' 
+              ? <>Nuestros especialistas están preparados para implementar soluciones técnicas eficientes, incluyendo tecnología <strong className="text-white font-semibold">PREVENTEST</strong> para verificación de válvulas sin interrumpir la operación.</>
+              : <>Our specialists are prepared to implement efficient technical solutions, including <strong className="text-white font-semibold">PREVENTEST</strong> technology for valve verification without interrupting operation.</>}
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/contact"
+              className="group inline-flex items-center justify-center px-8 py-3.5 bg-white text-sm sm:text-base font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
+            </Link>
+            
+            <Link 
+              to="/services"
+              className="group inline-flex items-center justify-center px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              {language === 'es' ? 'Ver Todos los Servicios' : 'View All Services'}
+            </Link>
+          </div>
+          
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 text-center">
+              <div className="text-white font-bold text-base sm:text-lg mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? '+46 años' : '+46 years'}
+              </div>
+              <div className="text-white/70 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Trayectoria industrial' : 'Industrial experience'}
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 text-center">
+              <div className="text-white font-bold text-base sm:text-lg mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                PREVENTEST
+              </div>
+              <div className="text-white/70 text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Operación en línea' : 'In-line operation'}
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 text-center">
+              <div className="text-white font-bold text-lg mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Ingeniería + Servicio' : 'Engineering + Service'}
+              </div>
+              <div className="text-white/70 text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Soporte técnico especializado' : 'Specialized technical support'}
               </div>
             </div>
           </div>
@@ -619,6 +1506,7 @@ const MantenimientosInSitu = () => {
       </section>
 
     </div>
+    </>
   );
 };
 

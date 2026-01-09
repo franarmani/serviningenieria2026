@@ -57,42 +57,74 @@ const CaneriasTubos = () => {
   return (
     <div className="min-h-screen">
       
-      {/* Hero Section - Mismo diseño que las otras páginas */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(26, 26, 26) 25%, rgb(42, 42, 42) 75%, rgb(15, 15, 15) 100%)'}}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, rgb(255, 255, 255) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
-        <div className="absolute inset-0 z-0 opacity-[0.08]">
-          <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop" alt="Industrial Background" className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop" 
+            alt={language === 'es' ? 'Accesorios para Cañerías' : 'Pipe Fittings'}
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
+          />
         </div>
-        <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(220, 38, 38, 0.03) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
-        
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12 lg:py-16 xl:py-20">
+          
+          {/* Badge */}
           <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
-              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
-              <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'TUBERÍA DE PROCESO CERTIFICADA' : 'CERTIFIED PROCESS PIPING'}</span>
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 sm:py-2.5">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
+              </span>
             </div>
           </div>
 
-          <div className="mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-3 sm:mb-4 lg:mb-6" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 200, letterSpacing: '0.01em', lineHeight: '1.1'}}>{language === 'es' ? 'CAÑERÍAS Y' : 'PIPES AND'}</h1>
-            
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, rgb(255, 0, 0) 0%, rgb(255, 51, 51) 50%, rgb(255, 102, 102) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>{language === 'es' ? 'TUBOS' : 'TUBES'}</h2>
-              <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
-            </div>
-          </div>
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? (
+              <>
+                ACCESORIOS PARA{' '}
+                <span className="text-corporate-red">CAÑERÍAS</span>
+              </>
+            ) : (
+              <>
+                PIPE{' '}
+                <span className="text-corporate-red">FITTINGS</span>
+              </>
+            )}
+          </h1>
 
-          <p className="text-sm sm:text-base lg:text-sm sm:text-base md:text-lg text-white/70 mb-8 sm:mb-12 lg:mb-16 max-w-2xl lg:max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 300, letterSpacing: '0.01em'}}>
-            {language === 'es' ? 'Cañerías y tubos industriales certificados ASTM, API para instalaciones de proceso y petroquímica.' : 'ASTM, API certified industrial pipes and tubes for process and petrochemical installations.'}
+          {/* Description */}
+          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Codos, Té, Bridas, Reducciones, Caps, Uniones, Caños y accesorios forjados certificados ASTM y ASME para instalaciones de proceso.'
+              : 'Elbows, Tees, Flanges, Reducers, Caps, Unions, Pipes and ASTM and ASME certified forged fittings for process installations.'}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" to="/contact" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
-            <a href="#scroll-content" className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Ver Tipos' : 'View Types'}</a>
-          </div>
+          {/* CTA */}
+          <a 
+            href="#scroll-content" 
+            className="inline-flex items-center text-sm sm:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Ver catálogo' : 'View catalog'}
+          </a>
         </div>
 
+        {/* Deslizar */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
             <span className="text-[10px] sm:text-xs font-medium mb-2 tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Deslizar' : 'Scroll'}</span>
