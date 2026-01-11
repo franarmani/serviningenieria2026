@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -13,6 +13,11 @@ const menuConfig = {
         hasSubmenu: true,
         submenu: [
           { 
+            name: 'Válvulas Industriales', 
+            path: '/materiales/valvulas',
+            description: 'Compuertas, globos, retenciones, mariposas'
+          },
+          { 
             name: 'Acoplamientos Rexnord', 
             path: '/materiales/acoplamientos',
             description: 'Omega, Viva, Addax, Thomas XTSR, Euroflex'
@@ -26,11 +31,6 @@ const menuConfig = {
             name: 'Accesorios para Cañerías', 
             path: '/materiales/accesorios-caneria',
             description: 'Codos, Te, Bridas, Reducciones, Caños'
-          },
-          { 
-            name: 'Válvulas Industriales', 
-            path: '/materiales/valvulas',
-            description: 'Compuertas, globos, retenciones, mariposas'
           }
         ]
       },
@@ -82,6 +82,7 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMaterialesOpen, setIsMaterialesOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const bodyScrollRestoreRef = useRef(null);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
 
@@ -100,6 +101,35 @@ const Header = () => {
     setIsMaterialesOpen(false);
   }, [location]);
 
+  // Bloquear scroll del body cuando el menú móvil está abierto
+  useEffect(() => {
+    if (!isMenuOpen) {
+      if (bodyScrollRestoreRef.current) {
+        bodyScrollRestoreRef.current();
+        bodyScrollRestoreRef.current = null;
+      }
+      return;
+    }
+
+    const body = document.body;
+    const previousOverflow = body.style.overflow;
+    const previousPaddingRight = body.style.paddingRight;
+
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    body.style.overflow = 'hidden';
+    if (scrollBarWidth > 0) {
+      body.style.paddingRight = `${scrollBarWidth}px`;
+    }
+
+    const restore = () => {
+      body.style.overflow = previousOverflow;
+      body.style.paddingRight = previousPaddingRight;
+    };
+
+    bodyScrollRestoreRef.current = restore;
+    return restore;
+  }, [isMenuOpen]);
+
   // Cerrar menús al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -116,27 +146,38 @@ const Header = () => {
   const mainMenuItems = [
     { name: t('inicio'), path: '/' },
     { name: t('empresa'), path: '/about' },
-    { name: t('divisiones'), path: '/services', hasDropdown: true },
+    { name: t('divisiones'), path: '/divisiones', hasDropdown: true },
     { name: t('novedades'), path: '/novedades' },
-    { name: t('contacto'), path: '/contact' }
+    {
+      name: t('contacto'),
+      path: '/contact',
+      to: {
+        pathname: '/contact',
+        search: `?subject=${encodeURIComponent(language === 'es' ? 'Consulta general' : 'General inquiry')}`,
+        hash: '#formulario'
+      }
+    }
   ];
 
   const isActivePath = (path) => {
     if (path === '/') return location.pathname === '/';
+    if (path === '/divisiones') {
+      return location.pathname === '/divisiones' || location.pathname.startsWith('/services/');
+    }
     return location.pathname.startsWith(path);
   };
 
   // Componente para items del menú
-  const MenuItem = ({ name, path, description, isComingSoon, hasSubmenu, onMouseEnter, children }) => (
+  const MenuItem = ({ name, path, to, description, isComingSoon, hasSubmenu, onMouseEnter, children }) => (
     <div className="relative" onMouseEnter={onMouseEnter}>
       <Link
-        to={path}
+        to={to ?? path}
         className={`flex items-center justify-between px-4 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-all duration-200 group`}
         style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '500' }}
       >
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <div className="w-1.5 h-1.5 bg-red-900/70 rounded-full group-hover:bg-red-800 transition-colors duration-200"></div>
+            <div className="w-1.5 h-1.5 bg-corporate-red/70 rounded-full group-hover:bg-corporate-red-hover transition-colors duration-200"></div>
             <div>
               <div className="font-medium">{name}</div>
               {description && <div className="text-xs text-white/50 mt-0.5">{description}</div>}
@@ -238,7 +279,7 @@ const Header = () => {
                   )}
                   
                   {/* Indicador de estado activo */}
-                  <div className={`absolute bottom-1 left-6 right-6 h-0.5 bg-gradient-to-r from-red-900 to-red-800 transition-all duration-300 ${
+                  <div className={`absolute bottom-1 left-6 right-6 h-0.5 bg-gradient-to-r from-corporate-red to-corporate-red-hover transition-all duration-300 ${
                     isActivePath(item.path) ? 'opacity-100 scale-100' : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100'
                   }`}></div>
                 </Link>
@@ -290,6 +331,15 @@ const Header = () => {
 
                               <div className="py-2">
                                 <Link
+                                  to="/materiales/valvulas"
+                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
+                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                                >
+                                  <div className="text-sm font-normal">{language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">{language === 'es' ? 'Esclusa, Globo, Retención, Mariposa, Esférica' : 'Gate, Globe, Check, Butterfly, Spherical'}</div>
+                                </Link>
+
+                                <Link
                                   to="/materiales/acoplamientos"
                                   className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
                                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
@@ -314,15 +364,6 @@ const Header = () => {
                                 >
                                   <div className="text-sm font-normal">{t('accesoriosCaneria')}</div>
                                   <div className="text-xs text-white/30 mt-1 font-light">Codos, Te, Bridas, Reducciones, Caños</div>
-                                </Link>
-
-                                <Link
-                                  to="/materiales/valvulas"
-                                  className="block px-6 py-4 text-white/70 hover:text-white hover:bg-white/[0.02] transition-all duration-200 border-l-2 border-transparent hover:border-white/20"
-                                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                                >
-                                  <div className="text-sm font-normal">{language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}</div>
-                                  <div className="text-xs text-white/30 mt-1 font-light">{language === 'es' ? 'Esclusa, Globo, Retención, Mariposa, Esférica' : 'Gate, Globe, Check, Butterfly, Spherical'}</div>
                                 </Link>
                               </div>
                             </div>
@@ -471,7 +512,7 @@ const Header = () => {
                     onClick={() => { setLanguage('es'); setIsLangMenuOpen(false); }}
                     className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200 ${
                       language === 'es' 
-                        ? 'bg-red-900/20 text-white' 
+                        ? 'bg-corporate-red/20 text-white' 
                         : 'text-white/70 hover:bg-white/5 hover:text-white'
                     }`}
                   >
@@ -483,7 +524,7 @@ const Header = () => {
                     </svg>
                     <span className="font-medium">Español</span>
                     {language === 'es' && (
-                      <svg className="w-4 h-4 ml-auto text-red-800" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 ml-auto text-corporate-red" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     )}
@@ -492,7 +533,7 @@ const Header = () => {
                     onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
                     className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200 ${
                       language === 'en' 
-                        ? 'bg-red-900/20 text-white' 
+                        ? 'bg-corporate-red/20 text-white' 
                         : 'text-white/70 hover:bg-white/5 hover:text-white'
                     }`}
                   >
@@ -508,7 +549,7 @@ const Header = () => {
                     </svg>
                     <span className="font-medium">English</span>
                     {language === 'en' && (
-                      <svg className="w-4 h-4 ml-auto text-red-800" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 ml-auto text-corporate-red" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     )}
@@ -519,12 +560,8 @@ const Header = () => {
 
             {/* Botón CTA */}
             <Link 
-              to="/contact" 
-              className="px-5 py-2 bg-gradient-to-r from-red-900 to-red-800 text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:from-red-800 hover:to-red-700 hover:shadow-lg hover:shadow-red-900/25 hover:scale-105 border border-red-800/20"
-              style={{ 
-                fontFamily: 'Inter, system-ui, sans-serif',
-                letterSpacing: '0.025em'
-              }}
+              to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
+              className="btn-primary"
             >
               {language === 'es' ? 'Login' : 'Login'}
             </Link>
@@ -542,14 +579,14 @@ const Header = () => {
         </div>
 
         {/* Menú Móvil */}
-        <div className={`lg:hidden fixed top-0 left-0 right-0 bottom-0 h-screen w-screen z-[20000] bg-[#0a0a0a] transition-opacity duration-300 ${
+        <div className={`lg:hidden fixed left-0 right-0 top-20 bottom-0 w-screen z-[11999] bg-[#0a0a0a] transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        } flex flex-col overflow-y-auto overscroll-contain pt-24 pb-10 px-6`} style={{ WebkitOverflowScrolling: 'touch' }}>
+        } flex flex-col overflow-y-auto overscroll-contain pt-6 pb-10 px-6`} style={{ WebkitOverflowScrolling: 'touch' }}>
           
           {/* Botón cerrar explícito */}
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/30 group z-[20001]"
+            className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/30 group"
           >
             <svg className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
@@ -692,7 +729,7 @@ const Header = () => {
                     onClick={() => setLanguage('es')}
                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       language === 'es'
-                        ? 'bg-red-900/30 text-white border border-red-800/50'
+                        ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
                         : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -708,7 +745,7 @@ const Header = () => {
                     onClick={() => setLanguage('en')}
                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       language === 'en'
-                        ? 'bg-red-900/30 text-white border border-red-800/50'
+                        ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
                         : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -731,10 +768,9 @@ const Header = () => {
             {/* CTA móvil */}
             <div className="pt-4 border-t border-white/10">
               <Link 
-                to="/contact" 
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-red-900 to-red-800 text-white text-sm font-semibold rounded-lg hover:from-red-800 hover:to-red-700"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                className="btn-primary w-full"
               >
                 {language === 'es' ? 'Login' : 'Login'}
               </Link>

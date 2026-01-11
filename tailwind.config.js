@@ -9,8 +9,9 @@ export default {
       colors: {
         'corporate': {
           dark: '#210C20',
-          red: '#8B0000',
-          accent: '#8B0000',
+          red: '#B00000',
+          'red-hover': '#980000',
+          accent: '#B00000',
           black: '#000000',
           white: '#FFFFFF',
           light: '#F8F9FA',

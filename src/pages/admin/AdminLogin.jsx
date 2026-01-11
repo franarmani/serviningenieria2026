@@ -135,6 +135,12 @@ const AdminLogin = () => {
               Credenciales por defecto: <br />
               <span className="font-mono bg-corporate-gray-100 px-2 py-1 rounded">admin / servin2025</span>
             </p>
+
+            <p className="mt-3 text-[10px] sm:text-xs text-corporate-gray-500 text-center">
+              Acceso al panel: <span className="font-mono bg-corporate-gray-100 px-2 py-0.5 rounded">/admin/dashboard</span>
+              <br />
+              En local: <span className="font-mono bg-corporate-gray-100 px-2 py-0.5 rounded">http://localhost:5173/admin/dashboard</span>
+            </p>
           </div>
         </div>
 

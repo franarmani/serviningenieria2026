@@ -116,11 +116,11 @@ const Services = () => {
           }}>
             {language === 'es' ? (
               <>
-                NUESTROS <span className="text-corporate-red">SERVICIOS</span>
+                NUESTRAS <span className="text-corporate-red">DIVISIONES</span>
               </>
             ) : (
               <>
-                OUR <span className="text-corporate-red">SERVICES</span>
+                OUR <span className="text-corporate-red">DIVISIONS</span>
               </>
             )}
           </h1>
@@ -279,7 +279,7 @@ const Services = () => {
       {/* CTA Section - Solid Red Corporate */}
       <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
+            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
           }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
           
@@ -304,8 +304,12 @@ const Services = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Link 
-                  to="/contact"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red text-sm sm:text-base font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  to={`/contact?subject=${encodeURIComponent(
+                    language === 'es'
+                      ? 'Necesito una solución técnica industrial'
+                      : 'I need an industrial technical solution'
+                  )}#formulario`}
+                  className="btn-primary-light px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif', minWidth: '220px' }}
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

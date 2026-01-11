@@ -41,7 +41,7 @@ const ComponentesIndustriales = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
           fontFamily: 'Inter, system-ui, sans-serif',
           letterSpacing: '-0.03em',
           lineHeight: '1.1'
@@ -400,10 +400,10 @@ const ComponentesIndustriales = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
             <Link 
-              to="/services"
+              to="/divisiones"
               className="hover:text-corporate-red transition-colors flex-shrink-0"
             >
-              {language === 'es' ? 'Servicios' : 'Services'}
+              {language === 'es' ? 'Divisiones' : 'Divisions'}
             </Link>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -604,12 +604,12 @@ const ComponentesIndustriales = () => {
       </section>
 
       {/* CTA Section - Diseño Premium */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></div>
+              <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
               <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Stock Disponible' : 'Stock Available'}</span>
             </div>
             
@@ -627,11 +627,11 @@ const ComponentesIndustriales = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
               <Link 
-                to="/contact"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-base sm:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitar cotización técnica: componentes y accesorios industriales' : 'Request technical quote: industrial components and fittings')}#formulario`}
+                className="btn-primary-light w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
@@ -639,10 +639,10 @@ const ComponentesIndustriales = () => {
               
               <Link 
                 to="/services/ingenieria-materiales"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base sm:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="btn-secondary-invert w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 </svg>
                 {language === 'es' ? 'Ver Ingeniería de Materiales' : 'View Materials Engineering'}

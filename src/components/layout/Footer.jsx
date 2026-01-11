@@ -5,6 +5,9 @@ import { useLanguage } from '../../context/LanguageContext';
 const Footer = () => {
   const { language } = useLanguage();
   
+  // Cálculo automático de años de experiencia desde 1979
+  const yearsOfExperience = new Date().getFullYear() - 1979;
+  
   return (
     <footer className="bg-black text-white">
       {/* Main Footer Content */}
@@ -23,8 +26,8 @@ const Footer = () => {
             </p>
             <p className="text-xs sm:text-sm text-gray-400 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
               {language === 'es'
-                ? 'Más de 45 años brindando soluciones técnicas para la industria pesada argentina.'
-                : 'Over 45 years providing technical solutions for Argentine heavy industry.'}
+                ? `Más de ${yearsOfExperience} años brindando soluciones técnicas para la industria pesada argentina.`
+                : `Over ${yearsOfExperience} years providing technical solutions for Argentine heavy industry.`}
             </p>
           </div>
         </div>

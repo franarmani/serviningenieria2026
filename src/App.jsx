@@ -48,7 +48,8 @@ function App() {
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/divisiones" element={<Services />} />
+        <Route path="/services" element={<Navigate to="/divisiones" replace />} />
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/novedades" element={<Novedades />} />
         <Route path="/novedades/:id" element={<NewsDetail />} />
@@ -145,8 +146,8 @@ const NotFound = () => {
             <a href="/" className="btn-primary">
               Volver al Inicio
             </a>
-            <a href="/services" className="btn-secondary">
-              Ver Servicios
+            <a href="/divisiones" className="btn-secondary">
+              Ver Divisiones
             </a>
           </div>
         </div>

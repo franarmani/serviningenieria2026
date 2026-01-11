@@ -199,7 +199,7 @@ const AcoplamientosRexnord = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.03em',
             lineHeight: '1.1'
@@ -252,8 +252,8 @@ const AcoplamientosRexnord = () => {
       <section className="py-3 sm:py-4 lg:py-6 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs lg:text-sm text-gray-600 overflow-x-auto">
-            <Link to="/services" className="hover:text-corporate-red transition-colors whitespace-nowrap flex-shrink-0">
-              {language === 'es' ? 'Servicios' : 'Services'}
+            <Link to="/divisiones" className="hover:text-corporate-red transition-colors whitespace-nowrap flex-shrink-0">
+              {language === 'es' ? 'Divisiones' : 'Divisions'}
             </Link>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -273,7 +273,7 @@ const AcoplamientosRexnord = () => {
         <section id="scroll-content" className="py-12 sm:py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="mb-10 sm:mb-14 lg:mb-20">
+            <div className="mb-6 sm:mb-8 lg:mb-10">
               <div className="inline-flex items-center bg-gray-100 border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
                 <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
                 <span className="text-gray-700 text-[11px] sm:text-xs font-semibold tracking-wide uppercase">{language === 'es' ? 'Representación Exclusiva' : 'Exclusive Representation'}</span>
@@ -375,18 +375,18 @@ const AcoplamientosRexnord = () => {
             <div className="text-center mb-12 sm:mb-16">
               <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 shadow-sm">
                 <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-                <span className="text-gray-700 text-xs sm:text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Catálogo Rexnord' : 'Rexnord Catalog'}</span>
+                <span className="text-gray-700 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Catálogo Rexnord' : 'Rexnord Catalog'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Líneas de' : 'Product'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Productos' : 'Lines'}</span>
               </h3>
               <div className="max-w-4xl mx-auto mb-8">
-                <p className="text-base sm:text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' 
                     ? 'Soluciones de acoplamientos industriales diseñadas para una transmisión de potencia confiable en equipos rotativos críticos.'
                     : 'Industrial coupling solutions designed for reliable power transmission in critical rotating equipment.'}
                 </p>
-                <p className="text-sm sm:text-sm sm:text-base text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' 
                     ? 'Los acoplamientos Rexnord se destacan por alta durabilidad, compensación de desalineaciones, reducción de vibraciones y mayor vida útil de los equipos.'
                     : 'Rexnord couplings stand out for their high durability, misalignment compensation, vibration reduction and extended equipment life.'}
@@ -411,11 +411,11 @@ const AcoplamientosRexnord = () => {
                     </span>
                   </div>
                   
-                  <h4 className="text-lg sm:text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {acoplamiento.nombre}
                   </h4>
                   
-                  <p className="text-sm sm:text-sm sm:text-base text-gray-600 mb-4 leading-relaxed flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {acoplamiento.descripcion}
                   </p>
                   
@@ -423,7 +423,7 @@ const AcoplamientosRexnord = () => {
                     <h5 className="font-semibold text-gray-900 mb-2 text-[10px] sm:text-xs uppercase tracking-wide">{language === 'es' ? 'Características clave' : 'Key Features'}</h5>
                     <ul className="space-y-1">
                       {acoplamiento.caracteristicas.map((caracteristica, idx) => (
-                        <li key={idx} className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600">
+                        <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600">
                           <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2 flex-shrink-0"></div>
                           <span>{caracteristica}</span>
                         </li>
@@ -445,14 +445,18 @@ const AcoplamientosRexnord = () => {
                   <div className="flex flex-col gap-2 mt-auto">
                     <Link
                       to={`/services/acoplamiento/${acoplamiento.id}`}
-                      className="w-full py-2 px-4 bg-corporate-red text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg text-center"
+                      className="btn-primary w-full text-xs sm:text-sm"
                       style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     >
                       {language === 'es' ? 'Ver Detalle Técnico' : 'View Technical Details'}
                     </Link>
                     <Link
-                      to="/contact"
-                      className="w-full py-2 px-4 border border-corporate-red text-corporate-red text-xs sm:text-sm font-medium rounded-lg hover:bg-corporate-red hover:text-white transition-colors duration-300 text-center"
+                      to={`/contact?subject=${encodeURIComponent(
+                        language === 'es'
+                          ? `Solicitud de cotización: Acoplamiento Rexnord ${acoplamiento.nombre}`
+                          : `Quote request: Rexnord coupling ${acoplamiento.nombre}`
+                      )}#formulario`}
+                      className="btn-outline-red w-full text-xs sm:text-sm"
                       style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     >
                       {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
@@ -470,12 +474,12 @@ const AcoplamientosRexnord = () => {
             <div className="text-center mb-12 sm:mb-16">
               <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
                 <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-                <span className="text-gray-700 text-xs sm:text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Sectores Atendidos' : 'Industries Served'}</span>
+                <span className="text-gray-700 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Sectores Atendidos' : 'Industries Served'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Aplicaciones' : 'Industrial'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Industriales' : 'Applications'}</span>
               </h3>
-              <p className="text-base sm:text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' 
                   ? <>Los acoplamientos Rexnord provistos por SERVIN Ingeniería se aplican en <strong>equipos rotativos industriales</strong>, donde la confiabilidad mecánica y la correcta selección del componente son críticas para la operación.</>
                   : <>Rexnord couplings supplied by SERVIN Engineering are applied in <strong>industrial rotating equipment</strong>, where mechanical reliability and proper component selection are critical for operation.</>}
@@ -489,7 +493,7 @@ const AcoplamientosRexnord = () => {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Minería' : 'Mining'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -526,7 +530,7 @@ const AcoplamientosRexnord = () => {
                     <img src="https://www.whitacrerebar.com/wp-content/uploads/2017/10/MeteringStation-1024x545.jpg" alt='Skid de bombas industriales' className="w-full h-32 sm:h-40 object-cover" />
                   </div>
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Petróleo & Gas' : 'Oil & Gas'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -553,7 +557,7 @@ const AcoplamientosRexnord = () => {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Cementeras' : 'Cement'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -590,7 +594,7 @@ const AcoplamientosRexnord = () => {
                     <img src="https://cdn.britannica.com/48/1548-004-13E12F99/slab-caster.jpg" alt="Colada continua" className="w-full h-32 sm:h-40 object-cover" />
                   </div>
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Siderurgia' : 'Steel'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -617,7 +621,7 @@ const AcoplamientosRexnord = () => {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Pulpa & Papel' : 'Pulp & Paper'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -654,7 +658,7 @@ const AcoplamientosRexnord = () => {
                     <img src="https://fansandblowers.com/uploads/_CGSmartImage/img-8604c14aabadfce19f88226d5f1cb70f" alt="Ventilador proceso" className="w-full h-32 sm:h-40 object-cover" />
                   </div>
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
-                    <h4 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Generación de Energía' : 'Power Generation'}
                     </h4>
                     <p className="text-xs sm:text-sm text-corporate-red font-medium uppercase tracking-wide mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -682,7 +686,7 @@ const AcoplamientosRexnord = () => {
             {/* Cierre */}
             <div className="mt-12 sm:mt-16 text-center">
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
-                <p className="text-gray-700 text-base sm:text-sm sm:text-base md:text-lg leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                   {language === 'es' 
                     ? <>SERVIN Ingeniería acompaña a sus clientes en la <strong>selección técnica de acoplamientos</strong>, actuando como nexo entre la aplicación real y la solución Rexnord más adecuada.</>
                     : <>SERVIN Engineering accompanies its clients in the <strong>technical selection of couplings</strong>, acting as a link between the actual application and the most suitable Rexnord solution.</>}
@@ -695,7 +699,7 @@ const AcoplamientosRexnord = () => {
         {/* CONTACTO FINAL */}
         <section className="py-10 sm:py-14 lg:py-20 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
+            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
           }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
@@ -718,24 +722,23 @@ const AcoplamientosRexnord = () => {
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Link 
-                  to="/contact"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-white text-xs sm:text-sm lg:text-base font-bold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  style={{ color: '#8B0000' }}
+                  to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Cotización técnica: Acoplamientos Rexnord' : 'Technical quote: Rexnord couplings')}#formulario`}
+                  className="btn-primary-light w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 lg:py-4"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  {language === 'es' ? 'Cotización Técnica' : 'Technical Quote'}
+                  <span>{language === 'es' ? 'Cotización técnica' : 'Technical quote'}</span>
                 </Link>
                 
                 <Link 
                   to="/services/ingenieria-materiales"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm lg:text-base font-semibold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="btn-secondary-invert w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 lg:py-4"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   </svg>
-                  {language === 'es' ? 'Materiales' : 'Materials'}
+                  <span>{language === 'es' ? 'Materiales' : 'Materials'}</span>
                 </Link>
               </div>
               

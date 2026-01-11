@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS public.news (
     date DATE NOT NULL DEFAULT CURRENT_DATE,
     status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'published', 'archived')),
     featured BOOLEAN DEFAULT false,
+    "showOnHome" BOOLEAN DEFAULT false,
+    location TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
 );
@@ -20,6 +22,8 @@ CREATE TABLE IF NOT EXISTS public.news (
 CREATE INDEX IF NOT EXISTS idx_news_status_date ON public.news(status, date DESC);
 CREATE INDEX IF NOT EXISTS idx_news_category ON public.news(category);
 CREATE INDEX IF NOT EXISTS idx_news_featured ON public.news(featured);
+CREATE INDEX IF NOT EXISTS idx_news_show_on_home ON public.news("showOnHome") WHERE "showOnHome" = true;
+CREATE INDEX IF NOT EXISTS idx_news_location ON public.news(location);
 
 -- Enable Row Level Security
 ALTER TABLE public.news ENABLE ROW LEVEL SECURITY;

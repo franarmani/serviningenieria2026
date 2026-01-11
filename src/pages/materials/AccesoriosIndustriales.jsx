@@ -349,7 +349,7 @@ const AccesoriosIndustriales = () => {
       <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
-            <Link to="/services" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Servicios' : 'Services'}</Link>
+            <Link to="/divisiones" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Divisiones' : 'Divisions'}</Link>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -357,7 +357,7 @@ const AccesoriosIndustriales = () => {
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium flex-shrink-0" style={{color: '#8B0000'}}>{language === 'es' ? 'Accesorios para Cañerías' : 'Pipe Accessories'}</span>
+            <span className="font-medium flex-shrink-0 text-corporate-red">{language === 'es' ? 'Accesorios para Cañerías' : 'Pipe Accessories'}</span>
           </div>
         </div>
       </section>
@@ -377,7 +377,7 @@ const AccesoriosIndustriales = () => {
                 }`}
                 style={categoriaActiva === cat.id ? { 
                   fontFamily: 'Inter, system-ui, sans-serif',
-                  background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
+                  background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
                 } : { fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {cat.nombre} ({cat.cantidad})
@@ -413,7 +413,7 @@ const AccesoriosIndustriales = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 text-[10px] sm:text-[10px] sm:text-xs font-medium rounded-full text-white" style={{backgroundColor: '#8B0000', fontFamily: 'Inter, system-ui, sans-serif'}}>
+                    <span className="px-2.5 py-1 text-[10px] sm:text-[10px] sm:text-xs font-medium rounded-full text-white bg-corporate-red" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
                       {categorias.find(c => c.id === producto.categoria)?.nombre}
                     </span>
                   </div>
@@ -440,12 +440,9 @@ const AccesoriosIndustriales = () => {
                       {producto.normas.slice(0, 3).map((norma, idx) => (
                         <span 
                           key={idx} 
-                          className="px-2 py-0.5 text-[9px] sm:text-[10px] md:text-[10px] sm:text-xs rounded border font-medium"
+                          className="px-2 py-0.5 text-[9px] sm:text-[10px] md:text-[10px] sm:text-xs rounded border font-medium bg-corporate-red/5 border-corporate-red/20 text-corporate-red"
                           style={{ 
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            backgroundColor: 'rgba(139, 0, 0, 0.05)',
-                            borderColor: 'rgba(139, 0, 0, 0.2)',
-                            color: '#8B0000'
+                            fontFamily: 'Inter, system-ui, sans-serif'
                           }}
                         >
                           {norma}
@@ -467,11 +464,15 @@ const AccesoriosIndustriales = () => {
                 {/* Footer */}
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
                   <Link 
-                    to="/contact"
+                    to={`/contact?subject=${encodeURIComponent(
+                      language === 'es'
+                        ? `Solicitud de cotización: ${producto.nombre}`
+                        : `Quote request: ${producto.nombre}`
+                    )}#formulario`}
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 text-[10px] sm:text-xs md:text-xs sm:text-sm font-semibold text-white rounded-lg transition-all duration-300 hover:opacity-90"
                     style={{ 
                       fontFamily: 'Inter, system-ui, sans-serif',
-                      background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
+                      background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
                     }}
                   >
                     {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
@@ -488,7 +489,7 @@ const AccesoriosIndustriales = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10">
             <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Proveedores' : 'Certified'} <span className="font-semibold" style={{color: '#8B0000'}}>{language === 'es' ? 'Certificados' : 'Suppliers'}</span>
+              {language === 'es' ? 'Proveedores' : 'Certified'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Certificados' : 'Suppliers'}</span>
             </h2>
             <p className="text-xs sm:text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' 
@@ -506,8 +507,8 @@ const AccesoriosIndustriales = () => {
               { nombre: 'Ind. Delgado', tipo: language === 'es' ? 'Espárragos' : 'Studs' }
             ].map((prov, idx) => (
               <div key={idx} className="bg-gray-50 rounded-xl p-4 sm:p-5 text-center border border-gray-100 hover:border-gray-200 transition-colors">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style={{backgroundColor: 'rgba(139, 0, 0, 0.1)'}}>
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#8B0000'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-3 bg-corporate-red/10">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
@@ -524,7 +525,7 @@ const AccesoriosIndustriales = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
@@ -547,11 +548,11 @@ const AccesoriosIndustriales = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
               <Link 
-                to="/contact"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-sm sm:text-base md:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización técnica: accesorios industriales certificados' : 'Technical quote request: certified industrial fittings')}#formulario`}
+                className="btn-primary-light w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
@@ -559,10 +560,10 @@ const AccesoriosIndustriales = () => {
               
               <Link 
                 to="/services/ingenieria-materiales"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm sm:text-base md:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="btn-secondary-invert w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 </svg>
                 {language === 'es' ? 'Ver Ingeniería de Materiales' : 'View Materials Engineering'}

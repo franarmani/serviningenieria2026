@@ -117,7 +117,7 @@ const PrefabricadosCanerias = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.03em',
             lineHeight: '1.1'
@@ -180,19 +180,17 @@ const PrefabricadosCanerias = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              to="/contact"
-              className="inline-block px-10 py-4 bg-corporate-red text-white text-sm font-bold uppercase tracking-wider hover:bg-[#6B0000] transition-colors"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Interés: Prefabricados de Cañerías (próximamente)' : 'Interest: Piping Prefabrication (coming soon)')}#formulario`}
+              className="btn-primary"
             >
               {language === 'es' ? 'Contacto' : 'Contact'}
             </Link>
             
             <Link 
-              to="/services"
-              className="inline-block px-10 py-4 border-2 border-gray-300 text-gray-900 text-sm font-bold uppercase tracking-wider hover:border-gray-400 hover:bg-gray-100 transition-colors"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              to="/divisiones"
+              className="btn-secondary"
             >
-              {language === 'es' ? 'Ver Servicios Activos' : 'View Active Services'}
+              {language === 'es' ? 'Ver divisiones' : 'View divisions'}
             </Link>
           </div>
         </div>

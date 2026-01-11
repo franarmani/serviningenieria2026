@@ -49,14 +49,23 @@ news (
   content TEXT,
   content_en TEXT,
   category TEXT,
+   location TEXT,
   image TEXT,
   date DATE,
   status TEXT (draft|published|archived),
   featured BOOLEAN,
+   showOnHome BOOLEAN,
   created_at TIMESTAMP,
   updated_at TIMESTAMP
 )
 ```
+
+Notas:
+- El dashboard usa `showOnHome` para destacar noticias en el Home.
+- El dashboard usa `location` como “Ubicación” (ciudad / planta / dirección).
+- Si tu base ya existe, podés ejecutar los scripts:
+   - `scripts/add-showOnHome-column.sql`
+   - `scripts/add-location-column.sql`
 
 ### 6. Inicializar datos de ejemplo
 Una vez configurado, los datos de ejemplo se crearán automáticamente la primera vez que accedas a la aplicación.

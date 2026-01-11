@@ -171,7 +171,7 @@ const Clientes = () => {
         
         <div className="relative z-10 container-custom text-center">
           <div className="max-w-5xl mx-auto">
-            <h1 className="font-display text-4xl lg:text-6xl xl:text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-8">
               <span className="block text-white/95 font-semibold mb-2">{language === 'es' ? 'NUESTROS' : 'OUR'}</span>
               <span className="block font-extrabold text-corporate-accent">{language === 'es' ? 'CLIENTES' : 'CLIENTS'}</span>
             </h1>
@@ -354,11 +354,18 @@ const Clientes = () => {
               : 'Join the more than 400 companies that trust SERVIN INGENIERÍA for their industrial maintenance needs.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-white text-corporate-red px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <a
+              href={`/contact?subject=${encodeURIComponent(
+                language === 'es'
+                  ? 'Solicitud de cotización: servicios industriales'
+                  : 'Quote request: industrial services'
+              )}#formulario`}
+              className="bg-white text-corporate-red px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
               {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
             </a>
-            <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-corporate-red transition-colors">
-              {language === 'es' ? 'Conocer Servicios' : 'View Services'}
+            <a href="/divisiones" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-corporate-red transition-colors">
+              {language === 'es' ? 'Conocer Divisiones' : 'View Divisions'}
             </a>
           </div>
         </div>

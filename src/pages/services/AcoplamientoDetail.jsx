@@ -342,7 +342,7 @@ const AcoplamientoDetail = () => {
               </p>
               <Link 
                 to="/materiales/acoplamientos" 
-                className="inline-flex items-center px-6 py-3 bg-corporate-red text-white font-semibold rounded-xl hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="btn-primary"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -390,7 +390,7 @@ const AcoplamientoDetail = () => {
             </div>
 
             {/* Title */}
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 md:mb-10 animate-fade-in-up-delay-1" style={{
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 md:mb-10 animate-fade-in-up-delay-1 uppercase" style={{
               fontFamily: 'Inter, system-ui, sans-serif',
               letterSpacing: '-0.03em'
             }}>
@@ -406,7 +406,11 @@ const AcoplamientoDetail = () => {
             {/* CTA */}
             <div className="animate-fade-in-up-delay-2">
               <Link 
-                to="/contact" 
+                to={`/contact?subject=${encodeURIComponent(
+                  language === 'es'
+                    ? `Solicitud de cotización: ${product.nombre}`
+                    : `Quote request: ${product.nombre}`
+                )}#formulario`}
                 className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red transition-colors duration-300"
                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
               >
@@ -656,7 +660,7 @@ const AcoplamientoDetail = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+        <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-7xl mx-auto">
               
@@ -679,11 +683,15 @@ const AcoplamientoDetail = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
                 <Link 
-                  to="/contact"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-base sm:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                  style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                  to={`/contact?subject=${encodeURIComponent(
+                    language === 'es'
+                      ? `Solicitud de cotización técnica: Acoplamientos Rexnord (${product.nombre})`
+                      : `Technical quote request: Rexnord couplings (${product.nombre})`
+                  )}#formulario`}
+                  className="btn-primary-light w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
-                  <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
@@ -691,10 +699,10 @@ const AcoplamientoDetail = () => {
                 
                 <Link 
                   to="/services/acoplamientos-rexnord"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base sm:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="btn-secondary-invert w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
-                  <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                   {language === 'es' ? 'Ver Catálogo Acoplamientos' : 'View Couplings Catalog'}

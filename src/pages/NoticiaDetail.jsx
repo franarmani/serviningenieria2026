@@ -275,7 +275,7 @@ const NoticiaDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#8B0000] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-corporate-red mx-auto mb-4"></div>
           <p className="text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Cargando...' : 'Loading...'}</p>
         </div>
       </div>
@@ -297,7 +297,7 @@ const NoticiaDetail = () => {
         <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
           <div className="max-w-4xl">
             <div className="flex items-center mb-4">
-              <span className="bg-[#8B0000] text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <span className="bg-corporate-red text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {getCategoryIcon(noticia.category)}
                 {getCategoryName(noticia.category)}
               </span>
@@ -322,7 +322,7 @@ const NoticiaDetail = () => {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-12">
           {noticia.tags.map((tag, index) => (
-            <span key={index} className="bg-[#8B0000]/10 text-[#8B0000] px-4 py-2 rounded-full text-xs sm:text-sm font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <span key={index} className="bg-corporate-red/10 text-corporate-red px-4 py-2 rounded-full text-xs sm:text-sm font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {tag}
             </span>
           ))}
@@ -339,7 +339,7 @@ const NoticiaDetail = () => {
         <div className="mt-16 pt-12 border-t border-gray-200">
           <Link 
             to="/novedades" 
-            className="inline-flex items-center bg-[#8B0000] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#6B0000] transition-all duration-300 hover:scale-105"
+            className="btn-primary"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

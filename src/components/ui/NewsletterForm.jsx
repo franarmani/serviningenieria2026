@@ -128,8 +128,8 @@ const NewsletterForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={language === 'es' ? 'correo@empresa.com' : 'email@company.com'}
-              className={`w-full pl-12 pr-6 py-4 rounded-xl border-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-white/50 outline-none shadow-lg transition-colors ${
-                status === 'error' ? 'border-red-400' : 'border-transparent'
+              className={`w-full pl-12 pr-6 py-3 rounded-lg border bg-white/95 text-gray-900 placeholder-gray-500 outline-none shadow-sm transition-colors focus:ring-2 focus:ring-white/50 focus:border-white/60 ${
+                status === 'error' ? 'border-red-300' : 'border-white/30'
               }`}
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               disabled={status === 'loading'}
@@ -139,7 +139,7 @@ const NewsletterForm = () => {
           <button 
             type="submit"
             disabled={status === 'loading'}
-            className="w-full sm:w-auto bg-white text-[#8B0000] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed" 
+            className="btn-primary-light w-full sm:w-auto px-8 py-3 disabled:opacity-70 disabled:cursor-not-allowed" 
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             {status === 'loading' ? (

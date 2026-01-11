@@ -37,6 +37,9 @@ const MantenimientosInSitu = () => {
   // Estado para controlar si está expandida la sección de metodología
   const [expandedMetodologia, setExpandedMetodologia] = useState(false);
 
+  // Cálculo automático de años de experiencia desde 1979
+  const yearsOfExperience = new Date().getFullYear() - 1979;
+
   const ventajasPreventest = [
     {
       titulo: language === 'es' ? "Sin Interrumpir la Operación" : "Without Interrupting Operation",
@@ -247,7 +250,7 @@ const MantenimientosInSitu = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.02em',
             lineHeight: '1.15'
@@ -390,71 +393,28 @@ const MantenimientosInSitu = () => {
 
       {/* Ensayos en Planta - EVIDENCIA TÉCNICA (Video) */}
       <section id="video-ensayos" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            
-            {/* Video - Columna izquierda */}
-            <div className="order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
-                <div className="aspect-video">
-                  <VimeoPlayer
-                    videoId="1152915059"
-                    hash="f6d5a1320b"
-                    title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
-                  />
-                </div>
-              </div>
-
-              <div className="mt-3 flex items-center justify-center gap-2">
-                <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
-                <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Calibración de válvulas — video' : 'Valve calibration — video'}
-                </span>
+          {/* Video centrado */}
+          <div className="max-w-3xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
+              <div className="aspect-video">
+                <VimeoPlayer
+                  videoId="1152915059"
+                  hash="f6d5a1320b"
+                  title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
+                />
               </div>
             </div>
 
-            {/* Texto técnico - Columna derecha */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 py-1 mb-4 shadow-sm">
-                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2"></div>
-                <span className="text-gray-700 text-xs font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Ensayos en Planta' : 'In-Plant Testing'}
-                </span>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                <span className="font-semibold text-corporate-red">{language === 'es' ? 'Ensayos funcionales' : 'Functional testing'}</span> {language === 'es' ? 'en banco certificado' : 'on certified bench'}
-              </h3>
-              
-              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' 
-                  ? 'Evaluación funcional de válvulas de control y seguridad en condiciones controladas, con instrumentación digital y registro documental.'
-                  : 'Functional evaluation of control and safety valves under controlled conditions, with digital instrumentation and documentary recording.'}
-              </p>
-              
-              <ul className="space-y-3">
-                {(language === 'es' ? [
-                  'Presión hidráulica hasta 650 kg/cm²',
-                  'Presión neumática hasta 200 kg/cm²',
-                  'Registro digital e informe técnico'
-                ] : [
-                  'Hydraulic pressure up to 650 kg/cm²',
-                  'Pneumatic pressure up to 200 kg/cm²',
-                  'Digital recording and technical report'
-                ]).map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <div className="w-5 h-5 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-3 flex items-center justify-center gap-2">
+              <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
+              <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Calibración de válvulas — video' : 'Valve calibration — video'}
+              </span>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -753,175 +713,6 @@ const MantenimientosInSitu = () => {
         </div>
       )}
 
-      {/* Nuestro Alcance - Responsive */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-6">
-              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
-              <span className="text-[10px] sm:text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Alcance de Servicios' : 'Service Scope'}
-              </span>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              letterSpacing: '-0.02em'
-            }}>
-              {language === 'es' ? 'Nuestro Alcance' : 'Our Scope'}
-            </h2>
-            
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es'
-                ? 'Servicios especializados para una amplia gama de válvulas industriales y sistemas de automatización.'
-                : 'Specialized services for a wide range of industrial valves and automation systems.'}
-            </p>
-          </div>
-
-          {/* Grid de categorías - Responsive */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            
-            {/* Válvulas Industriales */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas Industriales' : 'Industrial Valves'}
-                </h3>
-              </div>
-              
-              <div className="space-y-2">
-                {[
-                  { es: 'Esclusa, Globo, Retención', en: 'Gate, Globe, Check' },
-                  { es: 'Esféricas y Mariposa', en: 'Ball & Butterfly' },
-                  { es: 'Diafragma y Tapón lubricado', en: 'Diaphragm & Lubricated Plug' }
-                ].map((valve, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? valve.es : valve.en}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Válvulas Especiales */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                  </svg>
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas Especiales' : 'Special Valves'}
-                </h3>
-              </div>
-              
-              <div className="space-y-2">
-                {[
-                  { es: 'Pressure Seal', en: 'Pressure Seal' },
-                  { es: 'Doble y Triple excentricidad', en: 'Double & Triple Offset' },
-                  { es: 'API 6D / API 6A', en: 'API 6D / API 6A' },
-                  { es: 'Válvulas de Coke', en: 'Coke Valves' }
-                ].map((valve, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? valve.es : valve.en}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Sistemas de Alivio */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Sistemas de Alivio' : 'Relief Systems'}
-                </h3>
-              </div>
-              
-              <div className="space-y-2">
-                {[
-                  { es: 'Válvulas de seguridad y alivio', en: 'Safety & Relief Valves' },
-                  { es: 'Convencionales y Pilotadas', en: 'Conventional & Piloted' },
-                  { es: 'Presión y Vacío', en: 'Pressure & Vacuum' }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? item.es : item.en}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Automatización */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-corporate-red rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Automatización' : 'Automation'}
-                </h3>
-              </div>
-              
-              <div className="space-y-2">
-                {[
-                  { es: 'Válvulas Automatizadas', en: 'Automated Valves' },
-                  { es: 'Actuadores', en: 'Actuators' },
-                  { es: 'Válvulas de Control', en: 'Control Valves' }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <div className="w-4 h-4 rounded-full bg-corporate-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-sm text-gray-700" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? item.es : item.en}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
       {/* Válvulas de Seguridad - In Situ */}
       <section className="py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -929,7 +720,7 @@ const MantenimientosInSitu = () => {
             
             {/* Imagen */}
             <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/laboratoriomovil/5.jpg" 
                   alt={language === 'es' ? 'Válvula de seguridad en proceso de calibración' : 'Safety valve in calibration process'}
@@ -1164,443 +955,8 @@ const MantenimientosInSitu = () => {
         </div>
       </section>
 
-      {/* TRABAJOS REALIZADOS - Responsive */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-6">
-              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
-              <span className="text-[10px] sm:text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Portfolio' : 'Portfolio'}
-              </span>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              letterSpacing: '-0.02em'
-            }}>
-              {language === 'es' ? 'TRABAJOS REALIZADOS' : 'COMPLETED WORKS'}
-            </h2>
-            
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es'
-                ? 'Experiencia comprobada en mantenimiento y reparación de válvulas industriales de alta complejidad.'
-                : 'Proven experience in maintenance and repair of high-complexity industrial valves.'}
-            </p>
-          </div>
-
-          {/* Grid de trabajos - Responsive */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            
-            {/* Trabajo 1 - Pressure Seal */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/1.png" 
-                  alt="Pressure Seal"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  Pressure Seal
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de válvulas esclusas Pressure Seal.' 
-                    : 'Pressure Seal gate valve maintenance.'}
-                </p>
-                <ul className="space-y-1.5 sm:space-y-2">
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Internos Stellite' : 'Stellite internals'}</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Empaquetadura y Junta grafito conformado' : 'Formed graphite packing and gasket'}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 2 - Válvula para Coke */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/2.png" 
-                  alt="Válvula para Coke"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvula para Coke' : 'Coke Valve'}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de válvula Esférica 4 Vías 16" para servicio de Coke.' 
-                    : '4-Way 16" Ball Valve maintenance for Coke service.'}
-                </p>
-                <ul className="space-y-1.5 sm:space-y-2">
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Asientos Metálicos' : 'Metal seats'}</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Fuelles y acometidas de vapor' : 'Bellows and steam connections'}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 3 - Válvulas con Actuador Eléctrico */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/3.png" 
-                  alt="Válvulas con Actuador Eléctrico"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas esclusas con Actuador Eléctrico' : 'Gate Valves with Electric Actuator'}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de Válvulas esclusas con actuadores eléctricos.' 
-                    : 'Gate valve maintenance with electric actuators.'}
-                </p>
-                <ul className="space-y-1.5 sm:space-y-2">
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Internos Stellite' : 'Stellite internals'}</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Empaquetadura Grafito Conformado' : 'Formed Graphite Packing'}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 4 - Válvula Retención con Amortiguación */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/4.png" 
-                  alt="Válvula Retención con Amortiguación"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvula Retención con Amortiguación' : 'Check Valve with Damping'}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de válvulas retención y fabricación de sistema de amortiguación de Clapeta.' 
-                    : 'Check valve maintenance and clapper damping system fabrication.'}
-                </p>
-                <ul className="space-y-1.5 sm:space-y-2">
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Actuador Hidráulico' : 'Hydraulic Actuator'}</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-tight">{language === 'es' ? 'Internos AISI 410' : 'AISI 410 internals'}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 5 - Válvulas esclusas API 6D */}
-            <div className="bg-gray-50 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/5.png" 
-                  alt="Válvulas esclusas API 6D"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas esclusas API 6D' : 'API 6D Gate Valves'}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de válvulas esclusas con actuador hidráulico.' 
-                    : 'Gate valve maintenance with hydraulic actuator.'}
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Asiento metálico' : 'Metal seat'}
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Cuchilla y guías con aporte de Electroless Nickel' : 'Knife and guides with Electroless Nickel coating'}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 6 - Válvulas esclusas, globo y retención */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/6.png" 
-                  alt="Válvulas esclusas, globo y retención"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas esclusas, globo y retención' : 'Gate, Globe and Check Valves'}
-                </h3>
-                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de 100 válvulas esclusas, globo y retención de 2" a 12".' 
-                    : 'Maintenance of 100 gate, globe and check valves from 2" to 12".'}
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Internos AISI 410 y Stellite' : 'AISI 410 and Stellite internals'}
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Empaquetaduras de grafito conformado con inhibidor de corrosión' : 'Formed graphite packing with corrosion inhibitor'}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 7 - Válvulas de Seguridad Tanque */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/7.png" 
-                  alt="Válvulas de Seguridad Tanque"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas de Seguridad Tanque / Presión y Vacío' : 'Tank Safety Valves / Pressure and Vacuum'}
-                </h3>
-                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento en planta de válvulas de seguridad de Tanque de Amoniaco.' 
-                    : 'On-site maintenance of Ammonia Tank safety valves.'}
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Reemplazo de sellos, diafragmas y mantenimiento de piloto' : 'Seal and diaphragm replacement and pilot maintenance'}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 8 - Válvula de Seguridad 24" */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/8.png" 
-                  alt="Válvula de Seguridad 24 pulgadas"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvula de Seguridad Diámetro 24"' : '24" Diameter Safety Valve'}
-                </h3>
-                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de Válvula de seguridad de presión negativa.' 
-                    : 'Negative pressure safety valve maintenance.'}
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Cierre Metal-Metal' : 'Metal-to-Metal seal'}
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? '0 Burbujas' : '0 Bubbles'}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 9 - Válvulas de Seguridad Pilotadas */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/preventest/trabajos/9.png" 
-                  alt="Válvulas de Seguridad Pilotadas"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Válvulas de Seguridad Pilotadas' : 'Pilot-Operated Safety Valves'}
-                </h3>
-                <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' 
-                    ? 'Mantenimiento de Válvulas de seguridad de alta presión pilotadas.' 
-                    : 'High-pressure pilot-operated safety valve maintenance.'}
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Asiento Metal-Metal' : 'Metal-to-Metal seat'}
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {language === 'es' ? 'Presión de Prueba 296 Kg/cm²' : 'Test Pressure 296 Kg/cm²'}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Trabajo 10 - Mantenimiento en planta 11 Válvulas */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-3">
-              <div className="p-6">
-                {/* Grid de 3 imágenes - Responsive optimizado */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg">
-                    <img 
-                      src="/preventest/trabajos/mantenimiento1.png" 
-                      alt="Mantenimiento Pressure Seal - Imagen 1"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg">
-                    <img 
-                      src="/preventest/trabajos/mantenimiento2.png" 
-                      alt="Mantenimiento Pressure Seal - Imagen 2"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg col-span-2 md:col-span-1">
-                    <img 
-                      src="/preventest/trabajos/mantenimiento3.png" 
-                      alt="Mantenimiento Pressure Seal - Imagen 3"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-                
-                <div className="flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Mantenimiento en planta de 11 Válvulas Pressure Seal' : 'On-site maintenance of 11 Pressure Seal Valves'}
-                  </h3>
-                  <p className="text-sm text-gray-700 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' 
-                      ? 'Válvulas esclusas Pressure Seal 8" Serie 1500 y 12" Serie 1500.' 
-                      : '8" Series 1500 and 12" Series 1500 Pressure Seal gate valves.'}
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Desarme de válvulas' : 'Valve disassembly'}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Lapidado de asientos y cuñas' : 'Seat and wedge lapping'}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Mecanizado de vástagos' : 'Stem machining'}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Reemplazo de empaquetaduras' : 'Packing replacement'}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Juntas de bonete pressure seal' : 'Pressure seal bonnet gaskets'}
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-corporate-red mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                        {language === 'es' ? 'Reemplazo de cajas reductoras' : 'Gear box replacement'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
       {/* CTA Final - Estilo About */}
-      <section className="py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
           <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
@@ -1622,32 +978,32 @@ const MantenimientosInSitu = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              to="/contact"
-              className="group inline-flex items-center justify-center px-8 py-3.5 bg-white text-sm sm:text-base font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+              to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización técnica: mantenimiento in situ' : 'Technical quote request: on-site maintenance')}#formulario`}
+              className="btn-primary-light px-8 py-3.5 text-sm sm:text-base"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
             </Link>
             
             <Link 
-              to="/services"
-              className="group inline-flex items-center justify-center px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              to="/divisiones"
+              className="btn-secondary-invert px-8 py-3.5 text-sm sm:text-base"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              {language === 'es' ? 'Ver Todos los Servicios' : 'View All Services'}
+              {language === 'es' ? 'Ver divisiones' : 'View divisions'}
             </Link>
           </div>
           
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 text-center">
               <div className="text-white font-bold text-base sm:text-lg mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? '+46 años' : '+46 years'}
+                {language === 'es' ? `+${yearsOfExperience} años` : `+${yearsOfExperience} years`}
               </div>
               <div className="text-white/70 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' ? 'Trayectoria industrial' : 'Industrial experience'}

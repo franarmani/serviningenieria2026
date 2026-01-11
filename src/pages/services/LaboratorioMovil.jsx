@@ -97,7 +97,7 @@ const LaboratorioMovil = () => {
 
   const ventajasServicio = language === 'es' ? [
     {
-      titulo: "Reducción de Paradas de planta",
+      titulo: "Reducción de Paradas de Planta",
       descripcion: "Minimiza el tiempo de inactividad al realizar servicios sin desmontar equipos de la línea de proceso."
     },
     {
@@ -163,7 +163,7 @@ const LaboratorioMovil = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.03em',
             lineHeight: '1.1'
@@ -328,11 +328,9 @@ const LaboratorioMovil = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Desde 1979' : 'Since 1979'}
-                    </p>
-                    <p className="text-[10px] text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       {language === 'es' ? 'Bahía Blanca, Buenos Aires' : 'Bahía Blanca, Buenos Aires'}
                     </p>
+                   
                   </div>
                 </div>
               </div>
@@ -509,10 +507,14 @@ const LaboratorioMovil = () => {
             {/* Imagen */}
             <div className="relative order-1 lg:order-1">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/laboratoriomovil/8.jpg" 
-                  alt={language === 'es' ? 'Válvula de control en proceso de diagnóstico' : 'Control valve in diagnostic process'}
-                  className="w-full h-full object-cover"
+                <iframe
+                  src="https://player.vimeo.com/video/1153412418?title=0&byline=0&portrait=0"
+                  title={language === 'es' ? 'Video: Válvulas de Control' : 'Video: Control Valves'}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -584,7 +586,7 @@ const LaboratorioMovil = () => {
 
       {/* CTA Section - ROJO CORPORATIVO (como Services.jsx) */}
       <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
-        style={{ background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)' }}>
+        style={{ background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -596,13 +598,13 @@ const LaboratorioMovil = () => {
               </span>
             </div>
             
-            <h3 className="text-xl sm:text-2xl lg:text-xl sm:text-2xl lg:text-3xl font-light text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' 
                 ? <>¿Necesita <span className="font-semibold">servicios de laboratorio móvil</span>?</>
                 : <>Need <span className="font-semibold">mobile laboratory services</span>?</>}
             </h3>
             
-            <p className="text-sm sm:text-sm sm:text-base text-white/85 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+            <p className="text-sm sm:text-base text-white/85 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
               {language === 'es'
                 ? <>Contáctenos para coordinar una visita técnica y conocer cómo podemos optimizar sus <strong className="text-white font-normal">procesos de calibración y mantenimiento</strong> directamente en su planta.</>
                 : <>Contact us to coordinate a technical visit and learn how we can optimize your <strong className="text-white font-normal">calibration and maintenance processes</strong> directly at your plant.</>}
@@ -610,8 +612,8 @@ const LaboratorioMovil = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link 
-                to="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red text-sm sm:text-sm sm:text-base font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización: Laboratorio móvil' : 'Quote request: Mobile laboratory')}#formulario`}
+                className="btn-primary-light px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', minWidth: '220px' }}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

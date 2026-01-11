@@ -254,7 +254,17 @@ export const categories = [
   'Obras Civiles',
   'Certificaciones',
   'Capacitación',
-  'Empresa'
+  'Empresa',
+  // Divisiones / Unidades (para clasificar novedades por área)
+  'Ingeniería de Materiales',
+  'Planta de Mantenimiento Industrial',
+  'Mantenimientos In Situ – Laboratorio Móvil',
+  'Mantenimientos In Situ – PREVENTEST',
+  'Inspección de Tanques API & END',
+  'Revestimiento Industrial',
+  'Prefabricados de Cañerías',
+  'Cabinas de Granallado',
+  'Ingeniería Industrial'
 ];
 
 // ========== UPLOAD DE IMÁGENES ==========
@@ -320,6 +330,7 @@ The technical report, prepared according to API 653 standards, identified critic
 
 This inspection adds to the more than 1,000 performed since 1997, consolidating our position as leaders in tank inspection in Argentina.`,
         category: 'Inspección API',
+        location: 'Bahía Blanca, Argentina',
         image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop',
         date: '2025-11-20',
         status: 'published',
@@ -353,6 +364,7 @@ The audit process evaluated our quality management processes, documentation cont
 
 This renewal reaffirms our commitment to operational excellence and the satisfaction of our more than 400 active clients.`,
         category: 'Certificaciones',
+  location: 'Buenos Aires, Argentina',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
         date: '2025-11-15',
         status: 'published',
@@ -388,6 +400,7 @@ This investment allows us to offer comprehensive surface preparation services an
 
 The plant complements our valve and industrial equipment repair services, offering complete turnkey solutions.`,
         category: 'Empresa',
+  location: 'Buenos Aires, Argentina',
         image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop',
         date: '2025-11-10',
         status: 'published',
@@ -421,6 +434,7 @@ The project was executed with strict safety protocols, achieving 15,000 man-hour
 
 Thanks to our 46 years of experience and specialized mobile equipment, we were able to perform all work on-site, minimizing logistics time and maximizing plant availability.`,
         category: 'Mantenimiento',
+  location: 'Bahía Blanca, Argentina',
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop',
         date: '2025-11-05',
         status: 'published',

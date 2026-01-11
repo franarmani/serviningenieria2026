@@ -32,6 +32,12 @@ const Novedades = () => {
     return news.summary;
   };
 
+  const getLocation = (news) => {
+    if (!news) return '';
+    if (language === 'en' && news.location_en) return news.location_en;
+    return news.location || news.ubicacion || '';
+  };
+
   const featuredNews = novedades ? novedades.filter(novedad => novedad.featured) : [];
   const regularNews = novedades ? novedades.filter(novedad => !novedad.featured) : [];
   const recentNews = regularNews.slice(0, 6);
@@ -108,7 +114,7 @@ const Novedades = () => {
       </section>
 
       {/* NOTICIA PRINCIPAL (HERO EDITORIAL) */}
-      {featuredNews.length > 0 && (
+      {!loading && featuredNews.length > 0 && (
         <section className="bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
             <Link to={`/novedades/${featuredNews[0].id}`} className="block group">
@@ -135,11 +141,24 @@ const Novedades = () => {
                 {/* Contenido Principal */}
                 <div className="lg:col-span-5 flex flex-col justify-center">
                   {/* Fecha */}
-                  <div className="flex items-center gap-2 text-xs text-[#999] mb-4 uppercase tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#999] mb-4 uppercase tracking-wider" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <span>{formatDate(featuredNews[0].date)}</span>
+
+                    {getLocation(featuredNews[0]) && (
+                      <>
+                        <span className="text-[#bbb]">•</span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          {getLocation(featuredNews[0])}
+                        </span>
+                      </>
+                    )}
                   </div>
 
                   {/* Título */}
@@ -179,7 +198,28 @@ const Novedades = () => {
             <div className="h-px bg-[#ddd] flex-1"></div>
           </div>
 
-          {recentNews.length > 0 ? (
+          {loading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="bg-white border border-[#e5e5e5] overflow-hidden">
+                  <div className="aspect-[16/9] bg-gray-200 animate-pulse border-b border-[#e5e5e5]"></div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="h-6 w-28 bg-gray-200 animate-pulse"></div>
+                      <div className="h-4 w-20 bg-gray-100 animate-pulse"></div>
+                    </div>
+                    <div className="h-7 w-3/4 bg-gray-200 animate-pulse mb-4"></div>
+                    <div className="space-y-2 mb-5">
+                      <div className="h-4 w-full bg-gray-100 animate-pulse"></div>
+                      <div className="h-4 w-11/12 bg-gray-100 animate-pulse"></div>
+                      <div className="h-4 w-10/12 bg-gray-100 animate-pulse"></div>
+                    </div>
+                    <div className="h-5 w-24 bg-gray-200 animate-pulse"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : recentNews.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {recentNews.map((news, index) => (
                 <Link 
@@ -199,13 +239,23 @@ const Novedades = () => {
                   {/* Contenido */}
                   <div className="p-6">
                     {/* Categoría */}
-                    <div className="flex items-center gap-3 mb-5">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-5">
                       <span className="inline-block bg-corporate-red text-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.1em]" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
                         {news.category}
                       </span>
                       <span className="text-xs text-[#888] font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
                         {formatDate(news.date)}
                       </span>
+
+                      {getLocation(news) && (
+                        <span className="text-xs text-[#888] font-medium inline-flex items-center gap-1.5" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          {getLocation(news)}
+                        </span>
+                      )}
                     </div>
 
                     {/* Título */}

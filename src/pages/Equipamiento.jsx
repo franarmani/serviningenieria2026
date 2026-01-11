@@ -184,7 +184,7 @@ const Equipamiento = () => {
           <div className="mb-6 sm:mb-8 animate-fade-in-up">
             <div className="inline-flex items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8">
               <div className="w-2 h-2 bg-corporate-red rounded-full mr-3"></div>
-              <span className="text-white/80 text-xs sm:text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <span className="text-white/80 text-xs sm:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 Tecnología de vanguardia
               </span>
             </div>
@@ -192,7 +192,7 @@ const Equipamiento = () => {
           
           {/* Executive title */}
           <div className="mb-8 sm:mb-12 animate-fade-in-up-delay-1">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-4 sm:mb-6" style={{ 
+            <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-5xl font-light text-white mb-4 sm:mb-6" style={{ 
               fontFamily: 'Inter, system-ui, sans-serif',
               fontWeight: '200',
               letterSpacing: '0.01em',
@@ -205,7 +205,7 @@ const Equipamiento = () => {
               <h2 className="text-6xl sm:text-7xl lg:text-9xl xl:text-10xl font-bold" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
                 fontWeight: '800',
-                background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)',
+                background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -231,7 +231,11 @@ const Equipamiento = () => {
           {/* Executive actions */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 animate-fade-in-up-delay-3">
             <Link 
-              to="/contact" 
+              to={`/contact?subject=${encodeURIComponent(
+                language === 'es'
+                  ? 'Consulta técnica: equipamiento industrial'
+                  : 'Technical inquiry: industrial equipment'
+              )}#formulario`}
               className="btn-primary"
               style={{ width: '280px', height: '64px', fontFamily: 'Inter, system-ui, sans-serif' }}
             >
@@ -239,11 +243,11 @@ const Equipamiento = () => {
             </Link>
             
             <Link 
-              to="/services" 
+              to="/divisiones" 
               className="btn-secondary"
               style={{ width: '280px', height: '64px', fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              {language === 'es' ? 'Ver Servicios' : 'View Services'}
+              {language === 'es' ? 'Ver divisiones' : 'View divisions'}
             </Link>
           </div>
         </div>

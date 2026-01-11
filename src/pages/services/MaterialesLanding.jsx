@@ -5,6 +5,9 @@ import { useLanguage } from '../../context/LanguageContext';
 const MaterialesLanding = () => {
   const { language } = useLanguage();
   
+  // Cálculo automático de años de experiencia desde 1979
+  const yearsOfExperience = new Date().getFullYear() - 1979;
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
@@ -40,7 +43,7 @@ const MaterialesLanding = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.03em',
             lineHeight: '1.1'
@@ -115,7 +118,47 @@ const MaterialesLanding = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            
+
+            {/* Válvulas Velan */}
+            <div className="group h-full">
+              <Link 
+                to="/materiales/valvulas" 
+                className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-gray-100 hover:border-corporate-red/30 transform hover:-translate-y-2 flex flex-col"
+              >
+                <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden flex-shrink-0">
+                  <img 
+                    src="https://velan.com/wp-content/uploads/2024/09/API-623-cast-steel-globe-edited-1.png" 
+                    alt={language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute top-4 right-4 bg-corporate-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'VELAN' : 'VELAN'}
+                  </div>
+                </div>
+                
+                <div className="p-5 sm:p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/30">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.01em' }}>
+                    {language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                    {language === 'es' 
+                      ? 'Representantes exclusivos de Velan en Argentina desde diciembre de 2000. Esclusa, Globo, Retención, Mariposa, Esférica y válvulas especiales para procesos industriales críticos.'
+                      : 'Exclusive Velan representative in Argentina since December 2000. Gate, Globe, Check, Butterfly, ball and special valves for critical industrial processes.'}
+                  </p>
+                  
+                  <div className="pt-4 border-t border-gray-100">
+                    <div className="flex items-center justify-between text-corporate-red font-bold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300 mt-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      <span>{language === 'es' ? 'Explorar Línea' : 'Explore Line'}</span>
+                      <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
             {/* Acoplamientos Rexnord */}
             <div className="group h-full">
               <Link 
@@ -236,45 +279,7 @@ const MaterialesLanding = () => {
               </Link>
             </div>
 
-            {/* Válvulas Velan */}
-            <div className="group h-full">
-              <Link 
-                to="/materiales/valvulas" 
-                className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-gray-100 hover:border-corporate-red/30 transform hover:-translate-y-2 flex flex-col"
-              >
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden flex-shrink-0">
-                  <img 
-                    src="https://velan.com/wp-content/uploads/2024/09/API-623-cast-steel-globe-edited-1.png" 
-                    alt={language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-corporate-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'VELAN' : 'VELAN'}
-                  </div>
-                </div>
-                
-                <div className="p-5 sm:p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/30">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.01em' }}>
-                    {language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
-                    {language === 'es' 
-                      ? 'Representantes exclusivos de Velan en Argentina desde diciembre de 2000. Esclusa, Globo, Retención, Mariposa, Esférica y válvulas especiales para procesos industriales críticos.'
-                      : 'Exclusive Velan representative in Argentina since December 2000. Gate, Globe, Check, Butterfly, ball and special valves for critical industrial processes.'}
-                  </p>
-                  
-                  <div className="pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-between text-corporate-red font-bold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300 mt-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      <span>{language === 'es' ? 'Explorar Línea' : 'Explore Line'}</span>
-                      <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+            
 
           </div>
         </div>
@@ -308,7 +313,7 @@ const MaterialesLanding = () => {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? '46 Años de Experiencia' : '46 Years of Experience'}</h3>
+                  <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? `${yearsOfExperience} Años de Experiencia` : `${yearsOfExperience} Years of Experience`}</h3>
                   <p className="text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Conocimiento profundo del mercado industrial argentino y proveedores internacionales.' : 'Deep knowledge of the Argentine industrial market and international suppliers.'}</p>
                 </div>
               </div>
@@ -360,7 +365,7 @@ const MaterialesLanding = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-14 lg:py-16" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-12 sm:py-14 lg:py-16" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
@@ -383,25 +388,23 @@ const MaterialesLanding = () => {
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
               <Link 
-                to="/contact"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white text-sm sm:text-base font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitar cotización técnica: Ingeniería de Materiales' : 'Request a technical quote: Materials Engineering')}#formulario`}
+                className="btn-primary-light w-full sm:w-auto px-6 sm:px-8 py-3"
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                {language === 'es' ? 'Solicitar Cotización Técnica' : 'Request Technical Quote'}
+                <span>{language === 'es' ? 'Solicitar cotización técnica' : 'Request a technical quote'}</span>
               </Link>
               
               <Link 
-                to="/services"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                to="/divisiones"
+                className="btn-secondary-invert w-full sm:w-auto px-6 sm:px-8 py-3"
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
-                {language === 'es' ? 'Ver Todos los Servicios' : 'View All Services'}
+                <span>{language === 'es' ? 'Ver divisiones' : 'View divisions'}</span>
               </Link>
             </div>
             

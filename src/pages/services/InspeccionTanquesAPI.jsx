@@ -1,9 +1,15 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 
 const InspeccionTanquesAPI = () => {
   const { language } = useLanguage();
+
+  const contactUrl = (subject) => `/contact?subject=${encodeURIComponent(subject)}#formulario`;
+  const defaultContactSubject =
+    language === 'es'
+      ? 'Necesitamos una inspección API para nuestros tanques de almacenamiento'
+      : 'We need an API inspection for our storage tanks';
   
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -11,6 +17,107 @@ const InspeccionTanquesAPI = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState(null);
+  const [ropeAccessModalOpen, setRopeAccessModalOpen] = useState(false);
+
+  const ndtModalRef = useRef(null);
+  const ropeModalRef = useRef(null);
+  const lastFocusedElementRef = useRef(null);
+
+  useEffect(() => {
+    const isAnyModalOpen = modalOpen || ropeAccessModalOpen;
+    if (!isAnyModalOpen) return;
+
+    if (!lastFocusedElementRef.current) {
+      lastFocusedElementRef.current = document.activeElement;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const getFocusableElements = (root) => {
+      if (!root) return [];
+      const selector =
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+      return Array.from(root.querySelectorAll(selector)).filter((el) => {
+        const isDisabled = el.getAttribute('aria-disabled') === 'true' || el.hasAttribute('disabled');
+        const isHidden = el.getAttribute('aria-hidden') === 'true' || el.offsetParent === null;
+        return !isDisabled && !isHidden;
+      });
+    };
+
+    const getActiveModalElement = () => {
+      return ropeAccessModalOpen ? ropeModalRef.current : ndtModalRef.current;
+    };
+
+    const focusFirstElement = () => {
+      const modalEl = getActiveModalElement();
+      if (!modalEl) return;
+      const focusables = getFocusableElements(modalEl);
+      if (focusables.length > 0) {
+        focusables[0].focus();
+      } else {
+        modalEl.focus();
+      }
+    };
+
+    requestAnimationFrame(focusFirstElement);
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (ropeAccessModalOpen) {
+          setRopeAccessModalOpen(false);
+          return;
+        }
+
+        if (modalOpen) {
+          setModalOpen(false);
+          setSelectedGroup(null);
+        }
+
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const modalEl = getActiveModalElement();
+        if (!modalEl) return;
+
+        const focusables = getFocusableElements(modalEl);
+        if (focusables.length === 0) {
+          e.preventDefault();
+          modalEl.focus();
+          return;
+        }
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const active = document.activeElement;
+
+        if (e.shiftKey) {
+          if (active === first || active === modalEl || !modalEl.contains(active)) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (active === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+
+      const lastFocused = lastFocusedElementRef.current;
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+      lastFocusedElementRef.current = null;
+    };
+  }, [modalOpen, ropeAccessModalOpen]);
 
   const openModal = (grupo) => {
     setSelectedGroup(grupo);
@@ -246,7 +353,7 @@ const InspeccionTanquesAPI = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 uppercase" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             letterSpacing: '-0.03em',
             lineHeight: '1.1'
@@ -305,7 +412,7 @@ const InspeccionTanquesAPI = () => {
               backgroundColor: '#fefefe',
               borderColor: '#2e2c3a'
             }}>
-              <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#8B0000' }}></div>
+              <div className="w-2 h-2 rounded-full mr-3 bg-corporate-red"></div>
               <span className="text-xs font-semibold tracking-wide uppercase" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
                 color: '#2e2c3a'
@@ -317,7 +424,7 @@ const InspeccionTanquesAPI = () => {
               fontWeight: '600',
               color: '#2e2c3a'
             }}>
-              {language === 'es' ? 'Conforme a' : 'According to'} <span style={{ color: '#8B0000' }}>{language === 'es' ? 'Normativa Vigente' : 'Current Regulations'}</span>
+              {language === 'es' ? 'Conforme a' : 'According to'} <span className="text-corporate-red">{language === 'es' ? 'Normativa Vigente' : 'Current Regulations'}</span>
             </h2>
             <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed px-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Aplicación de estándares API y cumplimiento de resoluciones nacionales vigentes.' : 'Application of API standards and compliance with current national regulations.'}
@@ -337,7 +444,7 @@ const InspeccionTanquesAPI = () => {
                   }}>
                     {auditoria.titulo}
                   </h3>
-                  <p className="text-xs sm:text-xs sm:text-sm text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {auditoria.descripcion}
                   </p>
                 </div>
@@ -355,7 +462,7 @@ const InspeccionTanquesAPI = () => {
               backgroundColor: '#fefefe',
               borderColor: '#2e2c3a'
             }}>
-              <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#8B0000' }}></div>
+              <div className="w-2 h-2 rounded-full mr-3 bg-corporate-red"></div>
               <span className="text-xs font-semibold tracking-wide uppercase" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
                 color: '#2e2c3a'
@@ -367,7 +474,7 @@ const InspeccionTanquesAPI = () => {
               fontWeight: '600',
               color: '#2e2c3a'
             }}>
-              {language === 'es' ? 'Ensayos' : 'Non-Destructive'} <span style={{ color: '#8B0000' }}>{language === 'es' ? 'No Destructivos' : 'Testing'}</span>
+              {language === 'es' ? 'Ensayos' : 'Non-Destructive'} <span className="text-corporate-red">{language === 'es' ? 'No Destructivos' : 'Testing'}</span>
             </h2>
             <p className="text-lg text-gray-500 mb-6" style={{ 
               fontFamily: 'IBM Plex Sans, system-ui, sans-serif',
@@ -419,11 +526,11 @@ const InspeccionTanquesAPI = () => {
 
                   <button 
                     onClick={() => openModal(grupo)}
-                    className="w-full py-2 px-4 bg-corporate-red text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg flex items-center justify-center group" 
+                    className="btn-primary w-full text-xs sm:text-sm" 
                     style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   >
                     <span>{language === 'es' ? 'Ver Características Completas' : 'View Full Details'}</span>
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
@@ -436,10 +543,22 @@ const InspeccionTanquesAPI = () => {
 
       {/* Modal de detalles - Responsive Optimizado */}
       {modalOpen && selectedGroup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-[30000] flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-xl sm:rounded-2xl w-full max-w-sm sm:max-w-md md:max-w-lg h-[80vh] sm:h-[75vh] flex flex-col">
+        <div className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8">
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={closeModal}
+          ></div>
+
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="ndt-modal-title"
+            ref={ndtModalRef}
+            tabIndex={-1}
+            className="relative bg-white rounded-xl sm:rounded-2xl w-full max-w-sm sm:max-w-md md:max-w-lg max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] flex flex-col overflow-hidden shadow-2xl"
+          >
             <div className="flex-shrink-0 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between rounded-t-xl sm:rounded-t-2xl">
-              <h3 className="text-sm sm:text-base font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <h3 id="ndt-modal-title" className="text-sm sm:text-base font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {selectedGroup.titulo}
               </h3>
               <button 
@@ -503,8 +622,12 @@ const InspeccionTanquesAPI = () => {
 
                 <div className="mt-4 sm:mt-5 pt-4 border-t border-gray-200 text-center">
                   <Link 
-                    to="/contact"
-                    className="inline-flex items-center justify-center px-5 sm:px-6 py-2 sm:py-2.5 bg-corporate-red text-white text-xs sm:text-sm font-bold rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                    to={contactUrl(
+                      language === 'es'
+                        ? `Consulta técnica: ${selectedGroup?.titulo || selectedGroup?.nombre || 'Inspección API'}`
+                        : `Technical inquiry: ${selectedGroup?.titulo || selectedGroup?.nombre || 'API Inspection'}`
+                    )}
+                    className="btn-primary text-xs sm:text-sm"
                     style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     onClick={closeModal}
                   >
@@ -525,37 +648,56 @@ const InspeccionTanquesAPI = () => {
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 shadow-sm">
               <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-              <span className="text-gray-700 text-xs sm:text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Servicios Especializados' : 'Specialized Services'}</span>
+              <span className="text-gray-700 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Servicios Especializados' : 'Specialized Services'}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Servicios' : 'Complementary'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Complementarios' : 'Services'}</span>
             </h2>
-            <p className="text-base sm:text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Soluciones complementarias realizadas por personal técnicamente capacitado con tecnología especializada.' : 'Complementary solutions performed by technically trained personnel with specialized technology.'}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {serviciosEspecializados.map((servicio, index) => (
-              <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-corporate-red/20 flex flex-col h-full">
+              <div
+                key={index}
+                className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border flex flex-col h-full bg-white border-gray-100 hover:border-corporate-red/20"
+              >
                 <div className="p-6 sm:p-8 text-center flex-grow flex flex-col">
-                  <div className="w-14 h-14 bg-corporate-red rounded-xl flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-105 transition-transform duration-300 shadow-lg">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 bg-corporate-red/10 text-corporate-red border border-corporate-red/10">
                     {servicio.icon}
                   </div>
-                  <h3 className="text-lg sm:text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-corporate-red transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <h3
+                    className="text-lg sm:text-lg md:text-xl font-bold mb-3 text-gray-900 group-hover:text-corporate-red transition-colors"
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                  >
                     {servicio.titulo}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <p className="text-xs sm:text-sm leading-relaxed mb-6 flex-grow text-gray-600" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {servicio.descripcion}
                   </p>
                   
-                  <Link 
-                    to="/contact"
-                    className="w-full py-3 px-6 bg-corporate-red text-white text-xs sm:text-sm font-semibold rounded-xl hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg mt-auto inline-flex items-center justify-center"
-                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                  >
-                    {language === 'es' ? 'Solicitar Información' : 'Request Information'}
-                  </Link>
+                  {index === 1 ? (
+                    <button 
+                      onClick={() => setRopeAccessModalOpen(true)}
+                      className="btn-secondary w-full text-xs sm:text-sm mt-auto"
+                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {language === 'es' ? 'Ver Información' : 'View Information'}
+                    </button>
+                  ) : (
+                    <Link 
+                      to={contactUrl(defaultContactSubject)}
+                      className="btn-primary w-full text-xs sm:text-sm mt-auto"
+                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                    >
+                      {language === 'es' ? 'Solicitar Información' : 'Request Information'}
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -569,12 +711,12 @@ const InspeccionTanquesAPI = () => {
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center bg-gray-50 border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
               <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-corporate-red rounded-full mr-2 sm:mr-3"></div>
-              <span className="text-gray-700 text-xs sm:text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Cumplimiento Técnico' : 'Technical Compliance'}</span>
+              <span className="text-gray-700 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{language === 'es' ? 'Cumplimiento Técnico' : 'Technical Compliance'}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4 sm:mb-6 px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Normativas y' : 'Regulations and'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'Estándares Aplicados' : 'Applied Standards'}</span>
             </h2>
-            <p className="text-base sm:text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto px-4 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' 
                 ? 'Aplicación de estándares nacionales e internacionales que garantizan integridad estructural, seguridad operativa y trazabilidad de cada inspección.'
                 : 'Application of national and international standards that guarantee structural integrity, operational safety and traceability of each inspection.'}
@@ -698,7 +840,7 @@ const InspeccionTanquesAPI = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
@@ -707,35 +849,35 @@ const InspeccionTanquesAPI = () => {
               <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Inspección API</span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl lg:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               ¿Necesita una inspección API <span className="block font-bold mt-2">para sus tanques de almacenamiento?</span>
             </h2>
             
-            <p className="text-base sm:text-lg lg:text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               Más de <strong className="text-white font-semibold">1000 tanques inspeccionados</strong> avalan nuestra trayectoria. Nuestros especialistas están listos para asistirlo.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
               <Link 
-                to="/contact"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-base sm:text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                to={contactUrl(defaultContactSubject)}
+                className="btn-primary-light w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Solicitar Cotización Técnica
               </Link>
               
               <Link 
-                to="/services"
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base sm:text-sm sm:text-base md:text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                to="/divisiones"
+                className="btn-secondary-invert w-full sm:w-auto px-8 sm:px-10 py-4 text-sm sm:text-base md:text-lg"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
-                Ver Todos los Servicios
+                Ver divisiones
               </Link>
             </div>
             
@@ -756,6 +898,158 @@ const InspeccionTanquesAPI = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal de Acceso por Cuerdas */}
+      {ropeAccessModalOpen && (
+        <div className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8">
+          <div 
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            onClick={() => setRopeAccessModalOpen(false)}
+          ></div>
+          
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rope-access-title"
+            ref={ropeModalRef}
+            tabIndex={-1}
+            className="relative bg-white rounded-xl shadow-2xl w-full max-w-5xl max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] flex flex-col overflow-hidden"
+          >
+            {/* Header */}
+            <div className="sticky top-0 z-10 rounded-t-xl bg-gradient-to-r from-corporate-red to-corporate-red-hover text-white border-b border-white/10 shadow-sm">
+              <div className="px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 bg-white/15 border border-white/15 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <h3
+                      id="rope-access-title"
+                      className="text-base sm:text-lg md:text-xl font-semibold tracking-tight truncate text-white"
+                      style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                    >
+                      {language === 'es' ? 'Acceso por cuerdas' : 'Rope access'}
+                    </h3>
+                    <p className="text-white/85 text-[11px] sm:text-xs leading-snug" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es'
+                        ? 'Trabajo en altura con procedimientos y control de riesgos.'
+                        : 'Work at height with procedures and risk control.'}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  aria-label={language === 'es' ? 'Cerrar modal' : 'Close modal'}
+                  onClick={() => setRopeAccessModalOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-lg text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-corporate-red"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="overflow-y-auto flex-1 p-4 sm:p-6 md:p-8">
+              {/* Descripción Principal */}
+              <div className="mb-6">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' 
+                    ? 'Ofrecemos soluciones seguras y eficientes para la ejecución de trabajos en altura mediante la técnica de acceso por cuerdas. Este método, ampliamente utilizado a nivel internacional, permite llegar a lugares de difícil acceso sin necesidad de grandes estructuras auxiliares como andamios o grúas. El acceso por cuerda garantiza rapidez, flexibilidad y menor impacto en las instalaciones, reduciendo tiempos y costos de montaje. Se trata de una técnica segura, desarrollada bajo estrictos protocolos de trabajo y normas internacionales. Gracias a la capacitación de nuestro equipo, podemos realizar inspecciones, mantenimiento, limpieza, preparado de superficies, revestimiento, entre otras, cuidando siempre la integridad de las personas y la calidad del servicio.'
+                    : 'We offer safe and efficient solutions for executing work at height using rope access techniques. This method, widely used internationally, allows access to hard-to-reach places without the need for large auxiliary structures such as scaffolding or cranes. Rope access guarantees speed, flexibility and less impact on facilities, reducing assembly times and costs. It is a safe technique, developed under strict work protocols and international standards. Thanks to the training of our team, we can perform inspections, maintenance, cleaning, surface preparation, coating, among others, always taking care of the integrity of people and the quality of service.'}
+                </p>
+              </div>
+
+              {/* Galería de Imágenes */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/inspeccion-tanques/1.jpg" 
+                    alt={language === 'es' ? 'Trabajo en altura con acceso por cuerdas' : 'Height work with rope access'}
+                    className="w-full h-64 sm:h-72 object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/inspeccion-tanques/2.jpg" 
+                    alt={language === 'es' ? 'Inspección técnica en tanque' : 'Technical tank inspection'}
+                    className="w-full h-64 sm:h-72 object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Trabajos Verticales */}
+              <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-5 sm:p-6 mb-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 bg-corporate-red/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Trabajos Verticales' : 'Vertical Work'}
+                    </h4>
+                    <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' 
+                        ? 'Llevamos toda nuestra experiencia y servicios al ámbito de trabajos en altura, garantizando seguridad y eficiencia, incluso en los más alto.'
+                        : 'We bring all our experience and services to the field of work at height, ensuring safety and efficiency, even at the highest levels.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Aplicaciones */}
+              <div className="bg-white border border-gray-200 rounded-xl p-5 sm:p-6">
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-4 flex items-center gap-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <div className="w-8 h-8 bg-corporate-red/10 rounded-lg flex items-center justify-center">
+                    <svg className="w-4 h-4 text-corporate-red" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  {language === 'es' ? 'Aplicaciones' : 'Applications'}
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {(language === 'es' 
+                    ? ['Mantenimiento Industrial', 'Limpieza', 'Preparado de Superficie', 'Aplicación de Revestimiento', 'Inspección']
+                    : ['Industrial Maintenance', 'Cleaning', 'Surface Preparation', 'Coating Application', 'Inspection']
+                  ).map((aplicacion, idx) => (
+                    <div key={idx} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
+                      <div className="w-2 h-2 bg-corporate-red rounded-full flex-shrink-0"></div>
+                      <span className="text-sm text-gray-700 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {aplicacion}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Footer con botón de contacto */}
+            <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 px-4 sm:px-6 py-4 rounded-b-xl">
+              <Link 
+                to={contactUrl(
+                  language === 'es'
+                    ? 'Consulta técnica: Acceso por cuerdas'
+                    : 'Technical inquiry: Rope access'
+                )}
+                className="btn-primary w-full text-sm sm:text-base"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                onClick={() => setRopeAccessModalOpen(false)}
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                {language === 'es' ? 'Solicitar Información' : 'Request Information'}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

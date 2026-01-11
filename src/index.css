@@ -78,7 +78,7 @@
 
 /* Mejoras de hover para submenús */
 .dropdown-item:hover .text-white {
-  color: #8B0000;
+  color: #B00000;
 }
 
 /* Scrollbar personalizado */
@@ -92,12 +92,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(139, 0, 0, 0.8);
+  background: rgba(176, 0, 0, 0.8);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 0, 0, 1);
+  background: rgba(176, 0, 0, 1);
 }
 
 /* Ocultar scrollbar en carrusel mobile */
@@ -192,119 +192,55 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
+  /* Botones / CTAs (estilo profesional y consistente) */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold tracking-wide transition-colors duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-corporate-red/40 focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:pointer-events-none;
+    text-decoration: none;
+    text-align: center;
+  }
+
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #8B0000, #8B0000);
-    color: white;
-    padding: 0 1.5rem;
-    height: 3rem;
-    border-radius: 0.75rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.025em;
-    transition: all 0.3s ease;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
+    @apply btn-base bg-corporate-red text-white border border-corporate-red/20 shadow-sm;
+    @apply hover:bg-corporate-red-hover;
   }
-  
-  .btn-primary:hover {
-    background: linear-gradient(to right, #6B0000, #6B0000);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transform: scale(1.02);
+
+  .btn-primary-light {
+    @apply btn-base bg-white text-corporate-red border border-white/25 shadow-sm;
+    @apply hover:bg-gray-50;
   }
-  
-  .btn-primary:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.3);
-  }
-  
+
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    border: 2px solid #dee2e6;
-    color: #495057;
-    padding: 0 1.5rem;
-    height: 3rem;
-    border-radius: 0.75rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.025em;
-    transition: all 0.3s ease;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @apply btn-base bg-white text-gray-900 border border-gray-300 shadow-sm;
+    @apply hover:bg-gray-50 hover:border-gray-400;
   }
-  
-  .btn-secondary:hover {
-    background-color: #e9ecef;
-    border-color: #8B0000;
-    color: #8B0000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
+
+  .btn-outline-red {
+    @apply btn-base bg-transparent text-corporate-red border border-corporate-red/40 shadow-sm;
+    @apply hover:bg-corporate-red hover:text-white hover:border-corporate-red;
   }
-  
-    .btn-tercero {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #495057;
-    border: 2px solid #495057;
-    color: #f8f9fa;
-    padding: 0 1.5rem;
-    height: 3rem;
-    border-radius: 0.75rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.025em;
-    transition: all 0.3s ease;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .btn-secondary-invert {
+    @apply btn-base bg-transparent text-white border border-white/30;
+    @apply hover:bg-white/10 hover:border-white/40;
   }
-  
-  .btn-tercero:hover {
-    background-color: #8B0000;
-    border-color: #495057;
-    color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
+
+  .btn-tercero {
+    @apply btn-base bg-corporate-dark text-white border border-white/10 shadow-sm;
+    @apply hover:bg-corporate-dark/90;
   }
+
   .btn-ghost {
-    color: #000000;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    position: relative;
-    text-decoration: none;
+    @apply inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200;
+    @apply text-gray-900 hover:text-corporate-red;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
   }
-  
+
   .btn-ghost:hover {
-    color: #8B0000;
-  }
-  
-  .btn-ghost::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0.125rem;
-    background-color: #8B0000;
-    left: 0;
-    bottom: -0.25rem;
-    transition: width 0.3s ease;
-  }
-  
-  .btn-ghost:hover::after {
-    width: 100%;
+    text-decoration-color: rgba(176, 0, 0, 0.35);
   }
   
   .corporate-card {
@@ -440,7 +376,7 @@
   .divider {
     width: 5rem;
     height: 0.125rem;
-    background-color: #8B0000;
+    background-color: #B00000;
     margin: 3rem auto;
   }
   
@@ -452,11 +388,11 @@
   }
   
   .nav-link:hover {
-    color: #8B0000;
+    color: #B00000;
   }
   
   .hero-gradient {
-    background: linear-gradient(to right, #210C20, rgba(33, 12, 32, 0.95), rgba(151, 5, 11, 0.9));
+    background: linear-gradient(to right, #210C20, rgba(33, 12, 32, 0.95), rgba(176, 0, 0, 0.9));
   }
   
   .corporate-input {
@@ -471,8 +407,8 @@
   
   .corporate-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #8B0000;
-    border-color: #8B0000;
+    box-shadow: 0 0 0 2px #B00000;
+    border-color: #B00000;
   }
   
   .corporate-textarea {
@@ -489,8 +425,8 @@
   
   .corporate-textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #8B0000;
-    border-color: #8B0000;
+    box-shadow: 0 0 0 2px #B00000;
+    border-color: #B00000;
   }
 }
 
@@ -504,17 +440,17 @@
   }
   
   .bg-gradient-corporate {
-    background: linear-gradient(135deg, #210C20 0%, #8B0000 50%, #8B0000 100%);
+    background: linear-gradient(135deg, #210C20 0%, #B00000 50%, #B00000 100%);
   }
   
   .bg-gradient-corporate-soft {
-    background: linear-gradient(135deg, #210C20/95 0%, #8B0000/90 100%);
+    background: linear-gradient(135deg, rgba(33, 12, 32, 0.95) 0%, rgba(176, 0, 0, 0.9) 100%);
   }
   
   .bg-pattern {
     background-image: 
-      linear-gradient(45deg, transparent 65%, rgba(139, 0, 0, 0.03) 75%, transparent 80%),
-      linear-gradient(-45deg, transparent 65%, rgba(139, 0, 0, 0.03) 75%, transparent 80%);
+      linear-gradient(45deg, transparent 65%, rgba(176, 0, 0, 0.03) 75%, transparent 80%),
+      linear-gradient(-45deg, transparent 65%, rgba(176, 0, 0, 0.03) 75%, transparent 80%);
     background-size: 40px 40px;
   }
   
@@ -539,17 +475,17 @@
   
   /* Custom color utilities */
   .text-corporate-black { color: #000000; }
-  .text-corporate-red { color: #8B0000; }
-  .text-corporate-accent { color: #8B0000; }
+  .text-corporate-red { color: #B00000; }
+  .text-corporate-accent { color: #B00000; }
   .text-corporate-dark { color: #210C20; }
   
   .bg-corporate-black { background-color: #000000; }
-  .bg-corporate-red { background-color: #8B0000; }
-  .bg-corporate-accent { background-color: #8B0000; }
+  .bg-corporate-red { background-color: #B00000; }
+  .bg-corporate-accent { background-color: #B00000; }
   .bg-corporate-dark { background-color: #210C20; }
   
-  .border-corporate-red { border-color: #8B0000; }
-  .border-corporate-accent { border-color: #8B0000; }
+  .border-corporate-red { border-color: #B00000; }
+  .border-corporate-accent { border-color: #B00000; }
   
   /* Corporate gray scale */
   .text-corporate-gray-300 { color: #DEE2E6; }
@@ -604,7 +540,7 @@
 
 .timeline-card:hover .timeline-card-border {
   border-left-width: 6px;
-  border-left-color: #8B0000;
+  border-left-color: #B00000;
 }
 
 /* Timeline nodes (círculos rojos) */
@@ -614,7 +550,7 @@
 
 .timeline-node:hover {
   transform: scale(1.2);
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(176, 0, 0, 0.4);
 }
 
 /* Timeline icons micro-animations */
@@ -630,19 +566,19 @@
 /* Timeline horizontal eliminada - ahora usa timeline vertical simple sin efectos */
 
 .timeline-card:hover .bg-corporate-red\/10 {
-  background-color: rgba(139, 0, 0, 0.12);
+  background-color: rgba(176, 0, 0, 0.12);
   transform: scale(1.05);
 }
 
 /* Connector Lines - Subtle Corporate Touch */
 .timeline-card .border-gray-200 {
-  border-color: rgba(139, 0, 0, 0.15);
+  border-color: rgba(176, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .timeline-card:hover .border-gray-200 {
-  border-color: rgba(139, 0, 0, 0.3);
-  box-shadow: 0 1px 0 rgba(139, 0, 0, 0.1);
+  border-color: rgba(176, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(176, 0, 0, 0.1);
 }
 
 /* Typography Improvements */
@@ -651,7 +587,7 @@
 }
 
 .timeline-card:hover h3 {
-  color: rgba(139, 0, 0, 0.9);
+  color: rgba(176, 0, 0, 0.9);
 }
 
 /* Responsive Design */
@@ -1006,7 +942,7 @@
 
 /* Focus visible para accesibilidad */
 :focus-visible {
-  outline: 2px solid #8B0000;
+  outline: 2px solid #B00000;
   outline-offset: 2px;
 }
 

@@ -112,7 +112,7 @@ const EsparragosBuloneria = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" to="/contact" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
+            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización: espárragos y bulonería ASTM' : 'Quote request: ASTM certified studs and fasteners')}#formulario`} style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
             <a href="#scroll-content" className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Ver Tipos' : 'View Types'}</a>
           </div>
         </div>
@@ -131,7 +131,7 @@ const EsparragosBuloneria = () => {
       <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
-            <Link to="/services" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Servicios' : 'Services'}</Link>
+            <Link to="/divisiones" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Divisiones' : 'Divisions'}</Link>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -220,7 +220,7 @@ const EsparragosBuloneria = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <Link 
-              to="/contact"
+              to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización: espárragos certificados' : 'Quote request: certified studs')}#formulario`}
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red font-semibold rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-sm sm:text-base"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >

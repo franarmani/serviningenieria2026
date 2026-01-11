@@ -1,42 +1,23 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import VimeoPlayer from '../../components/VimeoPlayer';
+import { useModalA11y } from '../../hooks/useModalA11y';
 
 const PlantaMantenimiento = () => {
   const { language } = useLanguage();
-  const [showProcessModal, setShowProcessModal] = useState(false);
-  const [showEquipmentModal, setShowEquipmentModal] = useState(false);
-  const [showInfraModal, setShowInfraModal] = useState(false);
-  const [showCapacidadesModal, setShowCapacidadesModal] = useState(false);
+  const [openModalId, setOpenModalId] = useState(null);
+  const modalRef = useRef(null);
+
+  const closeModal = () => setOpenModalId(null);
+  const openModal = (id) => setOpenModalId(id);
+  const isAnyModalOpen = openModalId !== null;
+
+  useModalA11y({ isOpen: isAnyModalOpen, modalRef, onClose: closeModal });
   
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
-
-  // Cerrar modal con Escape
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        setShowProcessModal(false);
-        setShowEquipmentModal(false);
-        setShowInfraModal(false);
-        setShowCapacidadesModal(false);
-      }
-    };
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
-  }, []);
-
-  // Bloquear scroll cuando modal está abierto
-  useEffect(() => {
-    if (showProcessModal || showEquipmentModal || showInfraModal || showCapacidadesModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [showProcessModal, showEquipmentModal, showInfraModal, showCapacidadesModal]);
 
   return (
     <div className="min-h-screen">
@@ -309,7 +290,7 @@ const PlantaMantenimiento = () => {
             
             {/* Card 1: Infraestructura */}
             <button
-              onClick={() => setShowInfraModal(true)}
+              onClick={() => openModal('infra')}
               className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-corporate-red/30 hover:shadow-xl transition-all text-left"
             >
               <div className="w-12 h-12 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-corporate-red/20 transition-colors">
@@ -333,7 +314,7 @@ const PlantaMantenimiento = () => {
 
             {/* Card 2: Capacidades */}
             <button
-              onClick={() => setShowCapacidadesModal(true)}
+              onClick={() => openModal('capacidades')}
               className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-corporate-red/30 hover:shadow-xl transition-all text-left"
             >
               <div className="w-12 h-12 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-corporate-red/20 transition-colors">
@@ -357,7 +338,7 @@ const PlantaMantenimiento = () => {
 
             {/* Card 3: Equipamiento */}
             <button
-              onClick={() => setShowEquipmentModal(true)}
+              onClick={() => openModal('equipment')}
               className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-corporate-red/30 hover:shadow-xl transition-all text-left"
             >
               <div className="w-12 h-12 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-corporate-red/20 transition-colors">
@@ -396,7 +377,7 @@ const PlantaMantenimiento = () => {
 
             {/* Card 4: Proceso */}
             <button
-              onClick={() => setShowProcessModal(true)}
+              onClick={() => openModal('process')}
               className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-corporate-red/30 hover:shadow-xl transition-all text-left"
             >
               <div className="w-12 h-12 bg-corporate-red/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-corporate-red/20 transition-colors">
@@ -577,7 +558,7 @@ const PlantaMantenimiento = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center px-4">
               <Link 
-                to="/contact"
+                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitar evaluación técnica: válvulas industriales en planta certificada' : 'Request technical evaluation: critical industrial valves (certified plant)')}#formulario`}
                 className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
               >
@@ -615,32 +596,43 @@ const PlantaMantenimiento = () => {
       </section>
 
       {/* Modal: Infraestructura y Especificaciones */}
-      {showInfraModal && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
-          onClick={() => setShowInfraModal(false)}
+      {openModalId === 'infra' && (
+        <div
+          className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          onClick={closeModal}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-          
-          <div 
-            className="relative bg-white rounded-xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg w-full max-h-[90vh] overflow-y-auto"
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="planta-infra-modal-title"
+            tabIndex={-1}
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2.5 flex-none bg-white">
+              <h3
+                id="planta-infra-modal-title"
+                className="text-sm font-bold text-gray-900"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
                 {language === 'es' ? 'Especificaciones Técnicas' : 'Technical Specifications'}
               </h3>
-              <button 
-                onClick={() => setShowInfraModal(false)}
+              <button
+                type="button"
+                onClick={closeModal}
                 className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label={language === 'es' ? 'Cerrar modal' : 'Close modal'}
               >
                 <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            
-            <div className="p-3 sm:p-4">
+
+            <div className="p-3 sm:p-4 overflow-y-auto flex-1">
               <div className="grid grid-cols-2 gap-2 mb-3">
                 <div className="group bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-lg p-2.5 sm:p-3 border border-gray-200 hover:border-corporate-red/30 transition-all hover:shadow-md">
                   <div className="flex items-start justify-between mb-0.5">
@@ -716,32 +708,43 @@ const PlantaMantenimiento = () => {
       )}
 
       {/* Modal: Capacidades Técnicas */}
-      {showCapacidadesModal && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
-          onClick={() => setShowCapacidadesModal(false)}
+      {openModalId === 'capacidades' && (
+        <div
+          className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          onClick={closeModal}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-          
-          <div 
-            className="relative bg-white rounded-xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg w-full max-h-[90vh] overflow-y-auto"
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="planta-capacidades-modal-title"
+            tabIndex={-1}
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2.5 flex-none bg-white">
+              <h3
+                id="planta-capacidades-modal-title"
+                className="text-sm font-bold text-gray-900"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
                 {language === 'es' ? 'Capacidades Técnicas' : 'Technical Capabilities'}
               </h3>
-              <button 
-                onClick={() => setShowCapacidadesModal(false)}
+              <button
+                type="button"
+                onClick={closeModal}
                 className="p-1 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label={language === 'es' ? 'Cerrar modal' : 'Close modal'}
               >
                 <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            
-            <div className="p-3 sm:p-4">
+
+            <div className="p-3 sm:p-4 overflow-y-auto flex-1">
               <div className="space-y-1.5">
                 {(language === 'es' ? [
                   { title: 'Recuperación Integral', desc: 'Válvulas industriales de todo tipo y tamaño, desde 1/2" hasta 24"', badge: 'API 598', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
@@ -784,32 +787,43 @@ const PlantaMantenimiento = () => {
       )}
 
       {/* Modal: Equipamiento */}
-      {showEquipmentModal && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
-          onClick={() => setShowEquipmentModal(false)}
+      {openModalId === 'equipment' && (
+        <div
+          className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          onClick={closeModal}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-          
-          <div 
-            className="relative bg-white rounded-xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg w-full max-h-[90vh] overflow-y-auto"
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="planta-equipment-modal-title"
+            tabIndex={-1}
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2.5 flex-none bg-white">
+              <h3
+                id="planta-equipment-modal-title"
+                className="text-sm font-bold text-gray-900"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
                 {language === 'es' ? 'Equipamiento Industrial' : 'Industrial Equipment'}
               </h3>
-              <button 
-                onClick={() => setShowEquipmentModal(false)}
+              <button
+                type="button"
+                onClick={closeModal}
                 className="p-1 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label={language === 'es' ? 'Cerrar modal' : 'Close modal'}
               >
                 <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            
-            <div className="p-3 sm:p-4">
+
+            <div className="p-3 sm:p-4 overflow-y-auto flex-1">
               <div className="space-y-1.5">
                 {(language === 'es' ? [
                   { title: 'Bancos de Prueba VENTIL', desc: 'Computarizados con plataformas, mordazas hasta 16" y contador láser', badge: 'VENTIL', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
@@ -858,32 +872,43 @@ const PlantaMantenimiento = () => {
       )}
 
       {/* Modal: Proceso */}
-      {showProcessModal && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
-          onClick={() => setShowProcessModal(false)}
+      {openModalId === 'process' && (
+        <div
+          className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          onClick={closeModal}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-          
-          <div 
-            className="relative bg-white rounded-xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg w-full max-h-[90vh] overflow-y-auto"
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="planta-process-modal-title"
+            tabIndex={-1}
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2.5 flex-none bg-white">
+              <h3
+                id="planta-process-modal-title"
+                className="text-sm font-bold text-gray-900"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
                 {language === 'es' ? 'Proceso de Mantenimiento' : 'Maintenance Process'}
               </h3>
-              <button 
-                onClick={() => setShowProcessModal(false)}
+              <button
+                type="button"
+                onClick={closeModal}
                 className="p-1 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label={language === 'es' ? 'Cerrar modal' : 'Close modal'}
               >
                 <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            
-            <div className="p-3 sm:p-4">
+
+            <div className="p-3 sm:p-4 overflow-y-auto flex-1">
               <div className="space-y-1.5">
                 {(language === 'es' ? [
                   { num: '01', title: 'Diagnóstico e inspección dimensional completa', desc: 'Evaluación inicial del estado de la válvula', category: 'Inicial' },

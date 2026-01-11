@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
   const { language } = useLanguage();
+  const location = useLocation();
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +19,7 @@ const Contact = () => {
       badge: 'Contáctenos',
       heroTitle: 'CONECTEMOS',
       heroHighlight: 'SU PROYECTO',
-      heroSubtitle: 'Más de 46 años respaldando a la industria argentina. Nuestro equipo de ingenieros está listo para atender su consulta.',
+      heroSubtitle: 'Más de 46 años respaldando a la industria argentina. Nuestro equipo de profesionales están listos para atender su consulta.',
       // Form
       formTitle: 'Envíenos su Consulta',
       formSubtitle: 'Complete el formulario y nuestro equipo técnico-comercial le responderá dentro de las próximas 24 horas hábiles.',
@@ -26,6 +28,8 @@ const Contact = () => {
       namePlaceholder: 'Ej: Juan Pérez',
       companyLabel: 'Empresa / Representa a',
       companyPlaceholder: 'Ej: SERVIN / Represento a ...',
+      emailLabel: 'Email',
+      emailPlaceholder: 'Ej: nombre@empresa.com',
       subjectLabel: 'Asunto',
       subjectPlaceholder: 'Ej: Cotización / Consulta técnica',
       messageLabel: 'Mensaje',
@@ -58,7 +62,7 @@ const Contact = () => {
       badge: 'Contact Us',
       heroTitle: 'LET\'S CONNECT',
       heroHighlight: 'YOUR PROJECT',
-      heroSubtitle: 'Over 46 years supporting Argentine industry. Our team of engineers is ready to assist with your inquiry.',
+      heroSubtitle: 'Over 46 years supporting Argentine industry. Our team of professionals are ready to assist with your inquiry.',
       // Form
       formTitle: 'Send Us Your Inquiry',
       formSubtitle: 'Fill out the form and our technical-commercial team will respond within the next 24 business hours.',
@@ -67,6 +71,8 @@ const Contact = () => {
       namePlaceholder: 'E.g.: John Smith',
       companyLabel: 'Company / Representing',
       companyPlaceholder: 'E.g.: Your company / Representing ...',
+      emailLabel: 'Email',
+      emailPlaceholder: 'E.g.: name@company.com',
       subjectLabel: 'Subject',
       subjectPlaceholder: 'E.g.: Quotation / Technical inquiry',
       messageLabel: 'Message',
@@ -149,44 +155,92 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
+    email: '',
     subject: '',
     message: ''
   });
+  const [subjectTouched, setSubjectTouched] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [activeOffice, setActiveOffice] = useState(0);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const subjectFromQuery = params.get('subject');
+
+    if (subjectFromQuery && !subjectTouched) {
+      setFormData((prev) => ({ ...prev, subject: subjectFromQuery }));
+    }
+
+    if (location.hash === '#formulario') {
+      setTimeout(() => {
+        document.getElementById('formulario')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 0);
+    }
+  }, [location.search, location.hash, subjectTouched]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'subject' && !subjectTouched) setSubjectTouched(true);
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+    if (submitError) setSubmitError('');
   };
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = txt.required;
     if (!formData.company.trim()) newErrors.company = txt.required;
+    if (!formData.email.trim()) newErrors.email = txt.required;
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email.trim())) newErrors.email = txt.invalidEmail;
     if (!formData.subject.trim()) newErrors.subject = txt.required;
     if (!formData.message.trim()) newErrors.message = txt.required;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          language
+        })
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || 'Request failed');
+      }
+
       setSubmitSuccess(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      setSubmitError(language === 'en'
+        ? 'We could not send your inquiry right now. Please try again later.'
+        : 'No pudimos enviar tu consulta en este momento. Intentá nuevamente más tarde.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
-    setFormData({ name: '', company: '', subject: '', message: '' });
+    setFormData({ name: '', company: '', email: '', subject: '', message: '' });
+    setSubjectTouched(false);
     setSubmitSuccess(false);
+    setSubmitError('');
     setErrors({});
   };
 
@@ -304,6 +358,12 @@ const Contact = () => {
                   ) : (
                     <form onSubmit={handleSubmit}>
 
+                      {submitError && (
+                        <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                          {submitError}
+                        </div>
+                      )}
+
                       <div className="space-y-6">
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div>
@@ -342,6 +402,25 @@ const Contact = () => {
                               }`}
                             />
                             {errors.company && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.company}</p>}
+                          </div>
+
+                          <div className="sm:col-span-2">
+                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                              {txt.emailLabel} <span className="text-corporate-red">*</span>
+                            </label>
+                            <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              placeholder={txt.emailPlaceholder}
+                              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all outline-none shadow-none appearance-none text-sm sm:text-base ${
+                                errors.email
+                                  ? 'border-red-500 bg-red-50'
+                                  : 'border-gray-200 focus:border-corporate-red'
+                              }`}
+                            />
+                            {errors.email && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.email}</p>}
                           </div>
 
                           <div className="sm:col-span-2">

@@ -1,6 +1,56 @@
 import React from 'react';
 
 const RichContentRenderer = ({ content }) => {
+  const renderTextWithLinks = (text) => {
+    if (!text) return text;
+
+    // Basic URL detection (http(s):// or www.)
+    const urlRegex = /\b(?:https?:\/\/|www\.)[^\s<]+/gi;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = urlRegex.exec(text)) !== null) {
+      const raw = match[0];
+      const start = match.index;
+      const end = start + raw.length;
+
+      if (start > lastIndex) {
+        parts.push(text.slice(lastIndex, start));
+      }
+
+      // Strip trailing punctuation that commonly follows URLs in prose.
+      let urlText = raw;
+      let trailing = '';
+      while (urlText.length > 0 && /[).,;:!?\]]$/.test(urlText)) {
+        trailing = urlText.slice(-1) + trailing;
+        urlText = urlText.slice(0, -1);
+      }
+
+      const href = urlText.startsWith('http') ? urlText : `https://${urlText}`;
+      parts.push(
+        <a
+          key={`${start}-${urlText}`}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-corporate-red underline underline-offset-4 hover:text-red-700 break-words"
+        >
+          {urlText}
+        </a>
+      );
+
+      if (trailing) parts.push(trailing);
+      lastIndex = end;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.slice(lastIndex));
+    }
+
+    return parts.length ? parts : text;
+  };
+
   // Handle legacy content (string) or new content (blocks array)
   if (typeof content === 'string') {
     // Legacy content - render as paragraphs
@@ -8,7 +58,7 @@ const RichContentRenderer = ({ content }) => {
       <div className="prose max-w-none">
         {content.split('\n\n').map((paragraph, index) => (
           <p key={index} className="mb-4 text-corporate-gray-700 leading-relaxed">
-            {paragraph}
+            {renderTextWithLinks(paragraph)}
           </p>
         ))}
       </div>
@@ -36,7 +86,7 @@ const RichContentRenderer = ({ content }) => {
                 {block.content.split('\n').map((line, lineIndex) => (
                   line.trim() ? (
                     <p key={lineIndex} className="mb-4 text-corporate-gray-700 leading-relaxed text-lg">
-                      {line}
+                      {renderTextWithLinks(line)}
                     </p>
                   ) : (
                     <br key={lineIndex} />

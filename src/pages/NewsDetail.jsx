@@ -38,6 +38,12 @@ const NewsDetail = () => {
     return news.content;
   };
 
+  const getLocation = (news) => {
+    if (!news) return '';
+    if (language === 'en' && news.location_en) return news.location_en;
+    return news.location || news.ubicacion || '';
+  };
+
   useEffect(() => {
     const loadNews = async () => {
       const item = await getNewsItem(id);
@@ -94,13 +100,23 @@ const NewsDetail = () => {
           </div>
 
           {/* Category & Date */}
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6">
             <span className="bg-corporate-red text-white text-[10px] sm:text-xs font-semibold px-3 py-1.5 rounded" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {newsItem.category}
             </span>
             <span className="text-white/50 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {formatDate(newsItem.date)}
             </span>
+
+            {getLocation(newsItem) && (
+              <span className="text-white/50 text-xs sm:text-sm inline-flex items-center gap-1.5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                {getLocation(newsItem)}
+              </span>
+            )}
           </div>
 
           {/* Title */}
@@ -185,21 +201,23 @@ const NewsDetail = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/contact" 
-                className="group inline-flex items-center justify-center px-8 py-4 bg-corporate-red text-white font-semibold hover:bg-[#6B0000] transition-all"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                to={`/contact?subject=${encodeURIComponent(
+                  language === 'es'
+                    ? `Consulta sobre novedad: ${getTitle(newsItem)}`
+                    : `Inquiry about news: ${getTitle(newsItem)}`
+                )}#formulario`}
+                className="btn-primary"
               >
                 {language === 'es' ? 'Solicitar Consulta' : 'Request Consultation'}
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link 
-                to="/services" 
-                className="inline-flex items-center justify-center px-8 py-4 text-white font-medium border-2 border-white/20 hover:border-white/40 hover:bg-white/10 transition-all"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                to="/divisiones" 
+                className="btn-secondary-invert"
               >
-                {language === 'es' ? 'Explorar Servicios' : 'Explore Services'}
+                {language === 'es' ? 'Explorar Divisiones' : 'Explore Divisions'}
               </Link>
             </div>
 

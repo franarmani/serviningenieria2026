@@ -96,7 +96,7 @@ const BridasConexiones = () => {
             <div className="flex items-center justify-center mb-4 sm:mb-6">
               <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
               
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
                 {language === 'es' ? 'CONEXIONES' : 'FITTINGS'}
               </h2>
 
@@ -111,7 +111,7 @@ const BridasConexiones = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up-delay-3 px-4">
-            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" to="/contact" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
+            <Link className="btn-primary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitud de cotización: bridas y conexiones certificadas' : 'Quote request: certified flanges and fittings')}#formulario`} style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}</Link>
 
             <a href="#scroll-content" className="btn-secondary w-full sm:w-56 lg:w-64 h-11 sm:h-12 lg:h-14 text-sm sm:text-sm sm:text-base" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>{language === 'es' ? 'Ver Tipos' : 'View Types'}</a>
           </div>
@@ -132,7 +132,7 @@ const BridasConexiones = () => {
       <section className="py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center text-xs sm:text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
-            <Link to="/services" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Servicios' : 'Services'}</Link>
+            <Link to="/divisiones" className="hover:text-corporate-red transition-colors flex-shrink-0">{language === 'es' ? 'Divisiones' : 'Divisions'}</Link>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -214,7 +214,7 @@ const BridasConexiones = () => {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 100%)'
+            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
           }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
           
@@ -239,7 +239,7 @@ const BridasConexiones = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Link 
-                  to="/contact"
+                  to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Cotización / disponibilidad: bridas certificadas' : 'Quote / availability: certified flanges')}#formulario`}
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-corporate-red text-sm sm:text-sm sm:text-base font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif', minWidth: '200px' }}
                 >

@@ -19,8 +19,8 @@ const ValvulaDetail = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
         <div className="text-center">
-          <h1 className="text-lg sm:text-xl lg:text-2xl font-light text-gray-900 mb-4">{language === 'es' ? 'Producto' : 'Product'} <span className="font-semibold" style={{ color: '#8B0000' }}>{language === 'es' ? 'No Encontrado' : 'Not Found'}</span></h1>
-          <Link to="/materiales/valvulas" className="inline-flex items-center px-6 py-3 text-white font-semibold rounded-xl" style={{ backgroundColor: '#8B0000' }}>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-light text-gray-900 mb-4">{language === 'es' ? 'Producto' : 'Product'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'No Encontrado' : 'Not Found'}</span></h1>
+          <Link to="/materiales/valvulas" className="btn-primary">
             {language === 'es' ? 'Volver al Catálogo' : 'Back to Catalog'}
           </Link>
         </div>
@@ -75,10 +75,10 @@ const ValvulaDetail = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center text-xs sm:text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
               <Link 
-                to="/services"
+                to="/divisiones"
                 className="hover:text-corporate-red transition-colors flex-shrink-0"
               >
-                {language === 'es' ? 'Servicios' : 'Services'}
+                {language === 'es' ? 'Divisiones' : 'Divisions'}
               </Link>
               <svg className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -251,9 +251,13 @@ const ValvulaDetail = () => {
 
                 {/* CTA */}
                 <Link 
-                  to="/contact"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 text-white text-base font-bold rounded-xl transition-all hover:shadow-xl transform hover:-translate-y-0.5 shadow-lg"
-                  style={{ backgroundColor: '#8B0000', fontFamily: 'Inter, system-ui, sans-serif' }}
+                  to={`/contact?subject=${encodeURIComponent(
+                    language === 'es'
+                      ? `Solicitud de cotización técnica: Válvula ${valvula.nombre_es || valvula.nombre}`
+                      : `Technical quote request: Valve ${valvula.nombre}`
+                  )}#formulario`}
+                  className="btn-primary w-full py-4 text-base"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -278,24 +282,24 @@ const ValvulaDetail = () => {
                  (language === 'es' ? (valvula.caracteristicas_es || valvula.caracteristicas) : valvula.caracteristicas).length > 0 && (
                   <div>
                     <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center" style={{ backgroundColor: '#8B0000' }}>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center bg-corporate-red">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <h3 className="text-base sm:text-base sm:text-lg md:text-xl font-semibold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                         {language === 'es' ? 'Características Técnicas' : 'Technical Features'}
                       </h3>
                     </div>
                     <div className="grid grid-cols-1 gap-2 sm:gap-3">
                       {(language === 'es' ? (valvula.caracteristicas_es || valvula.caracteristicas) : valvula.caracteristicas).map((item, index) => (
                         <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
-                          <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 0, 0, 0.1)' }}>
-                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" style={{ color: '#8B0000' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0 bg-corporate-red/10">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
-                          <span className="text-xs sm:text-xs sm:text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
+                          <span className="text-xs sm:text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -312,7 +316,7 @@ const ValvulaDetail = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                       </div>
-                      <h3 className="text-base sm:text-base sm:text-lg md:text-xl font-semibold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                         {language === 'es' ? 'Industrias y Aplicaciones' : 'Industries & Applications'}
                       </h3>
                     </div>
@@ -320,7 +324,7 @@ const ValvulaDetail = () => {
                       {(language === 'es' ? (valvula.aplicaciones_es || valvula.aplicaciones) : valvula.aplicaciones).map((item, index) => (
                         <div key={index} className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
                           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full flex-shrink-0 bg-gray-900"></div>
-                          <span className="text-xs sm:text-xs sm:text-sm text-gray-700 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
+                          <span className="text-xs sm:text-sm text-gray-700 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -332,28 +336,32 @@ const ValvulaDetail = () => {
         )}
 
         {/* CTA Final */}
-        <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+        <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-2xl sm:text-3xl md:text-4xl font-light text-white mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h2 className="text-xl sm:text-3xl lg:text-3xl xl:text-2xl md:text-4xl font-light text-white mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? '¿Necesita asesoramiento' : 'Need technical'} <span className="font-bold">{language === 'es' ? 'técnico?' : 'advice?'}</span>
             </h2>
             
-            <p className="text-white/80 text-sm sm:text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p className="text-white/80 text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               {language === 'es' ? 'Representantes oficiales de Velan con más de 30 años de experiencia en soluciones industriales.' : 'Official Velan representatives with over 30 years of experience in industrial solutions.'}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link 
-                to="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-sm sm:text-sm sm:text-base font-bold rounded-xl transition-all hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                to={`/contact?subject=${encodeURIComponent(
+                  language === 'es'
+                    ? `Asesoramiento técnico: Catálogo de válvulas (${valvula.nombre_es || valvula.nombre})`
+                    : `Technical advice: Valves catalog (${valvula.nombre})`
+                )}#formulario`}
+                className="btn-primary-light px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {language === 'es' ? 'Solicitar Asesoramiento' : 'Request Consultation'}
               </Link>
               <Link 
                 to="/materiales/valvulas"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border border-white/30 text-white text-sm sm:text-sm sm:text-base font-semibold rounded-xl hover:bg-white/20 transition-all"
+                className="btn-secondary-invert px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {language === 'es' ? 'Ver Catálogo' : 'View Catalog'}
