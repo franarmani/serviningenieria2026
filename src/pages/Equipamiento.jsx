@@ -205,7 +205,7 @@ const Equipamiento = () => {
               <h2 className="text-6xl sm:text-7xl lg:text-9xl xl:text-10xl font-bold" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
                 fontWeight: '800',
-                background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)',
+                background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

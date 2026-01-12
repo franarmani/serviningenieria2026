@@ -279,7 +279,7 @@ const Services = () => {
       {/* CTA Section - Solid Red Corporate */}
       <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+            background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
           }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
           

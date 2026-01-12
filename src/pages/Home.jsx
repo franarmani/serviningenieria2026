@@ -336,8 +336,8 @@ const Home = () => {
             {/* Animated background */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute inset-0" style={{
-                backgroundImage: `radial-gradient(circle at 20% 50%, rgba(176, 0, 0, 0.1) 0%, transparent 50%),
-                                  radial-gradient(circle at 80% 50%, rgba(176, 0, 0, 0.1) 0%, transparent 50%)`
+                backgroundImage: `radial-gradient(circle at 20% 50%, rgba(224, 0, 0, 0.1) 0%, transparent 50%),
+                                  radial-gradient(circle at 80% 50%, rgba(224, 0, 0, 0.1) 0%, transparent 50%)`
               }}></div>
             </div>
 
@@ -365,7 +365,7 @@ const Home = () => {
                   style={{ 
                     fontFamily: 'Inter, system-ui, sans-serif',
                     fontWeight: '800',
-                    background: 'linear-gradient(135deg, #B00000 0%, #DC2626 50%, #B00000 100%)',
+                    background: 'linear-gradient(135deg, #E00000 0%, #FF2D2D 50%, #E00000 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -388,8 +388,8 @@ const Home = () => {
                     className="absolute inset-y-0 left-0 rounded-full"
                     style={{
                       width: `${loadingProgress}%`,
-                      background: 'linear-gradient(90deg, #B00000 0%, #DC2626 50%, #B00000 100%)',
-                      boxShadow: '0 0 20px rgba(220, 38, 38, 0.5)'
+                      background: 'linear-gradient(90deg, #E00000 0%, #FF2D2D 50%, #E00000 100%)',
+                      boxShadow: '0 0 20px rgba(255, 45, 45, 0.45)'
                     }}
                     transition={{ duration: 0.3 }}
                   />
@@ -488,7 +488,7 @@ const Home = () => {
               <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
                 fontWeight: '800',
-                background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)',
+                background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

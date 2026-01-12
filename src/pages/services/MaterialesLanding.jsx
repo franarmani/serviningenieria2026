@@ -365,7 +365,7 @@ const MaterialesLanding = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-14 lg:py-16" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
+      <section className="py-12 sm:py-14 lg:py-16" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 50%, #B80000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             

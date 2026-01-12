@@ -79,7 +79,7 @@ const BridasConexiones = () => {
           <img src="https://images.unsplash.com/photo-1565088299075-9dbb0b5e5b1e?q=80&w=2070&auto=format&fit=crop" alt="Industrial Background" className="w-full h-full object-cover" style={{filter: 'grayscale(100%) contrast(1.2)', mixBlendMode: 'overlay'}} />
         </div>
 
-        <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(220, 38, 38, 0.03) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
+        <div className="absolute inset-0 z-10" style={{background: 'radial-gradient(rgba(224, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%)'}}></div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20">
           
@@ -96,7 +96,7 @@ const BridasConexiones = () => {
             <div className="flex items-center justify-center mb-4 sm:mb-6">
               <div className="h-px w-8 sm:w-12 lg:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
               
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-4xl sm:text-5xl lg:text-6xl font-bold" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 800, background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', letterSpacing: '-0.02em', lineHeight: '1.1'}}>
                 {language === 'es' ? 'CONEXIONES' : 'FITTINGS'}
               </h2>
 
@@ -214,7 +214,7 @@ const BridasConexiones = () => {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+            background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
           }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
           

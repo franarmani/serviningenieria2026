@@ -78,7 +78,7 @@
 
 /* Mejoras de hover para submenús */
 .dropdown-item:hover .text-white {
-  color: #B00000;
+  color: #E00000;
 }
 
 /* Scrollbar personalizado */
@@ -92,12 +92,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(176, 0, 0, 0.8);
+  background: rgba(224, 0, 0, 0.8);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(176, 0, 0, 1);
+  background: rgba(224, 0, 0, 1);
 }
 
 /* Ocultar scrollbar en carrusel mobile */
@@ -240,7 +240,7 @@
   }
 
   .btn-ghost:hover {
-    text-decoration-color: rgba(176, 0, 0, 0.35);
+    text-decoration-color: rgba(224, 0, 0, 0.35);
   }
   
   .corporate-card {
@@ -376,7 +376,7 @@
   .divider {
     width: 5rem;
     height: 0.125rem;
-    background-color: #B00000;
+    background-color: #E00000;
     margin: 3rem auto;
   }
   
@@ -388,11 +388,11 @@
   }
   
   .nav-link:hover {
-    color: #B00000;
+    color: #E00000;
   }
   
   .hero-gradient {
-    background: linear-gradient(to right, #210C20, rgba(33, 12, 32, 0.95), rgba(176, 0, 0, 0.9));
+    background: linear-gradient(to right, #210C20, rgba(33, 12, 32, 0.95), rgba(224, 0, 0, 0.9));
   }
   
   .corporate-input {
@@ -407,8 +407,8 @@
   
   .corporate-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #B00000;
-    border-color: #B00000;
+    box-shadow: 0 0 0 2px #E00000;
+    border-color: #E00000;
   }
   
   .corporate-textarea {
@@ -425,8 +425,8 @@
   
   .corporate-textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #B00000;
-    border-color: #B00000;
+    box-shadow: 0 0 0 2px #E00000;
+    border-color: #E00000;
   }
 }
 
@@ -440,17 +440,17 @@
   }
   
   .bg-gradient-corporate {
-    background: linear-gradient(135deg, #210C20 0%, #B00000 50%, #B00000 100%);
+    background: linear-gradient(135deg, #210C20 0%, #E00000 50%, #E00000 100%);
   }
   
   .bg-gradient-corporate-soft {
-    background: linear-gradient(135deg, rgba(33, 12, 32, 0.95) 0%, rgba(176, 0, 0, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(33, 12, 32, 0.95) 0%, rgba(224, 0, 0, 0.9) 100%);
   }
   
   .bg-pattern {
     background-image: 
-      linear-gradient(45deg, transparent 65%, rgba(176, 0, 0, 0.03) 75%, transparent 80%),
-      linear-gradient(-45deg, transparent 65%, rgba(176, 0, 0, 0.03) 75%, transparent 80%);
+      linear-gradient(45deg, transparent 65%, rgba(224, 0, 0, 0.03) 75%, transparent 80%),
+      linear-gradient(-45deg, transparent 65%, rgba(224, 0, 0, 0.03) 75%, transparent 80%);
     background-size: 40px 40px;
   }
   
@@ -475,17 +475,17 @@
   
   /* Custom color utilities */
   .text-corporate-black { color: #000000; }
-  .text-corporate-red { color: #B00000; }
-  .text-corporate-accent { color: #B00000; }
+  .text-corporate-red { color: #E00000; }
+  .text-corporate-accent { color: #E00000; }
   .text-corporate-dark { color: #210C20; }
   
   .bg-corporate-black { background-color: #000000; }
-  .bg-corporate-red { background-color: #B00000; }
-  .bg-corporate-accent { background-color: #B00000; }
+  .bg-corporate-red { background-color: #E00000; }
+  .bg-corporate-accent { background-color: #E00000; }
   .bg-corporate-dark { background-color: #210C20; }
   
-  .border-corporate-red { border-color: #B00000; }
-  .border-corporate-accent { border-color: #B00000; }
+  .border-corporate-red { border-color: #E00000; }
+  .border-corporate-accent { border-color: #E00000; }
   
   /* Corporate gray scale */
   .text-corporate-gray-300 { color: #DEE2E6; }
@@ -540,7 +540,7 @@
 
 .timeline-card:hover .timeline-card-border {
   border-left-width: 6px;
-  border-left-color: #B00000;
+  border-left-color: #E00000;
 }
 
 /* Timeline nodes (círculos rojos) */
@@ -550,7 +550,7 @@
 
 .timeline-node:hover {
   transform: scale(1.2);
-  box-shadow: 0 0 20px rgba(176, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(224, 0, 0, 0.4);
 }
 
 /* Timeline icons micro-animations */
@@ -566,19 +566,19 @@
 /* Timeline horizontal eliminada - ahora usa timeline vertical simple sin efectos */
 
 .timeline-card:hover .bg-corporate-red\/10 {
-  background-color: rgba(176, 0, 0, 0.12);
+  background-color: rgba(224, 0, 0, 0.12);
   transform: scale(1.05);
 }
 
 /* Connector Lines - Subtle Corporate Touch */
 .timeline-card .border-gray-200 {
-  border-color: rgba(176, 0, 0, 0.15);
+  border-color: rgba(224, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .timeline-card:hover .border-gray-200 {
-  border-color: rgba(176, 0, 0, 0.3);
-  box-shadow: 0 1px 0 rgba(176, 0, 0, 0.1);
+  border-color: rgba(224, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(224, 0, 0, 0.1);
 }
 
 /* Typography Improvements */
@@ -587,7 +587,7 @@
 }
 
 .timeline-card:hover h3 {
-  color: rgba(176, 0, 0, 0.9);
+  color: rgba(224, 0, 0, 0.9);
 }
 
 /* Responsive Design */
@@ -942,7 +942,7 @@
 
 /* Focus visible para accesibilidad */
 :focus-visible {
-  outline: 2px solid #B00000;
+  outline: 2px solid #E00000;
   outline-offset: 2px;
 }
 

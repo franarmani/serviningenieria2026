@@ -4,7 +4,7 @@
 Premium corporate website for SERVIN INGENIERÍA S.A. built with React + Vite + TailwindCSS.
 
 ## Design Guidelines
-- Corporate colors: Red (#8B0000), Graphite Gray (#2e2c3a), White (#fefefe)
+- Corporate colors: Red (#E00000), Graphite Gray (#2e2c3a), White (#fefefe)
 - Modern, clean, professional engineering aesthetic
 - Well-defined blocks, ample white space
 - Corporate iconography and heavy industry imagery

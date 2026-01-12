@@ -24,7 +24,10 @@ const FalkCTSeries = () => {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 z-10 bg-black/75"></div>
+        <div
+          className="absolute inset-0 z-10"
+          style={{ background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)' }}
+        ></div>
 
         {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
@@ -536,7 +539,7 @@ const FalkCTSeries = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 via-transparent to-gray-900/20"></div>
                   </div>
                   
-                  <div className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'}}>
+                  <div className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
@@ -568,7 +571,7 @@ const FalkCTSeries = () => {
               
               {/* Tabla de Especificaciones */}
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div className="px-6 sm:px-8 py-4 sm:py-6" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'}}>
+                <div className="px-6 sm:px-8 py-4 sm:py-6" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
                   <h3 className="text-lg sm:text-base sm:text-lg md:text-xl font-bold text-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es' ? 'Rangos de Operación' : 'Operating Ranges'}
                   </h3>
@@ -674,7 +677,7 @@ const FalkCTSeries = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               
               <div className="order-2 lg:order-1">
-                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border" style={{borderColor: 'rgba(176, 0, 0, 0.1)'}}>
+                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border" style={{borderColor: 'rgba(224, 0, 0, 0.1)'}}>
                   
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-corporate-red">
@@ -759,7 +762,7 @@ const FalkCTSeries = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/30"></div>
                   </div>
                   
-                  <div className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'}}>
+                  <div className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
                     </svg>
@@ -790,7 +793,7 @@ const FalkCTSeries = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               
               {/* Falk CT-Series Gearbox */}
-              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 p-5 sm:p-6 lg:p-8 text-center sm:col-span-2 lg:col-span-1" style={{'--hover-border': 'rgba(176, 0, 0, 0.3)'}}>
+              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 p-5 sm:p-6 lg:p-8 text-center sm:col-span-2 lg:col-span-1" style={{'--hover-border': 'rgba(224, 0, 0, 0.3)'}}>
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform bg-corporate-red">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -1102,7 +1105,7 @@ const FalkCTSeries = () => {
 
         {/* CTA Final */}
         {/* CTA Final */}
-        <section className="py-10 sm:py-14 lg:py-20" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'}}>
+        <section className="py-10 sm:py-14 lg:py-20" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">

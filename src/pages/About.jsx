@@ -1470,7 +1470,7 @@ const About = () => {
             {/* Misión */}
             <div className="rounded-xl p-6 lg:p-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
               style={{
-                background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+                background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
               }}>
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-2xl"></div>
@@ -1515,7 +1515,7 @@ const About = () => {
       {/* CTA Final - Estilo compacto */}
       <section className="py-12 sm:py-14 lg:py-16 relative overflow-hidden" 
           style={{
-            background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+            background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
           }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
           

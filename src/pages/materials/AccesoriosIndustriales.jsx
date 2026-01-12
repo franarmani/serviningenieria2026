@@ -377,7 +377,7 @@ const AccesoriosIndustriales = () => {
                 }`}
                 style={categoriaActiva === cat.id ? { 
                   fontFamily: 'Inter, system-ui, sans-serif',
-                  background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+                  background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
                 } : { fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {cat.nombre} ({cat.cantidad})
@@ -472,7 +472,7 @@ const AccesoriosIndustriales = () => {
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 text-[10px] sm:text-xs md:text-xs sm:text-sm font-semibold text-white rounded-lg transition-all duration-300 hover:opacity-90"
                     style={{ 
                       fontFamily: 'Inter, system-ui, sans-serif',
-                      background: 'linear-gradient(135deg, #B00000 0%, #9A0000 100%)'
+                      background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
                     }}
                   >
                     {language === 'es' ? 'Solicitar Cotización' : 'Request Quote'}
@@ -525,7 +525,7 @@ const AccesoriosIndustriales = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #B00000 0%, #9A0000 50%, #900000 100%)'}}>
+      <section className="py-16 sm:py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 50%, #B80000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
