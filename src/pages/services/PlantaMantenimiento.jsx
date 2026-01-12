@@ -535,7 +535,7 @@ const PlantaMantenimiento = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #4B0000 100%)'}}>
+      <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             
@@ -560,7 +560,7 @@ const PlantaMantenimiento = () => {
               <Link 
                 to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Solicitar evaluación técnica: válvulas industriales en planta certificada' : 'Request technical evaluation: critical industrial valves (certified plant)')}#formulario`}
                 className="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#8B0000' }}
+                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#E00000' }}
               >
                 <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
