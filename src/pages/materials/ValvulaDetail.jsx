@@ -336,7 +336,7 @@ const ValvulaDetail = () => {
         )}
 
         {/* CTA Final */}
-        <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 50%, #B80000 100%)'}}>
+        <section className="py-12 sm:py-16 lg:py-20" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
             <h2 className="text-xl sm:text-3xl lg:text-3xl xl:text-2xl md:text-4xl font-light text-white mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>

@@ -956,7 +956,7 @@ const MantenimientosInSitu = () => {
       </section>
 
       {/* CTA Final - Estilo About */}
-      <section className="py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 50%, #B80000 100%)'}}>
+      <section className="py-20 lg:py-24" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
           <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">

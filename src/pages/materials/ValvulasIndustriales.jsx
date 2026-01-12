@@ -558,7 +558,7 @@ const ValvulasIndustriales = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 sm:py-14 lg:py-20 xl:py-24" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 50%, #B80000 100%)'}}>
+      <section className="py-10 sm:py-14 lg:py-20 xl:py-24" style={{background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-7xl mx-auto">
             
