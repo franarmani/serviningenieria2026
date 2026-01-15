@@ -2,7 +2,7 @@
 
 ## 📋 Descripción del Proyecto
 
-Sitio web corporativo profesional para **Servin Ingeniería S.A.**, empresa argentina líder en servicios especializados para la industria con casi 5 décadas de experiencia (fundada en 1979).
+Sitio web corporativo profesional desarrollado con arquitectura moderna y tecnologías de última generación.
 
 **Características principales:**
 - 🎨 Diseño corporativo moderno con identidad visual profesional
@@ -12,47 +12,6 @@ Sitio web corporativo profesional para **Servin Ingeniería S.A.**, empresa arge
 - 📧 Sistema de contacto serverless con backend propio
 - ⚡ Rendimiento optimizado y SEO-friendly
 - 🔐 Formularios seguros con validación completa
-
-## 🏢 Sobre la Empresa
-
-**Servin Ingeniería S.A.** es una empresa especializada en servicios industriales con:
-- **44+ años de trayectoria** (desde 1979)
-- **4 divisiones de servicios** especializados
-- **2,639 m²** de instalaciones propias
-- **+400 clientes** en cartera
-- Presencia en **3 ubicaciones**: Bahía Blanca (Casa Matriz), Neuquén y Buenos Aires
-
-### Mensaje del Presidente
-> "Servín Ingeniería ha experimentado un crecimiento notable en sus casi 5 décadas de historia. Nuestro crecimiento en facturación se ha multiplicado por 30 en los últimos 20 años..."
-> 
-> **Ing. Norberto Dagnino** - Presidente Servin Ingeniería S.A.
-
-## 🎯 Divisiones de Servicios
-
-### 1. Ingeniería de Materiales
-- Comercialización de válvulas, tuberías y accesorios
-- Representaciones internacionales (Velan Valves, Rexnord Couplings, FluoroSeal)
-- Representaciones nacionales (Valmec, Valbol, LVM, Giron, Valam)
-- Amplio catálogo de productos industriales
-- Política basada en estándares API & ISO
-
-### 2. Inspección de Tanques API y Equipos Estáticos
-- Inspección de tanques según normas API
-- Más de 1,000 tanques inspeccionados desde 1997
-- Pruebas especializadas: flujo magnético, ultrasonido, líquidos penetrantes, partículas magnetizables, prueba de vacío
-- Personal altamente capacitado
-
-### 3. Planta de Mantenimiento Industrial
-- Recuperación y calibración de válvulas
-- Superficie operativa actual: 300 m² (en expansión a 900 m²)
-- Equipamiento de vanguardia: tornos, lapidadoras, soldadoras TIG/MIG, cabinas de pintura
-- Relación costo-beneficio altamente competitiva
-
-### 4. Mantenimientos In Situ
-- Servicio de mantenimiento en las instalaciones del cliente
-- Equipos portátiles especializados
-- Minimización de tiempos de inactividad
-- Atención inmediata y personalizada
 
 ## 🏗️ Arquitectura del Proyecto
 
@@ -328,50 +287,6 @@ vercel --prod
 - `/planta-mantenimiento` - Planta de mantenimiento
 - `/mantenimiento-insitu` - Mantenimientos in situ
 - `/laboratorio-movil` - Laboratorio móvil PrevenTest
-## 📍 Información de Contacto
-
-### Casa Matriz - Bahía Blanca
-- **Dirección**: Av. Colón 2110/16, B8000FUY Bahía Blanca, Buenos Aires, Argentina
-- **Teléfonos**: +54 0291 452-8687 / 454-7318 / 456-2608
-- **Fax**: +54 0291 455-3727
-
-### Sucursal Neuquén
-- **Dirección**: Félix San Martín 128, Q8300LKD Neuquén, Argentina
-- **Teléfono**: +54 0299 448-8499
-- **Fax**: +54 0291 442-3805
-
-### Oficina Buenos Aires
-- **Dirección**: Avda. Rivadavia 1611 – 5° "D", C1033AAG Buenos Aires, Argentina
-
-## 🏆 Certificaciones y Estándares
-
-- ✅ **IRAM ISO 9001:2015** - Sistema de Gestión de Calidad
-- ✅ **IQNet ISO 9001:2015** - Reconocimiento Internacional
-- ✅ Cumplimiento de normas API para inspección de tanques
-- ✅ Estándares internacionales de calidad
-
-## 🎯 Divisiones de Servicios
-
-### 1. 🔧 Ingeniería de Materiales
-Comercialización de válvulas, tuberías y accesorios industriales con representaciones internacionales y nacionales de primer nivel.
-
-### 2. 🔍 Inspección de Tanques API
-Más de 1,000 tanques inspeccionados desde 1997 con tecnología de punta y personal altamente capacitado.
-
-### 3. 🏭 Planta de Mantenimiento Industrial
-Recuperación y calibración de válvulas con equipamiento de vanguardia en instalaciones de 300 m² (expandiéndose a 900 m²).
-
-### 4. 🚚 Mantenimientos In Situ
-Servicios de mantenimiento en las instalaciones del cliente con equipos portátiles especializados.
-
-## 📊 Empresa en Números
-
-- 📅 **44+ años** de trayectoria (desde 1979)
-- 🏢 **2,639 m²** de instalaciones propias
-- 👥 **400+ clientes** en cartera
-- 📍 **3 ubicaciones** en Argentina
-- 🔧 **1,000+ tanques** inspeccionados
-- 📈 **30x crecimiento** en facturación (últimos 20 años)
 
 ## 💼 Tecnologías del Proyecto
 
@@ -413,20 +328,14 @@ Para más información sobre aspectos específicos del proyecto:
 
 ## 🤝 Soporte
 
-Para consultas técnicas o soporte:
-- **Sitio web**: [www.serviningenieria.com.ar](http://www.serviningenieria.com.ar)
-- **LinkedIn**: [Servin Ingeniería S.A.](https://www.linkedin.com/company/servin-ingenieria-s-a/)
+Para consultas técnicas sobre el proyecto:
+- **Repositorio**: [GitHub](https://github.com/franarmani/serviningenieria2026)
 
 ---
 
-<div align="center">
-
-**Servin Ingeniería S.A.**  
-*Una empresa de servicios al servicio de las empresas*
-
-🔴 Calidad • 🔧 Experiencia • 🏆 Confianza
-
-</div>
+**Desarrollado por**: Franco Armani  
+**Año**: 2025-2026  
+**Versión**: 2.0 Professional
 - [ ] Migrar a framework moderno (React/Vue)
 - [ ] Implementar PWA
 - [ ] Optimización avanzada de imágenes (WebP, lazy loading mejorado)
