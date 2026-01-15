@@ -12,8 +12,8 @@ const AUTH_STORAGE_KEY = 'servin_admin_auth';
 
 // Credenciales hardcodeadas (simple frontend validation)
 const ADMIN_CREDENTIALS = {
-  username: 'admin',
-  password: 'servin2025'
+  username: 'serviningenieriaweb@gmail.com',
+  password: 'caarmaniweb2026'
 };
 
 // ========== AUTENTICACIÓN ==========

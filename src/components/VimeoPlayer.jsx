@@ -12,6 +12,8 @@ import React, { useMemo } from 'react';
  * @param background - Modo background (sin controles, autoplay, muted, loop)
  * @param className - Clases CSS adicionales
  * @param videoStyle - Estilos inline para el iframe
+ * @param startTime - Tiempo de inicio en segundos
+ * @param onReady - Callback cuando el iframe termina de cargar
  */
 export default function VimeoPlayer({
   videoId,
@@ -23,6 +25,8 @@ export default function VimeoPlayer({
   background = false,
   className = '',
   videoStyle,
+  startTime = 0,
+  onReady,
 }) {
   const src = useMemo(() => {
     const params = new URLSearchParams();
@@ -51,8 +55,11 @@ export default function VimeoPlayer({
     params.set('dnt', '1');
     params.set('playsinline', '1');
     
+    // Tiempo de inicio
+    if (startTime > 0) params.set('t', startTime);
+    
     return `https://player.vimeo.com/video/${videoId}?${params.toString()}`;
-  }, [videoId, hash, autoplay, muted, loop, background]);
+  }, [videoId, hash, autoplay, muted, loop, background, startTime]);
 
   return (
     <div className={`relative w-full h-full ${className}`}>
@@ -65,6 +72,7 @@ export default function VimeoPlayer({
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
         allowFullScreen
         style={videoStyle}
+        onLoad={onReady}
       />
     </div>
   );

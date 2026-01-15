@@ -50,6 +50,17 @@
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
@@ -963,4 +974,186 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ===== CUSTOM VIDEO PLAYER CONTROLS ===== */
+/* Estilización profesional y minimalista de controles de video */
+
+/* Control bar styling */
+video::-webkit-media-controls-panel {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+  backdrop-filter: blur(8px);
+  height: 48px;
+}
+
+video::-moz-media-controls {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+/* Play/Pause button */
+video::-webkit-media-controls-play-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #E00000;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px;
+  transition: all 0.2s ease;
+}
+
+video::-webkit-media-controls-play-button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Timeline/Progress bar */
+video::-webkit-media-controls-timeline {
+  height: 5px;
+  margin: 0 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+video::-webkit-media-slider-thumb {
+  background: linear-gradient(135deg, #E00000 0%, #C80000 100%);
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(224, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+video::-webkit-media-slider-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 4px 12px rgba(224, 0, 0, 0.6);
+}
+
+/* Volume slider */
+video::-webkit-media-controls-volume-slider {
+  width: 60px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* Time display */
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-current-time-display {
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+/* Fullscreen button */
+video::-webkit-media-controls-fullscreen-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  transition: all 0.2s ease;
+}
+
+video::-webkit-media-controls-fullscreen-button:hover {
+  color: #E00000;
+  transform: scale(1.1);
+}
+
+/* Volume button */
+video::-webkit-media-controls-mute-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  transition: all 0.2s ease;
+}
+
+video::-webkit-media-controls-mute-button:hover {
+  color: #E00000;
+  transform: scale(1.1);
+}
+
+/* Captions button */
+video::-webkit-media-controls-closed-captions-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  transition: all 0.2s ease;
+}
+
+video::-webkit-media-controls-closed-captions-button:hover {
+  color: #E00000;
+  transform: scale(1.1);
+}
+
+/* Settings/Menu button */
+video::-webkit-media-controls-toggle-closed-captions-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+}
+
+/* Overlay play button (center) */
+video::-webkit-media-controls-overlay-play-button {
+  background: linear-gradient(135deg, #E00000 0%, #C80000 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(224, 0, 0, 0.3);
+}
+
+video::-webkit-media-controls-overlay-play-button:hover {
+  background: linear-gradient(135deg, #C80000 0%, #A80000 100%);
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(224, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Text tracks styling */
+video::cue {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Firefox specific styles */
+video::-moz-media-controls-play-button {
+  color: #E00000;
+}
+
+video::-moz-media-controls-fullscreen-button {
+  color: #ffffff;
+}
+
+/* Generic focus states for accessibility */
+video::-webkit-media-controls-play-button:focus,
+video::-webkit-media-controls-fullscreen-button:focus,
+video::-webkit-media-controls-mute-button:focus {
+  outline: 2px solid #E00000;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

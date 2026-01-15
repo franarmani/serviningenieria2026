@@ -172,7 +172,7 @@ const NewsDetail = () => {
             <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
               <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
               <span className="text-white/90 text-xs font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Comencemos su proyecto' : "Let's start your project"}
+                {language === 'es' ? 'Conectemos su proyecto' : "Let's connect your project"}
               </span>
             </div>
 

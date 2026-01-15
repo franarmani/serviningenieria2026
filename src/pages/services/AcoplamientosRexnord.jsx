@@ -223,8 +223,8 @@ const AcoplamientosRexnord = () => {
             fontWeight: '300'
           }}>
             {language === 'es' 
-              ? 'Representación oficial Rexnord: Omega, Viva, Addax, Thomas XTSR, Euroflex para aplicaciones industriales críticas. Ingeniería de aplicación y soporte técnico especializado.'
-              : 'Official Rexnord representation: Omega, Viva, Addax, Thomas XTSR, Euroflex for critical industrial applications. Application engineering and specialized technical support.'}
+              ? 'Representantes oficiales de Rexnord desde 1992. Líneas Omega, Viva, Addax, Thomas XTSR, Euroflex para aplicaciones industriales críticas. Ingeniería de aplicación y soporte técnico especializado.'
+              : 'Official Rexnord representatives since 1992. Omega, Viva, Addax, Thomas XTSR, Euroflex lines for critical industrial applications. Application engineering and specialized technical support.'}
           </p>
 
           {/* CTA */}
@@ -291,7 +291,7 @@ const AcoplamientosRexnord = () => {
                 <div className="space-y-5 sm:space-y-8">
                   {/* First Block */}
                   <div>
-                    <h3 className="text-base sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">{language === 'es' ? 'Representantes Autorizados' : 'Authorized Representatives'}</h3>
+                    <h3 className="text-base sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">{language === 'es' ? 'Representantes Autorizados desde 1992' : 'Authorized Representatives since 1992'}</h3>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {language === 'es'
                         ? 'Como representantes exclusivos de Rexnord en la región, ofrecemos la línea completa de acoplamientos industriales para transmisión de potencia en aplicaciones críticas.'

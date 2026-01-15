@@ -14,8 +14,11 @@ const About = () => {
   const metricsRef = useRef(null);
 
   // Cálculo automático de años de experiencia desde 1979
-  const currentYear = new Date().getFullYear();
-  const yearsExperience = currentYear - 1979;
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
+  const yearsExperience = currentMonth >= 10 ? currentYear - 1979 : currentYear - 1980;
 
   useEffect(() => {
     // Llevar al top una sola vez
@@ -453,12 +456,20 @@ const About = () => {
             {/* Descripción centrada */}
             <div className="max-w-4xl mx-auto mb-12">
               <p 
+                className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
+              >
+                {language === 'es' 
+                  ? 'SERVIN INGENIERÍA S.A. nace en 1979 como consecuencia de un polo petroquímico que emergía en una ciudad netamente agrícola, ganadera, comercial y acéfala en materia de servicios para asistir estas nuevas industrias. Esta inquietud tomó forma orientando la actividad hacia el asesoramiento y provisión de materiales para la industria, fundamentalmente válvulas, cañerías, accesorios para alta presión y acoplamientos para equipos rotantes.'
+                  : 'SERVIN INGENIERÍA S.A. was born in 1979 as a result of an emerging petrochemical hub in a primarily agricultural, livestock, and commercial city lacking services to assist these new industries. This vision took shape by focusing on consulting and supplying materials for the industry, primarily valves, piping, high-pressure fittings, and couplings for rotating equipment.'}
+              </p>
+              <p 
                 className="text-sm sm:text-base text-gray-700 leading-relaxed"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
               >
                 {language === 'es' 
-                  ? 'Fundada en 1979 en Bahía Blanca por el Ing. Norberto Dagnino, SERVIN INGENIERÍA S.A. se consolidó como un referente nacional en ingeniería industrial aplicada. A lo largo de más de cuatro décadas, la empresa evolucionó manteniendo sus valores fundamentales: calidad, confiabilidad y compromiso operativo.'
-                  : 'Founded in 1979 in Bahía Blanca by Eng. Norberto Dagnino, SERVIN INGENIERÍA S.A. established itself as a national reference in applied industrial engineering. Throughout more than four decades, the company evolved while maintaining its fundamental values: quality, reliability and operational commitment.'}
+                  ? 'A lo largo de más de cuatro décadas, la empresa evolucionó manteniendo sus valores fundamentales: calidad, confiabilidad y compromiso operativo, consolidándose como un referente nacional en ingeniería industrial aplicada.'
+                  : 'Throughout more than four decades, the company evolved while maintaining its fundamental values: quality, reliability and operational commitment, establishing itself as a national reference in applied industrial engineering.'}
               </p>
             </div>
 
@@ -878,7 +889,7 @@ const About = () => {
                   <li className="flex items-start text-xs sm:text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento de Tanques' : 'Tank Coating'}</strong>
+                      <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento Industrial' : 'Industrial Coating'}</strong>
                       <span className="text-[10px] sm:text-xs text-gray-400 ml-1.5">{language === 'es' ? '· División en desarrollo' : '· Division in development'}</span>
                     </div>
                   </li>
@@ -1121,7 +1132,7 @@ const About = () => {
                     <li className="flex items-start text-xs text-gray-300">
                       <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
                       <div>
-                        <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento de Tanques' : 'Tank Coating'}</strong>
+                        <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento Industrial' : 'Industrial Coating'}</strong>
                         <span className="text-[10px] text-gray-400 ml-1.5">{language === 'es' ? '· División en desarrollo' : '· Division in development'}</span>
                       </div>
                     </li>
@@ -1268,6 +1279,7 @@ const About = () => {
         </div>
       </section>
 
+
       {/* Historia Section - Timeline detallado */}
       <section id="historia" className="relative bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
         
@@ -1319,25 +1331,25 @@ const About = () => {
                   </h4>
                   <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es'
-                      ? 'Inicio en Bahía Blanca como empresa especializada en ingeniería industrial.'
-                      : 'Start in Bahía Blanca as a company specialized in industrial engineering.'}
+                      ? 'Inicio en local rentado de 30 m² en calle Villarino 45, Bahía Blanca, orientado al asesoramiento y provisión de válvulas, cañerías, accesorios de alta presión y acoplamientos.'
+                      : 'Started in a 30 m² rented space at Villarino 45, Bahía Blanca, focused on consulting and supply of valves, piping, high-pressure fittings and couplings.'}
                   </p>
                   <div className="flex flex-wrap gap-2 sm:justify-end">
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Bases técnicas' : 'Technical foundations'}
+                      30 m²
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Cultura de calidad' : 'Quality culture'}
+                      {language === 'es' ? 'Villarino 45' : 'Villarino 45'}
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Servicio industrial' : 'Industrial service'}
+                      {language === 'es' ? 'Válvulas y accesorios' : 'Valves & fittings'}
                     </span>
                   </div>
                 </div>
                 <div className="hidden sm:block sm:w-1/2"></div>
               </div>
 
-              {/* 1984 - Infraestructura */}
+              {/* 1984 - Casa Matriz */}
               <div className="relative flex flex-col sm:flex-row sm:items-center">
                 <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
                 <div className="hidden sm:block sm:w-1/2"></div>
@@ -1346,31 +1358,119 @@ const About = () => {
                     1984
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Infraestructura' : 'Infrastructure'}
+                    {language === 'es' ? 'Casa Matriz Propia' : 'Own Headquarters'}
                   </h4>
                   <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es'
-                      ? 'Apertura de sede central en Av. Colón 2110/16.'
-                      : 'Opening of headquarters at Av. Colón 2110/16.'}
+                      ? 'Apertura de casa matriz en instalaciones propias de 223 m² en Av. Colón 2110, Bahía Blanca.'
+                      : 'Opening of headquarters in own facilities of 223 m² at Av. Colón 2110, Bahía Blanca.'}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Oficinas propias' : 'Own offices'}
+                      223 m²
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Depósito técnico' : 'Technical warehouse'}
+                      {language === 'es' ? 'Av. Colón 2110' : 'Av. Colón 2110'}
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Crecimiento sostenido' : 'Sustained growth'}
+                      {language === 'es' ? 'Instalaciones propias' : 'Own facilities'}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* 1997 - Inspecciones API */}
+              {/* 1990 - Primera Ampliación */}
               <div className="relative flex flex-col sm:flex-row sm:items-center">
                 <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
                 <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1990
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Primera Ampliación' : 'First Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Ampliación de oficinas centrales llevando las instalaciones a 746 m², triplicando la capacidad operativa.'
+                      : 'Expansion of central offices bringing facilities to 746 m², tripling operational capacity.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      746 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? '+334%' : '+334%'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 1992 - Buenos Aires */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1992
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Oficina Buenos Aires' : 'Buenos Aires Office'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Apertura de oficina comercial de 42 m² en Buenos Aires para atender oficinas centrales de clientes.'
+                      : 'Opening of 42 m² commercial office in Buenos Aires to serve clients\' headquarters.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      42 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Buenos Aires' : 'Buenos Aires'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Expansión comercial' : 'Commercial expansion'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1996 - Neuquén */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1996
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Sucursal Neuquén' : 'Neuquén Branch'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Apertura de sucursal en Neuquén con oficinas y depósitos en instalaciones propias de 577 m².'
+                      : 'Opening of Neuquén branch with offices and warehouses in own 577 m² facilities.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      577 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Neuquén' : 'Neuquén'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Oficina + Depósito' : 'Office + Warehouse'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 1997 - Inspecciones API */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
                   <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     1997
                   </div>
@@ -1379,58 +1479,226 @@ const About = () => {
                   </h4>
                   <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es'
-                      ? 'División de inspección de tanques y END certificados.'
-                      : 'Tank inspection and certified NDT division.'}
+                      ? 'Nueva unidad de negocio: Inspección de Tanques API y equipos estáticos mediante técnicas de ensayos no destructivos con personal capacitado y equipos de última tecnología.'
+                      : 'New business unit: API Tank Inspection and static equipment using non-destructive testing techniques with trained personnel and state-of-the-art equipment.'}
                   </p>
-                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                  <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       API 653
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      +1.000 {language === 'es' ? 'tanques' : 'tanks'}
+                      {language === 'es' ? 'END' : 'NDT'}
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'END avanzados' : 'Advanced NDT'}
+                      {language === 'es' ? 'Equipos especializados' : 'Specialized equipment'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1998 - Ampliación Depósito */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1998
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ampliación Depósito' : 'Warehouse Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Ampliación del depósito a 421 m² destinados exclusivamente al almacenaje de mercadería, impulsado por la demanda de productos.'
+                      : 'Warehouse expansion to 421 m² exclusively for merchandise storage, driven by product demand.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      421 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Depósito exclusivo' : 'Exclusive warehouse'}
                     </span>
                   </div>
                 </div>
                 <div className="hidden sm:block sm:w-1/2"></div>
               </div>
 
-              {/* 2010 - Planta Industrial */}
+              {/* 2000 - Representación Velan */}
               <div className="relative flex flex-col sm:flex-row sm:items-center">
                 <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
                 <div className="hidden sm:block sm:w-1/2"></div>
                 <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
                   <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    2010
+                    2000
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                    {language === 'es' ? 'Planta Industrial' : 'Industrial Plant'}
+                    {language === 'es' ? 'Representación Velan' : 'Velan Representation'}
                   </h4>
                   <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es'
-                      ? 'Taller propio con equipamiento especializado certificado.'
-                      : 'Own workshop with certified specialized equipment.'}
+                      ? 'Inicio como representante exclusivo de Velan en Argentina, consolidando el portafolio de válvulas industriales de alta performance.'
+                      : 'Start as exclusive Velan representative in Argentina, consolidating the portfolio of high-performance industrial valves.'}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      Banco VENTIL
+                      VELAN
                     </span>
                     <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Cabinas granallado' : 'Blasting cabins'}
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                      {language === 'es' ? 'Procesos certificados' : 'Certified processes'}
+                      {language === 'es' ? 'Exclusivo Argentina' : 'Exclusive Argentina'}
                     </span>
                   </div>
                 </div>
               </div>
 
+              {/* 2010 - Planta Industrial */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2010
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Planta de Mantenimiento' : 'Maintenance Plant'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Unidad de Servicio de Post Venta y Reparación de Válvulas en más de 350 m² con equipamiento especializado. Actualmente el Centro cuenta con más de 1000 m² cubiertos.'
+                      : 'Post-Sale Service and Valve Repair Unit in over 350 m² with specialized equipment. Currently the Center has over 1000 m² covered.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      +1000 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Banco VENTIL' : 'VENTIL Bench'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Granallado' : 'Shot blasting'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 2015 - Certificaciones ISO */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2015
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Certificaciones ISO' : 'ISO Certifications'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Compromiso con mejora continua mediante certificación de procesos críticos: ISO 9001 (Calidad), ISO 14001 (Medio Ambiente) e ISO 45001 (Seguridad).'
+                      : 'Commitment to continuous improvement through critical process certification: ISO 9001 (Quality), ISO 14001 (Environment) and ISO 45001 (Safety).'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 9001
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 14001
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 45001
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2022-2023 - Modernización */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2022-2023
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Modernización Administrativa' : 'Administrative Modernization'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Reforma integral del sector administrativo: actualización de mobiliario, mejoras en baños, cocina, sala de capacitación y reuniones.'
+                      : 'Comprehensive reform of administrative sector: furniture update, improvements in bathrooms, kitchen, training and meeting rooms.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Infraestructura' : 'Infrastructure'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Modernización' : 'Modernization'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 2024-2025 - Ampliación Depósito */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2024-2025
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ampliación Depósito' : 'Warehouse Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Proyecto de ampliación optimizando estibaje de materiales, alcanzando más de 700 m². Finalización en diciembre 2025.'
+                      : 'Expansion project optimizing material storage, reaching over 700 m². Completion in December 2025.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      +700 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Optimización' : 'Optimization'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2025 - Neuquén Expansión */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-corporate-red rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-corporate-red text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2025
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Expansión Neuquén' : 'Neuquén Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Adquisición de 10 hectáreas estratégicas en la "Ruta del Petróleo", Neuquén. Visión de crecimiento y consolidación del liderazgo regional.'
+                      : 'Acquisition of 10 strategic hectares on the "Oil Route", Neuquén. Vision of growth and regional leadership consolidation.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      10 {language === 'es' ? 'hectáreas' : 'hectares'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Ruta del Petróleo' : 'Oil Route'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Proyecto estratégico' : 'Strategic project'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
               {/* Hoy - Liderazgo Técnico */}
               <div className="relative flex flex-col sm:flex-row sm:items-center">
                 <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-corporate-red rounded-full border-4 border-white shadow-lg -ml-[7px] z-10 ring-4 ring-corporate-red/20"></div>
-                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
                   <div className="inline-block bg-corporate-red text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     {language === 'es' ? 'HOY' : 'TODAY'}
                   </div>
@@ -1442,7 +1710,7 @@ const About = () => {
                       ? '2.600 m², laboratorio móvil y 7 divisiones operativas.'
                       : '2,600 m², mobile laboratory and 7 operational divisions.'}
                   </p>
-                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                  <div className="flex flex-wrap gap-2">
                     <span className="bg-corporate-red/10 text-corporate-red px-2 py-1 rounded text-xs font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                       PREVENTEST
                     </span>
@@ -1454,7 +1722,6 @@ const About = () => {
                     </span>
                   </div>
                 </div>
-                <div className="hidden sm:block sm:w-1/2"></div>
               </div>
 
             </div>

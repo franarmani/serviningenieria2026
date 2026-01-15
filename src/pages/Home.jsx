@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import VimeoPlayer from '../components/VimeoPlayer';
+import CustomVideoPlayer from '../components/CustomVideoPlayer';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
 import StaggerText from '../components/ui/StaggerText';
@@ -17,6 +17,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [openStandard, setOpenStandard] = useState(null);
+  const [heroVideoReady, setHeroVideoReady] = useState(false);
   const carouselRef = useRef(null);
   const galleryModalRef = useRef(null);
 
@@ -136,9 +137,12 @@ const Home = () => {
   };
 
   // Calculo automatico de anos desde 1979
-  const currentYear = new Date().getFullYear();
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
   const foundingYear = 1979;
-  const yearsInBusiness = currentYear - foundingYear;
+  const yearsInBusiness = currentMonth >= 10 ? currentYear - foundingYear : currentYear - foundingYear - 1;
 
   // Divisiones operativas (8 completas)
   const divisions = [
@@ -174,7 +178,7 @@ const Home = () => {
     },
     {
       id: 'tratamiento-tanques',
-      name: language === 'es' ? 'Revestimiento de Tanques' : 'Tank Coating',
+      name: language === 'es' ? 'Revestimiento Industrial' : 'Industrial Coating',
       path: '/services/tratamiento-tanques',
       description: language === 'es' ? 'División en desarrollo' : 'Division in development',
       isComingSoon: true
@@ -433,15 +437,27 @@ const Home = () => {
       {/* HERO — SERVIN INGENIERÍA S.A. */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0f0f0f 100%)' }}>
         
+        {/* Placeholder mientras carga el video */}
+        <div className={`absolute inset-0 z-[5] transition-opacity duration-700 ease-out pointer-events-none ${heroVideoReady ? 'opacity-0' : 'opacity-80'}`}>
+          <img
+            src="https://serviningenieria.com.ar/galeriahome/4.jpg"
+            alt={language === 'es' ? 'SERVIN Ingeniería - Banner' : 'SERVIN Engineering - Banner'}
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+        </div>
+
         {/* Video background */}
         <div className="absolute inset-0 z-0 opacity-[0.15] overflow-hidden">
-          <VimeoPlayer
-            videoId="1152915143"
-            hash="fef85752dc"
-            title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
-            background
+          <video
+            autoPlay
             loop
-            videoStyle={{
+            muted
+            playsInline
+            onCanPlay={() => setHeroVideoReady(true)}
+            title={language === 'es' ? 'SERVIN Ingeniería - Video institucional' : 'SERVIN Engineering - Corporate video'}
+            style={{
               filter: 'grayscale(100%) contrast(1.2)',
               mixBlendMode: 'overlay',
               position: 'absolute',
@@ -451,9 +467,12 @@ const Home = () => {
               height: '100vh',
               minWidth: '100%',
               minHeight: '56.25vw',
-              transform: 'translate(-50%, -50%)'
+              transform: 'translate(-50%, -50%)',
+              objectFit: 'cover'
             }}
-          />
+          >
+            <source src="/servinhome.mp4" type="video/mp4" />
+          </video>
         </div>
         
         {/* Premium gradient overlay */}
@@ -539,6 +558,18 @@ const Home = () => {
           
         </div>
         
+        {/* Scroll Indicator anchored to section edge */}
+        <div className="absolute bottom-1 sm:bottom-3 md:bottom-5 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center text-white/80 animate-bounce">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
+            </span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+            </svg>
+          </div>
+        </div>
+        
       </section>
 
 
@@ -600,6 +631,8 @@ const Home = () => {
                   src="/galeriahome/4.jpg"
                   alt="Servin Ingeniería Instalaciones"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -978,6 +1011,8 @@ const Home = () => {
                             src={news.image || '/galeriahome/1.jpg'}
                             alt={language === 'es' ? news.title : news.titleEn}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[400px]"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                         <div className="w-1/2 p-10 flex flex-col justify-center">
@@ -1023,6 +1058,8 @@ const Home = () => {
                                   src={news.image || '/galeriahome/1.jpg'}
                                   alt={language === 'es' ? news.title : news.titleEn}
                                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                  loading="lazy"
+                                  decoding="async"
                                 />
                               </div>
                               <div className="p-4 flex flex-col">
@@ -1107,6 +1144,8 @@ const Home = () => {
                                 src={news.image || '/galeriahome/1.jpg'}
                                 alt={language === 'es' ? news.title : news.titleEn}
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy"
+                                decoding="async"
                               />
                             </div>
                             <div className="p-5 flex flex-col flex-grow">
@@ -1159,7 +1198,9 @@ const Home = () => {
                                   <img 
                                     src={news.image || '/galeriahome/1.jpg'}
                                     alt={language === 'es' ? news.title : news.titleEn}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                      loading="lazy"
+                                      decoding="async"
                                   />
                                 </div>
                                 <div className="p-4 flex flex-col flex-grow">
@@ -1312,6 +1353,8 @@ const Home = () => {
               alt="Norberto Dagnino"
               className="w-16 h-16 rounded-full object-cover border border-gray-200 bg-white flex-shrink-0"
               style={{ objectPosition: '50% 20%' }}
+              loading="lazy"
+              decoding="async"
             />
             <div className="text-center">
               <p 
@@ -1376,6 +1419,8 @@ const Home = () => {
                 src={galleryReduced[0]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1392,6 +1437,8 @@ const Home = () => {
                 src={galleryReduced[1]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1409,6 +1456,8 @@ const Home = () => {
                 src={galleryReduced[2]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1425,6 +1474,8 @@ const Home = () => {
                 src={galleryReduced[3]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1441,6 +1492,8 @@ const Home = () => {
                 src={galleryReduced[4]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1457,6 +1510,8 @@ const Home = () => {
                 src={galleryReduced[5]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1474,6 +1529,8 @@ const Home = () => {
                 src={galleryReduced[6]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1490,6 +1547,8 @@ const Home = () => {
                 src={galleryReduced[7]}
                 alt="SERVIN Infrastructure"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
             </motion.div>
@@ -1538,8 +1597,8 @@ const Home = () => {
                 style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
               >
                 {language === 'es'
-                  ? 'Infraestructura propia de 2.639 m², procesos alineados a estándares internacionales y equipo técnico con más de 45 años de experiencia en industria pesada.'
-                  : 'Own 2,639 m² infrastructure, processes aligned with international standards and technical team with over 45 years of experience in heavy industry.'}
+                  ? 'Infraestructura propia de 2.639 m², procesos alineados a estándares internacionales y equipo técnico con más de 46 años de experiencia en industria pesada.'
+                  : 'Own 2,639 m² infrastructure, processes aligned with international standards and technical team with over 46 years of experience in heavy industry.'}
               </p>
               
             </div>

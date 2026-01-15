@@ -55,7 +55,7 @@ const menuConfig = {
         description: 'Certificaciones internacionales'
       },
       { 
-        name: 'Revestimiento de Tanques', 
+        name: 'Revestimiento Industrial', 
         path: '/services/tratamiento-tanques',
         description: 'División en desarrollo',
         isComingSoon: true
@@ -130,7 +130,7 @@ const Header = () => {
     return restore;
   }, [isMenuOpen]);
 
-  // Cerrar menús al hacer click fuera
+  // Cerrar menús al hacer click fuera (SOLO DESKTOP)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest('header')) {
@@ -139,8 +139,11 @@ const Header = () => {
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    // Solo aplicar en desktop
+    if (window.innerWidth >= 1024) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
   }, []);
 
   const mainMenuItems = [
@@ -209,20 +212,16 @@ const Header = () => {
   );
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[12000] transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
-        : 'bg-black/20 backdrop-blur-md'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-[1000] bg-[#0a0a0a] border-b border-white/10 shadow-2xl">
       <div className="max-w-full mx-auto">
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
           
           {/* Logo Corporativo */}
-          <Link to="/" className="flex items-center group transition-all duration-300 relative z-[12001]">
+          <Link to="/" className="flex items-center relative z-[1001]">
             <img 
               src="/logocompleto.png" 
               alt="SERVIN INGENIERÍA S.A." 
-              className="h-10 sm:h-12 w-auto transition-all duration-300 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto"
             />
           </Link>
 
@@ -336,7 +335,7 @@ const Header = () => {
                                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                                 >
                                   <div className="text-sm font-normal">{language === 'es' ? 'Válvulas Velan' : 'Velan Valves'}</div>
-                                  <div className="text-xs text-white/30 mt-1 font-light">{language === 'es' ? 'Esclusa, Globo, Retención, Mariposa, Esférica' : 'Gate, Globe, Check, Butterfly, Spherical'}</div>
+                                  <div className="text-xs text-white/30 mt-1 font-light">{language === 'es' ? 'Esclusa, Globo, Retención, Mariposa, Bola' : 'Gate, Globe, Check, Butterfly, Ball'}</div>
                                 </Link>
 
                                 <Link
@@ -570,7 +569,7 @@ const Header = () => {
           {/* Botón Menú Móvil */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden relative w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex flex-col items-center justify-center space-y-1 transition-all duration-300 hover:bg-white/20 group z-[12001]"
+            className="lg:hidden relative w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex flex-col items-center justify-center space-y-1 z-[2001]"
           >
             <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
             <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -578,69 +577,100 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menú Móvil */}
-        <div className={`lg:hidden fixed left-0 right-0 top-20 bottom-0 w-screen z-[11999] bg-[#0a0a0a] transition-opacity duration-300 ${
-          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        } flex flex-col overflow-y-auto overscroll-contain pt-6 pb-10 px-6`} style={{ WebkitOverflowScrolling: 'touch' }}>
-          
-          {/* Botón cerrar explícito */}
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/30 group"
-          >
-            <svg className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+        {/* Menú Móvil - DESLIZA DESDE ARRIBA HACIA ABAJO */}
+        {isMenuOpen && (
+          <>
+            {/* Overlay/Backdrop que ocupa toda la pantalla */}
+            <div 
+              className="fixed inset-0 top-0 left-0 right-0 bottom-0 w-screen h-screen z-40 bg-black/80 backdrop-blur-sm lg:hidden animate-fade-in"
+              onClick={() => setIsMenuOpen(false)}
+              style={{ animation: 'fadeIn 0.3s ease-out' }}
+            />
 
-          <nav className="space-y-3 w-full">
-            {mainMenuItems.map((item, index) => (
-              <div key={index}>
-                {item.hasDropdown ? (
-                  <div
-                    onClick={() => {
-                      setIsServicesOpen(!isServicesOpen);
-                      setIsMaterialesOpen(false);
-                    }}
-                    className={`flex items-center justify-between px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg cursor-pointer ${
-                      isActivePath(item.path)
-                        ? 'text-white bg-white/10 border border-white/20' 
-                        : 'text-white/90 hover:text-white hover:bg-white/5'
-                    }`}
-                    style={{ 
-                      fontFamily: 'Inter, system-ui, sans-serif',
-                      letterSpacing: '0.025em'
-                    }}
-                  >
-                    <span>{item.name}</span>
-                    <svg 
-                      className={`w-4 h-4 transition-transform duration-300 ${
-                        isServicesOpen ? 'rotate-180' : ''
+            {/* Contenido del menú - por encima del overlay */}
+            <div 
+              className="fixed top-0 left-0 right-0 bottom-0 w-screen h-screen z-50 lg:hidden flex flex-col bg-[#0a0a0a] overflow-y-auto pt-20"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  setIsMenuOpen(false);
+                }
+              }}
+              style={{ animation: 'slideDownMenu 0.4s cubic-bezier(0.32, 0.72, 0, 1)' }}
+            >
+              <style>{`
+                @keyframes fadeIn {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+                @keyframes slideDownMenu {
+                  from {
+                    transform: translateY(-100vh);
+                    opacity: 0;
+                  }
+                  to {
+                    transform: translateY(0);
+                    opacity: 1;
+                  }
+                }
+              `}</style>
+
+              {/* Contenido del menú con scroll */}
+              <div 
+                className="flex-1 overflow-y-auto overscroll-contain px-6 py-6"
+                style={{ WebkitOverflowScrolling: 'touch' }}
+              >
+                <nav className="space-y-3 w-full">
+              {mainMenuItems.map((item, index) => (
+                <div key={index}>
+                  {item.hasDropdown ? (
+                    <div
+                      onClick={() => {
+                        setIsServicesOpen(!isServicesOpen);
+                        setIsMaterialesOpen(false);
+                      }}
+                      className={`flex items-center justify-between px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg cursor-pointer ${
+                        isActivePath(item.path)
+                          ? 'text-white bg-white/10 border border-white/20' 
+                          : 'text-white/90 hover:text-white hover:bg-white/5'
                       }`}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+                      style={{ 
+                        fontFamily: 'Inter, system-ui, sans-serif',
+                        letterSpacing: '0.025em'
+                      }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg ${
-                      isActivePath(item.path)
-                        ? 'text-white bg-white/10 border border-white/20' 
-                        : 'text-white/90 hover:text-white hover:bg-white/5'
-                    }`}
-                    style={{ 
-                      fontFamily: 'Inter, system-ui, sans-serif',
-                      letterSpacing: '0.025em'
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                )}
+                      <span>{item.name}</span>
+                      <svg 
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isServicesOpen ? 'rotate-180' : ''
+                        }`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`block px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg ${
+                        isActivePath(item.path)
+                          ? 'text-white bg-white/10 border border-white/20' 
+                          : 'text-white/90 hover:text-white hover:bg-white/5'
+                      }`}
+                      style={{ 
+                        fontFamily: 'Inter, system-ui, sans-serif',
+                        letterSpacing: '0.025em'
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 
                 {/* Submenú móvil para servicios */}
                 {item.hasDropdown && isServicesOpen && (
@@ -717,66 +747,69 @@ const Header = () => {
                 )}
               </div>
             ))}
-            
-            {/* Selector de Idioma Móvil */}
-            <div className="pt-4 border-t border-white/10">
-              <div className="flex items-center justify-between px-4 py-2">
-                <span className="text-sm text-white/60 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  {language === 'es' ? 'Idioma' : 'Language'}
-                </span>
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => setLanguage('es')}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      language === 'es'
-                        ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
-                        : 'text-white/70 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    <svg className="w-5 h-4 rounded-sm overflow-hidden" viewBox="0 0 640 480">
-                      <rect width="640" height="160" fill="#74acdf"/>
-                      <rect width="640" height="160" y="160" fill="#fff"/>
-                      <rect width="640" height="160" y="320" fill="#74acdf"/>
-                      <circle cx="320" cy="240" r="45" fill="#f6b40e"/>
-                    </svg>
-                    <span>ES</span>
-                  </button>
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      language === 'en'
-                        ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
-                        : 'text-white/70 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    <svg className="w-5 h-4 rounded-sm overflow-hidden" viewBox="0 0 640 480">
-                      <rect width="640" height="480" fill="#bd3d44"/>
-                      <rect y="37" width="640" height="37" fill="#fff"/>
-                      <rect y="111" width="640" height="37" fill="#fff"/>
-                      <rect y="185" width="640" height="37" fill="#fff"/>
-                      <rect y="259" width="640" height="37" fill="#fff"/>
-                      <rect y="333" width="640" height="37" fill="#fff"/>
-                      <rect y="407" width="640" height="37" fill="#fff"/>
-                      <rect width="256" height="259" fill="#192f5d"/>
-                    </svg>
-                    <span>EN</span>
-                  </button>
+              
+              {/* Selector de Idioma Móvil */}
+              <div className="pt-6 border-t border-white/10 mt-6">
+                <div className="flex items-center justify-between px-4 py-2 mb-4">
+                  <span className="text-sm text-white/60 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Idioma' : 'Language'}
+                  </span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setLanguage('es')}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        language === 'es'
+                          ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
+                          : 'text-white/70 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <svg className="w-5 h-4 rounded-sm overflow-hidden" viewBox="0 0 640 480">
+                        <rect width="640" height="160" fill="#74acdf"/>
+                        <rect width="640" height="160" y="160" fill="#fff"/>
+                        <rect width="640" height="160" y="320" fill="#74acdf"/>
+                        <circle cx="320" cy="240" r="45" fill="#f6b40e"/>
+                      </svg>
+                      <span>ES</span>
+                    </button>
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        language === 'en'
+                          ? 'bg-corporate-red/30 text-white border border-corporate-red/50'
+                          : 'text-white/70 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <svg className="w-5 h-4 rounded-sm overflow-hidden" viewBox="0 0 640 480">
+                        <rect width="640" height="480" fill="#bd3d44"/>
+                        <rect y="37" width="640" height="37" fill="#fff"/>
+                        <rect y="111" width="640" height="37" fill="#fff"/>
+                        <rect y="185" width="640" height="37" fill="#fff"/>
+                        <rect y="259" width="640" height="37" fill="#fff"/>
+                        <rect y="333" width="640" height="37" fill="#fff"/>
+                        <rect y="407" width="640" height="37" fill="#fff"/>
+                        <rect width="256" height="259" fill="#192f5d"/>
+                      </svg>
+                      <span>EN</span>
+                    </button>
+                  </div>
                 </div>
               </div>
+              
+              {/* CTA móvil */}
+              <div className="pt-4 border-t border-white/10 mt-6">
+                <Link 
+                  to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="btn-primary w-full"
+                >
+                  {language === 'es' ? 'Login' : 'Login'}
+                </Link>
+              </div>
+              </nav>
+              </div>
             </div>
-            
-            {/* CTA móvil */}
-            <div className="pt-4 border-t border-white/10">
-              <Link 
-                to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
-                onClick={() => setIsMenuOpen(false)}
-                className="btn-primary w-full"
-              >
-                {language === 'es' ? 'Login' : 'Login'}
-              </Link>
-            </div>
-          </nav>
-        </div>
+          </>
+        )}
       </div>
     </header>
   );

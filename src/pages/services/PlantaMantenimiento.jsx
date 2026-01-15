@@ -526,8 +526,8 @@ const PlantaMantenimiento = () => {
               </svg>
               <p className="text-sm sm:text-base text-gray-700 font-semibold" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                 {language === 'es' 
-                  ? 'Más de 45 años de trayectoria al servicio de la industria argentina'
-                  : 'Over 45 years serving Argentine industry'}
+                  ? 'Más de 46 años de trayectoria al servicio de la industria argentina'
+                  : 'Over 46 years serving Argentine industry'}
               </p>
             </div>
           </div>

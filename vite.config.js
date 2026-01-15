@@ -10,6 +10,17 @@ export default defineConfig({
       name: 'contact-api-dev',
       configureServer(server) {
         server.middlewares.use('/api/contact', async (req, res, next) => {
+          // CORS headers
+          res.setHeader('Access-Control-Allow-Origin', '*')
+          res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+          res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+          
+          if (req.method === 'OPTIONS') {
+            res.statusCode = 200
+            res.end()
+            return
+          }
+
           if (req.method !== 'POST') {
             res.statusCode = 405
             res.setHeader('Content-Type', 'application/json')
@@ -41,16 +52,30 @@ export default defineConfig({
               return
             }
 
-            await sendContactEmail({ name, company, email, subject, message, language })
+            // En desarrollo, solo logear el email (no enviar realmente)
+            console.log('\n═══════════════════════════════════════════════════════════')
+            console.log('📧 EMAIL MOCK (DESARROLLO) - No se envía realmente')
+            console.log('═══════════════════════════════════════════════════════════')
+            console.log('De:', process.env.CONTACT_FROM || 'serviningenieriaweb@gmail.com')
+            console.log('Para:', process.env.CONTACT_TO || 'ventasbbca@serviningenieria.com.ar')
+            console.log('Asunto:', `[SERVIN] ${subject}`)
+            console.log('───────────────────────────────────────────────────────────')
+            console.log('Datos del formulario:')
+            console.log('Nombre:', name)
+            console.log('Empresa:', company)
+            console.log('Email de contacto:', email)
+            console.log('Mensaje:', message)
+            console.log('Idioma:', language)
+            console.log('═══════════════════════════════════════════════════════════\n')
 
             res.statusCode = 200
             res.setHeader('Content-Type', 'application/json')
-            res.end(JSON.stringify({ ok: true }))
+            res.end(JSON.stringify({ ok: true, message: 'Email logged to console (development mode)' }))
           } catch (error) {
             console.error('[vite contact api] Error:', error)
-            res.statusCode = error?.code === 'MISSING_EMAIL_ENV' ? 501 : 500
+            res.statusCode = 500
             res.setHeader('Content-Type', 'application/json')
-            res.end(JSON.stringify({ ok: false, error: 'Email service not configured' }))
+            res.end(JSON.stringify({ ok: false, error: 'Server error' }))
           }
         })
       }

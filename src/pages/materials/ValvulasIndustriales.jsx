@@ -42,8 +42,8 @@ const ValvulasIndustriales = () => {
     },
     { 
       id: 'esfericas-mariposas-diafragma', 
-      nombre: language === 'es' ? 'Esféricas / Mariposas / Diafragma' : 'Spherical / Butterfly / Diaphragm', 
-      nombreCorto: language === 'es' ? 'Esféricas' : 'Spherical', 
+      nombre: language === 'es' ? 'Bola / Mariposas / Diafragma' : 'Ball / Butterfly / Diaphragm', 
+      nombreCorto: language === 'es' ? 'Bola' : 'Ball', 
       cantidad: contarPorCategoria('esfericas-mariposas-diafragma') 
     },
     { 
@@ -96,13 +96,13 @@ const ValvulasIndustriales = () => {
       return { tipo: 3, subtipo: 5 }; // Otras retención
     }
     
-    // 4. ESFÉRICAS (Ball/Spherical) - prioridad por tipo
+    // 4. BOLA (Ball) - prioridad por tipo
     if (nombre.includes('ball') || nombre.includes('esférica') || nombre.includes('bola')) {
       if (nombre.includes('cryogenic') || nombre.includes('criogénic')) return { tipo: 4, subtipo: 1 }; // Criogénicas
       if (productLine.includes('metal-seated') || productLine.includes('metal seated')) return { tipo: 4, subtipo: 2 }; // Metal seated
       if (productLine.includes('severe service')) return { tipo: 4, subtipo: 3 }; // Severe service
       if (productLine.includes('resilient-seated') || productLine.includes('resilient seated')) return { tipo: 4, subtipo: 4 }; // Resilient seated
-      return { tipo: 4, subtipo: 5 }; // Otras esféricas
+      return { tipo: 4, subtipo: 5 }; // Otras bola
     }
     
     // 5. MARIPOSA (Butterfly)
@@ -130,11 +130,22 @@ const ValvulasIndustriales = () => {
     .filter(v => {
       const matchCategoria = categoriaActiva === 'todos' || v.categoria === categoriaActiva;
       const matchProductLine = productLineActiva === 'todos' || v.product_line === productLineActiva;
+      
+      // Búsqueda bilingüe: busca en español e inglés
+      const searchTerm = busqueda.toLowerCase();
       const matchBusqueda = busqueda === '' || 
-        v.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-        v.descripcion.toLowerCase().includes(busqueda.toLowerCase()) ||
-        v.normas?.some(n => n.toLowerCase().includes(busqueda.toLowerCase())) ||
-        v.aplicaciones?.some(a => a.toLowerCase().includes(busqueda.toLowerCase()));
+        v.nombre?.toLowerCase().includes(searchTerm) ||
+        v.nombre_es?.toLowerCase().includes(searchTerm) ||
+        v.descripcion?.toLowerCase().includes(searchTerm) ||
+        v.descripcion_es?.toLowerCase().includes(searchTerm) ||
+        v.product_line?.toLowerCase().includes(searchTerm) ||
+        v.product_line_es?.toLowerCase().includes(searchTerm) ||
+        v.normas?.some(n => n.toLowerCase().includes(searchTerm)) ||
+        v.aplicaciones?.some(a => a.toLowerCase().includes(searchTerm)) ||
+        v.aplicaciones_es?.some(a => a.toLowerCase().includes(searchTerm)) ||
+        v.caracteristicas?.some(c => c.toLowerCase().includes(searchTerm)) ||
+        v.caracteristicas_es?.some(c => c.toLowerCase().includes(searchTerm));
+        
       return matchCategoria && matchProductLine && matchBusqueda;
     })
     .sort((a, b) => {
@@ -205,8 +216,8 @@ const ValvulasIndustriales = () => {
             fontWeight: '300'
           }}>
             {language === 'es' 
-              ? 'Válvulas industriales de alto rendimiento: API 600, 602, 603, esféricas, mariposa, seguridad y servicios especiales para aplicaciones críticas.'
-              : 'High-performance industrial valves: API 600, 602, 603, spherical, butterfly, safety and special services for critical applications.'}
+              ? 'Válvulas industriales de alto rendimiento: API 600, 602, 603, bola, mariposa, seguridad y servicios especiales para aplicaciones críticas.'
+              : 'High-performance industrial valves: API 600, 602, 603, ball, butterfly, safety and special services for critical applications.'}
           </p>
 
           {/* CTA */}
@@ -302,7 +313,7 @@ const ValvulasIndustriales = () => {
                     style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}
                   >
                     {language === 'es'
-                      ? 'Como representantes exclusivos de Velan en Argentina desde diciembre de 2000, ofrecemos válvulas industriales certificadas para procesos críticos: compuerta, globo, retención, esféricas, mariposa, seguridad y servicios especiales.'
+                      ? 'Como representantes exclusivos de Velan en Argentina desde diciembre de 2000, ofrecemos válvulas industriales certificadas para procesos críticos: compuerta, globo, retención, bola, mariposa, seguridad y servicios especiales.'
                       : 'As the exclusive Velan representative in Argentina since December 2000, we provide certified industrial valves for critical processes: gate, globe, check, ball, butterfly, safety and special services.'}
                   </p>
                 </div>
@@ -572,7 +583,7 @@ const ValvulasIndustriales = () => {
             </h2>
             
             <p className="text-xs sm:text-sm lg:text-sm sm:text-base xl:text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 lg:mb-10 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'Asesoramiento técnico en' : 'Technical advice on'} <strong className="text-white font-semibold">{language === 'es' ? 'válvulas API, esféricas, mariposa y seguridad' : 'API, spherical, butterfly and safety valves'}</strong>.
+              {language === 'es' ? 'Asesoramiento técnico en' : 'Technical advice on'} <strong className="text-white font-semibold">{language === 'es' ? 'válvulas API, bola, mariposa y seguridad' : 'API, ball, butterfly and safety valves'}</strong>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 lg:gap-5 justify-center items-center px-2">

@@ -6,7 +6,11 @@ const Footer = () => {
   const { language } = useLanguage();
   
   // Cálculo automático de años de experiencia desde 1979
-  const yearsOfExperience = new Date().getFullYear() - 1979;
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
+  const yearsOfExperience = currentMonth >= 10 ? currentYear - 1979 : currentYear - 1980;
   
   return (
     <footer className="bg-black text-white">
@@ -58,7 +62,7 @@ const Footer = () => {
                   aria-label="Admin"
                 >
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-.257-.257A6 6 0 1118 8zm-1.5 0a4.5 4.5 0 11-9 0 4.5 0 019 0zm-4.5 2.121l-1.06-1.061a1.5 1.5 0 112.12-2.121l1.061 1.06-2.121 2.122z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-.257-.257A6 6 0 1118 8zm-1.5 0a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-4.5 2.121l-1.06-1.061a1.5 1.5 0 112.12-2.121l1.061 1.06-2.121 2.122z" clipRule="evenodd" />
                   </svg>
                   <span className="tracking-tight">Admin</span>
                 </Link>

@@ -6,7 +6,11 @@ const MaterialesLanding = () => {
   const { language } = useLanguage();
   
   // Cálculo automático de años de experiencia desde 1979
-  const yearsOfExperience = new Date().getFullYear() - 1979;
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
+  const yearsOfExperience = currentMonth >= 10 ? currentYear - 1979 : currentYear - 1980;
   
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

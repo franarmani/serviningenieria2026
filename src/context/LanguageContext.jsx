@@ -30,8 +30,8 @@ const translations = {
     calibracionDesc: 'Tecnología móvil de precisión',
     inspeccionTanques: 'Inspección de Tanques API & END',
     inspeccionDesc: 'Certificaciones internacionales',
-    revestimientoTanques: 'Revestimiento de Tanques',
-    revestimientoDesc: 'División en desarrollo',
+    revestimientoTanques: 'Revestimiento Industrial',
+    revestimientoDesc: 'Protección de estructuras metálicas',
     cabinasGranallado: 'Cabinas de Granallado',
     cabinasDesc: 'Disponible 2026',
     proximamente: 'Próximamente',
@@ -130,7 +130,7 @@ const translations = {
     divisiones: 'Divisiones',
     enlaces: 'Enlaces',
     acercaNosotros: 'Acerca de Nosotros',
-    footerDesc: 'Más de 40 años ofreciendo soluciones técnicas especializadas para la industria pesada argentina.',
+    footerDesc: 'Más de 46 años ofreciendo soluciones técnicas especializadas para la industria pesada argentina.',
     footerDesc2: 'Divisiones técnicas especializadas en mantenimiento industrial, inspección API y provisión de materiales.',
     slogan: 'Una empresa de servicios al servicio de las empresas',
     
@@ -308,7 +308,7 @@ const translations = {
     divisiones: 'Divisions',
     enlaces: 'Links',
     acercaNosotros: 'About Us',
-    footerDesc: 'Over 40 years providing specialized technical solutions for Argentine heavy industry.',
+    footerDesc: 'Over 46 years providing specialized technical solutions for Argentine heavy industry.',
     footerDesc2: 'Technical divisions specialized in industrial maintenance, API inspection and materials supply.',
     slogan: 'A service company at the service of companies',
     
@@ -360,13 +360,16 @@ const translations = {
   }
 };
 
-const LanguageContext = createContext();
+const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
   // Obtener idioma guardado o usar español por defecto
   const [language, setLanguage] = useState(() => {
-    const saved = localStorage.getItem('servin-language');
-    return saved || 'es';
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('servin-language');
+      return saved || 'es';
+    }
+    return 'es';
   });
 
   // Guardar idioma en localStorage

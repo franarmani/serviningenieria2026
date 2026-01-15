@@ -39,7 +39,7 @@ export async function sendContactEmail(
   });
 
   const to = env.CONTACT_TO || 'ventasbbca@serviningenieria.com.ar';
-  const from = env.CONTACT_FROM || env.SMTP_USER;
+  const from = env.CONTACT_FROM || 'serviningenieriaweb@gmail.com';
 
   const safeSubject = (subject || '').trim() || (language === 'en' ? 'Website inquiry' : 'Consulta desde el sitio web');
 

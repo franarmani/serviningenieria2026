@@ -1,6 +1,5 @@
 ﻿import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Layout from '../../components/layout/Layout';
 import { useLanguage } from '../../context/LanguageContext';
 
 const AcoplamientoDetail = () => {
@@ -327,39 +326,36 @@ const AcoplamientoDetail = () => {
 
   if (!product) {
     return (
-      <Layout>
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="mb-8">
-              <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-8">
+            <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <h1 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Producto' : 'Product'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'No Encontrado' : 'Not Found'}</span>
+            </h1>
+            <p className="text-gray-600 mb-8 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'El producto solicitado no está disponible o el enlace es incorrecto.' : 'The requested product is not available or the link is incorrect.'}
+            </p>
+            <Link 
+              to="/materiales/acoplamientos" 
+              className="btn-primary"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              <h1 className="text-2xl sm:text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Producto' : 'Product'} <span className="font-semibold text-corporate-red">{language === 'es' ? 'No Encontrado' : 'Not Found'}</span>
-              </h1>
-              <p className="text-gray-600 mb-8 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'El producto solicitado no está disponible o el enlace es incorrecto.' : 'The requested product is not available or the link is incorrect.'}
-              </p>
-              <Link 
-                to="/materiales/acoplamientos" 
-                className="btn-primary"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                {language === 'es' ? 'Volver al Catálogo' : 'Back to Catalog'}
-              </Link>
-            </div>
+              {language === 'es' ? 'Volver al Catálogo' : 'Back to Catalog'}
+            </Link>
           </div>
         </div>
-      </Layout>
+      </div>
     );
   }
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
         
         {/* Hero Section */}
         <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
@@ -511,9 +507,7 @@ const AcoplamientoDetail = () => {
         {/* Características y Aplicaciones */}
         <section className="py-8 sm:py-12 lg:py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-              
               {/* Características Técnicas */}
               <div>
                 <div className="mb-6">
@@ -525,7 +519,6 @@ const AcoplamientoDetail = () => {
                     {language === 'es' ? 'Características Técnicas' : 'Technical Features'}
                   </h2>
                 </div>
-                
                 <div className="space-y-3">
                   {product.caracteristicas.map((caracteristica, index) => (
                     <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors group">
@@ -553,7 +546,6 @@ const AcoplamientoDetail = () => {
                     {language === 'es' ? 'Aplicaciones Industriales' : 'Industrial Applications'}
                   </h2>
                 </div>
-                
                 <div className="space-y-2 mb-6">
                   {product.aplicaciones.map((aplicacion, index) => (
                     <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors group">
@@ -564,7 +556,6 @@ const AcoplamientoDetail = () => {
                     </div>
                   ))}
                 </div>
-
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 flex items-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     <svg className="w-4 h-4 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -577,7 +568,6 @@ const AcoplamientoDetail = () => {
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -600,7 +590,6 @@ const AcoplamientoDetail = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-              
               <div className="bg-white rounded-xl p-4 border border-gray-100 hover:border-corporate-red/20 hover:shadow-sm transition-all">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-8 h-8 bg-corporate-red rounded-lg flex items-center justify-center">
@@ -727,8 +716,7 @@ const AcoplamientoDetail = () => {
           </div>
         </section>
 
-      </div>
-    </Layout>
+    </div>
   );
 };
 

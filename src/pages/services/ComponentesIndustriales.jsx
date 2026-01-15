@@ -326,68 +326,6 @@ const ComponentesIndustriales = () => {
           aplicaciones: ["Oil & Gas", "Servicios severos", "Alta corrosión"]
         }
       ]
-    },
-    {
-      categoria: "Acoplamientos",
-      proveedor: "REXNORD / Fabricantes certificados",
-      icono: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-        </svg>
-      ),
-      productos: [
-        {
-          tipo: "Acoples para Torres de Enfriamiento",
-          proveedor: "Fabricantes certificados",
-          descripcion: "Acoplamientos especiales para ventiladores de torres de enfriamiento industrial",
-          imagen: "/ingenieriademateriales/valvulas/Acoples para Torres de Enfriamiento.png",
-          especificaciones: ["Alta velocidad", "Resistente a intemperie", "Bajo mantenimiento"],
-          aplicaciones: ["Torres de enfriamiento", "Sistemas HVAC", "Plantas industriales"]
-        },
-        {
-          tipo: "Acoplamientos a Lámina",
-          proveedor: "REXNORD",
-          descripcion: "Acoplamientos flexibles de láminas metálicas para transmisión de potencia",
-          imagen: "/ingenieriademateriales/valvulas/Acoplamientos a Lámina.png",
-          especificaciones: ["Alta velocidad", "Sin lubricación", "Compensación angular"],
-          aplicaciones: ["Compresores", "Bombas", "Turbinas", "Transmisión de potencia"]
-        },
-        {
-          tipo: "Acoplamientos Elastoméricos",
-          proveedor: "REXNORD",
-          descripcion: "Acoplamientos con elemento elástico para absorción de vibraciones y desalineación",
-          imagen: "/ingenieriademateriales/valvulas/Acoplamientos Elastoméricos.png",
-          especificaciones: ["Elemento elastomérico", "Absorción de vibraciones", "Fácil instalación"],
-          aplicaciones: ["Motores eléctricos", "Bombas", "Equipos rotativos", "Maquinaria general"]
-        }
-      ]
-    },
-    {
-      categoria: "Aeroenfriadores y Tubos Aletados",
-      proveedor: "Fabricantes especializados",
-      icono: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      ),
-      productos: [
-        {
-          tipo: "Aeroenfriadores",
-          proveedor: "Fabricantes especializados",
-          descripcion: "Intercambiadores de calor aire-fluido para enfriamiento de procesos industriales",
-          imagen: "/ingenieriademateriales/valvulas/Aeroenfriadores.png",
-          especificaciones: ["API 661", "Alta eficiencia", "Diseño modular"],
-          aplicaciones: ["Refinerías", "Petroquímica", "Plantas de proceso", "Generación eléctrica"]
-        },
-        {
-          tipo: "Tubos Aletados",
-          proveedor: "Fabricantes especializados",
-          descripcion: "Tubos con aletas para intercambio térmico en aeroenfriadores y economizadores",
-          imagen: "/ingenieriademateriales/valvulas/Tubos Aletados.png",
-          especificaciones: ["ASTM A179", "Aletas helicoidales", "Alta transferencia térmica"],
-          aplicaciones: ["Aeroenfriadores", "Economizadores", "Calentadores de aire", "Condensadores"]
-        }
-      ]
     }
   ];
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -22,7 +23,7 @@ const Contact = () => {
       heroSubtitle: 'Más de 46 años respaldando a la industria argentina. Nuestro equipo de profesionales están listos para atender su consulta.',
       // Form
       formTitle: 'Envíenos su Consulta',
-      formSubtitle: 'Complete el formulario y nuestro equipo técnico-comercial le responderá dentro de las próximas 24 horas hábiles.',
+      formSubtitle: 'Complete el formulario con adjuntos opcionales y nuestro equipo técnico-comercial le responderá dentro de las próximas 24 horas hábiles.',
       // Fields
       nameLabel: 'Nombre y Apellido',
       namePlaceholder: 'Ej: Juan Pérez',
@@ -35,15 +36,15 @@ const Contact = () => {
       messageLabel: 'Mensaje',
       messagePlaceholder: 'Escriba su mensaje...',
       // Buttons
-      sendBtn: 'Enviar',
+      sendBtn: 'Enviar Consulta',
       sendingBtn: 'Enviando...',
       // Validation
       required: 'Campo requerido',
       invalidEmail: 'Email inválido',
       // Success
-      successTitle: '¡Consulta Enviada!',
-      successMsg: 'Nuestro equipo se comunicará con usted dentro de las próximas 24 horas hábiles.',
-      sendAnother: 'Enviar otra consulta',
+      successTitle: '¡Consulta Enviada Correctamente!',
+      successMsg: 'Gracias por contactarse con SERVIN Ingeniería. Nuestro equipo analizará su solicitud y se pondrá en contacto a la brevedad.',
+      sendAnother: 'Cerrar',
       // Offices
       officesTitle: 'Nuestras Oficinas',
       officesSubtitle: 'Presencia estratégica en las principales regiones industriales de Argentina',
@@ -65,7 +66,7 @@ const Contact = () => {
       heroSubtitle: 'Over 46 years supporting Argentine industry. Our team of professionals are ready to assist with your inquiry.',
       // Form
       formTitle: 'Send Us Your Inquiry',
-      formSubtitle: 'Fill out the form and our technical-commercial team will respond within the next 24 business hours.',
+      formSubtitle: 'Fill out the form with optional attachments and our technical-commercial team will respond within the next 24 business hours.',
       // Fields
       nameLabel: 'Name & Surname',
       namePlaceholder: 'E.g.: John Smith',
@@ -78,15 +79,15 @@ const Contact = () => {
       messageLabel: 'Message',
       messagePlaceholder: 'Write your message...',
       // Buttons
-      sendBtn: 'Send',
+      sendBtn: 'Send Inquiry',
       sendingBtn: 'Sending...',
       // Validation
       required: 'Required field',
       invalidEmail: 'Invalid email',
       // Success
-      successTitle: 'Inquiry Sent!',
-      successMsg: 'Our team will contact you within the next 24 business hours.',
-      sendAnother: 'Send another inquiry',
+      successTitle: 'Inquiry Sent Successfully!',
+      successMsg: 'Thank you for contacting SERVIN Engineering. Our team will analyze your request and get in touch shortly.',
+      sendAnother: 'Close',
       // Offices
       officesTitle: 'Our Offices',
       officesSubtitle: 'Strategic presence in Argentina\'s main industrial regions',
@@ -152,26 +153,15 @@ const Contact = () => {
   // ============================================
   // ESTADO
   // ============================================
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [subjectTouched, setSubjectTouched] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [activeOffice, setActiveOffice] = useState(0);
+  const [subjectFromQuery, setSubjectFromQuery] = useState('');
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const subjectFromQuery = params.get('subject');
-
-    if (subjectFromQuery && !subjectTouched) {
-      setFormData((prev) => ({ ...prev, subject: subjectFromQuery }));
+    const subject = params.get('subject');
+    
+    if (subject) {
+      setSubjectFromQuery(subject);
     }
 
     if (location.hash === '#formulario') {
@@ -182,67 +172,7 @@ const Contact = () => {
         });
       }, 0);
     }
-  }, [location.search, location.hash, subjectTouched]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === 'subject' && !subjectTouched) setSubjectTouched(true);
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
-    if (submitError) setSubmitError('');
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = txt.required;
-    if (!formData.company.trim()) newErrors.company = txt.required;
-    if (!formData.email.trim()) newErrors.email = txt.required;
-    else if (!/^\S+@\S+\.\S+$/.test(formData.email.trim())) newErrors.email = txt.invalidEmail;
-    if (!formData.subject.trim()) newErrors.subject = txt.required;
-    if (!formData.message.trim()) newErrors.message = txt.required;
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          language
-        })
-      });
-
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data?.ok) {
-        throw new Error(data?.error || 'Request failed');
-      }
-
-      setSubmitSuccess(true);
-    } catch (error) {
-      console.error('Error sending contact form:', error);
-      setSubmitError(language === 'en'
-        ? 'We could not send your inquiry right now. Please try again later.'
-        : 'No pudimos enviar tu consulta en este momento. Intentá nuevamente más tarde.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const resetForm = () => {
-    setFormData({ name: '', company: '', email: '', subject: '', message: '' });
-    setSubjectTouched(false);
-    setSubmitSuccess(false);
-    setSubmitError('');
-    setErrors({});
-  };
+  }, [location.search, location.hash]);
 
   // ============================================
   // RENDER
@@ -334,167 +264,8 @@ const Contact = () => {
             
             {/* Formulario - 2 columnas en desktop */}
             <div className="lg:col-span-2 order-2 lg:order-1">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-
-                {/* Form Content */}
-                <div className="p-4 sm:p-6 lg:p-8">
-                  {submitSuccess ? (
-                    /* Success State */
-                    <div className="text-center py-12">
-                      <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg className="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3">{txt.successTitle}</h3>
-                      <p className="text-gray-600 mb-8 max-w-md mx-auto">{txt.successMsg}</p>
-                      <button
-                        onClick={resetForm}
-                        className="inline-flex items-center px-6 py-3 bg-corporate-red hover:bg-red-700 text-white font-semibold rounded-xl transition-all"
-                      >
-                        {txt.sendAnother}
-                      </button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit}>
-
-                      {submitError && (
-                        <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                          {submitError}
-                        </div>
-                      )}
-
-                      <div className="space-y-6">
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
-                              {txt.nameLabel} <span className="text-corporate-red">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              name="name"
-                              value={formData.name}
-                              onChange={handleChange}
-                              placeholder={txt.namePlaceholder}
-                              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all outline-none shadow-none appearance-none text-sm sm:text-base ${
-                                errors.name
-                                  ? 'border-red-500 bg-red-50'
-                                  : 'border-gray-200 focus:border-corporate-red'
-                              }`}
-                            />
-                            {errors.name && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.name}</p>}
-                          </div>
-
-                          <div>
-                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
-                              {txt.companyLabel} <span className="text-corporate-red">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              name="company"
-                              value={formData.company}
-                              onChange={handleChange}
-                              placeholder={txt.companyPlaceholder}
-                              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all outline-none shadow-none appearance-none text-sm sm:text-base ${
-                                errors.company
-                                  ? 'border-red-500 bg-red-50'
-                                  : 'border-gray-200 focus:border-corporate-red'
-                              }`}
-                            />
-                            {errors.company && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.company}</p>}
-                          </div>
-
-                          <div className="sm:col-span-2">
-                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
-                              {txt.emailLabel} <span className="text-corporate-red">*</span>
-                            </label>
-                            <input
-                              type="email"
-                              name="email"
-                              value={formData.email}
-                              onChange={handleChange}
-                              placeholder={txt.emailPlaceholder}
-                              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all outline-none shadow-none appearance-none text-sm sm:text-base ${
-                                errors.email
-                                  ? 'border-red-500 bg-red-50'
-                                  : 'border-gray-200 focus:border-corporate-red'
-                              }`}
-                            />
-                            {errors.email && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.email}</p>}
-                          </div>
-
-                          <div className="sm:col-span-2">
-                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
-                              {txt.subjectLabel} <span className="text-corporate-red">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              name="subject"
-                              value={formData.subject}
-                              onChange={handleChange}
-                              placeholder={txt.subjectPlaceholder}
-                              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all outline-none shadow-none appearance-none text-sm sm:text-base ${
-                                errors.subject
-                                  ? 'border-red-500 bg-red-50'
-                                  : 'border-gray-200 focus:border-corporate-red'
-                              }`}
-                            />
-                            {errors.subject && <p className="mt-1 text-[10px] sm:text-xs text-red-500">{errors.subject}</p>}
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
-                            {txt.messageLabel} <span className="text-corporate-red">*</span>
-                          </label>
-                          <textarea
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            placeholder={txt.messagePlaceholder}
-                            rows={6}
-                            className={`w-full px-3 sm:px-4 py-3 rounded-xl border transition-all outline-none shadow-none appearance-none resize-none text-sm sm:text-base ${
-                              errors.message
-                                ? 'border-red-500 bg-red-50'
-                                : 'border-gray-200 focus:border-corporate-red'
-                            }`}
-                          />
-                          {errors.message && <p className="mt-1 text-xs sm:text-sm text-red-500">{errors.message}</p>}
-                        </div>
-
-                        <div className="pt-2">
-                          <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className={`w-full py-3 rounded-xl font-semibold text-white transition-all flex items-center justify-center space-x-2 text-sm sm:text-base ${
-                              isSubmitting
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-corporate-red hover:bg-red-700 shadow-lg hover:shadow-xl'
-                            }`}
-                          >
-                            {isSubmitting ? (
-                              <>
-                                <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                                <span>{txt.sendingBtn}</span>
-                              </>
-                            ) : (
-                              <>
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                                </svg>
-                                <span>{txt.sendBtn}</span>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  )}
-                </div>
-              </div>
+              {/* Componente FormSubmit */}
+              <ContactForm language={language} initialSubject={subjectFromQuery} />
             </div>
 
             {/* Sidebar - Oficinas */}
@@ -577,8 +348,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-   
 
     </div>
   );

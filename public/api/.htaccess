@@ -1,0 +1,15 @@
+# Permitir acceso a contact.php
+<Files "contact.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Denegar acceso directo a otros archivos PHP de configuración
+<FilesMatch "\.(conf|config|env)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Habilitar logs de errores (comentar en producción)
+# php_flag display_errors off
+# php_flag log_errors on

@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import VimeoPlayer from '../../components/VimeoPlayer';
+import CustomVideoPlayer from '../../components/CustomVideoPlayer';
 
 // Estilos CSS para animaciones
 const styles = `
@@ -38,7 +38,11 @@ const MantenimientosInSitu = () => {
   const [expandedMetodologia, setExpandedMetodologia] = useState(false);
 
   // Cálculo automático de años de experiencia desde 1979
-  const yearsOfExperience = new Date().getFullYear() - 1979;
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
+  const yearsOfExperience = currentMonth >= 10 ? currentYear - 1979 : currentYear - 1980;
 
   const ventajasPreventest = [
     {
@@ -397,21 +401,20 @@ const MantenimientosInSitu = () => {
           
           {/* Video centrado */}
           <div className="max-w-3xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gradient-to-br from-gray-900 to-black">
-              <div className="aspect-video">
-                <VimeoPlayer
-                  videoId="1152915059"
-                  hash="f6d5a1320b"
-                  title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio - SERVIN Ingeniería' : 'Safety and relief valve calibration - SERVIN Engineering'}
-                />
-              </div>
-            </div>
+            <div className="relative">
+              <CustomVideoPlayer
+                src="/calibracion de valvulas de seguridad y alivio.mp4"
+                title={language === 'es' ? 'Calibración de válvulas de seguridad y alivio' : 'Safety and relief valve calibration'}
+                badge={language === 'es' ? 'PREVENTEST' : 'PREVENTEST'}
+              />
 
-            <div className="mt-3 flex items-center justify-center gap-2">
-              <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
-              <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                {language === 'es' ? 'Calibración de válvulas — video' : 'Valve calibration — video'}
-              </span>
+              {/* Video info badge */}
+              <div className="mt-4 flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-red-50 to-white rounded-lg border border-red-100">
+                <div className="w-2 h-2 bg-corporate-red rounded-full animate-pulse"></div>
+                <span className="text-sm text-gray-700 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Calibración de válvulas — Ensayo en línea' : 'Valve calibration — In-line testing'}
+                </span>
+              </div>
             </div>
           </div>
 

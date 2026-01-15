@@ -55,17 +55,19 @@ const Novedades = () => {
       {/* HERO SECTION - Estilo Contact */}
       <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Blur */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
           <img 
             src="/galeriahome/13.jpg"
             alt="SERVIN INGENIERÍA Novedades"
             className="w-full h-full object-cover" 
-            style={{ filter: 'blur(3px)' }}
+            style={{ filter: 'none' }}
+            loading="eager"
+            fetchpriority="high"
           />
         </div>
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 z-10 bg-black/75"></div>
+        {/* Dark Overlay (lighter to reveal image) */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/35 via-black/45 to-black/60"></div>
 
         {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
@@ -100,14 +102,14 @@ const Novedades = () => {
           </p>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator (match About/Home style) */}
         <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
           <div className="flex flex-col items-center text-white/80 animate-bounce">
             <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              {language === 'es' ? 'EXPLORAR' : 'EXPLORE'}
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
             </span>
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
             </svg>
           </div>
         </div>
