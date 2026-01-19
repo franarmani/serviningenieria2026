@@ -332,7 +332,6 @@ Para consultas técnicas sobre el proyecto:
 - **Repositorio**: [GitHub](https://github.com/franarmani/serviningenieria2026)
 
 ---
-
 **Desarrollado por**: Franco Armani  
 **Año**: 2025-2026  
 **Versión**: 2.0 Professional
@@ -343,6 +342,7 @@ Para consultas técnicas sobre el proyecto:
 - [ ] Analytics avanzado
 - [ ] A/B Testing
 - [ ] Accesibilidad WCAG 2.1 AA completa
+
 
 ## 📚 Recursos Adicionales
 
@@ -360,6 +360,4 @@ Para consultas técnicas sobre el proyecto:
 
 ---
 
-**Última actualización**: Noviembre 2024  
-**Repositorio**: [ServinIngenieria-PREVIEW](https://github.com/franarmani/ServinIngenieria-PREVIEW)  
-**Estado**: ✅ Producción / Preview
+
