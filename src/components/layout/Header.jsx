@@ -558,12 +558,12 @@ const Header = () => {
             </div>
 
             {/* Botón CTA */}
-            <Link 
-              to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
+            <a 
+              href="https://fe-servin-production.up.railway.app/login"
               className="btn-primary"
             >
               {language === 'es' ? 'Login' : 'Login'}
-            </Link>
+            </a>
           </div>
 
           {/* Botón Menú Móvil */}
@@ -797,13 +797,13 @@ const Header = () => {
               
               {/* CTA móvil */}
               <div className="pt-4 border-t border-white/10 mt-6">
-                <Link 
-                  to={`/contact?subject=${encodeURIComponent(language === 'es' ? 'Acceso (Login)' : 'Access (Login)')}#formulario`}
+                <a 
+                  href="https://fe-servin-production.up.railway.app/login"
                   onClick={() => setIsMenuOpen(false)}
                   className="btn-primary w-full"
                 >
                   {language === 'es' ? 'Login' : 'Login'}
-                </Link>
+                </a>
               </div>
               </nav>
               </div>

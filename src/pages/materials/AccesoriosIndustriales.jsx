@@ -250,18 +250,7 @@ const AccesoriosIndustriales = () => {
       normas: ['ASTM A193', 'Zincado electrolítico'],
       materiales: ['Acero zincado'],
       aplicaciones: ['Ambientes corrosivos leves', 'Exterior'],
-      imagen: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=800&auto=format&fit=crop'
-    },
-    {
-      id: 21,
-      categoria: 'esparragos',
-      nombre: 'Espárragos Cadmiados',
-      proveedor: 'Industrias Delgado',
-      descripcion: 'Espárragos con recubrimiento de cadmio para servicios severos.',
-      normas: ['ASTM A193', 'Cadmiado'],
-      materiales: ['Acero cadmiado'],
-      aplicaciones: ['Oil & Gas', 'Servicios severos', 'Alta corrosión'],
-      imagen: 'https://images.unsplash.com/photo-1565088299075-9dbb0b5e5b1e?q=80&w=800&auto=format&fit=crop'
+      imagen: 'https://http2.mlstatic.com/D_Q_NP_2X_919243-MLA100191741689_122025-T.webp'
     }
   ];
 

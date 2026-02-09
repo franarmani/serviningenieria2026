@@ -313,17 +313,9 @@ const ComponentesIndustriales = () => {
           tipo: "Espárragos Zincados",
           proveedor: "Industrias Delgado",
           descripcion: "Espárragos con recubrimiento de zinc para protección anticorrosiva",
-          imagen: "https://geva.com.ar/wp-content/uploads/2022/10/esparragos.jpg",
+          imagen: "https://http2.mlstatic.com/D_Q_NP_2X_919243-MLA100191741689_122025-T.webp",
           especificaciones: ["ASTM A193", "Zincado electrolítico", "Acero zincado"],
           aplicaciones: ["Ambientes corrosivos leves", "Exterior"]
-        },
-        {
-          tipo: "Espárragos Cadmiados",
-          proveedor: "Industrias Delgado",
-          descripcion: "Espárragos con recubrimiento de cadmio para servicios severos",
-          imagen: "https://www.maferbul.com.ar/dist/assets/images/subcategories/259/carousel/esparrago-b8m-acero-inoxidable-aisi-316-catalogo.jpg",
-          especificaciones: ["ASTM A193", "Cadmiado", "Acero cadmiado"],
-          aplicaciones: ["Oil & Gas", "Servicios severos", "Alta corrosión"]
         }
       ]
     }

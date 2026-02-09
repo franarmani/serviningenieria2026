@@ -492,36 +492,42 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Executive title */}
+          {/* Executive title - SEO optimized H1 */}
           <div className="mb-4 sm:mb-6 lg:mb-8 animate-fade-in-up-delay-1">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-light text-white mb-2 sm:mb-3" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              fontWeight: '200',
-              letterSpacing: '0.01em',
-              lineHeight: '0.9'
-            }}>
-              SERVIN
-            </h1>
-            <div className="flex items-center justify-center mb-3 sm:mb-4">
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
-              <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold" style={{ 
+            {/* H1 completo para SEO (sr-only para screen readers y Google) */}
+            <h1 className="sr-only">Servin Ingeniería S.A. – Ingeniería Industrial en Bahía Blanca, Argentina</h1>
+            
+            {/* Título visual decorativo */}
+            <div aria-hidden="true">
+              <span className="block text-4xl sm:text-5xl lg:text-7xl font-light text-white mb-2 sm:mb-3" style={{ 
                 fontFamily: 'Inter, system-ui, sans-serif',
-                fontWeight: '800',
-                background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                letterSpacing: '-0.02em',
+                fontWeight: '200',
+                letterSpacing: '0.01em',
                 lineHeight: '0.9'
               }}>
-                INGENIERÍA
-              </h2>
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
+                SERVIN
+              </span>
+              <div className="flex items-center justify-center mb-3 sm:mb-4">
+                <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-corporate-red mr-2 sm:mr-4"></div>
+                <span className="text-5xl sm:text-6xl lg:text-8xl font-bold" style={{ 
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontWeight: '800',
+                  background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  letterSpacing: '-0.02em',
+                  lineHeight: '0.9'
+                }}>
+                  INGENIERÍA
+                </span>
+                <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-corporate-red to-transparent ml-2 sm:ml-4"></div>
+              </div>
             </div>
           </div>
           
-          {/* Professional subtitle */}
-          <p className="text-xs sm:text-sm text-white/80 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{ 
+          {/* Professional subtitle - SEO optimized */}
+          <p className="text-xs sm:text-sm text-white/80 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{ 
             fontFamily: 'Inter, system-ui, sans-serif',
             fontWeight: '300',
             letterSpacing: '0.01em'
@@ -529,6 +535,16 @@ const Home = () => {
             {language === 'es' 
               ? 'Una empresa de servicios al servicio de las empresas.'
               : 'A service company at the service of companies.'}
+          </p>
+          
+          {/* SEO Text - Visible but subtle */}
+          <p className="text-[10px] sm:text-xs text-white/50 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2 px-4" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Ingeniería industrial en Bahía Blanca, Argentina. Fundada en 1979. Certificaciones API, ASME e ISO 9001.'
+              : 'Industrial engineering in Bahía Blanca, Argentina. Founded in 1979. API, ASME and ISO 9001 certifications.'}
           </p>
           
           {/* CTA buttons */}
