@@ -1,0 +1,1856 @@
+﻿import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+
+const About = () => {
+  const { t, language } = useLanguage();
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentYears, setCurrentYears] = useState(0);
+  const [currentCompanies, setCurrentCompanies] = useState(0);
+  const [currentArea, setCurrentArea] = useState(0);
+  const [currentTanks, setCurrentTanks] = useState(0);
+  const [expandedCard, setExpandedCard] = useState(null);
+  const [expandedPolicy, setExpandedPolicy] = useState(null);
+  const metricsRef = useRef(null);
+
+  // Cálculo automático de años de experiencia desde 1979
+  // Se incrementa cada 1 de noviembre
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth(); // 0-11 (enero=0, noviembre=10)
+  const yearsExperience = currentMonth >= 10 ? currentYear - 1979 : currentYear - 1980;
+
+  useEffect(() => {
+    // Llevar al top una sola vez
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []); // Sin dependencias para que solo se ejecute al montar
+
+  useEffect(() => {
+    // === MÉTRICAS (como ya tenías) ===
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+            startCountAnimation();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (metricsRef.current) {
+      observer.observe(metricsRef.current);
+    }
+
+    return () => {
+      if (metricsRef.current) {
+        observer.unobserve(metricsRef.current);
+      }
+    };
+  }, [isVisible]);
+
+  // Datos de la línea de tiempo - 5 HITOS CLAVE (compactos)
+  const timelineEvents = language === 'es' ? [
+    {
+      year: "1979",
+      title: "Fundación",
+      description: "Inicio en Bahía Blanca como empresa especializada en ingeniería industrial.",
+      bullets: ["Bases técnicas", "Cultura de calidad", "Servicio industrial"]
+    },
+    {
+      year: "1984",
+      title: "Infraestructura",
+      description: "Apertura de sede central en Av. Colón 2110/16.",
+      bullets: ["Oficinas propias", "Depósito técnico", "Crecimiento sostenido"]
+    },
+    {
+      year: "1997",
+      title: "Inspecciones API",
+      description: "División de inspección de tanques y END certificados.",
+      bullets: ["API 653", "+1.000 tanques", "END avanzados"]
+    },
+    {
+      year: "2010",
+      title: "Planta Industrial",
+      description: "Taller propio con equipamiento especializado certificado.",
+      bullets: ["Banco VENTIL", "Cabinas granallado", "Procesos certificados"]
+    },
+    {
+      year: "Hoy",
+      title: "Liderazgo Técnico",
+      description: "2.600 m², laboratorio móvil y 7 divisiones operativas.",
+      bullets: ["PREVENTEST", "Flota propia", "Tecnología avanzada"]
+    }
+  ] : [
+    {
+      year: "1979",
+      title: "Foundation",
+      description: "Started in Bahía Blanca as a specialized industrial engineering company.",
+      bullets: ["Technical foundations", "Quality culture", "Industrial service"]
+    },
+    {
+      year: "1984",
+      title: "Infrastructure",
+      description: "Opening of headquarters at Av. Colón 2110/16.",
+      bullets: ["Own offices", "Technical warehouse", "Sustained growth"]
+    },
+    {
+      year: "1997",
+      title: "API Inspections",
+      description: "Tank inspection division and certified NDT.",
+      bullets: ["API 653", "+1,000 tanks", "Advanced NDT"]
+    },
+    {
+      year: "2010",
+      title: "Industrial Plant",
+      description: "Own workshop with certified specialized equipment.",
+      bullets: ["VENTIL Bench", "Shot blasting booths", "Certified processes"]
+    },
+    {
+      year: "Today",
+      title: "Technical Leadership",
+      description: "2,600 m², mobile laboratory and 7 operational divisions.",
+      bullets: ["PREVENTEST", "Own fleet", "Advanced technology"]
+    }
+  ];
+
+  const startCountAnimation = () => {
+    // Configuración de animaciones
+    const animateCounter = (start, end, setter, duration = 2000) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentValue = Math.floor(progress * (end - start) + start);
+        setter(currentValue);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    // Iniciar animaciones con diferentes duraciones para efecto escalonado
+    setTimeout(() => animateCounter(0, yearsExperience, setCurrentYears, 2000), 500);
+    setTimeout(() => animateCounter(0, 400, setCurrentCompanies, 2200), 700);
+    setTimeout(() => animateCounter(0, 2639, setCurrentArea, 2500), 900);
+    setTimeout(() => animateCounter(0, 1000, setCurrentTanks, 2300), 1100);
+  };
+
+  // Métricas corporativas con valores animados
+  const corporateMetrics = [
+    { 
+      number: currentYears, 
+      displayNumber: `${currentYears}+`, 
+      label: language === 'es' ? 'Años de Experiencia' : 'Years of Experience',
+      targetValue: yearsExperience 
+    },
+    { 
+      number: currentCompanies, 
+      displayNumber: `${currentCompanies}+`, 
+      label: language === 'es' ? 'Empresas Atendidas' : 'Companies Served',
+      targetValue: 400 
+    },
+    { 
+      number: currentArea, 
+      displayNumber: currentArea.toLocaleString(), 
+      label: language === 'es' ? 'm² de Instalaciones' : 'm² of Facilities',
+      targetValue: 2639 
+    },
+    { 
+      number: currentTanks, 
+      displayNumber: `${currentTanks}+`, 
+      label: language === 'es' ? 'Tanques Inspeccionados' : 'Tanks Inspected',
+      targetValue: 1000 
+    }
+  ];
+
+  // Pilares corporativos - estilo tarjetas del Home
+  const corporatePillars = [
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: language === 'es' ? 'Excelencia Técnica' : 'Technical Excellence',
+      description: language === 'es' ? 'Procesos certificados ISO, personal especializado y equipamiento de última generación para resultados superiores.' : 'ISO certified processes, specialized personnel and state-of-the-art equipment for superior results.'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      title: language === 'es' ? 'Seguridad Primero' : 'Safety First',
+      description: language === 'es' ? 'La seguridad operativa es nuestra prioridad absoluta en cada proyecto y procedimiento técnico especializado.' : 'Operational safety is our absolute priority in every project and specialized technical procedure.'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+      title: language === 'es' ? 'Responsabilidad y Ética' : 'Responsibility and Ethics',
+      description: language === 'es' ? 'Actuamos con integridad, transparencia y responsabilidad en todas nuestras relaciones comerciales e institucionales.' : 'We act with integrity, transparency and responsibility in all our commercial and institutional relationships.'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      title: language === 'es' ? 'Respeto por el Cliente' : 'Customer Respect',
+      description: language === 'es' ? 'Construimos relaciones duraderas basadas en confianza, respeto mutuo y compromiso profesional continuo.' : 'We build lasting relationships based on trust, mutual respect and continuous professional commitment.'
+    }
+  ];
+
+  const corporatePolicies = language === 'es' ? [
+    {
+      id: 'calidad',
+      title: 'Política de Calidad',
+      subtitle: 'Sistema de Aseguramiento de la Calidad',
+      paragraphs: [
+        'El Presidente de SERVIN Ingeniería S.A., Ing. Norberto A. Dagnino determinó la puesta en práctica de un Sistema de Aseguramiento de la Calidad que permite:'
+      ],
+      bullets: [
+        'Asegurar el estado de conservación y buen uso de los productos de sus representadas.',
+        'Desarrollar los servicios de tal forma que los mismos satisfagan y/o superen las expectativas de los clientes basados en el marco de las normas ISO.',
+        'Inducir a la participación en procura del perfeccionamiento de la capacidad de todos los integrantes de la empresa, sin distinción de niveles, ni especialidades.',
+        'Planificar actividades para mejorar la eficiencia de las operaciones relacionadas con el aseguramiento de la calidad.'
+      ]
+    },
+    {
+      id: 'materiales',
+      title: 'Ingeniería de Materiales',
+      subtitle: 'Política y Provisión',
+      paragraphs: [
+        'La dirección de SERVIN Ingeniería S.A. garantiza el uso de estándares internacionales API & ISO para materiales y procedimientos de control, aportando valor en Calidad y Seguridad.',
+        'Basado en estas premisas, SERVIN posee un programa de Calidad y un seguimiento de los materiales mediante Código de Barras que permite asegurar la trazabilidad de los productos comercializados, garantizando seguridad y satisfacción del cliente.',
+        'Nuestros productos responden a las más altas exigencias del mercado de la construcción. Contamos con un importante stock y un departamento de compras nacionales e internacionales que permiten satisfacer las necesidades emergentes a su debido tiempo y con una ecuación técnico-económica satisfactoria.'
+      ]
+    },
+    {
+      id: 'inspeccion',
+      title: 'Inspección de Tanques API y Equipos Estáticos',
+      subtitle: 'Mejora continua y tecnología aplicada',
+      paragraphs: [
+        'La división Inspecciones de SERVIN Ingeniería S.A. opera desde el año 1997, inspeccionando en su trayectoria más de 1000 tanques en empresas líderes del mercado Petrolero y Petroquímico tanto a nivel Nacional como Internacional.',
+        'Nuestra política de mejora continua nos lleva a equiparnos con la más alta tecnología, extendiendo el área de influencia y elevando el estándar de seguridad operativa.'
+      ],
+      bullets: [
+        'Detección de pérdida de masa por flujo magnético (MFL).',
+        'Medición y detección de corrosión por ultrasonido (UT).',
+        'Cuantificación de defectos de pisos de tanques mediante técnica de baja frecuencia electromagnética (LFET).'
+      ]
+    },
+    {
+      id: 'valvulas',
+      title: 'Servicio de Reparación de Válvulas',
+      subtitle: 'Taller propio y equipamiento especializado',
+      paragraphs: [
+        'En el año 2010, SERVIN Ingeniería S.A. incorporó una nueva división exclusivamente destinada al servicio, ofreciendo recuperación de válvulas manuales, de control y de seguridad con personal idóneo y tecnología de primer nivel.',
+        'Calidad, responsabilidad, tecnología, personal especializado y experiencia son los atributos que la empresa posee para brindar un servicio que cumple con las más altas exigencias de calidad y una relación costo-beneficio altamente competitiva.'
+      ],
+      bullets: [
+        'Torno vertical y torno paralelo.',
+        'Lapidadoras y agujereadora radial.',
+        'Cabina de granallado y cabina de pintura.',
+        'Bancos de pruebas certificados de alta tecnología.',
+        'Prensas hidráulicas de 100 y 200 Tn.',
+        'Equipos de soldadura TIG y MIG.'
+      ]
+    },
+    {
+      id: 'presidencia',
+      title: 'Mensaje de Presidencia',
+      subtitle: 'Visión y compromiso',
+      paragraphs: [
+        '“Continuamos nuestro crecimiento con la mirada hacia el futuro, pensando en el desarrollo de las nuevas generaciones.',
+        'La dedicación y el compromiso de siempre hacia nuestros clientes, sumados a nuestra vocación de servicio hacen de Servin Ingeniería S.A. una Empresa de Servicios al Servicio de las Empresas.”'
+      ]
+    }
+  ] : [
+    {
+      id: 'calidad',
+      title: 'Quality Policy',
+      subtitle: 'Quality Assurance System',
+      paragraphs: [
+        'The President of SERVIN Ingeniería S.A., Eng. Norberto A. Dagnino, established the implementation of a Quality Assurance System that enables:'
+      ],
+      bullets: [
+        'To ensure proper conservation and correct use of represented products.',
+        'To deliver services that meet and/or exceed client expectations within the ISO standards framework.',
+        'To foster participation aimed at continuous improvement of all team members, regardless of level or specialty.',
+        'To plan activities that improve the efficiency of quality-assurance-related operations.'
+      ]
+    },
+    {
+      id: 'materiales',
+      title: 'Materials Engineering',
+      subtitle: 'Policy & Supply',
+      paragraphs: [
+        'SERVIN Ingeniería S.A. is committed to using international API & ISO standards for materials and inspection/control procedures, adding value in Quality and Safety.',
+        'SERVIN operates a quality program with barcode-based tracking to ensure traceability of commercialized products, supporting safety and customer satisfaction.',
+        'We maintain strong stock levels and a national/international procurement department to respond in time with a solid technical-economic balance.'
+      ]
+    },
+    {
+      id: 'inspeccion',
+      title: 'API Tank & Static Equipment Inspection',
+      subtitle: 'Continuous improvement & applied technology',
+      paragraphs: [
+        'SERVIN Ingeniería S.A. inspections division has operated since 1997, inspecting more than 1,000 tanks for leading oil and petrochemical companies nationally and internationally.',
+        'Our continuous improvement approach drives investment in advanced technology and strengthens operational safety standards.'
+      ],
+      bullets: [
+        'Magnetic Flux Leakage (MFL) mass-loss detection.',
+        'Ultrasonic corrosion measurement and detection (UT).',
+        'Low Frequency Electromagnetic Technique (LFET) for tank floor defects.'
+      ]
+    },
+    {
+      id: 'valvulas',
+      title: 'Valve Repair Service',
+      subtitle: 'In-house workshop & specialized equipment',
+      paragraphs: [
+        'In 2010, SERVIN Ingeniería S.A. created a dedicated service division for the recovery of manual, control and safety valves, supported by qualified personnel and modern technology.',
+        'Quality, responsibility, technology and experience enable a service that meets high requirements with a competitive cost-benefit ratio.'
+      ],
+      bullets: [
+        'Vertical and parallel lathes.',
+        'Lapping machines and radial drilling machine.',
+        'Shot blasting and paint booths.',
+        'Certified high-technology test benches.',
+        '100 and 200 ton hydraulic presses.',
+        'TIG and MIG welding equipment.'
+      ]
+    },
+    {
+      id: 'presidencia',
+      title: 'Message from the Presidency',
+      subtitle: 'Vision & commitment',
+      paragraphs: [
+        '“We continue to grow with an eye on the future, thinking about the development of new generations.',
+        'Our longstanding dedication and commitment to clients, together with our service vocation, make Servin Ingeniería S.A. a service company at the service of companies.”'
+      ]
+    }
+  ];
+
+  return (
+    <>
+    <div className="min-h-screen">
+      
+      {/* Hero Section - Compacto y Profesional con imagen */}
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/about/servin.webp" 
+            alt={language === 'es' ? 'SERVIN Ingeniería' : 'SERVIN Engineering'}
+            className="w-full h-full object-cover" 
+            style={{ filter: 'blur(3px)' }}
+          />
+        </div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-6 sm:py-12 lg:py-16 xl:py-20">
+          
+          {/* Badge */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-full px-2 sm:px-4 md:px-6 py-0.5 sm:py-2 md:py-2.5">
+              <div className="w-1 sm:w-2 h-1 sm:h-2 bg-corporate-red rounded-full mr-1.5 sm:mr-3 animate-pulse"></div>
+              <span className="text-white/90 text-[8px] sm:text-xs md:text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Nuestra Empresa' : 'Our Company'}
+              </span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1'
+          }}>
+            {language === 'es' ? (
+              <>
+                SERVIN{' '}
+                <span className="text-corporate-red">INGENIERÍA</span>
+              </>
+            ) : (
+              <>
+                <span className="text-corporate-red">SERVIN</span>{' '}
+                ENGINEERING
+              </>
+            )}
+          </h1>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" style={{ 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontWeight: '300'
+          }}>
+            {language === 'es' 
+              ? 'Referentes en ingeniería industrial aplicada con infraestructura propia, equipos especializados y certificaciones internacionales.'
+              : 'Leaders in applied industrial engineering with own infrastructure, specialized equipment and international certifications.'}
+          </p>
+
+          {/* CTA */}
+          <a 
+            href="#pilares" 
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-white hover:text-corporate-red font-medium transition-colors"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {language === 'es' ? 'Conocer más' : 'Learn more'}
+          </a>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center text-white/80 animate-bounce">
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              {language === 'es' ? 'Deslizar' : 'Scroll'}
+            </span>
+            <svg className="w-3 h-5 sm:w-4 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - Pilares de Autoridad mejorado */}
+      <section className="relative bg-gradient-to-b from-white to-gray-50/50 py-20 lg:py-24 overflow-hidden scroll-mt-20" id="about">
+        
+        {/* Decoración de fondo */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          
+          <div id="pilares" className="text-center mb-16 scroll-mt-20">
+            {/* Badge centrado */}
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-6">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+              <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Desde 1979' : 'Since 1979'}
+              </span>
+            </div>
+            
+            {/* Título centrado */}
+            <h2 
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? 'LÍDERES EN' : 'LEADERS IN'}
+            </h2>
+            <h3 
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-6"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? 'INGENIERÍA INDUSTRIAL' : 'INDUSTRIAL ENGINEERING'}
+            </h3>
+            
+            {/* Descripción centrada */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <p 
+                className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
+              >
+                {language === 'es' 
+                  ? 'SERVIN INGENIERÍA S.A. nace en 1979 como consecuencia de un polo petroquímico que emergía en una ciudad netamente agrícola, ganadera, comercial y acéfala en materia de servicios para asistir estas nuevas industrias. Esta inquietud tomó forma orientando la actividad hacia el asesoramiento y provisión de materiales para la industria, fundamentalmente válvulas, cañerías, accesorios para alta presión y acoplamientos para equipos rotantes.'
+                  : 'SERVIN INGENIERÍA S.A. was born in 1979 as a result of an emerging petrochemical hub in a primarily agricultural, livestock, and commercial city lacking services to assist these new industries. This vision took shape by focusing on consulting and supplying materials for the industry, primarily valves, piping, high-pressure fittings, and couplings for rotating equipment.'}
+              </p>
+              <p 
+                className="text-sm sm:text-base text-gray-700 leading-relaxed"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
+              >
+                {language === 'es' 
+                  ? 'A lo largo de más de cuatro décadas, la empresa evolucionó manteniendo sus valores fundamentales: calidad, confiabilidad y compromiso operativo, consolidándose como un referente nacional en ingeniería industrial aplicada.'
+                  : 'Throughout more than four decades, the company evolved while maintaining its fundamental values: quality, reliability and operational commitment, establishing itself as a national reference in applied industrial engineering.'}
+              </p>
+            </div>
+
+            {/* Fundador Card - centrado y mejorado */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center">
+                  {/* Imagen */}
+                  <div className="flex-shrink-0">
+                    <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-md ring-4 ring-corporate-red/10">
+                      <img 
+                        src="/norberto.webp" 
+                        alt="Ing. Norberto Dagnino"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Contenido - centrado en mobile */}
+                  <div className="flex-1 text-center sm:text-left">
+                    {/* Nombre */}
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      Ing. Norberto Dagnino
+                    </h4>
+                    
+                    {/* Cargo */}
+                    <div className="inline-flex items-center bg-corporate-red/10 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-4">
+                      <span className="text-xs font-semibold text-corporate-red uppercase tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Fundador y Director Ejecutivo' : 'Founder & Executive Director'}
+                      </span>
+                    </div>
+                    
+                    {/* Descripción */}
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed" style={{ 
+                      fontFamily: 'Inter, system-ui, sans-serif',
+                      fontWeight: '400'
+                    }}>
+                      {language === 'es'
+                        ? `Profesional con más de ${yearsExperience} años de trayectoria en la industria. Su visión técnica y ética de trabajo dieron origen a la cultura corporativa que distingue hoy a la compañía.`
+                        : `Professional with over ${yearsExperience} years of experience in the industry. His technical vision and work ethic gave rise to the corporate culture that distinguishes the company today.`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pilares de Autoridad - 3 columnas centradas */}
+<div className="flex justify-center">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-12 sm:mb-16 lg:mb-20 max-w-5xl w-full">
+
+    {/* Pilar 1 */}
+    <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-corporate-red/5 transition-colors duration-300 group">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 bg-corporate-red/10 rounded-lg flex items-center justify-center group-hover:bg-corporate-red/20 transition-colors">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 sm:mb-1">
+        {language === 'es' ? 'Ingeniería Certificada' : 'Certified Engineering'}
+      </h4>
+      <p className="text-[9px] sm:text-[10px] text-gray-500">ISO 9001 · API 653</p>
+    </div>
+
+    {/* Pilar 2 */}
+    <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-corporate-red/5 transition-colors duration-300 group">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 bg-corporate-red/10 rounded-lg flex items-center justify-center group-hover:bg-corporate-red/20 transition-colors">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      </div>
+      <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 sm:mb-1">
+        {language === 'es' ? 'Infraestructura Propia' : 'Own Infrastructure'}
+      </h4>
+      <p className="text-[9px] sm:text-[10px] text-gray-500">
+        {language === 'es' ? '+2.600 m²' : '+2,600 m²'}
+      </p>
+    </div>
+
+    {/* Pilar 3 */}
+    <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-corporate-red/5 transition-colors duration-300 group">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 bg-corporate-red/10 rounded-lg flex items-center justify-center group-hover:bg-corporate-red/20 transition-colors">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 sm:mb-1">
+        {language === 'es' ? 'Experiencia Multisectorial' : 'Multi-sector Experience'}
+      </h4>
+      <p className="text-[9px] sm:text-[10px] text-gray-500">
+        {language === 'es' ? '+400 empresas' : '+400 companies'}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+        </div>
+      </section>
+
+      {/* POLÍTICAS — ACORDEÓN (NO ROMPE ESTRUCTURA) */}
+      <section className="bg-white py-14 sm:py-16 lg:py-20" id="politicas">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-5">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-2"></div>
+              <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Políticas' : 'Policies'}
+              </span>
+            </div>
+
+            <h2
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? 'Políticas y Compromisos' : 'Policies & Commitments'}
+            </h2>
+            <p
+              className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
+            >
+              {language === 'es'
+                ? 'Nuestro marco de calidad, trazabilidad y mejora continua que guía cada división operativa.'
+                : 'Our quality, traceability and continuous improvement framework guiding every operational division.'}
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-3">
+            {corporatePolicies.map((policy) => {
+              const isOpen = expandedPolicy === policy.id;
+              return (
+                <div key={policy.id} className="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+                  <button
+                    type="button"
+                    className="w-full flex items-start justify-between gap-4 p-5 sm:p-6 text-left hover:bg-white/60 transition-colors"
+                    onClick={() => setExpandedPolicy(isOpen ? null : policy.id)}
+                    aria-expanded={isOpen}
+                    aria-controls={`policy-${policy.id}`}
+                  >
+                    <div className="min-w-0">
+                      <div className="text-sm sm:text-base font-semibold text-gray-900" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {policy.title}
+                      </div>
+                      {policy.subtitle && (
+                        <div className="text-xs sm:text-sm text-gray-600 mt-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                          {policy.subtitle}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="w-9 h-9 rounded-xl bg-white border border-gray-200 flex items-center justify-center">
+                        <svg
+                          className={`w-5 h-5 text-corporate-red transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div
+                    id={`policy-${policy.id}`}
+                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[900px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}
+                  >
+                    <div className="px-5 sm:px-6 pb-6 pt-0">
+                      {policy.paragraphs?.map((text, idx) => (
+                        <p
+                          key={idx}
+                          className="text-sm text-gray-700 leading-relaxed mt-3"
+                          style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '400' }}
+                        >
+                          {text}
+                        </p>
+                      ))}
+
+                      {policy.bullets?.length > 0 && (
+                        <ul className="mt-4 space-y-2">
+                          {policy.bullets.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                              <div className="w-1.5 h-1.5 rounded-full bg-corporate-red mt-2 flex-shrink-0"></div>
+                              <span style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to={`/contact?subject=${encodeURIComponent(
+                language === 'es'
+                  ? 'Consulta institucional'
+                  : 'Institutional inquiry'
+              )}#formulario`}
+              className="btn-primary"
+            >
+              {language === 'es' ? 'Contactar' : 'Contact'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* DIVISIONES TÉCNICAS — FONDO NEGRO */}
+      <section className="relative bg-black py-20 lg:py-28 overflow-hidden" id="divisiones">
+        
+        {/* Decoración: líneas rojas sutiles */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent opacity-30"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-corporate-red to-transparent opacity-30"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Encabezado */}
+          <div className="mb-8 sm:mb-10 lg:mb-12 text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center bg-corporate-red/10 border border-corporate-red/30 rounded-full px-4 sm:px-5 py-2 mb-4 sm:mb-5">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-3 animate-pulse"></div>
+              <span className="text-corporate-red text-xs sm:text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? '8 Divisiones Especializadas' : '8 Specialized Divisions'}
+              </span>
+            </div>
+            
+            <h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-5 lg:mb-6"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? 'Divisiones Técnicas' : 'Technical Divisions'}
+            </h2>
+            <p 
+              className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}
+            >
+              {language === 'es' 
+                ? 'Infraestructura técnica diseñada para respaldar nuestras ocho divisiones de servicio, permitiendo brindar servicios certificados de mantenimiento, inspección, calibración y provisión de materiales industriales.'
+                : 'Technical infrastructure designed to support our eight service divisions, enabling certified maintenance, inspection, calibration and industrial materials supply services.'}
+            </p>
+          </div>
+
+          {/* Grid de las 8 divisiones - Desktop */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            
+            {/* División 1 - Planta de Mantenimiento */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 hover:border-corporate-red hover:bg-white/10 transition-all duration-300 group">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-corporate-red/20 p-2 sm:p-2.5 rounded-lg group-hover:bg-corporate-red/30 transition-colors flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h5 className="text-sm sm:text-base font-semibold text-white mb-1 sm:mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Planta de Mantenimiento Industrial' : 'Industrial Maintenance Plant'}
+                    </h5>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es'
+                    ? 'Infraestructura de más de 800 m², equipada con bancos VENTIL certificados, tornos, lapeadoras, cabinas y equipamiento integral para la recuperación y calibración de válvulas industriales y de seguridad.'
+                    : 'Infrastructure of over 800 m², equipped with certified VENTIL benches, lathes, lapping machines, booths and comprehensive equipment for the recovery and calibration of industrial and safety valves.'}
+                </p>
+                <Link to="/services/planta-mantenimiento" className="inline-flex items-center text-xs sm:text-sm text-corporate-red hover:text-white font-medium transition-colors mt-auto">
+                  {language === 'es' ? 'Ver división' : 'View division'}
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* División 2 - Mantenimientos In Situ PREVENTEST */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 hover:border-corporate-red hover:bg-white/10 transition-all duration-300 group">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-corporate-red/20 p-2 sm:p-2.5 rounded-lg group-hover:bg-corporate-red/30 transition-colors flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h5 className="text-sm sm:text-base font-semibold text-white mb-1 sm:mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Mantenimientos In Situ – PREVENTEST' : 'In-Situ Maintenance – PREVENTEST'}
+                    </h5>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es'
+                    ? 'Aplicación de tecnología PREVENTEST para calibración de válvulas de seguridad sin desmontaje y sin detener procesos, bajo procedimientos certificados.'
+                    : 'Application of PREVENTEST technology for safety valve calibration without disassembly and without stopping processes, under certified procedures.'}
+                </p>
+                <Link to="/services/mantenimientos-in-situ" className="inline-flex items-center text-xs sm:text-sm text-corporate-red hover:text-white font-medium transition-colors mt-auto">
+                  {language === 'es' ? 'Ver división' : 'View division'}
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* División 3 - Laboratorio Móvil */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 hover:border-corporate-red hover:bg-white/10 transition-all duration-300 group">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-corporate-red/20 p-2 sm:p-2.5 rounded-lg group-hover:bg-corporate-red/30 transition-colors flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h5 className="text-sm sm:text-base font-semibold text-white mb-1 sm:mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Mantenimientos In Situ – Laboratorio Móvil' : 'In-Situ Maintenance – Mobile Laboratory'}
+                    </h5>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es'
+                    ? 'Unidad autónoma para mantenimientos in situ, equipada con banco VENTIL, compresores y transmisores de presión, que permite intervenir válvulas directamente en planta.'
+                    : 'Autonomous unit for in-situ maintenance, equipped with VENTIL bench, compressors and pressure transmitters, allowing valve intervention directly at the plant.'}
+                </p>
+                <Link to="/services/laboratorio-movil" className="inline-flex items-center text-xs sm:text-sm text-corporate-red hover:text-white font-medium transition-colors mt-auto">
+                  {language === 'es' ? 'Ver división' : 'View division'}
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* División 4 - Inspección de Tanques API & END */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 hover:border-corporate-red hover:bg-white/10 transition-all duration-300 group">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-corporate-red/20 p-2 sm:p-2.5 rounded-lg group-hover:bg-corporate-red/30 transition-colors flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h5 className="text-sm sm:text-base font-semibold text-white mb-1 sm:mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Inspección de Tanques API & END' : 'API Tank Inspection & NDT'}
+                    </h5>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es'
+                    ? 'Servicios de inspección de tanques y equipos mediante tecnologías MFL, LFET, Ultrasonido (UT/PAUT), Líquidos Penetrantes, y auditorías conforme a API 653 y resoluciones vigentes.'
+                    : 'Tank and equipment inspection services using MFL, LFET, Ultrasound (UT/PAUT), Penetrant Testing technologies, and audits according to API 653 and current regulations.'}
+                </p>
+                <Link to="/services/inspeccion-tanques-api" className="inline-flex items-center text-xs sm:text-sm text-corporate-red hover:text-white font-medium transition-colors mt-auto">
+                  {language === 'es' ? 'Ver división' : 'View division'}
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* División 5 - Ingeniería de Materiales */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 hover:border-corporate-red hover:bg-white/10 transition-all duration-300 group">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-corporate-red/20 p-2 sm:p-2.5 rounded-lg group-hover:bg-corporate-red/30 transition-colors flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h5 className="text-sm sm:text-base font-semibold text-white mb-1 sm:mb-2 leading-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
+                    </h5>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4 flex-grow" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es'
+                    ? 'Suministro y soporte técnico en acoplamientos industriales, reductores, válvulas y componentes certificados, actuando como nexo técnico entre el cliente y los fabricantes representados.'
+                    : 'Supply and technical support in industrial couplings, reducers, valves and certified components, acting as a technical link between the client and the represented manufacturers.'}
+                </p>
+                <Link to="/services/ingenieria-materiales" className="inline-flex items-center text-xs sm:text-sm text-corporate-red hover:text-white font-medium transition-colors mt-auto">
+                  {language === 'es' ? 'Ver división' : 'View division'}
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Divisiones 6 y 7 - Próximamente */}
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl p-4 sm:p-5 lg:p-6 md:col-span-2 xl:col-span-1">
+              <div className="flex flex-col h-full">
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="bg-gray-500/20 p-2 sm:p-2.5 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2 mb-1 sm:mb-2">
+                      <h5 className="text-sm sm:text-base font-semibold text-gray-300" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {language === 'es' ? 'Próximamente' : 'Coming Soon'}
+                      </h5>
+                      <span className="text-[10px] sm:text-xs bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-medium">2026</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Actualmente en desarrollo nuevas capacidades industriales:' : 'Currently developing new industrial capabilities:'}
+                </p>
+                <ul className="space-y-2 flex-grow">
+                  <li className="flex items-start text-xs sm:text-sm text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento Industrial' : 'Industrial Coating'}</strong>
+                      <span className="text-[10px] sm:text-xs text-gray-400 ml-1.5">{language === 'es' ? '· División en desarrollo' : '· Division in development'}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start text-xs sm:text-sm text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <strong className="font-medium text-white">{language === 'es' ? 'Cabinas de Granallado' : 'Shot Blasting Booths'}</strong>
+                      <span className="text-[10px] sm:text-xs text-gray-400 ml-1.5">{language === 'es' ? '· Disponible 2026' : '· Available 2026'}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start text-xs sm:text-sm text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <strong className="font-medium text-white">{language === 'es' ? 'Prefabricados' : 'Prefabricated'}</strong>
+                      <span className="text-[10px] sm:text-xs text-gray-400 ml-1.5">{language === 'es' ? '· Piping y estructuras metálicas' : '· Piping and metal structures'}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Accordion Mobile */}
+          <div className="md:hidden space-y-3">
+            {/* División 1 */}
+            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 1 ? null : 1)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-corporate-red/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h5 className="text-sm font-semibold text-white truncate" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Planta de Mantenimiento' : 'Maintenance Plant'}
+                  </h5>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 1 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 1 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0 space-y-3">
+                  <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Infraestructura de más de 800 m², equipada con bancos VENTIL certificados, tornos, lapeadoras, cabinas y equipamiento integral para la recuperación y calibración de válvulas industriales y de seguridad.'
+                      : 'Infrastructure of over 800 m², equipped with certified VENTIL benches, lathes, lapping machines, booths and comprehensive equipment for the recovery and calibration of industrial and safety valves.'}
+                  </p>
+                  <Link to="/services/planta-mantenimiento" className="inline-flex items-center text-xs text-corporate-red hover:text-white font-medium transition-colors">
+                    {language === 'es' ? 'Ver división' : 'View division'}
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* División 2 */}
+            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 2 ? null : 2)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-corporate-red/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h5 className="text-sm font-semibold text-white truncate" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'PREVENTEST' : 'PREVENTEST'}
+                  </h5>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 2 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 2 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0 space-y-3">
+                  <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Aplicación de tecnología PREVENTEST para calibración de válvulas de seguridad sin desmontaje y sin detener procesos, bajo procedimientos certificados.'
+                      : 'Application of PREVENTEST technology for safety valve calibration without disassembly and without stopping processes, under certified procedures.'}
+                  </p>
+                  <Link to="/services/mantenimientos-in-situ" className="inline-flex items-center text-xs text-corporate-red hover:text-white font-medium transition-colors">
+                    {language === 'es' ? 'Ver división' : 'View division'}
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* División 3 */}
+            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 3 ? null : 3)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-corporate-red/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                    </svg>
+                  </div>
+                  <h5 className="text-sm font-semibold text-white truncate" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Laboratorio Móvil' : 'Mobile Laboratory'}
+                  </h5>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 3 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 3 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0 space-y-3">
+                  <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Unidad autónoma para mantenimientos in situ, equipada con banco VENTIL, compresores y transmisores de presión, que permite intervenir válvulas directamente en planta.'
+                      : 'Autonomous unit for in-situ maintenance, equipped with VENTIL bench, compressors and pressure transmitters, allowing valve intervention directly at the plant.'}
+                  </p>
+                  <Link to="/services/laboratorio-movil" className="inline-flex items-center text-xs text-corporate-red hover:text-white font-medium transition-colors">
+                    {language === 'es' ? 'Ver división' : 'View division'}
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* División 4 */}
+            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 4 ? null : 4)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-corporate-red/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h5 className="text-sm font-semibold text-white truncate" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Inspección API & END' : 'API Inspection & NDT'}
+                  </h5>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 4 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 4 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0 space-y-3">
+                  <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Servicios de inspección de tanques y equipos mediante tecnologías MFL, LFET, Ultrasonido (UT/PAUT), Líquidos Penetrantes, y auditorías conforme a API 653 y resoluciones vigentes.'
+                      : 'Tank and equipment inspection services using MFL, LFET, Ultrasound (UT/PAUT), Penetrant Testing technologies, and audits according to API 653 and current regulations.'}
+                  </p>
+                  <Link to="/services/inspeccion-tanques-api" className="inline-flex items-center text-xs text-corporate-red hover:text-white font-medium transition-colors">
+                    {language === 'es' ? 'Ver división' : 'View division'}
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* División 5 */}
+            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 5 ? null : 5)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-corporate-red/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-corporate-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <h5 className="text-sm font-semibold text-white truncate" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ingeniería de Materiales' : 'Materials Engineering'}
+                  </h5>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 5 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 5 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0 space-y-3">
+                  <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Suministro y soporte técnico en acoplamientos industriales, reductores, válvulas y componentes certificados, actuando como nexo técnico entre el cliente y los fabricantes representados.'
+                      : 'Supply and technical support in industrial couplings, reducers, valves and certified components, acting as a technical link between the client and the represented manufacturers.'}
+                  </p>
+                  <Link to="/services/ingenieria-materiales" className="inline-flex items-center text-xs text-corporate-red hover:text-white font-medium transition-colors">
+                    {language === 'es' ? 'Ver división' : 'View division'}
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Divisiones 6, 7 y 8 - Próximamente */}
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setExpandedCard(expandedCard === 6 ? null : 6)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                  <div className="bg-gray-500/20 p-2 rounded-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex items-center gap-2 flex-1">
+                    <h5 className="text-sm font-semibold text-gray-300" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Próximamente' : 'Coming Soon'}
+                    </h5>
+                    <span className="text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-medium">2026</span>
+                  </div>
+                </div>
+                <svg className={`w-5 h-5 text-white transition-transform flex-shrink-0 ml-2 ${expandedCard === 6 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`transition-all duration-300 ease-in-out ${expandedCard === 6 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-4 pt-0">
+                  <p className="text-xs text-gray-300 mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Actualmente en desarrollo nuevas capacidades industriales:' : 'Currently developing new industrial capabilities:'}
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start text-xs text-gray-300">
+                      <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <strong className="font-medium text-white">{language === 'es' ? 'Revestimiento Industrial' : 'Industrial Coating'}</strong>
+                        <span className="text-[10px] text-gray-400 ml-1.5">{language === 'es' ? '· División en desarrollo' : '· Division in development'}</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start text-xs text-gray-300">
+                      <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <strong className="font-medium text-white">{language === 'es' ? 'Cabinas de Granallado' : 'Shot Blasting Booths'}</strong>
+                        <span className="text-[10px] text-gray-400 ml-1.5">{language === 'es' ? '· Disponible 2026' : '· Available 2026'}</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start text-xs text-gray-300">
+                      <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <strong className="font-medium text-white">{language === 'es' ? 'Prefabricados' : 'Prefabricated'}</strong>
+                        <span className="text-[10px] text-gray-400 ml-1.5">{language === 'es' ? '· Piping y estructuras metálicas' : '· Piping and metal structures'}</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tradición Familiar - Diseño compacto */}
+      <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-gray-50/30 to-white overflow-hidden">
+        {/* Decoración de fondo sutil */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B00000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-12 items-center">
+            
+            {/* Columna de texto */}
+            <div className="order-2 lg:order-1">
+              {/* Badge */}
+              <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-3 sm:px-4 py-1.5 mb-3 sm:mb-4 shadow-sm">
+                <div className="w-1.5 h-1.5 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+                <span className="text-corporate-red text-[10px] sm:text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Empresa Familiar' : 'Family Business'}
+                </span>
+              </div>
+              
+              {/* Título */}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight" style={{ 
+                fontFamily: 'Inter, system-ui, sans-serif',
+                letterSpacing: '-0.02em'
+              }}>
+                {language === 'es' ? (
+                  <>
+                    <span className="text-gray-900">TRADICIÓN</span>
+                    <br />
+                    <span className="text-corporate-red">FAMILIAR</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-gray-900">FAMILY</span>
+                    <br />
+                    <span className="text-corporate-red">TRADITION</span>
+                  </>
+                )}
+              </h2>
+              
+              {/* Descripción */}
+              <div className="space-y-3 mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed" style={{ 
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontWeight: '400'
+                }}>
+                  {language === 'es'
+                    ? (<span><strong className="text-gray-900 font-semibold">SERVIN INGENIERÍA S.A.</strong> mantiene su esencia como empresa familiar, donde los valores de <strong className="text-corporate-red font-semibold">confianza, compromiso y excelencia</strong> se transmiten generacionalmente.</span>)
+                    : (<span><strong className="text-gray-900 font-semibold">SERVIN INGENIERÍA S.A.</strong> maintains its essence as a family business, where the values of <strong className="text-corporate-red font-semibold">trust, commitment and excellence</strong> are transmitted generationally.</span>)}
+                </p>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed" style={{ 
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontWeight: '400'
+                }}>
+                  {language === 'es'
+                    ? 'Esta característica nos permite conservar una atención personalizada y relaciones comerciales duraderas, combinando la solidez institucional con la calidez humana que distingue nuestro servicio.'
+                    : 'This characteristic allows us to maintain personalized attention and lasting business relationships, combining institutional strength with the human warmth that distinguishes our service.'}
+                </p>
+              </div>
+
+              {/* Stats o características */}
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-corporate-red mb-0.5 sm:mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    +{yearsExperience}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Años' : 'Years'}
+                  </div>
+                </div>
+                <div className="text-center border-x border-gray-200">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Generaciones' : 'Generations'}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-corporate-red mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    100%
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-600 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Familiar' : 'Family'}
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Columna de imagen */}
+            <div className="order-1 lg:order-2">
+              <div className="relative group">
+                {/* Decoración de fondo */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-corporate-red/10 to-corporate-red/5 rounded-2xl lg:rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                
+                {/* Imagen */}
+                <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/familia.webp" 
+                    alt="Familia Dagnino - Tradición familiar en SERVIN INGENIERÍA"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  
+                  {/* Overlay con info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 sm:p-6">
+                    <p className="text-white text-sm sm:text-base font-medium mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Familia Dagnino' : 'Dagnino Family'}
+                    </p>
+                    <p className="text-white/80 text-xs sm:text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Tradición y compromiso desde 1979' : 'Tradition and commitment since 1979'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Historia Section - Timeline detallado */}
+      <section id="historia" className="relative bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+        
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header centrado */}
+          <div className="text-center mb-12 sm:mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center bg-corporate-red/5 border border-corporate-red/20 rounded-full px-4 py-1.5 mb-5">
+              <div className="w-2 h-2 bg-corporate-red rounded-full mr-2 animate-pulse"></div>
+              <span className="text-xs font-semibold text-corporate-red uppercase tracking-wider" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {language === 'es' ? 'Nuestra Trayectoria' : 'Our Journey'}
+              </span>
+            </div>
+            
+            {/* Título */}
+            <h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 leading-tight"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? `+${yearsExperience} AÑOS DE` : `+${yearsExperience} YEARS OF`}
+            </h2>
+            <h3 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-corporate-red leading-tight"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '-0.02em' }}
+            >
+              {language === 'es' ? 'EVOLUCIÓN' : 'EVOLUTION'}
+            </h3>
+          </div>
+          
+          {/* Timeline detallado con hitos específicos */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Línea vertical */}
+            <div className="absolute left-8 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gray-400"></div>
+            
+            <div className="space-y-12 sm:space-y-16">
+              
+              {/* 1979 - Fundación */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-corporate-red rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-corporate-red text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1979
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Fundación' : 'Foundation'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Inicio en local rentado de 30 m² en calle Villarino 45, Bahía Blanca, orientado al asesoramiento y provisión de válvulas, cañerías, accesorios de alta presión y acoplamientos.'
+                      : 'Started in a 30 m² rented space at Villarino 45, Bahía Blanca, focused on consulting and supply of valves, piping, high-pressure fittings and couplings.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      30 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Villarino 45' : 'Villarino 45'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Válvulas y accesorios' : 'Valves & fittings'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 1984 - Casa Matriz */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1984
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Casa Matriz Propia' : 'Own Headquarters'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Apertura de casa matriz en instalaciones propias de 223 m² en Av. Colón 2110, Bahía Blanca.'
+                      : 'Opening of headquarters in own facilities of 223 m² at Av. Colón 2110, Bahía Blanca.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      223 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Av. Colón 2110' : 'Av. Colón 2110'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Instalaciones propias' : 'Own facilities'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1990 - Primera Ampliación */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1990
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Primera Ampliación' : 'First Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Ampliación de oficinas centrales llevando las instalaciones a 746 m², triplicando la capacidad operativa.'
+                      : 'Expansion of central offices bringing facilities to 746 m², tripling operational capacity.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      746 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? '+334%' : '+334%'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 1992 - Buenos Aires */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1992
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Oficina Buenos Aires' : 'Buenos Aires Office'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Apertura de oficina comercial de 42 m² en Buenos Aires para atender oficinas centrales de clientes.'
+                      : 'Opening of 42 m² commercial office in Buenos Aires to serve clients\' headquarters.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      42 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Buenos Aires' : 'Buenos Aires'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Expansión comercial' : 'Commercial expansion'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1996 - Neuquén */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1996
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Sucursal Neuquén' : 'Neuquén Branch'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Apertura de sucursal en Neuquén con oficinas y depósitos en instalaciones propias de 577 m².'
+                      : 'Opening of Neuquén branch with offices and warehouses in own 577 m² facilities.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      577 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Neuquén' : 'Neuquén'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Oficina + Depósito' : 'Office + Warehouse'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 1997 - Inspecciones API */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1997
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Inspecciones API' : 'API Inspections'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Nueva unidad de negocio: Inspección de Tanques API y equipos estáticos mediante técnicas de ensayos no destructivos con personal capacitado y equipos de última tecnología.'
+                      : 'New business unit: API Tank Inspection and static equipment using non-destructive testing techniques with trained personnel and state-of-the-art equipment.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      API 653
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'END' : 'NDT'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Equipos especializados' : 'Specialized equipment'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1998 - Ampliación Depósito */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    1998
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ampliación Depósito' : 'Warehouse Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Ampliación del depósito a 421 m² destinados exclusivamente al almacenaje de mercadería, impulsado por la demanda de productos.'
+                      : 'Warehouse expansion to 421 m² exclusively for merchandise storage, driven by product demand.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      421 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Depósito exclusivo' : 'Exclusive warehouse'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 2000 - Representación Velan */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2000
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Representación Velan' : 'Velan Representation'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Inicio como representante exclusivo de Velan en Argentina, consolidando el portafolio de válvulas industriales de alta performance.'
+                      : 'Start as exclusive Velan representative in Argentina, consolidating the portfolio of high-performance industrial valves.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      VELAN
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Exclusivo Argentina' : 'Exclusive Argentina'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2010 - Planta Industrial */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2010
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Planta de Mantenimiento' : 'Maintenance Plant'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Unidad de Servicio de Post Venta y Reparación de Válvulas en más de 350 m² con equipamiento especializado. Actualmente el Centro cuenta con más de 1000 m² cubiertos.'
+                      : 'Post-Sale Service and Valve Repair Unit in over 350 m² with specialized equipment. Currently the Center has over 1000 m² covered.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      +1000 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Banco VENTIL' : 'VENTIL Bench'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Granallado' : 'Shot blasting'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 2015 - Certificaciones ISO */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2015
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Certificaciones ISO' : 'ISO Certifications'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Compromiso con mejora continua mediante certificación de procesos críticos: ISO 9001 (Calidad), ISO 14001 (Medio Ambiente) e ISO 45001 (Seguridad).'
+                      : 'Commitment to continuous improvement through critical process certification: ISO 9001 (Quality), ISO 14001 (Environment) and ISO 45001 (Safety).'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 9001
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 14001
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      ISO 45001
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2022-2023 - Modernización */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2022-2023
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Modernización Administrativa' : 'Administrative Modernization'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Reforma integral del sector administrativo: actualización de mobiliario, mejoras en baños, cocina, sala de capacitación y reuniones.'
+                      : 'Comprehensive reform of administrative sector: furniture update, improvements in bathrooms, kitchen, training and meeting rooms.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Infraestructura' : 'Infrastructure'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Modernización' : 'Modernization'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* 2024-2025 - Ampliación Depósito */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2024-2025
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Ampliación Depósito' : 'Warehouse Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Proyecto de ampliación optimizando estibaje de materiales, alcanzando más de 700 m². Finalización en diciembre 2025.'
+                      : 'Expansion project optimizing material storage, reaching over 700 m². Completion in December 2025.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      +700 m²
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Optimización' : 'Optimization'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2025 - Neuquén Expansión */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-corporate-red rounded-full border-4 border-white shadow-md -ml-[7px] z-10"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+                  <div className="inline-block bg-corporate-red text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    2025
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Expansión Neuquén' : 'Neuquén Expansion'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? 'Adquisición de 10 hectáreas estratégicas en la "Ruta del Petróleo", Neuquén. Visión de crecimiento y consolidación del liderazgo regional.'
+                      : 'Acquisition of 10 strategic hectares on the "Oil Route", Neuquén. Vision of growth and regional leadership consolidation.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2 sm:justify-end">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      10 {language === 'es' ? 'hectáreas' : 'hectares'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Ruta del Petróleo' : 'Oil Route'}
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Proyecto estratégico' : 'Strategic project'}
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </div>
+
+              {/* Hoy - Liderazgo Técnico */}
+              <div className="relative flex flex-col sm:flex-row sm:items-center">
+                <div className="absolute left-8 sm:left-1/2 w-4 h-4 bg-corporate-red rounded-full border-4 border-white shadow-lg -ml-[7px] z-10 ring-4 ring-corporate-red/20"></div>
+                <div className="hidden sm:block sm:w-1/2"></div>
+                <div className="ml-20 sm:ml-0 sm:w-1/2 sm:pl-12">
+                  <div className="inline-block bg-corporate-red text-white px-3 py-1 rounded-full text-sm font-bold mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'HOY' : 'TODAY'}
+                  </div>
+                  <h4 className="text-xl font-bold text-corporate-red mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es' ? 'Liderazgo Técnico' : 'Technical Leadership'}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {language === 'es'
+                      ? '2.600 m², laboratorio móvil y 7 divisiones operativas.'
+                      : '2,600 m², mobile laboratory and 7 operational divisions.'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-corporate-red/10 text-corporate-red px-2 py-1 rounded text-xs font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      PREVENTEST
+                    </span>
+                    <span className="bg-corporate-red/10 text-corporate-red px-2 py-1 rounded text-xs font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Flota propia' : 'Own fleet'}
+                    </span>
+                    <span className="bg-corporate-red/10 text-corporate-red px-2 py-1 rounded text-xs font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      {language === 'es' ? 'Tecnología avanzada' : 'Advanced technology'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Misión y Visión */}
+      <section className="relative py-12 sm:py-14 lg:py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+            {/* Misión */}
+            <div className="rounded-xl p-6 lg:p-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
+              }}>
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'MISIÓN' : 'MISSION'}
+                </h3>
+                <div className="w-10 h-0.5 bg-white/60 mb-4"></div>
+                <p className="text-white/95 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                  {language === 'es'
+                    ? 'Brindar servicios especializados de ingeniería industrial con los más altos estándares de calidad, seguridad y eficiencia.'
+                    : 'Provide specialized industrial engineering services with the highest standards of quality, safety and efficiency.'}
+                </p>
+              </div>
+            </div>
+
+            {/* Visión */}
+            <div className="bg-white rounded-xl p-6 lg:p-8 border border-gray-200 shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-corporate-red rounded-full blur-xl"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'VISIÓN' : 'VISION'}
+                </h3>
+                <div className="w-10 h-0.5 bg-gray-300 mb-4"></div>
+                <p className="text-gray-700 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '300' }}>
+                  {language === 'es'
+                    ? 'Ser reconocidos como la empresa líder en ingeniería industrial especializada, manteniendo nuestros valores familiares.'
+                    : 'Be recognized as the leading company in specialized industrial engineering, maintaining our family values.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* CTA Final - Estilo compacto */}
+      <section className="py-12 sm:py-14 lg:py-16 relative overflow-hidden" 
+          style={{
+            background: 'linear-gradient(135deg, #E00000 0%, #C80000 100%)'
+          }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
+          
+          {/* Patrón decorativo */}
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="max-w-4xl mx-auto">
+              {/* Badge mejorado */}
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 mb-4 sm:mb-6">
+                <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
+                <span className="text-white text-[10px] sm:text-xs font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {language === 'es' ? 'Consulta técnica' : 'Technical inquiry'}
+                </span>
+              </div>
+              
+              {/* Título mejorado */}
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4" style={{ 
+                fontFamily: 'Inter, system-ui, sans-serif',
+                letterSpacing: '-0.02em'
+              }}>
+                {language === 'es'
+                  ? <>Coordinemos una <span className="text-white/80">consulta</span><br />técnica</>
+                  : <>Let’s schedule a <span className="text-white/80">technical</span><br />consultation</>}
+              </h3>
+              
+              {/* Descripción mejorada */}
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 mb-8 sm:mb-10 leading-relaxed max-w-3xl mx-auto" style={{ 
+                fontFamily: 'Inter, system-ui, sans-serif',
+                fontWeight: '300'
+              }}>
+                {language === 'es'
+                  ? <>Con más de <strong className="font-semibold text-white">{yearsExperience} años de experiencia</strong>, podemos revisar alcance, normas aplicables y plazos, y definir el siguiente paso: visita técnica, presupuesto o plan de trabajo.</>
+                  : <>With more than <strong className="font-semibold text-white">{yearsExperience} years of experience</strong>, we can review scope, applicable standards and timelines, and define the next step: a technical visit, a quote, or a work plan.</>}
+              </p>
+              
+              {/* Botones mejorados */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-2xl mx-auto">
+                <Link
+                  to={`/contact?subject=${encodeURIComponent(
+                    language === 'es'
+                      ? 'Solicito una consulta técnica'
+                      : 'I request technical consultation'
+                  )}#formulario`}
+                  className="btn-primary-light w-full sm:w-auto px-10 sm:px-12 py-4 sm:py-5 text-sm sm:text-base"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>{language === 'es' ? 'Coordinar consulta' : 'Schedule consultation'}</span>
+                </Link>
+                
+                <Link to="/divisiones" className="btn-secondary-invert w-full sm:w-auto px-10 sm:px-12 py-4 sm:py-5 text-sm sm:text-base">
+                  <span>{language === 'es' ? 'Ver divisiones' : 'View divisions'}</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    </div>
+    </>
+  );
+};
+
+export default About;

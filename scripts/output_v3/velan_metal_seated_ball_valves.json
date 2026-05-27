@@ -1,0 +1,143 @@
+{
+  "product_line": "Metal-seated ball valves",
+  "slug": "metal-seated-ball-valves",
+  "categoria_servin": "esfericas-mariposas-diafragma",
+  "total_productos": 2,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Metal-seated ball valves",
+      "nombre": "Securaseal M-Series Metal-Seated Ball Valves",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/M-series_os-1000x1000-1.png",
+      "url_velan": "https://velan.com/products/securaseal-m-series-metal-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24(DN 50 - 600)",
+        "Pressure Class": "ASME Classes 150 - 600",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "Cast body with precision machined construction. Our optimized body design complies with industry standards.",
+        "Maximum temperature for CF8M is 1,000°F (538°C) and for WCB 800°F (426°C).",
+        "Full port ensures large capacity and reduces the risk of clogging when handling solids or slurries.",
+        "Valve meets API 641 and ISO 15848-1 fugitive emissions standards up to NPS 18 and class 150/300/600. All valves have 100 ppm Low-E fugitive emissions design and packing/gasket seals with proven installation base. Packing meets requirements of API 622, and API 622HT Fugitive emissions testing.",
+        "Inherently fire safe valve design and materials with proven installation base and sample validation to API 607, ISO 10497, API 6FA. Packing meets requirements of API 589 Fire safe testing.",
+        "Crimped seat locking option does not require additional parts or special tools.",
+        "Tightness rates: Allowable leakage rate at full ∆P: ASME/FCI 70-2 Class VI.",
+        "Blowout-proof stem.",
+        "Pressurized thrust washer prevents galling and provides secondary stem seal.",
+        "Locking devices standard on lever operated valves.",
+        "High visibility valve position indicators.",
+        "Lifting swivel eye-bolts as a standard for NPS 6 (DN 150) and above."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-MSBVM-02-25",
+          "title": "Securaseal® M-Series Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-BVMS3-02-20",
+          "title": "SB-150/300 (Type M, S, W & X) Metal-Seated Split-Body Ball Valves, Full Port and Regular Port",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MSBV-08-25",
+          "title": "Securaseal Metal-Seated Ball Valves Product Update",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API641-06-19",
+          "title": "Valves Qualified for API 641 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-OHA-02-21",
+          "title": "Metal-Seated Ball Valves for High Pressure Oxygen Service",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Metal-seated ball valves",
+      "nombre": "Securaseal TE-150 300 600 Metal-Seated Ball Valve",
+      "descripcion": "The Velan top-entry metal-seated ball valve is one of the most universally used valves on the market today. As a standard design it is ideally suited for manual, automatic and throttling control for a wide range of applications for pressure up to 1,480 psig (102 bar) and temperatures up to 1,000°F (538°C) depending upon size, metallurgy and end connections.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/TE-150-300-600-MS-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-te-150-300-600-metal-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 6(DN 15 - 150)",
+        "Pressure Class": "ASME Classes 150 - 600",
+        "Standard Connections": "Threaded, Socket weld, Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Permits in-line access for seat replacement.",
+        "Can be welded into line without disassembly. Consult IOM for details.",
+        "Full port reduces risk of clogging in slurries and solids applications.",
+        "Body-cover joint not affected by pipe stresses.",
+        "High sealing integrity of body-cover joint due to fully-enclosed spiral-wound stainless steel graphite gasket design.",
+        "Solid CoCr alloy seats with large seating faces.",
+        "Backup seal: Graphite to 1,000°F (538°C).",
+        "Operation automatically wipes ball clean.",
+        "Wall thickness complies with ASME B16.34.",
+        "Stainless steel ball, hard chrome plated.",
+        "Stainless steel blowout-proof stem.",
+        "Low emission stem seal.",
+        "Live-loaded two-piece flanged gland.",
+        "Fully-guided stem reduces side thrust effect to eliminate wobbling.",
+        "Heavy stainless handle for manual operation. Up to NPS 2 (DN 50) for regular port. (For automation contact Velan Engineering.)"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BVMS2-98a",
+          "title": "Securaseal TE-150/300/600 Metal-Seated Ball Valves, Full Port ½-2″(15-50mm) and Regular",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-MSTE-01-23",
+          "title": "Securaseal TE-150/300/600 Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API641-06-19",
+          "title": "Valves Qualified for API 641 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

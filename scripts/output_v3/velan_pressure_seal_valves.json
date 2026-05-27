@@ -1,0 +1,522 @@
+{
+  "product_line": "Pressure seal valves",
+  "slug": "pressure-seal-valves",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 8,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Flexible Wedge Gate Valve",
+      "descripcion": "The Velan pressure seal flexible wedge gate valve was pioneered by Velan in 1960. It has a large flexibility index up to 0.035” (0.89 mm) within normal closing torques and allowable stresses to compensate for seat distortions caused by piping loads, thermal and pressure fluctuations, seal-welding of seats and cooling down of a valve closed hot. It is the ideal choice for critical power plant applications where valves are subject to frequent start-ups and shut-downs.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-flexible-wedge-gate-edited.png",
+      "url_velan": "https://velan.com/products/pressure-seal-flexible-wedge-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 60 (DN 50 -1500)",
+        "Pressure Class": "ASME classes 600 - 4500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Velan’s proven pressure seal design.",
+        "Velan flexible wedge offers superior tightness of seats and freedom from sticking.",
+        "Wedge guiding minimizes seat rubbing and scuffing resulting in long cycle life.",
+        "Designed to ASME B16.34.",
+        "Live-loaded bonnet bolting maintains the required bonnet seal regardless of pressure-temperature fluctuations.",
+        "Body made of superior strength forgings and optional cast steel.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Optional live-loading of packing.",
+        "Non-rotating stem requires lower operating torque.",
+        "Hardfaced seating faces resist erosion.",
+        "Designed to ASME B16.34.",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-PSFLEXEN-10-17",
+          "title": "Pressure Seal Flexible Wedge Gate Valves – EN Standard",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-PSFLEXASME-01-23",
+          "title": "Pressure Seal Flexible Wedge Gate Valves – ASME Standard",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Parallel Slide Gate Valve",
+      "descripcion": "Velan pressure seal parallel slide gate valves are ideal for clean service and steam. The parallel slide valve design relies on the primary system pressure acting on the downstream disc for seat integrity. There is no wedging action or extra loading on the seats. Due to its inherent design, the parallel slide valve is not subject to thermal binding concerns, resulting in a distinct safety advantage in high temperature service.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-parallel-slide-gate.png",
+      "url_velan": "https://velan.com/products/pressure-seal-parallel-slide-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME Classes 600 - 2500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Velan’s innovative pressure seal design to ASME B16.34.",
+        "Body – superior strength forgings / high quality castings.",
+        "Live-loaded bonnet bolting stores the required sealing load during a pressure or temperature induced transient which cause bonnet movement.",
+        "Unique parallel slide forged cage unit design comprises all operating parts of the slide discs and is precision guided to provide longer disc, seat, and body life.",
+        "Hardfaced seating faces resist erosion.",
+        "Non-rotating stem requires lower operating torque.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Bypass valves are recommended to equalize pressure across the disc before opening if the valve is exposed to very high differential pressure.",
+        "Velan offers equalizing and bypass pipes and valves in many different configurations to help ensure the valve will open under any operating conditions, preventing over pressurization, pressure locking, and thermal binding.",
+        "Optional live-loading of packing extends low emission service life especially in service with large pressure/temperature transients or frequent cycling."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-MTV-09-22",
+          "title": "SIL Safety Manual for Multi-Turn Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSLGA-01-23",
+          "title": "Pressure Seal Parallel Slide Gate Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Globe Valve",
+      "descripcion": "Velan globe valve’s top and bottom-guided disc assures stem operation without side thrust caused by high pressure flow. The non-rotating stem results in lower friction of all moving parts and longer stem packing life. All this resulting in smooth, easy operation and tight shutoff under extreme pressures.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-globe-edited.png",
+      "url_velan": "https://velan.com/products/pressure-seal-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 16 (DN 50 - 400)",
+        "Pressure Class": "ASME Classes 600 - 4500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Velan’s proven pressure seal design to ASME B16.34.",
+        "Live-loaded pressure seal bonnet bolting on NPS 6 and larger as a standard.",
+        "Body – superior strength forgings / high quality castings.",
+        "Body guided disc eliminates side thrust and provides longer disc, seat and body life.",
+        "Impactor handwheel for tight shutoff.",
+        "Velan stem seal offers tight seal with little to no maintenance over long periods of time.",
+        "Non-rotating stem requires lower operating torque.",
+        "The body and disc are CoCr alloy hardfaced on seat contact and disc guiding surfaces, which provides maximum resistance to erosion and wear.",
+        "Optional live-loading of packing extends low emission service life especially in service with large pressure/temperature transients or frequent cycling.",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSGL-08-24",
+          "title": "Pressure Seal Globe, Stop Check, and Needle Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Y-Pattern Globe Valve",
+      "descripcion": "The Velan pressure seal y-pattern globe valve offers a lower pressure drop compared to vertical globe valves. The non-rotating stem results in lower friction of all moving parts and longer stem packing life. All this resulting in smooth, easy operation and tight shutoff under extreme pressures.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-y-pattern-globe.png",
+      "url_velan": "https://velan.com/products/pressure-seal-y-pattern-globe-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME Class 900 - 2500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Velan’s innovative pressure seal design to ASME B16.34.",
+        "Live-loaded pressure seal bonnet bolting on NPS 6 and larger as a standard.",
+        "Body – superior strength forgings / high quality castings.",
+        "Excellent resistance to the effects of thermal cycling.",
+        "Body guided disc eliminates side thrust and provides longer life to the disc, seat, and body. The body and disc are CoCr alloy hardfaced on seat contact and disc guiding surfaces, which provides maximum resistance to erosion and wear.",
+        "Impactor handwheel gives 3–10 times more closing force than a standard handwheel for tight shutoff (available up to size NPS 4).",
+        "Non-rotating stem requires lower operating torque.",
+        "Stem expansion/contraction thrust unit for high temperature application (optional).",
+        "Optional live-loading of packing extends low emission service life especially in service with large pressure/temperature transients or frequent cycling.",
+        "Optional disc designs: Stop-check,needle-disc, and skirted-disc.",
+        "Optional: elbow down design",
+        "Other sizes and pressure classes available. Contact the company for specifications."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_YPGL-06-23",
+          "title": "Pressure Seal Y-Pattern Globe Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Swing Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. For information please consult the appropriate Installation Operation manual (IOM).",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-swing-check-edited.png",
+      "url_velan": "https://velan.com/products/pressure-seal-swing-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME classes 600 - 2500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Advanced pressure seal design.",
+        "No penetration of hinge pin to outside. Eliminates pin seal leakage and provides in-line service.",
+        "Compact cage unit. All moving parts are attached to the hanger block/hanger ring and can be removed easily for service.",
+        "Forged seat/disc is hardfaced with CoCr alloy, ground and lapped to a mirror finish for maximum erosion resistance and long service life. The seat is seal-welded to the body.",
+        "Disc can partially adjust for tight shutoff. In the fully open position, it rests against a stop.",
+        "CoCr alloy bearings for hinge pin.",
+        "Easy in-line service. All parts are easily accessible for maintenance. Seating faces can be re-lapped.",
+        "Forged bonnet."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSSC-01-23",
+          "title": "Pressure Seal Swing Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Tilting Disc Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. For information please consult the appropriate Installation Operation manual (IOM).",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-tilting-disc-check.png",
+      "url_velan": "https://velan.com/products/pressure-seal-tilting-disc-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 24 (DN 50 - 600)",
+        "Pressure Class": "ASME Classes 600 - 2500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Advanced pressure seal design.",
+        "Live-loaded pressure seal bonnet bolting on NPS 2 and larger as a standard.",
+        "Unique cage unit. Entire seat-hinge-pin-disc assembly can be tested outside the valve before seal welding into the body.",
+        "Eliminates pin seal leakage.",
+        "Superior tightness. Conical, lapped-in hardfaced seating is self-aligning.",
+        "Efficient operation. The hinge pin located near the center of gravity allows the conical seating face of the disc to move out and into the seat rapidly without sliding or wear. The disc pivots through a small arc preventing back flow and“water hammer”.",
+        "Easy in-line service."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSTDC-01-23",
+          "title": "Pressure Seal Tilting Disc Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Piston Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. For information please consult the appropriate Installation Operation manual (IOM).",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-piston-check.png",
+      "url_velan": "https://velan.com/products/pressure-seal-piston-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 10 (DN 50 - 250)",
+        "Pressure Class": "ASME Classes 600 - 2500",
+        "Standard Connections": "Butt weld, Flanged"
+      },
+      "caracteristicas": [
+        "Advanced pressure seal design.",
+        "Live-loaded pressure seal bonnet bolting as a standard.",
+        "Forged cover ring is centered by the body bore and provides perfect sealing surface for the gasket.",
+        "Disc-piston fully guided with CoCr alloy seating and guiding surfaces. The light disc-piston ensures maximum lift and low pressure drop.",
+        "Seat integrally hardfaced with CoCr alloy for maximum resistance to wear, erosion and distortion due to high temperature changes and piping loads.",
+        "Tight shutoff.",
+        "Excellent resistance to thermal changes.",
+        "Optional equalizer piping available if required.",
+        "Other sizes available on request.",
+        "Quick and easy repair in the line."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSPC-01-23",
+          "title": "Pressure Seal Piston Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-FPSM-10-23",
+          "title": "Cast and Forged Pressure Seal Gate, Globe, Parallel Slide and Check Valves NPS 2-30 (DN 50-750)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pressure seal valves",
+      "nombre": "Pressure Seal Y-Pattern Piston Check Valve",
+      "descripcion": "Check valves are installed to allow flow in one direction only and they protect systems that can be affected by reverse flow, such as a system shutdown. They are operated entirely by reaction to the flow and therefore do not require external actuation. Care and attention should be paid to check valve installation orientation. For information please consult the appropriate Installation Operation manual (IOM).",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pressure-seal-y-pattern-piston-check.png",
+      "url_velan": "https://velan.com/products/pressure-seal-y-pattern-piston-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 1/2 - 24 (DN 65 - 600)",
+        "Pressure Class": "ASME Classes 900 - 2500",
+        "Standard Connections": "Butt weld, Fanged"
+      },
+      "caracteristicas": [
+        "Advanced pressure seal design.",
+        "Live-loaded pressure seal bonnet bolting as a standard.",
+        "Forged cover ring is centered by the body bore and provides perfect sealing surface for the gasket.",
+        "Disc-piston fully guided with CoCr alloy seating and guiding surfaces. The light disc-piston ensures maximum lift and low pressure drop.",
+        "Seat integrally hardfaced with CoCr alloy for maximum resistance to wear, erosion and distortion due to high temperature changes and piping loads.",
+        "Tight shutoff.",
+        "Excellent resistance to thermal changes.",
+        "Optional equalizer piping available if required.",
+        "Other sizes available on request.",
+        "Quick and easy repair in the line."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-PS_PSYPC-01-23",
+          "title": "Pressure Seal Y-Pattern Piston Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HFVM08-22",
+          "title": "Hardfacing Trim Updates",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "CAT-PS-10-11a",
+          "title": "Pressure Seal and Bolted Bonnet",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

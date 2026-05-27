@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicializar Supabase - SERVIN INGENIERÍA</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #8B0000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #660000;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #8B0000;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Inicializar Base de Datos Supabase</h1>
+        
+        <div class="step">
+            <h3>Paso 1: Crear Tabla e Índices</h3>
+            <p>Primero debes ejecutar el SQL en el SQL Editor de Supabase:</p>
+            <button onclick="copySQL()">📋 Copiar SQL Schema</button>
+            <a href="https://supabase.com/dashboard/project/xaijqiwlguoxjxrbhraa/sql/new" target="_blank">
+                <button>🔗 Abrir SQL Editor</button>
+            </a>
+        </div>
+
+        <div class="step">
+            <h3>Paso 2: Insertar Datos Iniciales</h3>
+            <p>Una vez creada la tabla, inserta las novedades:</p>
+            <button id="initBtn" onclick="initializeData()">✨ Insertar Novedades</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div id="results" style="margin-top: 20px;"></div>
+    </div>
+
+    <textarea id="sqlSchema" style="position: absolute; left: -9999px;">
+-- Ejecuta esto primero en el SQL Editor de Supabase
+-- https://supabase.com/dashboard/project/xaijqiwlguoxjxrbhraa/sql/new
+
+-- Create news table
+CREATE TABLE IF NOT EXISTS public.news (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    title TEXT NOT NULL,
+    title_en TEXT,
+    summary TEXT NOT NULL,
+    summary_en TEXT,
+    content TEXT NOT NULL,
+    content_en TEXT,
+    category TEXT NOT NULL,
+    image TEXT,
+    date DATE NOT NULL DEFAULT CURRENT_DATE,
+    status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'published', 'archived')),
+    featured BOOLEAN DEFAULT false,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
+);
+
+-- Create indexes
+CREATE INDEX IF NOT EXISTS idx_news_status_date ON public.news(status, date DESC);
+CREATE INDEX IF NOT EXISTS idx_news_category ON public.news(category);
+CREATE INDEX IF NOT EXISTS idx_news_featured ON public.news(featured);
+
+-- Enable RLS
+ALTER TABLE public.news ENABLE ROW LEVEL SECURITY;
+
+-- Drop existing policies if they exist
+DROP POLICY IF EXISTS "Anyone can view published news" ON public.news;
+DROP POLICY IF EXISTS "Authenticated users can view all news" ON public.news;
+DROP POLICY IF EXISTS "Authenticated users can insert news" ON public.news;
+DROP POLICY IF EXISTS "Authenticated users can update news" ON public.news;
+DROP POLICY IF EXISTS "Authenticated users can delete news" ON public.news;
+
+-- RLS Policies
+CREATE POLICY "Anyone can view published news" ON public.news
+    FOR SELECT USING (status = 'published');
+
+CREATE POLICY "Authenticated users can view all news" ON public.news
+    FOR SELECT TO authenticated USING (true);
+
+CREATE POLICY "Authenticated users can insert news" ON public.news
+    FOR INSERT TO authenticated WITH CHECK (true);
+
+CREATE POLICY "Authenticated users can update news" ON public.news
+    FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+
+CREATE POLICY "Authenticated users can delete news" ON public.news
+    FOR DELETE TO authenticated USING (true);
+
+-- Trigger for updated_at
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = TIMEZONE('utc'::text, NOW());
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+DROP TRIGGER IF EXISTS update_news_updated_at ON public.news;
+CREATE TRIGGER update_news_updated_at BEFORE UPDATE ON public.news
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Create storage bucket
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('images', 'images', true)
+ON CONFLICT (id) DO NOTHING;
+
+-- Drop existing storage policies if they exist
+DROP POLICY IF EXISTS "Anyone can view images" ON storage.objects;
+DROP POLICY IF EXISTS "Authenticated users can upload images" ON storage.objects;
+DROP POLICY IF EXISTS "Authenticated users can update images" ON storage.objects;
+DROP POLICY IF EXISTS "Authenticated users can delete images" ON storage.objects;
+
+-- Storage policies
+CREATE POLICY "Anyone can view images" ON storage.objects
+    FOR SELECT USING (bucket_id = 'images');
+
+CREATE POLICY "Authenticated users can upload images" ON storage.objects
+    FOR INSERT TO authenticated WITH CHECK (bucket_id = 'images');
+
+CREATE POLICY "Authenticated users can update images" ON storage.objects
+    FOR UPDATE TO authenticated USING (bucket_id = 'images');
+
+CREATE POLICY "Authenticated users can delete images" ON storage.objects
+    FOR DELETE TO authenticated USING (bucket_id = 'images');
+    </textarea>
+
+    <script>
+        // Configuración de Supabase
+        const SUPABASE_URL = 'https://xaijqiwlguoxjxrbhraa.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhhaWpxaXdsZ3VveGp4cmJocmFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY0NTUzMzksImV4cCI6MjA1MjAzMTMzOX0.EcRFNP2OrvkS5r3GEw-XdG9V0NU7Y0j_iJjdWYO_aDw';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        function copySQL() {
+            const sqlText = document.getElementById('sqlSchema');
+            sqlText.select();
+            document.execCommand('copy');
+            showStatus('✅ SQL copiado al portapapeles. Ahora pégalo en el SQL Editor de Supabase.', 'success');
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+        }
+
+        async function initializeData() {
+            const btn = document.getElementById('initBtn');
+            btn.disabled = true;
+            showStatus('⏳ Insertando novedades en Supabase...', 'info');
+
+            const sampleNews = [
+                {
+                    title: 'Inspección de Tanque de 10.000 m³ en Refinería',
+                    title_en: 'Inspection of 10,000 m³ Tank at Refinery',
+                    summary: 'Completamos exitosamente la inspección API 653 de un tanque de almacenamiento de 10.000 m³ en refinería, garantizando la integridad estructural y cumplimiento normativo.',
+                    summary_en: 'We successfully completed the API 653 inspection of a 10,000 m³ storage tank at a refinery, ensuring structural integrity and regulatory compliance.',
+                    content: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'SERVIN INGENIERÍA finalizó con éxito la inspección integral según norma API 653 de un tanque de almacenamiento de hidrocarburos de 10.000 m³ de capacidad en una importante refinería de la región.\n\nEl trabajo incluyó:\n- Inspección visual interna y externa completa\n- Medición de espesores por ultrasonido\n- Ensayos no destructivos (END)\n- Evaluación de la integridad estructural\n- Informe técnico detallado con recomendaciones\n\nEl proyecto se completó en tiempo récord manteniendo los más altos estándares de seguridad y calidad.'
+                        }
+                    ]),
+                    content_en: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'SERVIN INGENIERÍA successfully completed a comprehensive inspection according to API 653 standard of a 10,000 m³ hydrocarbon storage tank at a major regional refinery.\n\nThe work included:\n- Complete internal and external visual inspection\n- Ultrasonic thickness measurements\n- Non-destructive testing (NDT)\n- Structural integrity assessment\n- Detailed technical report with recommendations\n\nThe project was completed in record time while maintaining the highest safety and quality standards.'
+                        }
+                    ]),
+                    category: 'Inspección API',
+                    image: '/about/inspeccion-api.webp',
+                    date: '2025-11-19',
+                    status: 'published',
+                    featured: true
+                },
+                {
+                    title: 'Certificación IRAM ISO 9001:2015 Renovada',
+                    title_en: 'IRAM ISO 9001:2015 Certification Renewed',
+                    summary: 'SERVIN INGENIERÍA renovó su certificación IRAM ISO 9001:2015, reafirmando nuestro compromiso con la calidad y la mejora continua en todos nuestros procesos.',
+                    summary_en: 'SERVIN INGENIERÍA renewed its IRAM ISO 9001:2015 certification, reaffirming our commitment to quality and continuous improvement in all our processes.',
+                    content: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'Con orgullo anunciamos la renovación de nuestra certificación IRAM ISO 9001:2015, otorgada por el Instituto Argentino de Normalización y Certificación (IRAM).\n\nEsta certificación reconoce:\n- Nuestro sistema de gestión de calidad\n- Los procesos de mejora continua implementados\n- El compromiso con la satisfacción del cliente\n- La capacitación permanente de nuestro equipo\n\nDesde 2010, SERVIN INGENIERÍA mantiene esta certificación, demostrando nuestro compromiso constante con la excelencia en la prestación de servicios de ingeniería.'
+                        }
+                    ]),
+                    content_en: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'We proudly announce the renewal of our IRAM ISO 9001:2015 certification, granted by the Argentine Institute of Standardization and Certification (IRAM).\n\nThis certification recognizes:\n- Our quality management system\n- Implemented continuous improvement processes\n- Commitment to customer satisfaction\n- Ongoing training of our team\n\nSince 2010, SERVIN INGENIERÍA has maintained this certification, demonstrating our constant commitment to excellence in engineering services.'
+                        }
+                    ]),
+                    category: 'Certificaciones',
+                    image: '/about/certificacion-iso.webp',
+                    date: '2025-11-14',
+                    status: 'published',
+                    featured: false
+                },
+                {
+                    title: 'Nueva Planta de Granallado y Pintura',
+                    title_en: 'New Blasting and Painting Facility',
+                    summary: 'Inauguramos nuestra nueva planta de granallado y pintura industrial con tecnología de última generación para tratamiento de superficies metálicas.',
+                    summary_en: 'We inaugurated our new industrial blasting and painting facility with state-of-the-art technology for metal surface treatment.',
+                    content: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'SERVIN INGENIERÍA inauguró su nueva planta de granallado y pintura industrial, equipada con tecnología de última generación para el tratamiento y protección de superficies metálicas.\n\nCaracterísticas de la nueva planta:\n- Cabina de granallado automatizada\n- Sistema de recuperación y reciclado de abrasivo\n- Cabina de pintura con control de temperatura y humedad\n- Capacidad para piezas de gran tamaño\n- Cumplimiento de normas SSPC, NACE e ISO\n\nEsta inversión nos permite ofrecer servicios de mayor calidad y reducir los tiempos de entrega para nuestros clientes.'
+                        }
+                    ]),
+                    content_en: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'SERVIN INGENIERÍA inaugurated its new industrial blasting and painting facility, equipped with state-of-the-art technology for metal surface treatment and protection.\n\nNew facility features:\n- Automated blasting booth\n- Abrasive recovery and recycling system\n- Paint booth with temperature and humidity control\n- Capacity for large-sized parts\n- Compliance with SSPC, NACE, and ISO standards\n\nThis investment allows us to offer higher quality services and reduce delivery times for our customers.'
+                        }
+                    ]),
+                    category: 'Empresa',
+                    image: '/plantamantenimiento/granallado.webp',
+                    date: '2025-11-09',
+                    status: 'published',
+                    featured: false
+                },
+                {
+                    title: 'Mantenimiento In Situ en Planta Petroquímica',
+                    title_en: 'On-Site Maintenance at Petrochemical Plant',
+                    summary: 'Finalización exitosa de mantenimiento programado en planta petroquímica, incluyendo reparación de equipos estáticos y dinámicos.',
+                    summary_en: 'Successful completion of scheduled maintenance at petrochemical plant, including repair of static and dynamic equipment.',
+                    content: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'Nuestro equipo técnico finalizó exitosamente el mantenimiento programado en una planta petroquímica, completando todas las actividades en el plazo establecido y sin incidentes de seguridad.\n\nAlcance del trabajo:\n- Mantenimiento de bombas centrífugas y recipientes a presión\n- Inspección y reparación de cañerías\n- Reemplazo de válvulas y actuadores\n- Pruebas hidrostáticas y de hermeticidad\n- Puesta en marcha y comisionado\n\nEl trabajo se realizó coordinando con las operaciones de la planta para minimizar el impacto en la producción.'
+                        }
+                    ]),
+                    content_en: JSON.stringify([
+                        {
+                            id: '1',
+                            type: 'text',
+                            content: 'Our technical team successfully completed scheduled maintenance at a petrochemical plant, completing all activities within the established timeframe and without safety incidents.\n\nScope of work:\n- Maintenance of centrifugal pumps and pressure vessels\n- Inspection and repair of piping\n- Replacement of valves and actuators\n- Hydrostatic and leak tests\n- Start-up and commissioning\n\nThe work was carried out coordinating with plant operations to minimize impact on production.'
+                        }
+                    ]),
+                    category: 'Mant. In Situ',
+                    image: '/about/mantenimiento-insitu.webp',
+                    date: '2025-11-04',
+                    status: 'published',
+                    featured: false
+                }
+            ];
+
+            try {
+                // Insertar las novedades
+                const { data, error } = await supabase
+                    .from('news')
+                    .insert(sampleNews)
+                    .select();
+
+                if (error) throw error;
+
+                showStatus(`✅ ¡Éxito! Se insertaron ${data.length} novedades en Supabase.`, 'success');
+                
+                // Mostrar resultados
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '<h3>📊 Novedades Insertadas:</h3><pre>' + 
+                    JSON.stringify(data, null, 2) + '</pre>';
+
+            } catch (error) {
+                console.error('Error:', error);
+                showStatus(`❌ Error: ${error.message}. Asegúrate de haber ejecutado el SQL schema primero.`, 'error');
+            } finally {
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

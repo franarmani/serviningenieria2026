@@ -1,0 +1,178 @@
+{
+  "product_line": "Digital Solutions",
+  "slug": "digital-solutions",
+  "categoria_servin": "seguridad",
+  "total_productos": 3,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "seguridad",
+      "product_line": "Digital Solutions",
+      "nombre": "V-Flange manual valve remote monitoring system",
+      "descripcion": "V-Flange is an advanced and reliable remote monitoring system designed specifically for quarter-turn valves. This innovative solution combines a robust on-valve device with an intuitive cloud dashboard, offering comprehensive monitoring without the n...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/04/V-flange-new-right.png",
+      "url_velan": "https://velan.com/products/v-flange-manual-valve-remote-monitoring-system/",
+      "especificaciones": {},
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-VFLG-04-25",
+          "title": "V-Flange manual valve remote monitoring system",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-DISO-03-25",
+          "title": "Digital Solutions for valve automation, control and monitoring",
+          "url": "https://velan.com/wp-content/uploads/2025/04/BRO-DISO-03-25.pdf"
+        },
+        {
+          "code": "ABV-VFLG_Report-25-07-15",
+          "title": "V-Flange IP Test Report",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "code": "ABV-VFLG-ATEX-25",
+          "title": "V-Flange ATEX Certificate",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "seguridad",
+      "product_line": "Digital Solutions",
+      "nombre": "Programmable logic controller and local control panels",
+      "descripcion": "Velan’s Programmable Logic Controller (PLC) and control panels are programmed with Velan-proprietary software developed according to the best practices and procedures of the Delayed Coker industry. Velan offers end users a complete hardware and softw...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/PLC-panel-copy.png",
+      "url_velan": "https://velan.com/products/programmable-logic-controller-and-local-control-panels/",
+      "especificaciones": {
+        "Size Range": "does not apply",
+        "Pressure Class": "does not apply",
+        "Standard Connections": "does not apply",
+        "Body Material": "does not apply"
+      },
+      "caracteristicas": [
+        "Part of Velan’s full package of valve automation, control, and monitoring solutions.",
+        "Includes programmable logic controller and hard-wired panel complete with switch and inlet ISO interlocks.",
+        "Works in conjunction with electrically operated valves for remote monitoring.",
+        "Human-machine interface (HMI) diagnostic feature provides:Control of interlock and permissivesRedundancy (power, processor, I/o)",
+        "Control of interlock and permissives",
+        "Redundancy (power, processor, I/o)",
+        "HMI screen system for monitoring,",
+        "DCS communication and handshaking.",
+        "Intrinsically safe signals option.",
+        "Integration with ancillary equipment."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QC-PLC-07-25",
+          "title": "Programmable Logic Controller (PLC) and Local Control Panels",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-DISO-03-25",
+          "title": "Digital Solutions for valve automation, control and monitoring",
+          "url": "https://velan.com/wp-content/uploads/2025/04/BRO-DISO-03-25.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-CBV-03-23",
+          "title": "Complete Valve Solutions for the Delayed Coker Industry",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-CBV-03-23.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-EB-03-24",
+          "title": "Ebullated Bed and Slurry-Phase Hydrocracking Solutions",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-EB-03-24.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "seguridad",
+      "product_line": "Digital Solutions",
+      "nombre": "Purge Panel",
+      "descripcion": "Velan has developed highly customizable purge systems designed to optimize process conditions through precise control of temperature, flow rate, and pressure. These systems prevent clogging in the valve seat and body cavity areas while ensuring press...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Purge-panel.png",
+      "url_velan": "https://velan.com/products/purge-panel/",
+      "especificaciones": {
+        "Size Range": "n/a",
+        "Pressure Class": "n/a",
+        "Standard Connections": "n/a",
+        "Body Material": "n/a"
+      },
+      "caracteristicas": [
+        "Minimizes purge consumption",
+        "Flow indicator and flow metering valve",
+        "Pressure up to 5,000 psi",
+        "Temperature up to 518 °F (280°C)",
+        "Available for vacuum gas oil or hydrogen",
+        "Various end connections available",
+        "Thermocouples with temperature alarm"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QC-PLC-07-25",
+          "title": "Programmable Logic Controller (PLC) and Local Control Panels",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-DISO-03-25",
+          "title": "Digital Solutions for valve automation, control and monitoring",
+          "url": "https://velan.com/wp-content/uploads/2025/04/BRO-DISO-03-25.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-CBV-03-23",
+          "title": "Complete Valve Solutions for the Delayed Coker Industry",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-CBV-03-23.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-EB-03-24",
+          "title": "Ebullated Bed and Slurry-Phase Hydrocracking Solutions",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-EB-03-24.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    }
+  ]
+}

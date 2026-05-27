@@ -1,0 +1,58 @@
+{
+  "product_line": "Pilot-operated check valve",
+  "slug": "pilot-operated-check-valve",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 1,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Pilot-operated check valve",
+      "nombre": "Pilot-Operated Check Valve",
+      "descripcion": "Velan’s pilot-operated check valve design is a flexible and reliable solution. It enables reverse flow, and provides a safe alternative to control hydraulic and pneumatic systems during maintenance and normal operations. It also prevents overpressure...",
+      "normas": [
+        "ASME B16.34",
+        "API 594"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Pilot-operated-check.png",
+      "url_velan": "https://velan.com/products/pilot-operated-check-valve/",
+      "especificaciones": {
+        "Size Range": "2400",
+        "Pressure Class": "6000 psi hydraulic fluid pressure",
+        "Standard Connections": "Manifold mounted"
+      },
+      "caracteristicas": [
+        "Designed for 6,000 psi hydraulic fluid pressure and sized to provide optimal flow.",
+        "The check disc, piston, and stem are case hardened to provide long service life and minimal deformation.",
+        "The check valve is designed to achieve the desired cracking pressure.",
+        "Manifold mounted with four o-rings to ensure a tight seal at the interface.",
+        "Enables reverse flow."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-POCV-06-24",
+          "title": "Pilot-Operated Check Valve",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1351 @@
+{
+  "product_line": "API 6A and 6D valves",
+  "slug": "api-6a-and-6d",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 18,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "KEC-KEY-KSC-BTK series Rotary control ball valves",
+      "descripcion": "Developed from a traditional trunnion ball design, the new generation Key-C rotary control ball valve offers high performance with maximum flow capacity. Manufactured by Velan ABV, the ball is equipped with special caged trim. In processes that require handling large flow rates, the Key-C control valve is a competitive option to what is currently on the market, offering a lower cost of ownership. Key-C valves can be packaged with our unique, patent protected Cable drive actuator to ensure the maximum dynamic control performance under the most demanding conditions. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/KEC-series-Rotary-control-ball.png",
+      "url_velan": "https://velan.com/products/kec-key-ksc-btk-series-rotary-control-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 -48 (DN 50-1200)",
+        "Pressure Class": "ASME 150 - ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25",
+        "Series": "KEC-KEY-KSC-BTK",
+        "Valve design": "based on API 6D- IEC 60534- ISA 75 and customer requirements",
+        "Temperature range": "-320 to 428°F (-196 to 220°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25",
+        "Body design": "Forged bolted two-piece or three-piece with preferred flow direction"
+      },
+      "caracteristicas": [
+        "One single upstream Seat in DPE configuration",
+        "Metal-seated with hardfacing on ball and seat",
+        "Valve flow capacity similar to traditional Ball Valve",
+        "wide rangeability",
+        "Compact & lightweight design",
+        "Better wear resistance to internal erosion",
+        "Tight shutoff Capability: same seat design as a trunnion ball valve",
+        "Two dedicated trims for liquid and gas media",
+        "Low noise and no vibration with Multistage trim",
+        "Secondary seals in Pure Graphite",
+        "Anti-Static Device",
+        "Anti-Blow out stem",
+        "Low fugitive emission stem packing available",
+        "Manual: wrench or gear with padlocking",
+        "Actuated: Pneumatic Cable Drive with Smart positioner for modulating or Electric"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-KEYC-03-22",
+          "title": "Rotary Control Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "DTP series Adjustable angle choke control valves",
+      "descripcion": "Generally located at the wellhead, valves are designed for Oil&Gas processing, water and gas injection and gas lift. Velan’s DTP series are the optimal solution for controlling high levels of fluid pressure in the most difficult conditions such as dirty and corrosive fluid services. Angle choke are traditional robust angle valves with a multistage trim and a corresponding plug specifically designed to provide high energy dissipation. The valve’s multi-stage technology and discrete tortuous path design divides the flow into many streams reducing pressure and fluid velocity avoiding cavitation, flashing or erosion phenomena. Velan ABV offers the advantage of intechangeable plug and trim components, the valve has no welded internal parts, resulting low maintenance costs. Actuation can be either hydraulic or pneumatic depending on the speed requested. Stepper actuators are an option for reaching the highest level of accuracy. Material selection is fully customizable to meet customers project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/DTP-adjustable-angle-choke-control.png",
+      "url_velan": "https://velan.com/products/dtp-series-adjustable-angle-choke-control-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1.13/16 - 9 (DN 46- 228)NPS 2-12 (DN 50-300)",
+        "Pressure Class": "ASME 900 - ASME 2500API 5000 - API 15000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Hub connection, 6B, 6BX as per API6A",
+        "Series": "DTP",
+        "Valve design": "based on API 6A or B16.34 and customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per Velan standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged angle one-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with inserts in fully tungsten Carbide",
+        "Lip seals configuration",
+        "Blowout stem design",
+        "High capacity and accurate control also with minimum opening",
+        "Low noise and no vibration with multistage trim",
+        "Quick change of all internal parts with no bolting",
+        "Plug and trim material with excellent erosion resistance property available",
+        "Disks clamped without any internal threads",
+        "Ease maintenance without removal of actuator and instrument connections",
+        "Plug type: Balance (to minimize the actuator thrust) or Unbalance or Pressurized",
+        "Over or Under the plug flow configuration",
+        "One-piece tungsten sinterized trim for high erosion service",
+        "Manual: Gear with handwheel",
+        "Actuated: Linear Pneumatic/ Hydraulic, Electric or Stepper",
+        "Compliance with API 6A /B16.34 inspection and testing"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-DTP-01-22",
+          "title": "DTP series Adjustable angle choke control valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "Axial No-Slam Check Valve (NSC-NSZ-NFC-NFZ-SSC-SSZ-SFC-SFZ series)",
+      "descripcion": "Velan ABV’s API 6D no-slam check valves are silent in-line and specifically designed to automatically protect critical components from reverse flow as well as pressure transients. Fast and prompt closing is assured due to the powerful spring and short valve stroke. As forward velocity begins to slow, the spring assist starts to close the disc. By the time it reaches zero, the valve disc is closed against the seat before reverse flow can occur, preventing a peak of pressure in the line and water hammer phenomena. In addition, Velan ABV offers a compact version of No-slam check valves, providing the same reliability and quality of the traditional No-slam valves, but with significant space and weight savings. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Generación de energía",
+        "Agua"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Axial-no-slam-check.png",
+      "url_velan": "https://velan.com/products/axial-no-slam-check-valves-nsc-nsz-nfc-nfz-ssc-ssz-sfc-sfz-series/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 56 (DN 50-1400) NPS 1.13/16- 21.1/4 (DN 46-540)",
+        "Pressure Class": "ASME 150 - ASME 2500 API 5000-API 15000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Hub connection, 6B, 6BX as per API 6A",
+        "Series": "NSC-NSZ-NFC-NFZ-SSC-SSZ-SFC-SFZ",
+        "Valve design": "Based on API 6D and customer requirements based on API 6A and customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard/As per API 6A standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47 BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Cast one-piece / bolted two pieces for size >20 inch.Forged bolted one-piece/ three-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with hard facing on disk and seat",
+        "Powerful spring for ultra-fast closing action",
+        "Venturi pattern design",
+        "Minor friction between moving parts to eliminate any chance of jamming",
+        "Spring assisted and short stroke",
+        "No chattering effects to minimize pressure fluctuation during normal conditions",
+        "Low pressure drop",
+        "High dynamic response and zero reverse flow",
+        "Nozzle design if the valve size >20 in for better flow regulation",
+        "Short pattern design compact face-to-face option for weight and space savings",
+        "Automatic",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Compliance with API 6A inspection and testing",
+        "Fire safe and fire tested as per API 6FA/ 607",
+        "PED 2014/68/UE"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-NSC03-22",
+          "title": "API 6D No-Slam Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "GTC Series Slab Through Conduit Gate Valve",
+      "descripcion": "Slab through conduit gate valves are designed and manufactured in accordance with API 6D and API 6A standards and specifically for on-off services. This valve is suited to withstand all type of process fluids, under high pressure and temperature conditions. The valve design includes a rising stem which accommodates the upward and downward movements of the gate allowing it to open and close under the line pressure. In normal operation, line fluid fills the cavity and the gate is lifted by the pressure generated from the flow path assisting the actuator spring to open the valve, resulting in a fail-open configuration. Slab through conduit gate valves are piggable in the fully open position and generate pressure drop across the valve equal to the inside diameter of the connecting pipe. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/GTC-slab-through-conduit-gate.png",
+      "url_velan": "https://velan.com/products/gtc-series-slab-through-conduit-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1.13/16 –16.3/4 (DN 46-425) NPS 2- 36 (DN 50-900)",
+        "Pressure Class": "ASME 150 - ASME 2500 API 5000-API 10000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, BW, Butt Welded as per B16.25, Hub connection, 6B, 6BX as per API6A",
+        "Series": "GTC",
+        "Valve design": "based on API 6D and customer requirementsbased on API 6A and customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard/As per API 6A standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with hardfacing on wedge and Seats",
+        "Secondary seals in Pure Graphite",
+        "Anti-Static Device",
+        "Anti Blow out stem",
+        "O-ring /Lip seals configuration",
+        "Fully piggable design",
+        "Negligible pressure drop in fully open position",
+        "Relief valve in the body cavity",
+        "Easy in line maintenance",
+        "Customized design for horizontal stem installation and or vertical pipeline installation available",
+        "Manual: Gear with handwheel",
+        "Actuated: Linear Pneumatic/ Hydraulic/Electric",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Compliance with API 6A inspection and testing",
+        "Fire safe and fire tested as per API 6FA/ 607"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-GTC-05-21",
+          "title": "GTC Series Slab Through Conduit Gate Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "GTX Series Double Expanding Gate Valve",
+      "descripcion": "GTX series valves are specifically design for on-off services and are suited to withstand all types of high abrasive services under high pressure and temperature conditions. The valve is equipped with a wedge and segment. The system achieves its positive seal capacity by mechanically expanding the gate and segment against the seats due to the thrust exerted by the stem. In both in closed and open position, the expansion creates a tight seal against the upstream and downstream seats. During the valve stroke, this unique design resists expansion of the gate, allowing it to slide, avoiding wear of seats and gate. Valves are piggable in the fully open position and generate pressure drop across the valve equal to the inside diameter of the connecting pipe. Material selection is fully customizable to meet customers project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Abrasivos",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/GTX-double-expanding-gate.png",
+      "url_velan": "https://velan.com/products/gtx-series-double-expanding-gate-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1.13/16 –16.3/4 (DN 46-425) NPS 2- 36 (DN 50-900)",
+        "Pressure Class": "ASME 150 - ASME 2500 API 5000-API 10000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Hub connection, 6B, 6BX as per API6A",
+        "Series": "GTX",
+        "Valve design": "based on API 6D and customer requirementsbased on API 6A and customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard or As per API 6A standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with hardfacing on wedge and Seats",
+        "Secondary seals in Pure Graphite",
+        "Anti-Static Device",
+        "Anti Blow out stem",
+        "O-ring /Lip seals configuration",
+        "Fully Piggable design",
+        "Negligible pressure drop in fully open position",
+        "Relief valve in the body cavity",
+        "Easy in line maintenance",
+        "Customized design for horizontal stem installation and or vertical pipeline installation available",
+        "Manual: Gear with handwheel",
+        "Actuated: Linear Pneumatic/ Hydraulic/Electric",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Compliance with API 6A inspection and testing",
+        "Fire safe and fire tested as per API 6FA/ 607"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-GTX-05-21",
+          "title": "GTX Series Double Expanding Gate Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "CHK Series Swing Check Valve",
+      "descripcion": "Swing check valves are a trusted choice for general-purpose use in both upstream and midstream applications, available in both forged or cast materials, and the design ensures total reliability for high pressure and high temperature services. The swinging action of the disc away from the seat allows forward flow and when the flow is stopped, the disc returns to the seat, preventing backflow. Swing check valves are suitable for installations in lines where pigging operations are required for various maintenance services. The piggable design makes the swing check valve ideal for installation in riser pipelines and subsea applications. Convenience of operation and simple in-line maintenance are essential features of our design. Internal parts can be inspected and repaired without removing the valve off the pipeline even where space is restricted as in the top entry trunnion ball valve construction.The valve can be installed in both vertical and horizontal positions and offers unsurpassed quality and reliability– while the simple design minimizes maintenance costs. Material selection is fully customizable to meet customers project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Subsea",
+        "Alta presión",
+        "Alta temperatura",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/CHK-series-swing-check.png",
+      "url_velan": "https://velan.com/products/chk-series-swing-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1.13/16- 21.1/4 (DN 46-540) NPS 2 - 36 (DN 50-900)",
+        "Pressure Class": "ASME 150 - 2500 API 5000 - 15000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Hub connection, 6B, 6BX as per API 6A",
+        "Series": "CHK",
+        "Valve design": "Based on API 6D and customer requirementsbased on API 6A and customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per API 6D standard or as Velan standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with hard facing on disk and seat",
+        "Welded-in-seat ring",
+        "Easy in-line maintenance as in top entry ball valve construction",
+        "Suitable for horizontal and vertical (flow-up) installation",
+        "Suited for low velocity service",
+        "Fully piggable design",
+        "Secondary seals in pure Graphite",
+        "De-clutchable device for lock opening during pipeline cleaning",
+        "Automatic",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Compliance with API 6A inspection and testing",
+        "Fire safe and fire tested as per API 6FA/ 607",
+        "PED 2014/68/UE",
+        "Available as per API 6A standard:",
+        "Product specification levels PSL 1, 2, 3, 3G, and 4"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-CCHK-05-21",
+          "title": "CHK Series Swing Check Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "CSK Series Subsea Swing Check Valve",
+      "descripcion": "Subsea swing check valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years. Available in both forged or cast materials, the design ensures total reliability for high pressure and high temperature services. The swinging action of the disc away from the seat allows forward flow and when the flow is stopped, the disc returns to the seat, preventing backflow. Swing check valves are suitable for installations in lines where pigging operations are required for various maintenance services. The piggable design makes the swing check valve ideal for installation in riser pipelines and subsea applications. Convenience of operation and simple in-line maintenance are essential features of our design. Internal parts can be inspected and repaired without removing the valve off the pipeline even where space is restricted as in the top-entry trunnion ball valve construction. The valve can be installed in both vertical and horizontal positions and offers unsurpassed quality and reliability– while the simple design minimizes maintenance costs. Material selection is fully customizable to meet customers project specifications Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Subsea",
+        "Alta presión",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/CSK-series-subsea-swing-check.png",
+      "url_velan": "https://velan.com/products/csk-series-subsea-swing-check-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 36 (DN 50-900)",
+        "Pressure Class": "ASME 150 - ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Hub connection",
+        "Series": "CSK",
+        "Valve design": "Based on API 6DSS and customer requirements",
+        "Temperature range": "-76 to 410°F (-60 to 210°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Metal-seated with hardfacing on disk and seat.",
+        "Welded-in-seat ring",
+        "Body/bonnet sealing with a secondary environmental soft seal as additional barrier to seawater ingress into the valve",
+        "Easy in-line maintenance as in the top-entry trunnion ball valve construction",
+        "Suitable for horizontal and vertical (flow-up) installation",
+        "Suited for low velocity service",
+        "Fully piggable design",
+        "De-clutchable device for lock opening during pipeline cleaning with ROV interface",
+        "Suitable for flow rates with corrosive and dirty fluids",
+        "Cathodic protection for the whole system, on request",
+        "Automatic",
+        "Compliance with API 6DSS Inspection and testing",
+        "PED 2014/68/UE",
+        "Hyperbaric validation testing as per API 6DSS"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-CCSKSS-05-21",
+          "title": "CSK Series Subsea Swing Check Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BT2-BT3 Series API 6D Side-Entry Trunnion Ball Valve",
+      "descripcion": "Side-entry ball valves are manufactured in accordance with API 6D standards. The complete range of forged valves is designed in two or three bolted pieces with a solid double trunnion configuration and two independent seats for an easy bidirectional sealing, to ensure the greatest level of tightness and reliability under high pressure and temperature conditions in all critical isolation services. Materials selection is fully customizable to meet the customer’s project specifications and several unique features are available to offer an enhanced technical solution suitable to aggressive offshore environments and corrosive and abrasive fluids. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Alta presión",
+        "Alta temperatura",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BT2-BT3-API-6D-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/bt2-bt3-series-api-6d-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-56 (DN 50-1400)",
+        "Pressure Class": "ASME 150 - ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Socket Welded as per B16.11, Hub connection",
+        "Series": "BT2 and BT3",
+        "Valve design": "based on API 6D and Customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25SW, Socket Welded as per B16.11Hub connection",
+        "Body design": "Forged bolted two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with Hardfacing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Combination seats",
+        "Interchangeable seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure graphite",
+        "Anti-Static device",
+        "Anti Blow out stem",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "O-ring /Lip seals and Graphite configuration",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Extended bonnet for low & high temperature available",
+        "Manual: wrench or Gear with padlocking"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-6DSE03-22",
+          "title": "API 6D Side-Entry Trunnion Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BT2-BT3 Series API 6A Side-Entry Trunnion Ball Valve",
+      "descripcion": "Velan ABV has been an API 6A licensee since 2001, implementing a quality management system in compliance with API Q1 and offers a complete range of valves that comply with the latest edition of API requirements. Velan ABV designs and manufactures API 6A Side-entry ball valves for Wellhead and Christmas tree equipment and for operating in aggressive environments with various fluids and gases such as a petroleum mixture of oil and sand and extreme sour gas service. Our forged valves are configured in two or three bolted pieces to ensure the highest level of reliability in varying combinations of high-temperature and high-pressure applications. Forged materials provide the rigidity and strength required in critical high-pressure operations to meet the customer’s project specifications Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BT2-BT3-API-6A-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/bt2-bt3-series-api-6a-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1.13/16 – 21.1/4 (DN 46-540)",
+        "Pressure Class": "API 5000 – API 20000",
+        "Standard Connections": "Hub connection, 6B, 6BX as per API6A",
+        "Series": "BT2 and BT3",
+        "Valve design": "based on API 6A and Customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per API 6A standard",
+        "End connections": "Hub connection6B, 6BX as per API6A",
+        "Body design": "Two or three bolted forged pieces"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with Hardfacing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Combination seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Lip seal configuration",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Manual: wrench or Gear with padlocking",
+        "Actuated: Pneumatic/ Hydraulic/Electric",
+        "Compliance with API 6A inspection and testing"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-6ASE03-22",
+          "title": "API 6A Side-Entry Trunnion Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "SS2-SS3 Series Subsea Side-Entry Trunnion Ball Valve",
+      "descripcion": "Subsea side-entry ball valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years offering the utmost level of reliability and safety under high-pressure conditions even in harsh service with the presence of sand or solid particles. Subsea side-entry ball valves may be completed with a subsea gear and ROV receptacle for remote operation by a ROV or with a handwheel for manual operation by diver. As an alternative, valves can be fitted with hydraulic subsea actuators, and fully compensated in a double or single acting configuration, with or without ROV override. Subsea side-entry ball valves are available in a wide range of materials and configurations to meet both customer’s requirements and the specific needs of an application Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Subsea"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SS2-SS3-subsea-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/ss2-ss3-series-subsea-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-48 (DN 50-1200)",
+        "Pressure Class": "ASME 150-ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25, Hub connection",
+        "Series": "SS2 and SS3",
+        "Valve design": "based on API 6DSS and customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection",
+        "Body design": "Forged bolted two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with Hardfacing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Combination seats",
+        "Double block and bleed design (DBB)",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "O-ring/lip seal configuration",
+        "Body sealing designed in double O-ring configuration for sea water protection",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Manual: Gear with ROV receptacle or handwheel",
+        "Actuated: Hydraulic with or without ROV receptacle / handwheel overridebaric compensator for operators",
+        "Compliance with API 6DSS Inspection and testing",
+        "SIL 3 Certification as per IEC61508",
+        "PED 2014/68/UE"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-6DSS-01-22",
+          "title": "SS2-SS3 Series Subsea Side-Entry Trunnion Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "SYR-SYD Series Cryogenic Side-Entry Trunnion Ball Valve",
+      "descripcion": "Cryogenic side-entry ball valves are manufactured for extremely low temperature and cryogenic applications.Valves are designed with an integral bonnet extension which prevents cryogenic liquids from reaching the stem packing by enabling the liquids to boil and convert to gas. This minimizes the energy loss along the extension and protects the valve from malfunctioning. The structural integrity of the valve reduces any thermal deformation of internal components caused by temperature variance to a minimum, ensuring the highest level of performance for tight shut-off in critical LNG fields. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SYR-SYD-cryogenic-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/syr-syd-series-cryogenic-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-48 (DN 50-1200)",
+        "Pressure Class": "ASME 150 - ASME 900",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25",
+        "Series": "SYR-SYD",
+        "Valve design": "based on BS 6364, MESC 77/200, ISO 28921 (on request) and customer requirements",
+        "Temperature range": "-320 to 212°F (-196 to 120°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25",
+        "Body design": "Forged bolted two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on ball and seats",
+        "Seat design to avoid trapped fluid in body cavity",
+        "Secondary seals in pure graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Lip seal configuration",
+        "Low fugitive emission stem packing available",
+        "Extended bonnet for low and cryogenic service",
+        "Manual: wrench or gear with padlocking",
+        "Actuated: Pneumatic/ Hydraulic/Electric",
+        "Compliance with BS 6364, MESC 77/200, ISO 28921 (on request) inspection and testing",
+        "Fire safe and fire tested as per API 6FA/607",
+        "SIL 3 Certification as per IEC61508",
+        "Fugitive Emission as per ISO15848",
+        "PED 2014/68/UE"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-BSSE-01-22",
+          "title": "SYR-SYD Series Cryogenic Side-Entry Trunnion Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BTE-BTF-TSB-BTX-TXB Series Top-Entry Trunnion Ball Valve",
+      "descripcion": "Top-entry trunnion ball valves are the perfect solution for both offshore and onshore systems. Convenience of operation and maintenance are essential features of our design simplifying in-line disassembly for trim inspection or internal repairs even where space is restrictive. Our valves also offer excellent corrosion resistance and superior sealing performance at both high and low pressures. Valves are manufactured in a single forged or cast piece and configured with two independent seats for a bi-directional sealing and are manufactured in accordance with customer specific requirements and international standards. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BTE-BTF-TSB-BTX-TXB-top-entry-ball.png",
+      "url_velan": "https://velan.com/products/bte-btf-tsb-btx-txb-series-top-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 56 (DN 50-1400)NPS 1.13/16 –16.3/4 (DN 46-425)",
+        "Pressure Class": "ASME 150-ASME 2500 API 5000-API 15000",
+        "Standard Connections": "BTE-BTF-TSB-BTX-TXB series top-entry trunnion ball valves",
+        "Series": "BTE-BTF-TSB-BTX-TXB",
+        "Valve design": "based on API 6D or API 6A or API 6DSS and customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard/As per API 6A standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "O-ring/lip seal configuration",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Special maintenance tool for in-line seat disengagement",
+        "Stem extension for underground installations available",
+        "Manual: wrench or gear with padlocking",
+        "Actuated: Pneumatic/ Hydraulic/Electric"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-TETB-01-22",
+          "title": "BTE-BTF-TSB-BTX-TXB Series Top-Entry Trunnion Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-PC-04-19",
+          "title": "Pipeline Compressor Stations",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "TYF-TYS Series Cryogenic Top-Entry Trunnion Ball Valve",
+      "descripcion": "Cryogenic top-entry ball valves are manufactured for extremely low temperature and cryogenic applications where in-line disassembly is required for trim inspection and maintenance.Valves are designed with an integral bonnet extension which prevents cryogenic liquids from reaching the stem packing by enabling the liquids to boil and convert to gas. This minimizes the energy loss along the extension and protects the valve from malfunctioning. The structural integrity of the valve reduces any thermal deformation of internal components caused by temperature variance to a minimum, ensuring the highest level of performance for tight shut-off in critical LNG fields. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Criogénico",
+        "GNL"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/TYF-TYS-cryogenic-top-entry-ball.png",
+      "url_velan": "https://velan.com/products/tyf-tys-series-cryogenic-top-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 -36 (DN 50-900)",
+        "Pressure Class": "ASME 150 - ASME 900",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25",
+        "Series": "TYF-TYS",
+        "Valve design": "based on BS 6364, MESC 77/200, ISO 28921 (on request) and customer requirements",
+        "Temperature range": "-320 to 212°F (-196 to 120°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25",
+        "Body design": "Forged or cast one-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on Ball and Seats",
+        "Seat design to avoid trapped fluid in body cavity",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Lip seal configuration",
+        "Low fugitive emission stem packing available",
+        "Special maintenance tool for in-line seat disengagement",
+        "Extended bonnet for low and cryogenic service",
+        "Manual: wrench or gear with padlocking",
+        "Actuated: Pneumatic/ Hydraulic/Electric",
+        "Compliance with BS 6364, MESC 77/200, ISO 28921 (on request) inspection and testing",
+        "Fire safe and fire tested as per API 6FA/607",
+        "SIL 3 Certification as per IEC61508",
+        "Fugitive Emission as per ISO15848"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-BSTE02-22",
+          "title": "Cryogenic Top-Entry Trunnion Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BPU Serie Fully Welded Side-Entry Trunnion Ball Valve",
+      "descripcion": "Velan ABV offers a complete range of fully welded two or three-piece side-entry ball valves. The fully welded body construction provides a lighter solution while also avoiding potential leak paths to the external environment, ensuring reliable protection of the whole system. A solid double trunnion configuration and two independent seats with bidirectional sealing ensure the greatest level of tightness and reliability under high pressure and temperature conditions in all critical isolation services. Several unique features are available offering advanced technical solutions suitable for sweet or acid gas processes or pipelines applications. Material selection is fully customizable to meet customers project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Alta presión",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BPU-series-fully-welded-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/bpu-series-fully-welded-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-56 (DN 50-1400)",
+        "Pressure Class": "ASME 150 - ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Butt Welded as per B16.25",
+        "Series": "BPU",
+        "Valve design": "based on API 6D and customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25",
+        "Body design": "Forged welded two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on Ball and Seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Stem extension for underground installations",
+        "Manual: wrench or gear with padlocking",
+        "Actuated: Pneumatic/ Hydraulic/Electric",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Fire safe and fire tested as per API 6FA/607"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-FWSE-01-22",
+          "title": "BPU Serie Fully Welded Side-Entry Trunnion Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "SXP Serie Subsea Fully Welded Side-Entry Trunnion Ball Valve",
+      "descripcion": "Subsea fully welded ball valves are suitable in water depths to 500 mt (1700 fit) and maintain an average service life of 25 years. Valves are designed with two or three fully welded forged pieces with a solid double trunnion configuration and two independent seats with bidirectional sealing ensuring the greatest level of tightness and reliability under high pressure and temperature conditions in all critical isolation services. The fully welded body construction ensures a lighter solution and avoids potential leak paths to the external environment. As a result, the valves are an excellent choice in marine and subsea pipelines. Subsea fully welded trunnion ball valves may be completed with a subsea gear and ROV receptacle for remote operation by ROV or with a handwheel for manual operation by the diver. As an alternative, valves can be fitted with hydraulic subsea actuators, fully compensated in a double or single acting configuration, with or without ROV override. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Subsea",
+        "Alta presión",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/SXP-series-subsea-fully-welded-side-entry-ball.png",
+      "url_velan": "https://velan.com/products/sxp-series-subsea-fully-welded-side-entry-trunnion-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-48 (DN 50-1200)",
+        "Pressure Class": "ASME 150-ASME 2500",
+        "Standard Connections": "\"Flanged (RF, RTJ) as per B16.5 &B16.47 Butt Welded as per B16.25, Hub connection, Socket Welded as per B16.11\"",
+        "Series": "SXP",
+        "Valve design": "based on API 6DSS and customer requirements",
+        "Temperature range": "-76 to 410°F (-60 to 210°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connectionSW, Socket Welded as per B16.11",
+        "Body design": "Forged welded two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Double block and bleed design (DBB)",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Dynamic seals in O-ring/lip seal configuration",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Manual: Gear with ROV receptacle or handwheel",
+        "Actuated: Hydraulic with or without ROV receptacle / handwheel overridebaric compensator for operators",
+        "Compliance with API 6DSS Inspection and testing",
+        "SIL 3 Certification as per IEC61508",
+        "PED 2014/68/UE",
+        "Hyperbaric validation testing as per API 6DSS (available on request)",
+        "Cap test as per API 6DSS (available on request)"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "title": "SXP Series Subsea Fully Welded Side-Entry Trunnion Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BTD-BTC-SSD Series Modular Double Block and Bleed Ball Valve",
+      "descripcion": "Modular double block and bleed valves combine two in-line isolation valves into a single body with an additional bleed valve used to drain or vent trapped fluid between the two obturators to ensure highest level of safety in double isolation and bleed service. Using a double block and bleed valve versus two separate valves saves weight and space on the piping layout and ensures a significant reduction of potential leakage to the atmosphere, minimizing any hazardous risk when transferring liquids or gas. Several unique features are available to offer advanced technical solutions suitable to deal with aggressive and severe offshore environments. Material selection is fully customizable to meet customers project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Offshore",
+        "Alta presión",
+        "Alta temperatura"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BTD-BTC-SSD-modular-double-BB-ball-.png",
+      "url_velan": "https://velan.com/products/btd-btc-ssd-series-modular-double-block-and-bleed-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2-48 (DN 50-1200) NPS 1.13/16 –16.3/4 (DN 46-425)",
+        "Pressure Class": "ASME 150 - ASME 2500 API 5000-15000",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47 Butt Welded as per B16.25, Hub connection, 6B, 6BX as per API6A",
+        "Series": "BTD-BTC-SSD",
+        "Valve design": "based on API 6D or API 6A or API 6DSS and customer requirements",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per Velan standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47BW, Butt Welded as per B16.25Hub connection6B, 6BX as per API6A",
+        "Body design": "Forged three-piece housing two balls"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on ball and seats",
+        "Four Self relieving seats",
+        "Four Double piston seats",
+        "Combination seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "O-ring / Lip seal configuration",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Extended bonnet for low & high temperature available",
+        "Low pressure loss through the valve",
+        "BTC series: extremely compact valve design as per high pressure compact ball valves"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BC2-BC3 Series High Pressure Compact Ball Valve",
+      "descripcion": "With several years of experience in high pressure ball valves for offshore platforms and FPSO, Velan ABV has developed a new generation of compact valves in both a single and double ball configuration. Our design provides a competitive solution in an ever-expanding market that faces technical and economic challenges. We offer a wide range of two or three-piece forged bolted body trunnion mounted ball valves. Two independent seats provide easy bidirectional sealing to ensure the greatest level of tightness and reliability under high pressure and temperature conditions in critical isolation services. High pressure compact ball valves have the same reliability and level of quality as traditional API valves but with significant space and weight savings due to the compact flange design integrated into the valve closures. Compact welding neck flanges that connect the pipeline to the valve provide further space savings. Design and selection of materials are fully customizable to meet the customer’s project specifications. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Alta presión",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BC2-and-BC3-high-pressure-compact-ball.png",
+      "url_velan": "https://velan.com/products/bc2-bc3-series-high-pressure-compact-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 -36 (DN 50-900)NPS 1.13/16 –16.3/4 (DN 46-425)",
+        "Pressure Class": "ASME 900 - ASME 2500 API 5000 - API 20000",
+        "Standard Connections": "Norsok L005 compact flange, Freudenberg/ Grayloc compact flange",
+        "Series": "BC2 and BC3",
+        "Valve design": "Based on API 6D or API 6A or API 6DSS and customer requirements",
+        "Temperature range": "-150 to 428°F (-101 to 220°C)",
+        "Face-to-face": "As per Velan standard",
+        "End connections": "Norsok L005 compact flangeFreudenberg/ Grayloc compact flange",
+        "Body design": "Forged bolted two-piece and three-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with hard facing on ball and seats",
+        "Self relieving seats",
+        "Double piston seats",
+        "Combination seats",
+        "Double block and bleed design (DBB)",
+        "Secondary seals in pure Graphite",
+        "Anti-static device",
+        "Anti-blowout stem",
+        "Lip seal configuration",
+        "Emergency sealant injection on seats and stem available",
+        "Low fugitive emission stem packing available",
+        "CRA overlay on all dynamic sealing areas or on all wetted parts available",
+        "Compact and lightweight design",
+        "Lighter piping welding neck flanges with smaller dimensions offer 80% in weight savings",
+        "Manual: wrench or gear with padlocking"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-HPC04-22",
+          "title": "High Pressure Compact Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "API 6A and 6D valves",
+      "nombre": "BF2-BF3-BFT-BFU Series Side-Entry Floating Ball Valve",
+      "descripcion": "Velan ABV’S floating ball valve designed for on/off general service, offers a high-quality product at a very competitive price ensuring the greatest level of tightness and reliability. Side-entry floating ball valves are manufactured in accordance with API 6D and BS EN ISO 17292 standards. The valve is configured in a forged bolted two-piece split-body design with a small diameter, suitable for medium/lor pressure working conditions.Characterized by simple design, the valve seats are directly inserted into the body. The upstream flow pressure pushes the free-floating ball against the downstream seat-the resulting compression provides a perfect leak-free sealing solution even after years in-service. The stem is connected at the top of the ball and allowing the valve to open and close with a quarter-turn movement. Material selection is fully customizable to meet the customer’s project specifications and several unique features are available offering an enhanced technical solution suitable for aggressive offshore environment and corrosive and abrasive fluids. Seat design Features Operator Testing & certifications",
+      "normas": [
+        "API 6A",
+        "IEC 60534",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Offshore",
+        "Corrosivos",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/BF2-BF3-BFT-BFU-series-side-entry-floating-ball.png",
+      "url_velan": "https://velan.com/products/bf2-bf3-bft-bfu-series-side-entry-floating-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2-6 (DN 15-150)",
+        "Pressure Class": "ASME 150 - ASME 2500",
+        "Standard Connections": "Flanged (RF, RTJ) as per B16.5 &B16.47, Socket Welded as per B16.11",
+        "Series": "BF2-BF3-BFT-BFU",
+        "Valve design": "Based on API 6D and BS EN ISO 17292 standards",
+        "Temperature range": "-150 to 662°F (-101 to 350°C)",
+        "Face-to-face": "As per API 6D standard",
+        "End connections": "RF, RTJ as per B16.5 &B16.47SW, Socket Welded as per B16.11",
+        "Body design": "Forged bolted two-piece/Three-piece Forged threaded two-pieceForged welded two-piece"
+      },
+      "caracteristicas": [
+        "Soft or metal seated with Hardfacing on ball and seats",
+        "Secondary seals in pure Graphite",
+        "Anti-Static Device",
+        "Anti Blow out stem",
+        "Bi-directional tight shut-off",
+        "Low fugitive emission stem packing available",
+        "O-ring /Lip seals and Graphite configuration",
+        "Low pressure drop",
+        "Compact and lightweght",
+        "Manual: wrench or Gear with padlocking",
+        "Compliance with API 6D & ISO 5208 & API 598 inspection and testing",
+        "Fire safe and fire tested as per API 6FA/ 607",
+        "SIL 3 Certification as per IEC61508",
+        "Fugitive Emission as per ISO15848",
+        "PED 2014/68/UE"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-6DBF03-22",
+          "title": "Side-Entry Floating Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Catalogs",
+          "code": "ABV-FLB-03-17",
+          "title": "Velan ABV General Product Line Brochure",
+          "url": "https://velan.com/wp-content/uploads/2024/09/ABV-FLB-03-17.pdf"
+        }
+      ]
+    }
+  ]
+}

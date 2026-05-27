@@ -1,0 +1,696 @@
+{
+  "product_line": "Severe service metal-seated ball valves",
+  "slug": "severe-service-metal-seated-ball-valves",
+  "categoria_servin": "esfericas-mariposas-diafragma",
+  "total_productos": 12,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal® J-Series metal-seated double-ball valve",
+      "descripcion": "Single or double-actuated bi-directional double-ball valve for hydrocracking, ebullated bed, catalyst handling, and other refining processes. The J-Series is based on the Securaseal® R-Series and includes all field proven features plus a bracket arra...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Refinerías",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2025/07/MSBVJ.bip_.17-1.png",
+      "url_velan": "https://velan.com/products/securaseal-j-series-metal-seated-double-ball-valve/",
+      "especificaciones": {
+        "Size Range": "NPS 2-18 (DN 50-450)",
+        "Pressure Class": "ASME Class 300, 600, 900, 1500, and 2500",
+        "Standard Connections": "Flanged (RF, RTJ), butt weld, socket weld, threaded, hub ends"
+      },
+      "caracteristicas": [
+        "Two balls and mating seats with large sealing surfaces and extra shut-off angle and backseat gasket to maintain API 598",
+        "Pressure-energized gold plated Securaring™ gasket with external rib to ensure shell integrity",
+        "Heavy duty torque arm allows for opening against high differential pressure on both sides simultaneously",
+        "Two separate brackets to prevent stresses caused by hot body and room temperature bracket",
+        "Valve stem and actuator drive shaft are two different parts to prevent side load on stem and stem sealing leakage",
+        "Top and bottom bearings ensure guidance of actuator drive shafts",
+        "Can be mounted either horizontally or vertically"
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-MSBVJ-06-25",
+          "title": "Securaseal® J-Series metal-seated double-ball valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-MS-10-22",
+          "title": "SIL Safety Manual for Securaseal Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API641-06-19",
+          "title": "Valves Qualified for API 641 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal R-Series Ebullated Bed Valve",
+      "descripcion": "Designed and developed to perform in a wide range of severe applications, the Securaseal R-series is our most robust and versatile metal-seated ball valve with over two decades of proven performance in the toughest applications including aggressive e...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/R-series-ebullated-bed-hub-end.png",
+      "url_velan": "https://velan.com/products/securaseal-r-series-ebullated-bed-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 36 (DN 15 - 900)",
+        "Pressure Class": "ASME Class 150, 300, 600, 900, 1500, 2500 and 4500",
+        "Standard Connections": "Flanged (RF, RTJ), butt weld, socket weld, threaded, hub ends"
+      },
+      "caracteristicas": [
+        "Optimized body design complies with industry standards ASME B16.34 and API 608.",
+        "Bi-directional sealing with a preferred sealing direction in dirty service.",
+        "Tight shut-off. Match-lapped balls and seats for 100% contact.",
+        "Upstream seat equipped with a Belleville spring to guarantee the scraping of the ball surface and maintain effective sealing.",
+        "Seats are replaceable in-line for simple assembly and disassembly, with no special tools required.",
+        "Low emissions stem seal in compliance with the highest industry standards.",
+        "Robust blowout-proof stem.",
+        "Live-loaded packing flange and improved stem seal design maintains packing sealing performance over the life of the valve.",
+        "Fully guided stem.",
+        "Internal thrust washers to reduce torque and provide secondary stem seal."
+      ],
+      "documentos": [
+        {
+          "type": "Flyers",
+          "code": "FLY-SRC-04-18a",
+          "title": "Securaseal R-Series Cast Valve",
+          "url": "https://velan.com/wp-content/uploads/2024/09/FLY-SRC-04-18a-1.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-MS-10-22",
+          "title": "SIL Safety Manual for Securaseal Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-API641-06-19",
+          "title": "Valves Qualified for API 641 and ISO-15848-1",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal C-Series Slurry Ball Valve",
+      "descripcion": "Válvula Severe service metal-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 6D",
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Servicios severos",
+        "Corrosivos",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-C-series-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-c-series-slurry-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS ½ - 36 (DN 15 - 900)",
+        "Pressure Class": "Up to class 1500",
+        "Standard Connections": "Flanged (RF)",
+        "Body Material": "Contact Velan",
+        "Ball:": "Floating",
+        "Ball-stem design:": "separate ball/stem",
+        "Product type:": "forged (optional: cast)",
+        "End connections:": "Flanged (optional: hub or socket weld)",
+        "Seat sealing:": "unidirectional, bidirectional (optional: double block)",
+        "Seat:": "lock-in, thru bolts (optional: others)",
+        "Low temperature:": "32-392 (0-200)",
+        "Coating:": "HVOF (optional: fused)",
+        "Testing:": "API 598 (optional: API 6D, LP gas seat)",
+        "Industries:": "Slurry transport, power (optional: HPAL, POX)",
+        "Media:": "Catalyst handling, hot hydrocarbons"
+      },
+      "caracteristicas": [
+        "External tapered roller bearing offers lower torque due to a robust drive train that ensures operability.",
+        "Optimized stem sealing & live-loading design for a potentially corrosive atmosphere.",
+        "Slurry-proof internals ensure shut-off and minimized clogging in high velocity slurries.",
+        "Fully bi-directional sealing design maximizes life expectancy using a permanently energized ball and seatcontact as well as effective scraping of sealing surfaces. Symmetrical spring-loaded seat configurationensures bidirectional sealing as per API 598.",
+        "Weld overlay wear/erosion protection throughout the interior valve flow passage",
+        "HVOF hardfaced coating on top of overlay provides extra wear/erosion protection",
+        "Custom IIoT panel and sensors able to connect to multiple valves",
+        "RFID tag technology for digital identification and tracking of valves in-service",
+        "Velan Cable drive actuator, with its linear characteristics, constant efficiency, zero backlash, and reducedlag is a good choice in slurry pipeline transport.",
+        "Fire test qualifications to API 607 and ISO 10497."
+      ],
+      "documentos": [
+        {
+          "type": "Flyers",
+          "code": "FLY-MIN-05-21a",
+          "title": "Securaseal C-Series for Mining Applications",
+          "url": "https://velan.com/wp-content/uploads/2024/09/FLY-MIN-05-21a.pdf"
+        },
+        {
+          "type": "Legacy maintenance manuals",
+          "code": "IOM-KGVM-01-12",
+          "title": "High Performance Knife Gate Valves NPS 2-36 (DN 50-900)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-MS-10-22",
+          "title": "SIL Safety Manual for Securaseal Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal N-Series Hydromet Ball Valve",
+      "descripcion": "The Securaseal Type N was designed and developed for the most severe services heavy industry has to offer. None are more severe than high pressure leaching by acid or oxygen used in the refining of nickel and gold ores. These services push every piec...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Refinerías",
+        "Agua",
+        "Alta presión",
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-N-series-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-n-series-hydromet-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 16 (DN 15 - 400)",
+        "Pressure Class": "ASME Classes 150 - 900",
+        "Standard Connections": "Flanged (RF, RTJ), Butt weld, Socket weld, Threaded"
+      },
+      "caracteristicas": [
+        "Forged compact body with precision machined construction complies to ASME B16.34.",
+        "The optimized body includes several features for easy installation in various orientations.",
+        "Wall thickness is larger than required by industry standards and ideal for corrosion and erosion applications.",
+        "Robust blowout-proof fully guided stem, has the largest Maximum Allowable Stem Torque (MAST) of all severe service ball valves, ensuring normal operation regardless of valve orientation and process conditions.",
+        "External thrust bearing is positioned away from corrosive media, reducing the operating torque and extending valve performance.",
+        "Ball and seats are 100% fully mate-lapped and coated with the latest coating solutions that fit the requirements of the service conditions.",
+        "Advanced coatings for ball and seats, as well as the waterway bore when necessary, provide trouble free operation even in aggressive erosive and corrosive services as demonstrated in the most severe HPAL plant in the world. Several deposition methods are available and some of these processes provide greatly improved wear properties.",
+        "Our stem packing technology guarantees a low-emission stem seal in compliance with the highest industry standards.",
+        "Slurry-proof floating upstream seat with unique precision machined ‘load ring’ guarantees permanent contact between the ball and seats for effective ball scrapping and tight shut-off in both directions.",
+        "Seats are replaceable in-line for simple assembly and disassembly, with no special tools required."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "MP-2008",
+          "title": "Severe Service Valves for the Mineral Processing Industry",
+          "url": "https://velan.com/wp-content/uploads/2024/09/MP-2008.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-MSBVNR-10-15b",
+          "title": "Securaseal Type N and Type R Severe Service Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-MSBVN-05-20",
+          "title": "Securaseal N-Series Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal TX-Series Acid Injection Ball Valve",
+      "descripcion": "Designed for the most extreme process and environmental conditions, Velan’s Securaseal acid injection top-entry metal-seated ball valve provides customized application-focused features that deliver a robust valve for highly corrosive slurry–one of th...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Alta presión",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-TX-series.png",
+      "url_velan": "https://velan.com/products/securaseal-tx-series-acid-injection-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1 - 6 (DN 25 – 150)",
+        "Pressure Class": "ASME Class 600 and 900",
+        "Standard Connections": "Flanged (RF)",
+        "Body Material": "Contact Velan"
+      },
+      "caracteristicas": [
+        "Top-entry, fully forged, thicker-wall valve for greater strength, lowest operating piping stresses, and extra corrosion allowances.",
+        "U.S. patent pending features designed specifically for highly corrosive slurry in HPAL.",
+        "VEL-Ta, Tantalum proprietary coating is applied to all ‘wetted’ surfaces ensuring the highest corrosion protection in service.",
+        "Robust blowout-proof fully guided stem, has the largest Maximum Allowable Stem Torque (MAST) of all severe service ball valves, ensuring normal operation regardless of valve orientation and process conditions.",
+        "Ball and seats are 100% fully mate-lapped and coated with the latest coating solutions that fit the requirements of the service conditions.",
+        "Velan stem packing technology guarantees a low emission stem seal in compliance with the highest industry standards.",
+        "Unique precision machined slurry-proof upstream floating seat.",
+        "Zero seat leakage test criteria",
+        "Bidirectional sealing design",
+        "Heat dissipating features to lower temperature on valve parts."
+      ],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "QS-MSTX-05-23",
+          "title": "Securaseal® TX-series metal-seated ball valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "MP-2008",
+          "title": "Severe Service Valves for the Mineral Processing Industry",
+          "url": "https://velan.com/wp-content/uploads/2024/09/MP-2008.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Brochures",
+          "code": "AMS-HPAL-10-25",
+          "title": "Valve Lifecycle for HPAL Hydrometallurgy Processes",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal U-Series Trunnion-Mounted (Balance) Ball Valve",
+      "descripcion": "Trunnion mounted metal-seated ball valve.",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-U-series.png",
+      "url_velan": "https://velan.com/products/securaseal-u-series-trunnion-mounted-balance-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 4 (DN 100)",
+        "Standard Connections": "Contact Velan",
+        "Body Material": "Contact Velan"
+      },
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-MS-10-22",
+          "title": "SIL Safety Manual for Securaseal Metal-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-MSBVU-03-14b",
+          "title": "Securaseal Type-U Metal-Seated Trunnion Mounted Ball Valves, NPS 4 (DN 100)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal L-Series High Temperature Ball Valve",
+      "descripcion": "The Velan Type L high-temperature metal-seated ball valve is well suited for a variety of demanding services where high-temperature and abrasive solids are present.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos",
+        "Abrasivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Securaseal-L-series-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-l-series-high-temperature-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 4 - 24 (DN 100 - 600)",
+        "Pressure Class": "ASME classes 150 - 300",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "Unique, patented single-seat ball valve design. The Velan single-seat ball valve has a flat spring set acting through a hardfaced bearing against the bottom ball shaft which provides sufficient initial ball-seat load for valve tightness, even at low delta P.",
+        "The design provides freedom for thermal expansion of the ball without jamming, even at extreme temperatures.",
+        "Proven in qualification tests and field operation to be solids–proof, even for the toughest applications on slurry service with solids.",
+        "Tightness rates: Allowable leakage rate at full delta P: ASME/ FCI 70-2 Class V. Tighter shutoff available upon request.",
+        "Max. operating temperature: CF8M valves: 1,450°F (788°C). WCB valves: 800°F (426°C). Chrome Moly C5 or C12: 1,000°F (538°C).",
+        "Wall thickness complies with ASME B16.34."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Cap-Tight Batch Digester Capping Valve",
+      "descripcion": "The cap-tight batch digester capping valve delivers outstanding performance and exceptional reliability, because of its unique design. It was developed by using more than 25 years of experience in the application of automated capping. Every component...",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Servicios severos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Batch-digester.png",
+      "url_velan": "https://velan.com/products/cap-tight-batch-digester-capping-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 12 - 30",
+        "Pressure Class": "N/A",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "No adjustment necessary: All Velan capping valve parts are easy to install.",
+        "Easy in-place maintenance: Easy to take apart and reassemble, even while on the digester.",
+        "Simple design: The only moving parts are the ball and its assembled shaft.",
+        "Reversible ball and seat lower maintenance costs."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-BDC-2000",
+          "title": "Cap-Tight Batch Digester Capping Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal® Coker Diverter Valve (Three and Four-Way)",
+      "descripcion": "​AUTOMATIONThe electric, hydraulic or pneumatic actuator is selected in function of coker service. A large torque safety factor ensures the valve will cycle under the most stringent conditions. When selecting actuators, special attention is paid to t...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-diverter.png",
+      "url_velan": "https://velan.com/products/coker-diverter-valves-three-and-four-way/",
+      "especificaciones": {
+        "Size Range": "NPS 3 - 18 (DN 80 - 450)",
+        "Pressure Class": "ASME Classes 150 - 900",
+        "Standard Connections": "Flanged (RTJ, RF)"
+      },
+      "caracteristicas": [
+        "The sturdy one-piece ball and stemprovides optimal strength, and is well suited to applications where fouling due to coke fines are a concern. The one-piece design avoids the problems generally associated with the more conventional two-piece ball and stem, which is highly susceptible to solids buildup in the ball-stem joint and a resulting increase in operating torques.Avoids hysteresis and misalignment.",
+        "A Lantern ringwith steam block and extra deep stuffing box minimizes the risk of leakage occurring through the packing chamber. Live-loading is available on request.",
+        "Strong bellowsoffer a unique seat loading design that maintains the floating seats in constant contact with the ball and ensures a positive seal.",
+        "Velan’s unique scraper type seats designscrapes coke buildup from the surface of the ball during each cycle. Seats are hard-faced to ensure a long, trouble-free service life.",
+        "Steam purgesto bellows and body area ensure the valve cavities are kept free of coke buildup.",
+        "The stem couplingis designed to perform three main functions:Protect against “overtorquing” of the stem.Protect the actuator components.Protect against an unintentional switch into bypass (typically applies to four-way switch).",
+        "Protect against “overtorquing” of the stem.",
+        "Protect the actuator components.",
+        "Protect against an unintentional switch into bypass (typically applies to four-way switch).",
+        "Protect against “overtorquing” of the stem."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal® Coker Ring Type Back Pressure Control Valve",
+      "descripcion": "Patented Velan ring valves are an intrinsically safe design. The ring valve has no seats. It is a throttling valve. As a result, it does not require a mechanical stop in order to avoid full closure and the resulting drum overpressurization. Automatio...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-ring-type.png",
+      "url_velan": "https://velan.com/products/coker-ring-type-back-pressure-control-valve/",
+      "especificaciones": {
+        "Size Range": "NPS 14 – 36 (DN 50 – 200)",
+        "Pressure Class": "ASME Classes 150 – 300",
+        "Standard Connections": "RTJ, RF, LFF"
+      },
+      "caracteristicas": [
+        "Steam purges:Steam purges to bellows and body area ensure the valve cavities are kept free of coke buildup.",
+        "Excellent throttling characteristics:In the “maximum obstruction” position, the valve provides a pressure drop equal to a butterfly valve’s set at 15° open."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal Hydrodrill Ball Valve",
+      "descripcion": "Velan Securaseal R-series full bore ball valves are generally installed in high pressure applications where the highly erosive and sometimes corrosive reclaimed waters, used to drill the coke out of the drum, can significantly shorten valve life. Aut...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Agua",
+        "Alta presión",
+        "Servicios severos",
+        "Corrosivos"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-hydrodrill-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-hydrodrill-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1 1/2 –12 (DN 40 – 300)",
+        "Pressure Class": "ASME Classes 1500 – 2500",
+        "Standard Connections": "Flanged (RTJ, RF)"
+      },
+      "caracteristicas": [
+        "In order to ensure long, leak-free, reliable operation all valve wetted parts are hardfaced.",
+        "Valves are available in A105 or low temperature steels with stainless steel internals.",
+        "Both uni-directional and bi-directional are available."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-CBVM-04-16",
+          "title": "Delayed Coker Metal-Seated Ball Valves NPS 2-36 (DN 50-900)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Brochures",
+          "code": "BRO-CBV-03-23",
+          "title": "Complete Valve Solutions for the Delayed Coker Industry",
+          "url": "https://velan.com/wp-content/uploads/2024/09/BRO-CBV-03-23.pdf"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Severe service metal-seated ball valves",
+      "nombre": "Securaseal® K-Series Coker Isolation Valve",
+      "descripcion": "Optimized for superior isolation–the right choice for uninterrupted service in delayed coking. ​AUTOMATIONThe electric, hydraulic or pneumatic actuator is selected in function of coker service. A large torque safety factor ensures the valve will cycl...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor",
+        "Servicios severos",
+        "Coquización"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Coker-isolation-ball.png",
+      "url_velan": "https://velan.com/products/securaseal-k-series-coker-isolation-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 2 - 36 (DN 50 - 900)",
+        "Pressure Class": "ASME Classes 150 - 900",
+        "Standard Connections": "RTJ, RF, LFF, BW, SW, threaded, hub ends"
+      },
+      "caracteristicas": [
+        "The sturdy one-piece ball and stemprovides optimal strength, and is well suited to applications where fouling due to coke fines are a concern. The one-piece design avoids the problems generally associated with the more conventional two-piece ball and stem, which is highly susceptible to solids buildup in the ball-stem joint and a resulting increase in operating torques. Avoids hysteresis and misalignment.",
+        "A Lantern ringwith steam block and extra deep stuffing box minimizes the risk of leakage occurring through the packing chamber. Live-loading is available on request.",
+        "Strong bellowsoffer a unique seat loading design that maintains the floating seats in constant contact with the ball and ensures a positive seal.",
+        "Velan’s unique scraper type seats designscrapes coke buildup from the surface of the ball during each cycle. Seats are hard-faced to ensure a long, trouble-free service life.",
+        "Steam purgesto bellows and body area ensure the valve cavities are kept free of coke buildup.",
+        "The stem couplingis designed to perform three main functions:Protect against “overtorquing” of the stem.Protect the actuator components.Protect against an unintentional switch into bypass (typically applies to four-way switch).",
+        "Protect against “overtorquing” of the stem.",
+        "Protect the actuator components.",
+        "Protect against an unintentional switch into bypass (typically applies to four-way switch).",
+        "Protect against “overtorquing” of the stem."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-CBV-10-22",
+          "title": "SIL Safety Manual for Coker Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-CBVM-04-16",
+          "title": "Delayed Coker Metal-Seated Ball Valves NPS 2-36 (DN 50-900)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Application notes",
+          "code": "AN-FCC-10-16",
+          "title": "Fluid Catalytic Cracking Challenges",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

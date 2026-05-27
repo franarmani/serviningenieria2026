@@ -1,0 +1,706 @@
+{
+  "product_line": "Resilient-seated ball valves",
+  "slug": "resilient-seated-ball-valves",
+  "categoria_servin": "esfericas-mariposas-diafragma",
+  "total_productos": 12,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ SB 150/300/600 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal® split-body resilient-seated ball valves are available with a floating or trunnion ball, designed to handle an extensive range of applications. Standard valves with MPTFE seats and graphite packing can handle steam service up to 150 ...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-SB-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-sb-150-300-and-600-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 24(DN 15 - 600)",
+        "Pressure Class": "ASME Classes 150 - 600",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-BVSB-02-25",
+          "title": "Memoryseal SB-150/300/600 Split-Body Ball Valve",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-BVSB2-07-14b",
+          "title": "Memoryseal Split-Body Ball Valves NPS 2-10 (DN 50-250)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-BVSB3A-10-12b",
+          "title": "Memoryseal Split-Body Ball Valves, Flanged and Full Port NPS 2-24 (DN50-500), Regular Port",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HTORSBV-05-23",
+          "title": "Memoryseal and VTP-2000 Product Update",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MPTFE",
+          "title": "Memoryseal: Advantages of MPTFE (ModifiedPTFE)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ UB 150 and 300 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal™ unibody resilient-seated ball valves are designed with unique 3-way packing arrangements for superior stem sealing to handle an extensive range of applications. These rugged, versatile, and high-performance unibody Memoryseal™ resil...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-UB-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-ub-150-and-300-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 12(DN 15 - 300)",
+        "Pressure Class": "ASME Classes 150 - 300",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BVUB4-2001b",
+          "title": "Memoryseal Unibody Ball Valves 2-12″ (50-300 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BVUB3-01a",
+          "title": "Memoryseal Unibody Ball Valves ½-1½” (15-40 mm)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-BV-10-22",
+          "title": "SIL Safety Manual for Memoryseal Resilient-Seated Ball Valves SB-TE-UB-EE-HB-EP",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ TE-150/300/600 Resilient-Seated Ball Valve",
+      "descripcion": "Velan Memoryseal™ top-entry resilient-seated ball valves can be easily serviced or replaced in-line while the integrity of the valve is not affected. The exclusive Memoryseal™ seats compensate automatically for wear and fluctuations of pressure and t...",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Vapor"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-Top-entry-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-te-150-300-and-600-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 4(DN 15 - 100)",
+        "Pressure Class": "ASME Classes 150 - 600",
+        "Standard Connections": "Flanged, Threaded, Socket weld, Butt weld"
+      },
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Data sheets",
+          "code": "DS-BVTE-11-24",
+          "title": "Memoryseal TE-150/300/600 Resilient-Seated Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-BV-10-22",
+          "title": "SIL Safety Manual for Memoryseal Resilient-Seated Ball Valves SB-TE-UB-EE-HB-EP",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MPTFE",
+          "title": "Memoryseal: Advantages of MPTFE (ModifiedPTFE)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ EP-2000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-EP-2000-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-ep-2000-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "Up to 2000 psig",
+        "Standard Connections": "Threaded"
+      },
+      "caracteristicas": [
+        "Exclusive Memoryseal™ seats compensate automatically for wear and fluctuations in pressure and temperature.",
+        "Multiple solid cup and cone type PTFE stem seal or graphite packing.",
+        "Adjustable packing flange.",
+        "Stem guides reduce side thrust.",
+        "Long cycle life.",
+        "Low, uniform torques.",
+        "Blowout-proof stem.",
+        "Live-loaded thrust washer prevents galling and provides a secondary stem seal.",
+        "Fully enclosed body seal plus metal-to-metal seal for body and body end. Body seal protects threads from medium.",
+        "Rugged two-piece design with wall thickness to B16.34."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BVEP-1997a",
+          "title": "Memoryseal EP-2000 End-Entry Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-BV-10-22",
+          "title": "SIL Safety Manual for Memoryseal Resilient-Seated Ball Valves SB-TE-UB-EE-HB-EP",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVEP-04-22",
+          "title": "Memoryseal EP-2000 End-Entry Two-Piece Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ EE-1000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-EE-1000-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-ee-1000-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2 (DN 15 - 50)",
+        "Pressure Class": "Up to 1000 psig",
+        "Standard Connections": "Threaded"
+      },
+      "caracteristicas": [
+        "Exclusive Memoryseal™ seats compensate automatically for wear and fluctuations in pressure and temperature.",
+        "Multiple solid cup and cone type PTFE stem seal or graphite packing.",
+        "Adjustable threaded gland.",
+        "Stem guides reduce side thrust.",
+        "Long cycle life.",
+        "Low, uniform torques.",
+        "Blowout-proof stem.",
+        "Live-loaded thrust washer prevents galling and provides a secondary stem seal.",
+        "Fully enclosed body seal plus metal-to-metal seal for body and body end.",
+        "Stainless handle with safety clip. Oval handwheel also available."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-BV-10-22",
+          "title": "SIL Safety Manual for Memoryseal Resilient-Seated Ball Valves SB-TE-UB-EE-HB-EP",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVEE-06-22",
+          "title": "Memoryseal EE-1000 End-Entry Two-Piece Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MPTFE",
+          "title": "Memoryseal: Advantages of MPTFE (ModifiedPTFE)",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ HB-2000 Resilient-Seated Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-HB-2000-ball.png",
+      "url_velan": "https://velan.com/products/memoryseal-hb-2000-resilient-seated-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "Up to 2000 psig",
+        "Standard Connections": "Threaded"
+      },
+      "caracteristicas": [
+        "Exclusive Memoryseal™ seats compensate automatically for wear and fluctuations in pressure and temperature.",
+        "Multiple solid cup and cone type PTFE stem seal or graphite packing.",
+        "Fire tested in accordance with API 607 Rev. 5/ISO 10497.",
+        "Adjustable self locking threaded gland NPS 1/2 – 2 (DN 15–50).",
+        "Stem guide in gland bushing prevents side thrust.",
+        "Long cycle life.",
+        "Low, uniform torques.",
+        "Blowout-proof stem.",
+        "Thrust washer prevents galling, reduces torque and provides secondary stem seal.",
+        "One-piece heavy wall body for high structural strength to ASME B16.34."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-BVHB-1998a",
+          "title": "Memoryseal HB-2000 One-Piece Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Safety manuals",
+          "code": "SIL-BV-10-22",
+          "title": "SIL Safety Manual for Memoryseal Resilient-Seated Ball Valves SB-TE-UB-EE-HB-EP",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVHB-04-22",
+          "title": "Memoryseal HB-2000 One-Piece Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ Cryogenic Split-Body Ball Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34",
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-cryogenic-cast-split-body.png",
+      "url_velan": "https://velan.com/products/memoryseal-cryogenic-split-body-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 24(DN 15 - 600)",
+        "Pressure Class": "ASME class 150 - 600",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "Meets ASME B16.5, ASME B16.34, API 608, API 598.",
+        "Face-to-face dimensions meet ASME B16.10 long pattern.",
+        "Gear actuator standard on NPS 8–24 (DN 200–600) SB-150/300 and NPS 6 –12 (DN 150–300) SB-600 valves.",
+        "Memoryseal seats compensate automatically for wear and fluctuations of pressure and temperature.",
+        "Long cycle life.",
+        "Low torques.",
+        "Blowout-proof stem.",
+        "Stem bearing reduces side thrust.",
+        "Multiple solid PTFE or chevron type stem seal (adjustable).",
+        "Pressurized thrust washer prevents galling and provides secondary stem seal."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-CRYO-2001a",
+          "title": "Cryogenic Gate, Globe, Check, Ball, and Butterfly Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-CRYO-2001a.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MPTFE",
+          "title": "Memoryseal: Advantages of MPTFE (ModifiedPTFE)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HTORSBV-05-23",
+          "title": "Memoryseal and VTP-2000 Product Update",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Memoryseal™ Cryogenic Top-Entry Ball Valve",
+      "descripcion": "DESIGN FEATURES:",
+      "normas": [
+        "ASME B16.34",
+        "API 6FA/607"
+      ],
+      "aplicaciones": [
+        "Oil & Gas"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Memoryseal-cryogenic-cast-top-entry.png",
+      "url_velan": "https://velan.com/products/memoryseal-cryogenic-top-entry-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 3/8 - 3 (DN 10 - 80)",
+        "Pressure Class": "ASME Class 600",
+        "Standard Connections": "Socket weld, Threaded"
+      },
+      "caracteristicas": [
+        "Meets ASME B16.5, ASME B16.34, API 608, API 598.",
+        "Face-to-face dimensions meet ASME B16.10 long pattern.",
+        "Gear actuator standard on NPS 8–24 (DN 200–600) SB-150/300 and NPS 6 –12 (DN 150–300) SB-600 valves.",
+        "Memoryseal seats compensate automatically for wear and fluctuations of pressure and temperature.",
+        "Long cycle life.",
+        "Low torques.",
+        "Blowout-proof stem.",
+        "Stem bearing reduces side thrust.",
+        "Multiple solid PTFE or chevron type stem seal (adjustable).",
+        "Pressurized thrust washer prevents galling and provides secondary stem seal."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Catalogs",
+          "code": "VEL-CRYO-2001a",
+          "title": "Cryogenic Gate, Globe, Check, Ball, and Butterfly Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-CRYO-2001a.pdf"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-MPTFE",
+          "title": "Memoryseal: Advantages of MPTFE (ModifiedPTFE)",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HTORSBV-05-23",
+          "title": "Memoryseal and VTP-2000 Product Update",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "VTP-2000 Three-Piece High Performance Ball Valve",
+      "descripcion": "Velan’s VTP-2000 three-piece ball valve is a high-performance ball valve, ideal for a wide variety of services. Designed for simple, in-line maintenance, and long, reliable service life, this resilient-seated ball valve offers sophisticated technical...",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VTP-2000-resilient-seated-ball.png",
+      "url_velan": "https://velan.com/products/vtp-2000-three-piece-high-performance-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/2 - 2(DN 15 - 50) full and regular port",
+        "Pressure Class": "1500–2000 WOG",
+        "Standard Connections": "Socket weld, Threaded"
+      },
+      "caracteristicas": [],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-BVV3P-05-15a",
+          "title": "V3P-1000 3-Piece Full Port Ball Valves, Threaded or Socket Weld Ends",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-VTP-05-23.pdf",
+          "title": "VTP-2000 Three-Piece High Performance Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Product updates",
+          "code": "PU-HTORSBV-05-23",
+          "title": "Memoryseal and VTP-2000 Product Update",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Valvac VOP-1000 General Purpose Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VOP_1000.png",
+      "url_velan": "https://velan.com/products/valvac-vop-1000-general-purpose-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50)",
+        "Pressure Class": "Up to 1000 psig",
+        "Standard Connections": "Threaded"
+      },
+      "caracteristicas": [
+        "Carbon or stainless steel body materials.",
+        "Reduced port.",
+        "RPTFE seats."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVVOP-01-23",
+          "title": "Valvac VOP-1000 General Purpose Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Valvac VEE-2000 General Purpose Ball Valve",
+      "descripcion": "Válvula Resilient-seated ball valves de alta calidad para aplicaciones industriales.",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/VEE_2000F.png",
+      "url_velan": "https://velan.com/products/valvac-vee-2000-general-purpose-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2 (DN 8 - 50 mm)",
+        "Pressure Class": "Up to 2000 psig",
+        "Standard Connections": "Threaded"
+      },
+      "caracteristicas": [
+        "Carbon or stainless steel body materials.",
+        "Full and regular port",
+        "RPTFE seats."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVVEE-01-23",
+          "title": "Valvac VEE-2000 General Purpose Ball Valves",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "categoria": "esfericas-mariposas-diafragma",
+      "product_line": "Resilient-seated ball valves",
+      "nombre": "Valvac V3P-1000 General Purpose Ball Valve",
+      "descripcion": "The Velan Valvac three-piece ball valve with integral ISO mounting pad is a low-cost ball valve for many industrial, commercial and OEM automated applications. The ISO mounting pad will allow quick and easy direct mounting of ISO compatible quarter-t...",
+      "normas": [
+        "API 608",
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Petroquímica",
+        "Proceso"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/V3P_1000.png",
+      "url_velan": "https://velan.com/products/valvac-v3p-1000-general-purpose-ball-valves/",
+      "especificaciones": {
+        "Size Range": "NPS 1/4 - 2(DN 8 - 50)",
+        "Pressure Class": "Up to 1000 psig",
+        "Standard Connections": "Threaded, Socket weld"
+      },
+      "caracteristicas": [
+        "Multiple solid cup and cone type PTFE packing-adjustable.",
+        "Thrust washer prevents galling, reduces torque and provides secondary stem seal.",
+        "Adjustable packing with self-locking gland nut complete with protective metal packing washer.",
+        "4-bolt bracket to ISO standard for automation.",
+        "Blowout-proof stem.",
+        "Threaded or socket weld ends."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "QS-BVV3P-06-23",
+          "title": "Valvac V3P-1000 General Purpose Ball Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-BVV3P-05-15a",
+          "title": "V3P-1000 3-Piece Full Port Ball Valves, Threaded or Socket Weld Ends",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}

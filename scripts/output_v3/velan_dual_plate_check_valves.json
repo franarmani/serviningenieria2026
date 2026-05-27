@@ -1,0 +1,314 @@
+{
+  "product_line": "Dual plate check valves",
+  "slug": "dual-plate-check-valves",
+  "categoria_servin": "esclusas-globo-retencion",
+  "total_productos": 5,
+  "productos": [
+    {
+      "id": 1,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Dual plate check valves",
+      "nombre": "Proquip Dual-Plate Check Valve: Wafer Type",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-wafer-edited.png",
+      "url_velan": "https://velan.com/products/proquip-dual-plate-check-valves-wafer-type/",
+      "especificaciones": {
+        "Size Range": "NPS 2-60 (DN 50-1500)",
+        "Pressure Class": "ASME classes 150-2500",
+        "Standard Connections": "Wafer"
+      },
+      "caracteristicas": [
+        "Retainerless emission-free design. With no holes through the body wall, leakage to the outside is impossible.",
+        "Body surface with uninterrupted gasket surface.",
+        "Intrinsically fire safe.",
+        "The reduced weight of the disc minimizes slamming and water hammer.",
+        "The disc side hinges, eliminate the effect of gravity resulting in lower energy costs when installed in a horizontal pipeline.",
+        "Design maximizes the flow path area through the valve with a lower pressure drop. The internal retention method does not encroach on the gasket sealing surface.",
+        "Springs provide a fast-acting response to flow reversal, minimizing stress and maximizing service life.",
+        "Shock bumpers extended cycle life of internal components with minimal wear in severe service.",
+        "Extended seat life due to the clearance between the disc hinge and hinge pin which eliminates any dragging effect from the discs.",
+        "Velan Proquip dual plate check valves easily meet and exceed test requirements of API 598 for metal-seated check valves.",
+        "API 594 Face-to-face dimension",
+        "To suit ANSI B16.5 flanges, NPS 2-24 (DN 50-600)",
+        "To suit ANSI B16.47 Series A flanges, NPS 26 (DN 650) and larger",
+        "ASME B16.47 Series B available upon request."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-DPCV-10-14",
+          "title": "Proquip Dual Plate Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-DPW-11-22",
+          "title": "Proquip Dual-Plate Check Valves Wafer Type",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Dual plate check valves",
+      "nombre": "Proquip Dual-Plate Check Valve: Lug Type",
+      "descripcion": "",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-solid-lug.png",
+      "url_velan": "https://velan.com/products/proquip-dual-plate-check-valves-solid-lug-type/",
+      "especificaciones": {
+        "Size Range": "NPS 2-48 (DN 50-1200)",
+        "Pressure Class": "ASME classes 150-2500 API 2000-5000",
+        "Standard Connections": "Lug"
+      },
+      "caracteristicas": [
+        "Retainerless emission-free design. With no holes through the body wall, leakage to the outside is impossible.",
+        "Body surface with uninterrupted gasket surface.",
+        "Intrinsically fire safe.",
+        "The reduced weight of the disc minimizes slamming and water hammer.",
+        "The disc side hinges, eliminate the effect of gravity resulting in lower energy costs when installed in a horizontal pipeline.",
+        "Design maximizes the flow path area through the valve with a lower pressure drop. The internal retention method does not encroach on the gasket sealing surface.",
+        "Springs provide a fast-acting response to flow reversal, minimizing stress and maximizing service life.",
+        "Shock bumpers extended cycle life of internal components with minimal wear in severe service.",
+        "Extended seat life due to the clearance between the disc hinge and hinge pin which eliminates any dragging effect from the discs.",
+        "Velan Proquip dual plate check valves easily meet and exceed test requirements of API 598 for metal-seated check valves.",
+        "Retainerless design is supplied as standard",
+        "API 594 Face-to-face dimension",
+        "To suit ANSI B16.5 flanges, NPS 2-24 (DN 50-600)",
+        "To suit ANSI B16.47 Series A flanges, NPS 26 (DN 650) and larger",
+        "ASME B16.47 Series B available upon request"
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-DPL-01-25",
+          "title": "Proquip Dual-Plate Check Valves Lug Type",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Dual plate check valves",
+      "nombre": "Proquip Dual-Plate Check Valve: Hub End Type",
+      "descripcion": "Velan Proquip hub end dual-plate check valves are made of carbon, stainless, or alloy steel to handle an extensive range of applications. The retainerless body is clamped into a piping system by using clamp connectors per customer’s requirements.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-hub.png",
+      "url_velan": "https://velan.com/products/proquip-dual-plate-check-valves-hub-end-type/",
+      "especificaciones": {
+        "Size Range": "NPS 2-24 (DN 50-600)",
+        "Pressure Class": "ASME classes 600-2500",
+        "Standard Connections": "Hub"
+      },
+      "caracteristicas": [
+        "Retainerless emission-free design. With no holes through the body wall, leakage to the outside is impossible.",
+        "Body surface with uninterrupted gasket surface.",
+        "Intrinsically fire safe.",
+        "The reduced weight of the disc minimizes slamming and water hammer.",
+        "The disc side hinges, eliminate the effect of gravity resulting in lower energy costs when installed in a horizontal pipeline.",
+        "Design maximizes the flow path area through the valve with a lower pressure drop. The internal retention method does not encroach on the gasket sealing surface.",
+        "Springs provide a fast-acting response to flow reversal, minimizing stress and maximizing service life.",
+        "Shock bumpers extended cycle life of internal components with minimal wear in severe service.",
+        "Extended seat life due to the clearance between the disc hinge and hinge pin which eliminates any dragging effect from the discs.",
+        "Velan Proquip dual plate check valves easily meet and exceed test requirements of API 598 for metal-seated check valves."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-DPCV-10-14",
+          "title": "Proquip Dual Plate Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-DPH-11-22",
+          "title": "Proquip Dual-Plate Check Valves Hub End Type Document Code",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Dual plate check valves",
+      "nombre": "Proquip Dual-Plate Check Valve: Double Flange Type",
+      "descripcion": "Velan Proquip double flange dual-plate check valves are made of cast carbon, stainless, or alloy steel to handle an extensive range of applications. The retainerless body is available in a drilled-thru or threaded double flange ends.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-Doub-flg-edited.png",
+      "url_velan": "https://velan.com/products/proquip-dual-plate-check-valves-double-flange-type/",
+      "especificaciones": {
+        "Size Range": "NPS 12-60 (DN 300-1500)",
+        "Pressure Class": "ASME classes 150-900",
+        "Standard Connections": "Flanged"
+      },
+      "caracteristicas": [
+        "Retainerless emission-free design. With no holes through the body wall, leakage to the outside is impossible.",
+        "Body surface with uninterrupted gasket surface.",
+        "Intrinsically fire safe.",
+        "The reduced weight of the disc minimizes slamming and water hammer.",
+        "The disc side hinges, eliminate the effect of gravity resulting in lower energy costs when installed in a horizontal pipeline.",
+        "Design maximizes the flow path area through the valve with a lower pressure drop. The internal retention method does not encroach on the gasket sealing surface.",
+        "Springs provide a fast-acting response to flow reversal, minimizing stress and maximizing service life.",
+        "Shock bumpers extended cycle life of internal components with minimal wear in severe service.",
+        "Extended seat life due to the clearance between the disc hinge and hinge pin which eliminates any dragging effect from the discs.",
+        "Velan Proquip dual plate check valves easily meet and exceed test requirements of API 598 for metal-seated check valves.",
+        "ASME B16.5 for NPS 12–24 (DN 300–600).",
+        "ASME B16.47 Series A for NPS 26 (DN 650) and larger.",
+        "ASME B16.47 Series B available upon request."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-DPCV-10-14",
+          "title": "Proquip Dual Plate Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-DPDF-11-22",
+          "title": "Proquip Dual-Plate Check Valves Double Flange Type",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoria": "esclusas-globo-retencion",
+      "product_line": "Dual plate check valves",
+      "nombre": "Proquip Dual-Plate Check Valve: Butt Weld End Type",
+      "descripcion": "Velan Proquip butt weld end dual-plate check valves are made of carbon, stainless, or alloy steel to handle an extensive range of applications. The butt weld ends are designed to be directly welded into a piping system.",
+      "normas": [
+        "ASME B16.34"
+      ],
+      "aplicaciones": [
+        "Oil & Gas",
+        "Agua",
+        "Pipelines"
+      ],
+      "imagen": "https://velan.com/wp-content/uploads/2024/09/Proquip-DPCV-BW.png",
+      "url_velan": "https://velan.com/products/proquip-dual-plate-check-valves-butt-weld-end-type/",
+      "especificaciones": {
+        "Size Range": "NPS 3-36 (DN 80-900)",
+        "Pressure Class": "ASME classes 150-600",
+        "Standard Connections": "Butt weld"
+      },
+      "caracteristicas": [
+        "Retainerless emission-free design. With no holes through the body wall, leakage to the outside is impossible.",
+        "Body surface with uninterrupted gasket surface.",
+        "Intrinsically fire safe.",
+        "The reduced weight of the disc minimizes slamming and water hammer.",
+        "The disc side hinges, eliminate the effect of gravity resulting in lower energy costs when installed in a horizontal pipeline.",
+        "Design maximizes the flow path area through the valve with a lower pressure drop. The internal retention method does not encroach on the gasket sealing surface.",
+        "Springs provide a fast-acting response to flow reversal, minimizing stress and maximizing service life.",
+        "Shock bumpers extended cycle life of internal components with minimal wear in severe service.",
+        "Extended seat life due to the clearance between the disc hinge and hinge pin which eliminates any dragging effect from the discs.",
+        "Velan Proquip dual plate check valves easily meet and exceed test requirements of API 598 for metal-seated check valves."
+      ],
+      "documentos": [
+        {
+          "type": "Maintenance manuals",
+          "code": "PED-QRL-ALL-10-25",
+          "title": "Quick Reference Instructions Available in 24 Languages",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "VEL-RMS-08-23",
+          "title": "Recommended Preventative Maintenance Schedule for Velan Valves",
+          "url": "https://velan.com/wp-content/uploads/2024/09/VEL-RMS_08-23.pdf"
+        },
+        {
+          "type": "Maintenance manuals",
+          "code": "IOM-DPCV-10-14",
+          "title": "Proquip Dual Plate Check Valves",
+          "url": "https://velan.com/login/"
+        },
+        {
+          "type": "Data sheets",
+          "code": "DS-DPBW-11-22",
+          "title": "Proquip Dual-Plate Check Valves Butt Weld End Type",
+          "url": "https://velan.com/login/"
+        }
+      ]
+    }
+  ]
+}
