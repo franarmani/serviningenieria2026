@@ -632,7 +632,7 @@ const InspeccionTanquesAPI = () => {
                     onClick={closeModal}
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {language === 'es' ? 'Solicitar Información' : 'Request Information'}
                   </Link>
@@ -640,7 +640,7 @@ const InspeccionTanquesAPI = () => {
               </div>
             </div>
           </div>
-      )}
+        )}
 
       {/* Servicios Especializados */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
@@ -681,13 +681,13 @@ const InspeccionTanquesAPI = () => {
                   {index === 1 ? (
                     <button 
                       onClick={() => setRopeAccessModalOpen(true)}
-                      className="btn-secondary w-full text-xs sm:text-sm mt-auto"
+                      className="btn-primary w-full text-xs sm:text-sm"
                       style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <span>{language === 'es' ? 'Ver Características Completas' : 'View Complete Features'}</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                       </svg>
-                      {language === 'es' ? 'Ver Información' : 'View Information'}
                     </button>
                   ) : (
                     <Link 
@@ -695,6 +695,9 @@ const InspeccionTanquesAPI = () => {
                       className="btn-primary w-full text-xs sm:text-sm mt-auto"
                       style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                       {language === 'es' ? 'Solicitar Información' : 'Request Information'}
                     </Link>
                   )}
@@ -1042,7 +1045,7 @@ const InspeccionTanquesAPI = () => {
                 onClick={() => setRopeAccessModalOpen(false)}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 {language === 'es' ? 'Solicitar Información' : 'Request Information'}
               </Link>
